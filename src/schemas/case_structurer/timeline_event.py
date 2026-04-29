@@ -18,9 +18,9 @@ EvidenceAtom, not TimelineEvent.
 from __future__ import annotations
 
 from enum import StrEnum
-from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from src.utils.id_generator import generate_event_id
 
 from .common import (
     ConfidenceLevel,
@@ -30,11 +30,6 @@ from .common import (
     TimeExpressionType,
 )
 from .source_span import SourceSpan
-
-
-def _new_event_id() -> EventID:
-    """Generate a stable timeline event id."""
-    return f"event_{uuid4().hex}"
 
 
 class TimelineEventType(StrEnum):
@@ -96,7 +91,7 @@ class TimelineEvent(BaseModel):
     )
 
     event_id: EventID = Field(
-        default_factory=_new_event_id,
+        default_factory=generate_event_id,
         description="Unique id for this timeline event.",
     )
 

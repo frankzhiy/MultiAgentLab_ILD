@@ -12,16 +12,10 @@ sections, evidence atoms, diagnoses, hypotheses, conflicts, or actions.
 
 from __future__ import annotations
 
-from uuid import uuid4
-
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from src.utils.id_generator import generate_span_id
 
 from .common import InputID, SpanID
-
-
-def _new_span_id() -> SpanID:
-    """Generate a stable source span id."""
-    return f"span_{uuid4().hex}"
 
 
 class SourceSpan(BaseModel):
@@ -42,7 +36,7 @@ class SourceSpan(BaseModel):
     )
 
     span_id: SpanID = Field(
-        default_factory=_new_span_id,
+        default_factory=generate_span_id,
         description="Unique id for this source span.",
     )
 

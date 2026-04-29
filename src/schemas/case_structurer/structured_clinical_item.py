@@ -18,9 +18,9 @@ EvidenceAtom, not StructuredClinicalItem.
 from __future__ import annotations
 
 from enum import StrEnum
-from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from src.utils.id_generator import generate_item_id
 
 from .common import (
     CertaintyLevel,
@@ -32,11 +32,6 @@ from .common import (
     TemporalRelation,
 )
 from .source_span import SourceSpan
-
-
-def _new_item_id() -> ItemID:
-    """Generate a stable clinical item id."""
-    return f"item_{uuid4().hex}"
 
 
 class ClinicalItemType(StrEnum):
@@ -112,7 +107,7 @@ class StructuredClinicalItem(BaseModel):
     )
 
     item_id: ItemID = Field(
-        default_factory=_new_item_id,
+        default_factory=generate_item_id,
         description="Unique id for this structured clinical item.",
     )
 

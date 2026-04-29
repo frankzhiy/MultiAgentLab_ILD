@@ -20,9 +20,9 @@ not support one.
 from __future__ import annotations
 
 from enum import StrEnum
-from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from src.utils.id_generator import generate_ambiguity_id
 
 from .common import (
     AmbiguityID,
@@ -32,11 +32,6 @@ from .common import (
     SectionID,
 )
 from .source_span import SourceSpan
-
-
-def _new_ambiguity_id() -> AmbiguityID:
-    """Generate a stable ambiguity id."""
-    return f"ambiguity_{uuid4().hex}"
 
 
 class AmbiguityType(StrEnum):
@@ -89,7 +84,7 @@ class AmbiguityItem(BaseModel):
     )
 
     ambiguity_id: AmbiguityID = Field(
-        default_factory=_new_ambiguity_id,
+        default_factory=generate_ambiguity_id,
         description="Unique id for this ambiguity item.",
     )
 

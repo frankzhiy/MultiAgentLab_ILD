@@ -17,9 +17,9 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 from enum import StrEnum
-from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from src.utils.id_generator import generate_stage_id
 
 from .common import CaseID, ConfidenceLevel, InputID, StageID
 
@@ -27,11 +27,6 @@ from .common import CaseID, ConfidenceLevel, InputID, StageID
 def _utc_now() -> datetime:
     """Return timezone-aware UTC timestamp."""
     return datetime.now(timezone.utc)
-
-
-def _new_stage_id() -> StageID:
-    """Generate a stable stage id."""
-    return f"stage_{uuid4().hex}"
 
 
 class StageType(StrEnum):
@@ -101,7 +96,7 @@ class StageContext(BaseModel):
     )
 
     stage_id: StageID = Field(
-        default_factory=_new_stage_id,
+        default_factory=generate_stage_id,
         description="Unique id for this case stage.",
     )
 
