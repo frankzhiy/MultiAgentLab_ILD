@@ -12,9 +12,9 @@ StructuredClinicalItem.
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
+from src.utils.id_generator import generate_input_id
 
 from .common import CaseID, InputID
 
@@ -22,11 +22,6 @@ from .common import CaseID, InputID
 def _utc_now() -> datetime:
     """Return timezone-aware UTC timestamp."""
     return datetime.now(timezone.utc)
-
-
-def _new_input_id() -> InputID:
-    """Generate a stable input id."""
-    return f"input_{uuid4().hex}"
 
 
 
@@ -47,7 +42,7 @@ class RawTextInput(BaseModel):
     )
 
     input_id: InputID = Field(
-        default_factory=_new_input_id,
+        default_factory=generate_input_id,
         description="Unique id for this raw text input.",
     )
 
