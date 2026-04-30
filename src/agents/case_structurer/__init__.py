@@ -1,3 +1,3 @@
-from .agent import CaseStructurerAgent, CaseStructuringParseError
+from .agent import CaseStructurerAgent
 
-__all__ = ["CaseStructurerAgent", "CaseStructuringParseError"]
+__all__ = ["CaseStructurerAgent"]

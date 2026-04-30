@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import yaml
@@ -12,8 +12,9 @@ class AgentLLMConfig:
     model: str
     temperature: float
     max_tokens: int
-    prompt_path: str
+    prompt_path: str | None = None
     response_format: str | None = None
+    prompts: dict[str, str] = field(default_factory=dict)
 
 
 _REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -39,17 +40,34 @@ def load_agent_config(agent_name: str) -> AgentLLMConfig:
         )
 
     try:
+        raw_prompts = raw_config.get("prompts") or {}
+        if not isinstance(raw_prompts, dict):
+            raise ValueError(
+                f"Invalid 'prompts' value in agent config '{agent_name}': "
+                "expected a mapping of prompt names to paths."
+            )
+
+        prompt_path = raw_config.get("prompt_path")
+        prompts = {str(key): str(value) for key, value in raw_prompts.items()}
+
+        if prompt_path is None and not prompts:
+            raise ValueError(
+                f"Agent config '{agent_name}' must define either "
+                "'prompt_path' or 'prompts'."
+            )
+
         return AgentLLMConfig(
             provider=str(raw_config["provider"]),
             model=str(raw_config["model"]),
             temperature=float(raw_config["temperature"]),
             max_tokens=int(raw_config["max_tokens"]),
-            prompt_path=str(raw_config["prompt_path"]),
+            prompt_path=str(prompt_path) if prompt_path is not None else None,
             response_format=(
                 str(raw_config["response_format"])
                 if raw_config.get("response_format") is not None
                 else None
             ),
+            prompts=prompts,
         )
     except KeyError as exc:
         raise ValueError(

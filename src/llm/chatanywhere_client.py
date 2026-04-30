@@ -19,14 +19,18 @@ class ChatAnywhereClient:
         model: str,
         temperature: float,
         max_tokens: int,
+        response_format: str | None = "json_object",
     ) -> str:
-        response = self.client.chat.completions.create(
-            model=model,
-            messages=messages,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            response_format={"type": "json_object"},
-        )
+        request_kwargs = {
+            "model": model,
+            "messages": messages,
+            "temperature": temperature,
+            "max_tokens": max_tokens,
+        }
+        if response_format is not None:
+            request_kwargs["response_format"] = {"type": response_format}
+
+        response = self.client.chat.completions.create(**request_kwargs)
 
         content = response.choices[0].message.content
         if content is None or not content.strip():
