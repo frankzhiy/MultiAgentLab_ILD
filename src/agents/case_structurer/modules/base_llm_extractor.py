@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 from enum import StrEnum
 from typing import Any
 
+from src.agents.case_structurer.prompting.template_renderer import (
+    PromptTemplateRenderer,
+)
 from src.config.agent_config import AgentLLMConfig, load_agent_config
 from src.llm.chatanywhere_client import ChatAnywhereClient
 from src.schemas.case_structurer.raw_text_input import RawTextInput
@@ -21,11 +23,7 @@ class BaseLLMExtractor:
         self.llm_client = llm_client
         self.agent_name = agent_name
         self.config: AgentLLMConfig = load_agent_config(agent_name)
-
-    def load_prompt(self, prompt_path: str) -> str:
-        repo_root = Path(__file__).resolve().parents[4]
-        resolved_path = repo_root / prompt_path
-        return resolved_path.read_text(encoding="utf-8")
+        self.prompt_renderer = PromptTemplateRenderer()
 
     def prompt_path(self, prompt_name: str) -> str:
         try:
@@ -42,9 +40,13 @@ class BaseLLMExtractor:
         prompt_path: str,
         user_payload: dict[str, Any],
         instruction: str,
+        template_vars: dict[str, Any] | None = None,
         response_format: str | None = "json_object",
     ) -> str:
-        prompt_text = self.load_prompt(prompt_path)
+        prompt_text = self.prompt_renderer.render_file(
+            prompt_path,
+            template_vars or {},
+        )
         payload_text = json.dumps(
             user_payload,
             ensure_ascii=False,
@@ -106,6 +108,22 @@ class BaseLLMExtractor:
             value = payload.get(key)
             if isinstance(value, str) and value.strip():
                 return value.strip()
+        return None
+
+    @staticmethod
+    def coerce_optional_text(value: Any) -> str | None:
+        """Coerce LLM scalar output into an optional schema text field."""
+        if value is None:
+            return None
+        if isinstance(value, StrEnum):
+            value = value.value
+        if isinstance(value, str):
+            cleaned = value.strip()
+            return cleaned or None
+        if isinstance(value, bool):
+            return "true" if value else "false"
+        if isinstance(value, int | float):
+            return str(value)
         return None
 
     @staticmethod

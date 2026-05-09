@@ -1,0 +1,379 @@
+{
+  "event_id_map": {
+    "event_001": "event_001",
+    "event_002": "event_002",
+    "event_003": "event_003",
+    "event_004": "event_004",
+    "event_005": "event_005",
+    "event_006": "event_006",
+    "event_007": "event_007",
+    "event_008": "event_008",
+    "event_009": "event_009",
+    "event_010": "event_010"
+  },
+  "ambiguity_id_map": {
+    "ambiguity_001": "ambiguity_001",
+    "ambiguity_002": "ambiguity_002",
+    "ambiguity_003": "ambiguity_003"
+  },
+  "timeline_events": [
+    {
+      "event_id": "event_001",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "symptom_onset",
+      "event_time_text": "8年",
+      "time_expression_type": "duration",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著",
+      "related_item_ids": [
+        "item_003",
+        "item_004",
+        "item_005",
+        "item_006",
+        "item_014",
+        "item_015",
+        "item_016",
+        "item_017",
+        "item_018",
+        "item_019"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_001",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 1,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "event_id": "event_002",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "unknown",
+      "event_time_text": "1年前",
+      "time_expression_type": "relative",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "1年前新冠病毒感染",
+      "related_item_ids": [
+        "item_027"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_002",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "1年前新冠病毒感染",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 2,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "event_id": "event_003",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "symptom_onset",
+      "event_time_text": "1年前",
+      "time_expression_type": "relative",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显",
+      "related_item_ids": [
+        "item_028",
+        "item_029",
+        "item_030",
+        "item_031",
+        "item_032"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_003",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 3,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "event_id": "event_004",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "treatment_started",
+      "event_time_text": "1周余",
+      "time_expression_type": "duration",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "于当地诊所输液1周余后咳嗽咳痰、胸闷气短有所改善",
+      "related_item_ids": [
+        "item_033"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_004",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 4,
+      "classification_confidence": "medium",
+      "notes": "Treatment details unspecified"
+    },
+    {
+      "event_id": "event_005",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "symptom_worsening",
+      "event_time_text": "2月",
+      "time_expression_type": "duration",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短",
+      "related_item_ids": [
+        "item_007",
+        "item_034",
+        "item_035",
+        "item_036",
+        "item_037"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_005",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 5,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "event_id": "event_006",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "test_performed",
+      "event_time_text": "2024年6月11日",
+      "time_expression_type": "absolute",
+      "normalized_time": "2024-06-11",
+      "relative_time": null,
+      "description": "2024年6月11日胸部CT检查",
+      "related_item_ids": [
+        "item_042"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_006",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 6,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "event_id": "event_007",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "diagnosis_made",
+      "event_time_text": "2024年6月11日",
+      "time_expression_type": "absolute",
+      "normalized_time": "2024-06-11",
+      "relative_time": null,
+      "description": "诊断为肺部感染",
+      "related_item_ids": [
+        "item_043"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_007",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "考虑为“肺部感染”",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 7,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "event_id": "event_008",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "treatment_started",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "给予抗感染治疗",
+      "related_item_ids": [
+        "item_044"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_008",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "治疗上给予抗感染（具体不详）治疗",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 8,
+      "classification_confidence": "medium",
+      "notes": "Exact timing and details of treatment not specified"
+    },
+    {
+      "event_id": "event_009",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "treatment_response",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "抗感染治疗后胸闷气短症状改善不明显",
+      "related_item_ids": [
+        "item_045"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_009",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "胸闷气短症状改善不明显",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 9,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "event_id": "event_010",
+      "input_id": "input_20260509_b2869588",
+      "event_type": "hospitalization",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "进一步诊治后以“间质性肺炎，肺部感染”收住院",
+      "related_item_ids": [
+        "item_046",
+        "item_047"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_010",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "以“间质性肺炎，肺部感染”收住我科",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "event_order": 10,
+      "classification_confidence": "medium",
+      "notes": "Exact admission date not specified"
+    }
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "ambiguity_001",
+      "input_id": "input_20260509_b2869588",
+      "ambiguity_type": "unclear_treatment_status",
+      "ambiguous_text": "于当地诊所输液1周余（具体不详）",
+      "possible_interpretations": [
+        "Treatment type and exact medications unknown",
+        "Duration approximately 1 week"
+      ],
+      "reason": "Treatment details and exact timing are not specified in the text",
+      "related_section_ids": [
+        "section_005"
+      ],
+      "related_item_ids": [
+        "item_033"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_ambiguity_001",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "于当地诊所输液1周余（具体不详）",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "needs_clarification": true,
+      "classification_confidence": "medium",
+      "notes": null
+    },
+    {
+      "ambiguity_id": "ambiguity_002",
+      "input_id": "input_20260509_b2869588",
+      "ambiguity_type": "unclear_treatment_status",
+      "ambiguous_text": "治疗上给予抗感染（具体不详）治疗",
+      "possible_interpretations": [
+        "Antibiotic or other anti-infective treatment given",
+        "Exact drugs, doses, and duration unknown"
+      ],
+      "reason": "Treatment details are not specified in the text",
+      "related_section_ids": [
+        "section_005"
+      ],
+      "related_item_ids": [
+        "item_044"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_ambiguity_002",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "治疗上给予抗感染（具体不详）治疗",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "needs_clarification": true,
+      "classification_confidence": "medium",
+      "notes": null
+    },
+    {
+      "ambiguity_id": "ambiguity_003",
+      "input_id": "input_20260509_b2869588",
+      "ambiguity_type": "unclear_diagnosis_status",
+      "ambiguous_text": "以“间质性肺炎，肺部感染”收住我科",
+      "possible_interpretations": [
+        "Confirmed diagnosis of interstitial pneumonia and lung infection",
+        "Working diagnosis pending further confirmation"
+      ],
+      "reason": "Diagnosis timing and confirmation status are not explicitly detailed",
+      "related_section_ids": [
+        "section_005"
+      ],
+      "related_item_ids": [
+        "item_046",
+        "item_047"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_ambiguity_003",
+          "input_id": "input_20260509_b2869588",
+          "quoted_text": "以“间质性肺炎，肺部感染”收住我科",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "needs_clarification": true,
+      "classification_confidence": "medium",
+      "notes": null
+    }
+  ]
+}

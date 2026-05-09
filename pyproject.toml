@@ -10,9 +10,9 @@ readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "Your Team" }]
 dependencies = [
+	"jinja2",
 	"pydantic>=2,<3",
 	"openai",
 	"pyyaml",
 	"python-dotenv",
 ]
-

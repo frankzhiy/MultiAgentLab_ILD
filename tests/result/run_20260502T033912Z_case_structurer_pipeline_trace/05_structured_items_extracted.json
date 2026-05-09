@@ -1,0 +1,392 @@
+[
+  {
+    "item_id": "item_001",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_001",
+    "item_type": "demographic",
+    "label": "女,77岁",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "not_mentioned",
+    "source_spans": [
+      {
+        "span_id": "span_001",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "女,77岁",
+        "char_start": 3,
+        "char_end": 9
+      }
+    ],
+    "item_order": 1,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_002",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_002",
+    "item_type": "symptom",
+    "label": "间断咳嗽咳痰伴胸闷气短8年",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_002",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "间断咳嗽咳痰伴胸闷气短8年",
+        "char_start": 3,
+        "char_end": 19
+      }
+    ],
+    "item_order": 2,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_003",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_002",
+    "item_type": "symptom",
+    "label": "加重2月",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_003",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "加重2月",
+        "char_start": 20,
+        "char_end": 24
+      }
+    ],
+    "item_order": 3,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_004",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "comorbidity",
+    "label": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_004",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+        "char_start": 14,
+        "char_end": 38
+      }
+    ],
+    "item_order": 4,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_005",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "procedure",
+    "label": "40年前左下肢骨折固定术",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "past",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_005",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "40年前左下肢骨折固定术",
+        "char_start": 39,
+        "char_end": 49
+      }
+    ],
+    "item_order": 5,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_006",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "symptom",
+    "label": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_006",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适",
+        "char_start": 50,
+        "char_end": 132
+      }
+    ],
+    "item_order": 6,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_007",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "symptom",
+    "label": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "past",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_007",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显",
+        "char_start": 133,
+        "char_end": 196
+      }
+    ],
+    "item_order": 7,
+    "classification_confidence": "medium",
+    "notes": null
+  },
+  {
+    "item_id": "item_008",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "treatment",
+    "label": "于当地诊所输液1周余",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "past",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_008",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "于当地诊所输液1周余",
+        "char_start": 197,
+        "char_end": 217
+      }
+    ],
+    "item_order": 8,
+    "classification_confidence": "medium",
+    "notes": null
+  },
+  {
+    "item_id": "item_009",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "treatment_response",
+    "label": "输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "past",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_009",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+        "char_start": 218,
+        "char_end": 246
+      }
+    ],
+    "item_order": 9,
+    "classification_confidence": "medium",
+    "notes": null
+  },
+  {
+    "item_id": "item_010",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "symptom",
+    "label": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_010",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+        "char_start": 247,
+        "char_end": 280
+      }
+    ],
+    "item_order": 10,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_011",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "imaging_finding",
+    "label": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_011",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+        "char_start": 281,
+        "char_end": 355
+      }
+    ],
+    "item_order": 11,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_012",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "treatment",
+    "label": "治疗上给予抗感染（具体不详）治疗",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_012",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "治疗上给予抗感染（具体不详）治疗",
+        "char_start": 356,
+        "char_end": 372
+      }
+    ],
+    "item_order": 12,
+    "classification_confidence": "medium",
+    "notes": null
+  },
+  {
+    "item_id": "item_013",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "treatment_response",
+    "label": "胸闷气短症状改善不明显",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_013",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "胸闷气短症状改善不明显",
+        "char_start": 373,
+        "char_end": 393
+      }
+    ],
+    "item_order": 13,
+    "classification_confidence": "medium",
+    "notes": null
+  },
+  {
+    "item_id": "item_014",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "diagnosis_history",
+    "label": "以“间质性肺炎，肺部感染”收住我科",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_014",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "以“间质性肺炎，肺部感染”收住我科",
+        "char_start": 394,
+        "char_end": 414
+      }
+    ],
+    "item_order": 14,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_015",
+    "input_id": "input_20260502_7165a514",
+    "section_id": "section_003",
+    "item_type": "other",
+    "label": "患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "not_mentioned",
+    "source_spans": [
+      {
+        "span_id": "span_015",
+        "input_id": "input_20260502_7165a514",
+        "quoted_text": "患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+        "char_start": 415,
+        "char_end": 460
+      }
+    ],
+    "item_order": 15,
+    "classification_confidence": "medium",
+    "notes": null
+  }
+]

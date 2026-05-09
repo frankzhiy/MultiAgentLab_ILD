@@ -1,5 +1,15 @@
 from __future__ import annotations
 
+from src.agents.case_structurer.prompting.output_skeletons import (
+    stage_context_skeleton,
+)
+from src.agents.case_structurer.prompting.prompt_context import (
+    format_forbidden_objects,
+    format_raw_input_summary,
+)
+from src.agents.case_structurer.prompting.schema_contracts import (
+    stage_context_contract,
+)
 from src.schemas.case_structurer.raw_text_input import RawTextInput
 from src.schemas.case_structurer.stage_context import (
     StageContext,
@@ -14,16 +24,33 @@ class StageContextExtractor(BaseLLMExtractor):
     """Extract workflow-level stage context without clinical facts."""
 
     def extract(self, raw_input: RawTextInput) -> StageContext:
+        input_order = raw_input.input_order or 1
+        template_vars = {
+            **stage_context_contract(),
+            "input_id": raw_input.input_id,
+            "case_id": raw_input.case_id,
+            "input_order": input_order,
+            "raw_text": raw_input.raw_text,
+            "raw_input_summary": format_raw_input_summary(raw_input),
+            "forbidden_objects": format_forbidden_objects(),
+            "output_skeleton": stage_context_skeleton(
+                input_id=raw_input.input_id,
+                case_id=raw_input.case_id,
+                input_order=input_order,
+            ),
+        }
+
         content = self.generate_json(
             prompt_path=self.prompt_path("stage_context"),
             user_payload={"raw_input": raw_input.model_dump(mode="json")},
             instruction="Return exactly one StageContext JSON object.",
+            template_vars=template_vars,
         )
         payload = self.parse_json_content(content)
         if not isinstance(payload, dict):
             raise ValueError("StageContext extractor returned a non-object JSON value.")
 
-        stage_order = raw_input.input_order or 1
+        stage_order = input_order
         is_initial_stage = stage_order == 1
 
         stage_type = payload.get("stage_type") or StageType.UNKNOWN

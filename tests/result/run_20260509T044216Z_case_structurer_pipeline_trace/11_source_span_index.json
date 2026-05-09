@@ -1,0 +1,858 @@
+{
+  "note": "Debug index only. The formal CaseStructuringResult keeps SourceSpan objects nested under their owning clinical objects.",
+  "count": 71,
+  "source_spans": [
+    {
+      "parent_schema": "ClinicalSection",
+      "parent_collection": "clinical_sections",
+      "parent_id": "section_001",
+      "span": {
+        "span_id": "span_section_001",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "患者***,女,77岁",
+        "char_start": 0,
+        "char_end": 11
+      }
+    },
+    {
+      "parent_schema": "ClinicalSection",
+      "parent_collection": "clinical_sections",
+      "parent_id": "section_002",
+      "span": {
+        "span_id": "span_section_002",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+        "char_start": 12,
+        "char_end": 36
+      }
+    },
+    {
+      "parent_schema": "ClinicalSection",
+      "parent_collection": "clinical_sections",
+      "parent_id": "section_003",
+      "span": {
+        "span_id": "span_section_003",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "一般健康状况：良好",
+        "char_start": 38,
+        "char_end": 47
+      }
+    },
+    {
+      "parent_schema": "ClinicalSection",
+      "parent_collection": "clinical_sections",
+      "parent_id": "section_004",
+      "span": {
+        "span_id": "span_section_004",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "疾病史：既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史。40年前左下肢骨折固定术",
+        "char_start": 48,
+        "char_end": 108
+      }
+    },
+    {
+      "parent_schema": "ClinicalSection",
+      "parent_collection": "clinical_sections",
+      "parent_id": "section_005",
+      "span": {
+        "span_id": "span_section_005",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "现病史：患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗。1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善。2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适，遂就诊于当地医院，完善2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”，治疗上给予抗感染（具体不详）治疗后，胸闷气短症状改善不明显，为进一步诊治，遂就诊于我院，详阅当地胸部CT，请我科医师会诊后，以“间质性肺炎，肺部感染”收住我科。病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化。",
+        "char_start": 109,
+        "char_end": 527
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_001",
+      "span": {
+        "span_id": "span_item_001",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "女",
+        "char_start": 6,
+        "char_end": 7
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_002",
+      "span": {
+        "span_id": "span_item_002",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "77岁",
+        "char_start": 8,
+        "char_end": 11
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_003",
+      "span": {
+        "span_id": "span_item_003",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "间断咳嗽咳痰伴胸闷气短8年",
+        "char_start": 15,
+        "char_end": 28
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_004",
+      "span": {
+        "span_id": "span_item_004",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "间断咳嗽咳痰伴胸闷气短8年",
+        "char_start": 15,
+        "char_end": 28
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_005",
+      "span": {
+        "span_id": "span_item_005",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "间断咳嗽咳痰伴胸闷气短8年",
+        "char_start": 15,
+        "char_end": 28
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_006",
+      "span": {
+        "span_id": "span_item_006",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "间断咳嗽咳痰伴胸闷气短8年",
+        "char_start": 15,
+        "char_end": 28
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_007",
+      "span": {
+        "span_id": "span_item_007",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "加重2月",
+        "char_start": 29,
+        "char_end": 33
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_008",
+      "span": {
+        "span_id": "span_item_008",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "一般健康状况：良好",
+        "char_start": 38,
+        "char_end": 47
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_009",
+      "span": {
+        "span_id": "span_item_009",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "既往高血压8年",
+        "char_start": 52,
+        "char_end": 59
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_010",
+      "span": {
+        "span_id": "span_item_010",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服",
+        "char_start": 60,
+        "char_end": 85
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_011",
+      "span": {
+        "span_id": "span_item_011",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "糖尿病",
+        "char_start": 86,
+        "char_end": 89
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_012",
+      "span": {
+        "span_id": "span_item_012",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "冠心病病史",
+        "char_start": 90,
+        "char_end": 95
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_013",
+      "span": {
+        "span_id": "span_item_013",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "40年前左下肢骨折固定术",
+        "char_start": 96,
+        "char_end": 108
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_014",
+      "span": {
+        "span_id": "span_item_014",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "患者于8年前无明显诱因出现咳嗽咳痰",
+        "char_start": 113,
+        "char_end": 130
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_015",
+      "span": {
+        "span_id": "span_item_015",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "患者于8年前无明显诱因出现咳嗽咳痰",
+        "char_start": 113,
+        "char_end": 130
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_016",
+      "span": {
+        "span_id": "span_item_016",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "痰液为黏白色，量少，易咳出",
+        "char_start": 131,
+        "char_end": 144
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_017",
+      "span": {
+        "span_id": "span_item_017",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": 21,
+        "char_end": 26
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_018",
+      "span": {
+        "span_id": "span_item_018",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": 21,
+        "char_end": 26
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_019",
+      "span": {
+        "span_id": "span_item_019",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "夜间为著",
+        "char_start": 151,
+        "char_end": 155
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_020",
+      "span": {
+        "span_id": "span_item_020",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无发热寒战",
+        "char_start": 156,
+        "char_end": 161
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_021",
+      "span": {
+        "span_id": "span_item_021",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无胸痛",
+        "char_start": 162,
+        "char_end": 165
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_022",
+      "span": {
+        "span_id": "span_item_022",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无咯血",
+        "char_start": null,
+        "char_end": null
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_023",
+      "span": {
+        "span_id": "span_item_023",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无午后低热",
+        "char_start": 168,
+        "char_end": 173
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_024",
+      "span": {
+        "span_id": "span_item_024",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无乏力",
+        "char_start": null,
+        "char_end": null
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_025",
+      "span": {
+        "span_id": "span_item_025",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无盗汗",
+        "char_start": null,
+        "char_end": null
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_026",
+      "span": {
+        "span_id": "span_item_026",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无恶心呕吐",
+        "char_start": 180,
+        "char_end": 185
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_027",
+      "span": {
+        "span_id": "span_item_027",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "1年前新冠病毒感染",
+        "char_start": 197,
+        "char_end": 206
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_028",
+      "span": {
+        "span_id": "span_item_028",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "1年前新冠病毒感染后再次出现咳嗽咳痰",
+        "char_start": 197,
+        "char_end": 215
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_029",
+      "span": {
+        "span_id": "span_item_029",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "1年前新冠病毒感染后再次出现咳嗽咳痰",
+        "char_start": 197,
+        "char_end": 215
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_030",
+      "span": {
+        "span_id": "span_item_030",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "痰液为黏白色，量少，易咳出",
+        "char_start": 131,
+        "char_end": 144
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_031",
+      "span": {
+        "span_id": "span_item_031",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": 21,
+        "char_end": 26
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_032",
+      "span": {
+        "span_id": "span_item_032",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": 21,
+        "char_end": 26
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_033",
+      "span": {
+        "span_id": "span_item_033",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+        "char_start": 247,
+        "char_end": 273
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_034",
+      "span": {
+        "span_id": "span_item_034",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "2月前无明显诱因再次出现咳嗽咳痰",
+        "char_start": 274,
+        "char_end": 290
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_035",
+      "span": {
+        "span_id": "span_item_035",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "2月前无明显诱因再次出现咳嗽咳痰",
+        "char_start": 274,
+        "char_end": 290
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_036",
+      "span": {
+        "span_id": "span_item_036",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": 21,
+        "char_end": 26
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_037",
+      "span": {
+        "span_id": "span_item_037",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": 21,
+        "char_end": 26
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_038",
+      "span": {
+        "span_id": "span_item_038",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无发热寒战",
+        "char_start": 156,
+        "char_end": 161
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_039",
+      "span": {
+        "span_id": "span_item_039",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无胸痛",
+        "char_start": 162,
+        "char_end": 165
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_040",
+      "span": {
+        "span_id": "span_item_040",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无咯血",
+        "char_start": null,
+        "char_end": null
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_041",
+      "span": {
+        "span_id": "span_item_041",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无恶心呕吐",
+        "char_start": 180,
+        "char_end": 185
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_042",
+      "span": {
+        "span_id": "span_item_042",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+        "char_start": 329,
+        "char_end": 402
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_043",
+      "span": {
+        "span_id": "span_item_043",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "考虑为“肺部感染”",
+        "char_start": 403,
+        "char_end": 412
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_044",
+      "span": {
+        "span_id": "span_item_044",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "治疗上给予抗感染（具体不详）治疗",
+        "char_start": 413,
+        "char_end": 429
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_045",
+      "span": {
+        "span_id": "span_item_045",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "胸闷气短症状改善不明显",
+        "char_start": 431,
+        "char_end": 442
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_046",
+      "span": {
+        "span_id": "span_item_046",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "以“间质性肺炎，肺部感染”收住我科",
+        "char_start": 475,
+        "char_end": 492
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_047",
+      "span": {
+        "span_id": "span_item_047",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "以“间质性肺炎，肺部感染”收住我科",
+        "char_start": 475,
+        "char_end": 492
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_048",
+      "span": {
+        "span_id": "span_item_048",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "患者神志清",
+        "char_start": 497,
+        "char_end": 502
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_049",
+      "span": {
+        "span_id": "span_item_049",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "精神可",
+        "char_start": 503,
+        "char_end": 506
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_050",
+      "span": {
+        "span_id": "span_item_050",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "饮食睡眠正常",
+        "char_start": null,
+        "char_end": null
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_051",
+      "span": {
+        "span_id": "span_item_051",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "饮食睡眠正常",
+        "char_start": null,
+        "char_end": null
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_052",
+      "span": {
+        "span_id": "span_item_052",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "大小便正常",
+        "char_start": 512,
+        "char_end": 517
+      }
+    },
+    {
+      "parent_schema": "StructuredClinicalItem",
+      "parent_collection": "structured_items",
+      "parent_id": "item_053",
+      "span": {
+        "span_id": "span_item_053",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "体重无明显变化",
+        "char_start": 519,
+        "char_end": 526
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_001",
+      "span": {
+        "span_id": "span_event_001",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著",
+        "char_start": 113,
+        "char_end": 155
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_002",
+      "span": {
+        "span_id": "span_event_002",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "1年前新冠病毒感染",
+        "char_start": 197,
+        "char_end": 206
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_003",
+      "span": {
+        "span_id": "span_event_003",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显",
+        "char_start": 197,
+        "char_end": 241
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_004",
+      "span": {
+        "span_id": "span_event_004",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+        "char_start": 242,
+        "char_end": 273
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_005",
+      "span": {
+        "span_id": "span_event_005",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短",
+        "char_start": 274,
+        "char_end": 296
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_006",
+      "span": {
+        "span_id": "span_event_006",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+        "char_start": 329,
+        "char_end": 402
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_007",
+      "span": {
+        "span_id": "span_event_007",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "考虑为“肺部感染”",
+        "char_start": 403,
+        "char_end": 412
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_008",
+      "span": {
+        "span_id": "span_event_008",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "治疗上给予抗感染（具体不详）治疗",
+        "char_start": 413,
+        "char_end": 429
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_009",
+      "span": {
+        "span_id": "span_event_009",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "胸闷气短症状改善不明显",
+        "char_start": 431,
+        "char_end": 442
+      }
+    },
+    {
+      "parent_schema": "TimelineEvent",
+      "parent_collection": "timeline_events",
+      "parent_id": "event_010",
+      "span": {
+        "span_id": "span_event_010",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "以“间质性肺炎，肺部感染”收住我科",
+        "char_start": 475,
+        "char_end": 492
+      }
+    },
+    {
+      "parent_schema": "AmbiguityItem",
+      "parent_collection": "ambiguities",
+      "parent_id": "ambiguity_001",
+      "span": {
+        "span_id": "span_ambiguity_001",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "于当地诊所输液1周余（具体不详）",
+        "char_start": 242,
+        "char_end": 258
+      }
+    },
+    {
+      "parent_schema": "AmbiguityItem",
+      "parent_collection": "ambiguities",
+      "parent_id": "ambiguity_002",
+      "span": {
+        "span_id": "span_ambiguity_002",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "治疗上给予抗感染（具体不详）治疗",
+        "char_start": 413,
+        "char_end": 429
+      }
+    },
+    {
+      "parent_schema": "AmbiguityItem",
+      "parent_collection": "ambiguities",
+      "parent_id": "ambiguity_003",
+      "span": {
+        "span_id": "span_ambiguity_003",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "以“间质性肺炎，肺部感染”收住我科",
+        "char_start": 475,
+        "char_end": 492
+      }
+    }
+  ]
+}

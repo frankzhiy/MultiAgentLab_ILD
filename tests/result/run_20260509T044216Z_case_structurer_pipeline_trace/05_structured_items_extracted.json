@@ -1,0 +1,1380 @@
+[
+  {
+    "item_id": "item_001",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_001",
+    "item_type": "demographic",
+    "label": "female",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "unknown",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_001",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "女",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 1,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_002",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_001",
+    "item_type": "demographic",
+    "label": "age",
+    "value": "77",
+    "unit": "岁",
+    "body_site": null,
+    "temporality": "unknown",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_002",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "77岁",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 2,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_003",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_002",
+    "item_type": "symptom",
+    "label": "cough",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_003",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "间断咳嗽咳痰伴胸闷气短8年",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 3,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_004",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_002",
+    "item_type": "symptom",
+    "label": "sputum",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_004",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "间断咳嗽咳痰伴胸闷气短8年",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 4,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_005",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_002",
+    "item_type": "symptom",
+    "label": "chest tightness",
+    "value": null,
+    "unit": null,
+    "body_site": "chest",
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_005",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "间断咳嗽咳痰伴胸闷气短8年",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 5,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_006",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_002",
+    "item_type": "symptom",
+    "label": "shortness of breath",
+    "value": null,
+    "unit": null,
+    "body_site": "respiratory",
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_006",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "间断咳嗽咳痰伴胸闷气短8年",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 6,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_007",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_002",
+    "item_type": "symptom",
+    "label": "symptom worsening",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": "2月",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_007",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "加重2月",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 7,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_008",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_003",
+    "item_type": "other",
+    "label": "general health status",
+    "value": "良好",
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_008",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "一般健康状况：良好",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 8,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_009",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_004",
+    "item_type": "comorbidity",
+    "label": "hypertension",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_009",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "既往高血压8年",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 9,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_010",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_004",
+    "item_type": "medication",
+    "label": "sacubitril valsartan tablets",
+    "value": "2",
+    "unit": "片/次 1次/日",
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_010",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 10,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_011",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_004",
+    "item_type": "comorbidity",
+    "label": "diabetes",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_011",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "糖尿病",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 11,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_012",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_004",
+    "item_type": "comorbidity",
+    "label": "coronary heart disease",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_012",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "冠心病病史",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 12,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_013",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_004",
+    "item_type": "procedure",
+    "label": "left lower limb fracture fixation surgery",
+    "value": null,
+    "unit": null,
+    "body_site": "left lower limb",
+    "temporality": "past",
+    "time_text": "40年前",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_013",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "40年前左下肢骨折固定术",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 13,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_014",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "cough",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_014",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "患者于8年前无明显诱因出现咳嗽咳痰",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 14,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_015",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "sputum",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_015",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "患者于8年前无明显诱因出现咳嗽咳痰",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 15,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_016",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "sputum characteristics",
+    "value": "粘白色, 量少, 易咳出",
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_016",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "痰液为黏白色，量少，易咳出",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 16,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_017",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "chest tightness",
+    "value": null,
+    "unit": null,
+    "body_site": "chest",
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_017",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 17,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_018",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "shortness of breath",
+    "value": null,
+    "unit": null,
+    "body_site": "respiratory",
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_018",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 18,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_019",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "night symptoms",
+    "value": "chest tightness and shortness of breath",
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_019",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "夜间为著",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 19,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_020",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "fever",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_020",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无发热寒战",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 20,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_021",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "chest pain",
+    "value": null,
+    "unit": null,
+    "body_site": "chest",
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_021",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无胸痛",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 21,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_022",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "hemoptysis",
+    "value": null,
+    "unit": null,
+    "body_site": "respiratory",
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_022",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无咯血",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 22,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_023",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "afternoon low fever",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_023",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无午后低热",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 23,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_024",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "fatigue",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_024",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无乏力",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 24,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_025",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "night sweats",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_025",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无盗汗",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 25,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_026",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "nausea and vomiting",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "chronic",
+    "time_text": "8年",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_026",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无恶心呕吐",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 26,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_027",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "exposure",
+    "label": "COVID-19 infection",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "past",
+    "time_text": "1年前",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_027",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "1年前新冠病毒感染",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 27,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_028",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "cough",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": "1年前",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_028",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "1年前新冠病毒感染后再次出现咳嗽咳痰",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 28,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_029",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "sputum",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": "1年前",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_029",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "1年前新冠病毒感染后再次出现咳嗽咳痰",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 29,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_030",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "sputum characteristics",
+    "value": "粘白色, 量少, 易咳出",
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": "1年前",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_030",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "痰液为黏白色，量少，易咳出",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 30,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_031",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "chest tightness",
+    "value": null,
+    "unit": null,
+    "body_site": "chest",
+    "temporality": "current",
+    "time_text": "1年前",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_031",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 31,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_032",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "shortness of breath",
+    "value": null,
+    "unit": null,
+    "body_site": "respiratory",
+    "temporality": "current",
+    "time_text": "1年前",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_032",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 32,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_033",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "symptom improvement",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "follow_up",
+    "time_text": "1周余",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_033",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 33,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_034",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "cough",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": "2月",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_034",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "2月前无明显诱因再次出现咳嗽咳痰",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 34,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_035",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "sputum",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": "2月",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_035",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "2月前无明显诱因再次出现咳嗽咳痰",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 35,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_036",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "chest tightness",
+    "value": null,
+    "unit": null,
+    "body_site": "chest",
+    "temporality": "recent_worsening",
+    "time_text": "2月",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_036",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 36,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_037",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "shortness of breath",
+    "value": null,
+    "unit": null,
+    "body_site": "respiratory",
+    "temporality": "recent_worsening",
+    "time_text": "2月",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_037",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "伴胸闷气短",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 37,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_038",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "fever",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": "2月",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_038",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无发热寒战",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 38,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_039",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "chest pain",
+    "value": null,
+    "unit": null,
+    "body_site": "chest",
+    "temporality": "recent_worsening",
+    "time_text": "2月",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_039",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无胸痛",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 39,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_040",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "hemoptysis",
+    "value": null,
+    "unit": null,
+    "body_site": "respiratory",
+    "temporality": "recent_worsening",
+    "time_text": "2月",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_040",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无咯血",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 40,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_041",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "symptom",
+    "label": "nausea and vomiting",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": "2月",
+    "certainty": "definite",
+    "negation": "absent",
+    "source_spans": [
+      {
+        "span_id": "span_item_041",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "无恶心呕吐",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 41,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_042",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "imaging_finding",
+    "label": "chest CT findings",
+    "value": "双肺间质增粗纹理走形杂乱, 肺野密度增高, 右肺中叶、下叶、左肺舌段条片状实性高密度影, 右肺中叶、下叶病灶边缘模糊",
+    "unit": null,
+    "body_site": "lungs",
+    "temporality": "recent_worsening",
+    "time_text": "2024年6月11日",
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_042",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 42,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_043",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "diagnosis_history",
+    "label": "lung infection",
+    "value": null,
+    "unit": null,
+    "body_site": "lungs",
+    "temporality": "recent_worsening",
+    "time_text": "2024年6月11日",
+    "certainty": "possible",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_043",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "考虑为“肺部感染”",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 43,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_044",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "treatment",
+    "label": "anti-infective treatment",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_044",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "治疗上给予抗感染（具体不详）治疗",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 44,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_045",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "treatment_response",
+    "label": "symptom improvement",
+    "value": "胸闷气短症状改善不明显",
+    "unit": null,
+    "body_site": null,
+    "temporality": "recent_worsening",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_045",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "胸闷气短症状改善不明显",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 45,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_046",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "diagnosis_history",
+    "label": "interstitial pneumonia",
+    "value": null,
+    "unit": null,
+    "body_site": "lungs",
+    "temporality": "recent_worsening",
+    "time_text": null,
+    "certainty": "possible",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_046",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "以“间质性肺炎，肺部感染”收住我科",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 46,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_047",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "diagnosis_history",
+    "label": "lung infection",
+    "value": null,
+    "unit": null,
+    "body_site": "lungs",
+    "temporality": "recent_worsening",
+    "time_text": null,
+    "certainty": "possible",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_047",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "以“间质性肺炎，肺部感染”收住我科",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 47,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_048",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "sign",
+    "label": "consciousness",
+    "value": "clear",
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_048",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "患者神志清",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 48,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_049",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "sign",
+    "label": "mental status",
+    "value": "normal",
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_049",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "精神可",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 49,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_050",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "sign",
+    "label": "appetite",
+    "value": "normal",
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_050",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "饮食睡眠正常",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 50,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_051",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "sign",
+    "label": "sleep",
+    "value": "normal",
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_051",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "饮食睡眠正常",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 51,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_052",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "sign",
+    "label": "bowel and bladder function",
+    "value": "normal",
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_052",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "大小便正常",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 52,
+    "classification_confidence": "high",
+    "notes": null
+  },
+  {
+    "item_id": "item_053",
+    "input_id": "input_20260509_b2869588",
+    "section_id": "section_005",
+    "item_type": "sign",
+    "label": "weight change",
+    "value": "no significant change",
+    "unit": null,
+    "body_site": null,
+    "temporality": "current",
+    "time_text": null,
+    "certainty": "definite",
+    "negation": "present",
+    "source_spans": [
+      {
+        "span_id": "span_item_053",
+        "input_id": "input_20260509_b2869588",
+        "quoted_text": "体重无明显变化",
+        "char_start": null,
+        "char_end": null
+      }
+    ],
+    "item_order": 53,
+    "classification_confidence": "high",
+    "notes": null
+  }
+]

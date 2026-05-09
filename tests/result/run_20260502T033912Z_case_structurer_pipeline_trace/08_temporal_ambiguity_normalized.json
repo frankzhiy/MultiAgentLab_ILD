@@ -1,0 +1,277 @@
+{
+  "event_id_map": {
+    "event_001": "event_001",
+    "event_002": "event_002",
+    "event_003": "event_003",
+    "event_004": "event_004",
+    "event_005": "event_005",
+    "event_006": "event_006",
+    "event_007": "event_007",
+    "event_008": "event_008"
+  },
+  "ambiguity_id_map": {
+    "ambiguity_001": "ambiguity_001",
+    "ambiguity_002": "ambiguity_002"
+  },
+  "timeline_events": [
+    {
+      "event_id": "event_001",
+      "input_id": "input_20260502_7165a514",
+      "event_type": "symptom_onset",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短",
+      "related_item_ids": [
+        "item_006"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_001",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短",
+          "char_start": 334,
+          "char_end": 374
+        }
+      ],
+      "event_order": 1,
+      "classification_confidence": "medium",
+      "notes": null
+    },
+    {
+      "event_id": "event_002",
+      "input_id": "input_20260502_7165a514",
+      "event_type": "symptom_onset",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短",
+      "related_item_ids": [
+        "item_007"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_002",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短",
+          "char_start": 460,
+          "char_end": 505
+        }
+      ],
+      "event_order": 2,
+      "classification_confidence": "medium",
+      "notes": null
+    },
+    {
+      "event_id": "event_003",
+      "input_id": "input_20260502_7165a514",
+      "event_type": "treatment_started",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "于当地诊所输液1周余",
+      "related_item_ids": [
+        "item_008"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_003",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "输液1周余",
+          "char_start": 506,
+          "char_end": 517
+        }
+      ],
+      "event_order": 3,
+      "classification_confidence": "medium",
+      "notes": null
+    },
+    {
+      "event_id": "event_004",
+      "input_id": "input_20260502_7165a514",
+      "event_type": "symptom_improvement",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "输液1周余后感咳嗽咳痰、胸闷气短有所改善",
+      "related_item_ids": [
+        "item_009"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_004",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+          "char_start": 517,
+          "char_end": 547
+        }
+      ],
+      "event_order": 4,
+      "classification_confidence": "medium",
+      "notes": null
+    },
+    {
+      "event_id": "event_005",
+      "input_id": "input_20260502_7165a514",
+      "event_type": "symptom_worsening",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短",
+      "related_item_ids": [
+        "item_010"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_005",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短",
+          "char_start": 548,
+          "char_end": 579
+        }
+      ],
+      "event_order": 5,
+      "classification_confidence": "medium",
+      "notes": null
+    },
+    {
+      "event_id": "event_006",
+      "input_id": "input_20260502_7165a514",
+      "event_type": "test_performed",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "2024年6月11日胸部CT检查",
+      "related_item_ids": [
+        "item_011"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_006",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影",
+          "char_start": 579,
+          "char_end": 646
+        }
+      ],
+      "event_order": 6,
+      "classification_confidence": "medium",
+      "notes": null
+    },
+    {
+      "event_id": "event_007",
+      "input_id": "input_20260502_7165a514",
+      "event_type": "treatment_started",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "治疗上给予抗感染治疗",
+      "related_item_ids": [
+        "item_012"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_007",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "治疗上给予抗感染（具体不详）治疗",
+          "char_start": 646,
+          "char_end": 662
+        }
+      ],
+      "event_order": 7,
+      "classification_confidence": "medium",
+      "notes": null
+    },
+    {
+      "event_id": "event_008",
+      "input_id": "input_20260502_7165a514",
+      "event_type": "treatment_response",
+      "event_time_text": null,
+      "time_expression_type": "unknown",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "抗感染治疗后胸闷气短症状改善不明显",
+      "related_item_ids": [
+        "item_013"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_008",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "胸闷气短症状改善不明显",
+          "char_start": 662,
+          "char_end": 678
+        }
+      ],
+      "event_order": 8,
+      "classification_confidence": "medium",
+      "notes": null
+    }
+  ],
+  "ambiguities": [
+    {
+      "ambiguity_id": "ambiguity_001",
+      "input_id": "input_20260502_7165a514",
+      "ambiguity_type": "unclear_time",
+      "ambiguous_text": "输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+      "possible_interpretations": [
+        "The source text is ambiguous or under-specified."
+      ],
+      "reason": "The source text should not be forced into one interpretation.",
+      "related_section_ids": [
+        "section_003"
+      ],
+      "related_item_ids": [
+        "item_008",
+        "item_009"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_009",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+          "char_start": 506,
+          "char_end": 547
+        }
+      ],
+      "needs_clarification": false,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "ambiguity_id": "ambiguity_002",
+      "input_id": "input_20260502_7165a514",
+      "ambiguity_type": "unclear_treatment_status",
+      "ambiguous_text": "治疗上给予抗感染（具体不详）治疗",
+      "possible_interpretations": [
+        "The source text is ambiguous or under-specified."
+      ],
+      "reason": "The source text should not be forced into one interpretation.",
+      "related_section_ids": [
+        "section_003"
+      ],
+      "related_item_ids": [
+        "item_012"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_010",
+          "input_id": "input_20260502_7165a514",
+          "quoted_text": "治疗上给予抗感染（具体不详）治疗",
+          "char_start": 646,
+          "char_end": 662
+        }
+      ],
+      "needs_clarification": false,
+      "classification_confidence": "high",
+      "notes": null
+    }
+  ]
+}

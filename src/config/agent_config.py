@@ -12,6 +12,8 @@ class AgentLLMConfig:
     model: str
     temperature: float
     max_tokens: int
+    # CaseStructurer uses the named prompts mapping; prompt_path remains for
+    # single-prompt agents and backward-compatible config loading.
     prompt_path: str | None = None
     response_format: str | None = None
     prompts: dict[str, str] = field(default_factory=dict)

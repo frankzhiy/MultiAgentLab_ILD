@@ -4,6 +4,20 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from src.agents.case_structurer.prompting.output_skeletons import (
+    temporal_ambiguity_skeleton,
+)
+from src.agents.case_structurer.prompting.prompt_context import (
+    format_available_items,
+    format_available_sections,
+    format_forbidden_objects,
+    format_raw_input_summary,
+    format_source_span_policy,
+    format_stage_context_summary,
+)
+from src.agents.case_structurer.prompting.schema_contracts import (
+    temporal_ambiguity_contract,
+)
 from src.schemas.case_structurer.ambiguity_item import AmbiguityItem, AmbiguityType
 from src.schemas.case_structurer.clinical_section import ClinicalSection
 from src.schemas.case_structurer.common import ConfidenceLevel, TimeExpressionType
@@ -34,6 +48,20 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
         sections: list[ClinicalSection],
         items: list[StructuredClinicalItem],
     ) -> TemporalAmbiguityExtractionResult:
+        template_vars = {
+            **temporal_ambiguity_contract(),
+            "input_id": raw_input.input_id,
+            "case_id": raw_input.case_id,
+            "raw_text": raw_input.raw_text,
+            "raw_input_summary": format_raw_input_summary(raw_input),
+            "stage_context_summary": format_stage_context_summary(stage_context),
+            "available_sections": format_available_sections(sections),
+            "available_items": format_available_items(items),
+            "source_span_policy": format_source_span_policy(raw_input.input_id),
+            "forbidden_objects": format_forbidden_objects(),
+            "output_skeleton": temporal_ambiguity_skeleton(raw_input.input_id),
+        }
+
         content = self.generate_json(
             prompt_path=self.prompt_path("temporal_ambiguity"),
             user_payload={
@@ -66,6 +94,7 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
                 "Return exactly one JSON object with keys timeline_events and "
                 "ambiguities."
             ),
+            template_vars=template_vars,
         )
         payload = self.parse_json_content(content)
         if not isinstance(payload, dict):
@@ -128,7 +157,7 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
                 "text field."
             )
 
-        event_time_text = payload.get("event_time_text")
+        event_time_text = self.coerce_optional_text(payload.get("event_time_text"))
         time_expression_type = self.coerce_enum_value(
             payload.get("time_expression_type"),
             TimeExpressionType,
@@ -154,8 +183,10 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
             ),
             "event_time_text": event_time_text,
             "time_expression_type": time_expression_type,
-            "normalized_time": payload.get("normalized_time"),
-            "relative_time": payload.get("relative_time"),
+            "normalized_time": self.coerce_optional_text(
+                payload.get("normalized_time")
+            ),
+            "relative_time": self.coerce_optional_text(payload.get("relative_time")),
             "description": description,
             "related_item_ids": related_item_ids,
             "source_spans": self.prepare_source_spans(
@@ -170,7 +201,7 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
                 ConfidenceLevel,
                 "medium",
             ),
-            "notes": payload.get("notes"),
+            "notes": self.coerce_optional_text(payload.get("notes")),
         }
 
     def _hydrate_ambiguity_payload(
@@ -243,7 +274,7 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
             "ambiguous_text": ambiguous_text,
             "possible_interpretations": possible_interpretations,
             "reason": (
-                payload.get("reason")
+                self.coerce_optional_text(payload.get("reason"))
                 or "The source text should not be forced into one interpretation."
             ),
             "related_section_ids": related_section_ids,
@@ -260,5 +291,5 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
                 ConfidenceLevel,
                 "medium",
             ),
-            "notes": payload.get("notes"),
+            "notes": self.coerce_optional_text(payload.get("notes")),
         }

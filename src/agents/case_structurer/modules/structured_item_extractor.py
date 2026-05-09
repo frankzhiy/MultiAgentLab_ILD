@@ -2,6 +2,19 @@ from __future__ import annotations
 
 from pydantic import TypeAdapter
 
+from src.agents.case_structurer.prompting.output_skeletons import (
+    structured_item_skeleton,
+)
+from src.agents.case_structurer.prompting.prompt_context import (
+    format_available_sections,
+    format_forbidden_objects,
+    format_raw_input_summary,
+    format_source_span_policy,
+    format_stage_context_summary,
+)
+from src.agents.case_structurer.prompting.schema_contracts import (
+    structured_item_contract,
+)
 from src.schemas.case_structurer.clinical_section import ClinicalSection
 from src.schemas.case_structurer.common import (
     CertaintyLevel,
@@ -28,6 +41,19 @@ class StructuredClinicalItemExtractor(BaseLLMExtractor):
         stage_context: StageContext,
         sections: list[ClinicalSection],
     ) -> list[StructuredClinicalItem]:
+        template_vars = {
+            **structured_item_contract(),
+            "input_id": raw_input.input_id,
+            "case_id": raw_input.case_id,
+            "raw_text": raw_input.raw_text,
+            "raw_input_summary": format_raw_input_summary(raw_input),
+            "stage_context_summary": format_stage_context_summary(stage_context),
+            "available_sections": format_available_sections(sections),
+            "source_span_policy": format_source_span_policy(raw_input.input_id),
+            "forbidden_objects": format_forbidden_objects(),
+            "output_skeleton": structured_item_skeleton(raw_input.input_id),
+        }
+
         content = self.generate_json(
             prompt_path=self.prompt_path("structured_item"),
             user_payload={
@@ -48,6 +74,7 @@ class StructuredClinicalItemExtractor(BaseLLMExtractor):
                 "Return exactly one JSON object with key structured_items, whose "
                 "value is an array of StructuredClinicalItem objects."
             ),
+            template_vars=template_vars,
         )
         payload = self.parse_json_content(content)
         item_payloads = self.extract_array_payload(
@@ -114,15 +141,15 @@ class StructuredClinicalItemExtractor(BaseLLMExtractor):
                 "uncertain",
             ),
             "label": label,
-            "value": payload.get("value"),
-            "unit": payload.get("unit"),
-            "body_site": payload.get("body_site"),
+            "value": self.coerce_optional_text(payload.get("value")),
+            "unit": self.coerce_optional_text(payload.get("unit")),
+            "body_site": self.coerce_optional_text(payload.get("body_site")),
             "temporality": self.coerce_enum_value(
                 payload.get("temporality"),
                 TemporalRelation,
                 "unknown",
             ),
-            "time_text": payload.get("time_text"),
+            "time_text": self.coerce_optional_text(payload.get("time_text")),
             "certainty": self.coerce_enum_value(
                 certainty,
                 CertaintyLevel,
@@ -145,5 +172,5 @@ class StructuredClinicalItemExtractor(BaseLLMExtractor):
                 ConfidenceLevel,
                 "medium",
             ),
-            "notes": payload.get("notes"),
+            "notes": self.coerce_optional_text(payload.get("notes")),
         }

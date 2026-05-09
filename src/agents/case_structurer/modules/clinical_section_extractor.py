@@ -2,6 +2,18 @@ from __future__ import annotations
 
 from pydantic import TypeAdapter
 
+from src.agents.case_structurer.prompting.output_skeletons import (
+    clinical_section_skeleton,
+)
+from src.agents.case_structurer.prompting.prompt_context import (
+    format_forbidden_objects,
+    format_raw_input_summary,
+    format_source_span_policy,
+    format_stage_context_summary,
+)
+from src.agents.case_structurer.prompting.schema_contracts import (
+    clinical_section_contract,
+)
 from src.schemas.case_structurer.clinical_section import (
     ClinicalSection,
     ClinicalSectionType,
@@ -21,6 +33,18 @@ class ClinicalSectionExtractor(BaseLLMExtractor):
         raw_input: RawTextInput,
         stage_context: StageContext,
     ) -> list[ClinicalSection]:
+        template_vars = {
+            **clinical_section_contract(),
+            "input_id": raw_input.input_id,
+            "case_id": raw_input.case_id,
+            "raw_text": raw_input.raw_text,
+            "raw_input_summary": format_raw_input_summary(raw_input),
+            "stage_context_summary": format_stage_context_summary(stage_context),
+            "source_span_policy": format_source_span_policy(raw_input.input_id),
+            "forbidden_objects": format_forbidden_objects(),
+            "output_skeleton": clinical_section_skeleton(raw_input.input_id),
+        }
+
         content = self.generate_json(
             prompt_path=self.prompt_path("clinical_section"),
             user_payload={
@@ -31,6 +55,7 @@ class ClinicalSectionExtractor(BaseLLMExtractor):
                 "Return exactly one JSON object with key clinical_sections, whose "
                 "value is an array of ClinicalSection objects."
             ),
+            template_vars=template_vars,
         )
         payload = self.parse_json_content(content)
         section_payloads = self.extract_array_payload(
@@ -85,7 +110,7 @@ class ClinicalSectionExtractor(BaseLLMExtractor):
                 ClinicalSectionType,
                 "uncertain",
             ),
-            "title": payload.get("title"),
+            "title": self.coerce_optional_text(payload.get("title")),
             "normalized_text": normalized_text,
             "source_spans": self.prepare_source_spans(
                 raw_input=raw_input,
@@ -99,6 +124,8 @@ class ClinicalSectionExtractor(BaseLLMExtractor):
                 ConfidenceLevel,
                 "medium",
             ),
-            "parent_section_id": payload.get("parent_section_id"),
-            "notes": payload.get("notes"),
+            "parent_section_id": self.coerce_optional_text(
+                payload.get("parent_section_id")
+            ),
+            "notes": self.coerce_optional_text(payload.get("notes")),
         }
