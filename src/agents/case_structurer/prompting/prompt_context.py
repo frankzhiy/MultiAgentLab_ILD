@@ -32,8 +32,13 @@ def format_source_span_policy(input_id: str) -> str:
             "- Every extracted object must include source_spans.",
             f"- source_spans[*].input_id must equal {input_id}.",
             (
-                "- quoted_text must be copied from raw_text or be a near-exact "
-                "source fragment."
+                "- source_spans[*].quoted_text must be a continuous exact "
+                "substring copied from raw_text."
+            ),
+            (
+                "- Quote the complete original statement that supports the "
+                "structured object. Do not use atomized, rewritten, or "
+                "synthesized item text as quoted_text."
             ),
             "- Set char_start and char_end to null unless you are certain.",
             "- Code will resolve exact offsets later.",

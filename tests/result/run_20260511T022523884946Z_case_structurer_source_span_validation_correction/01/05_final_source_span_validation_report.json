@@ -1,0 +1,14 @@
+{
+  "is_valid": false,
+  "issues": [
+    {
+      "severity": "error",
+      "code": "item_source_span_insufficient_support",
+      "message": "StructuredClinicalItem fields are not sufficiently supported by the item's source_spans. Unsupported fields: time_text.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": null,
+      "quoted_text": "治疗上给予抗感染（具体不详）治疗 2024 6 11"
+    }
+  ]
+}

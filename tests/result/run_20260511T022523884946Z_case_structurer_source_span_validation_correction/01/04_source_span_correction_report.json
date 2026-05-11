@@ -1,0 +1,83 @@
+{
+  "actions": [
+    {
+      "status": "applied",
+      "code": "item_source_span_insufficient_support",
+      "message": "Added minimal source span for unsupported item field.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_015",
+      "span_id": "span_item_015_time_text_support_002",
+      "field_name": "time_text",
+      "before_quoted_text": null,
+      "after_quoted_text": "2024年6月11日"
+    },
+    {
+      "status": "skipped",
+      "code": "item_source_span_insufficient_support",
+      "message": "Missing field support was not uniquely locatable.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": null,
+      "field_name": "time_text",
+      "before_quoted_text": "年",
+      "after_quoted_text": null
+    },
+    {
+      "status": "skipped",
+      "code": "item_source_span_insufficient_support",
+      "message": "Missing field support was not uniquely locatable.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": null,
+      "field_name": "time_text",
+      "before_quoted_text": "月",
+      "after_quoted_text": null
+    },
+    {
+      "status": "skipped",
+      "code": "item_source_span_insufficient_support",
+      "message": "Missing field support was not uniquely locatable.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": null,
+      "field_name": "time_text",
+      "before_quoted_text": "日后",
+      "after_quoted_text": null
+    },
+    {
+      "status": "applied",
+      "code": "item_source_span_insufficient_support",
+      "message": "Added minimal source span for unsupported item field.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": "span_item_016_time_text_support_002",
+      "field_name": "time_text",
+      "before_quoted_text": null,
+      "after_quoted_text": "2024"
+    },
+    {
+      "status": "applied",
+      "code": "item_source_span_insufficient_support",
+      "message": "Added minimal source span for unsupported item field.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": "span_item_016_time_text_support_003",
+      "field_name": "time_text",
+      "before_quoted_text": null,
+      "after_quoted_text": "6"
+    },
+    {
+      "status": "applied",
+      "code": "item_source_span_insufficient_support",
+      "message": "Added minimal source span for unsupported item field.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": "span_item_016_time_text_support_004",
+      "field_name": "time_text",
+      "before_quoted_text": null,
+      "after_quoted_text": "11"
+    }
+  ],
+  "applied_count": 4,
+  "skipped_count": 3
+}

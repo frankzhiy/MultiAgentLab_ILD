@@ -13,6 +13,10 @@ from src.agents.case_structurer.errors import (
 )
 from src.llm.chatanywhere_client import ChatAnywhereClient
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
+from src.validators.case_structurer import (
+    SourceSpanValidationCorrectionResult,
+    validate_and_correct_source_spans,
+)
 
 from .modules import (
     CaseStructuringAssembler,
@@ -65,6 +69,38 @@ class CaseStructurerPipeline:
         self.assembler = CaseStructuringAssembler()
 
     def run(
+        self,
+        raw_text: str,
+        case_id: str | None = None,
+        input_order: int = 1,
+        parent_input_id: str | None = None,
+    ) -> CaseStructuringResult:
+        return self.run_with_validation(
+            raw_text=raw_text,
+            case_id=case_id,
+            input_order=input_order,
+            parent_input_id=parent_input_id,
+        ).corrected_result
+
+    def run_with_validation(
+        self,
+        raw_text: str,
+        case_id: str | None = None,
+        input_order: int = 1,
+        parent_input_id: str | None = None,
+    ) -> SourceSpanValidationCorrectionResult:
+        initial_result = self._run_initial_structuring(
+            raw_text=raw_text,
+            case_id=case_id,
+            input_order=input_order,
+            parent_input_id=parent_input_id,
+        )
+        return self._run_step(
+            "SourceSpanValidationCorrection",
+            lambda: validate_and_correct_source_spans(initial_result),
+        )
+
+    def _run_initial_structuring(
         self,
         raw_text: str,
         case_id: str | None = None,

@@ -1,0 +1,58 @@
+{
+  "input_file": "data/02.txt",
+  "initial_case_structuring_result_file": "02/01_initial_case_structuring_result.json",
+  "initial_source_span_validation_report_file": "02/02_initial_source_span_validation_report.json",
+  "corrected_case_structuring_result_file": "02/03_corrected_case_structuring_result.json",
+  "source_span_correction_report_file": "02/04_source_span_correction_report.json",
+  "final_source_span_validation_report_file": "02/05_final_source_span_validation_report.json",
+  "validation_correction_position": "after SourceSpanResolver and after CaseStructuringResult assembly",
+  "case_structuring_result_mutated_in_place": false,
+  "case_structuring_result_changed_by_correction": false,
+  "initial_is_valid": true,
+  "final_is_valid": true,
+  "residual_issues_fail_test": false,
+  "validation_correction_outcome": "clean",
+  "initial_issue_count": 0,
+  "final_issue_count": 0,
+  "residual_issue_count": 0,
+  "initial_issue_counts_by_severity": {
+    "info": 0,
+    "warning": 0,
+    "error": 0
+  },
+  "final_issue_counts_by_severity": {
+    "info": 0,
+    "warning": 0,
+    "error": 0
+  },
+  "initial_issue_counts_by_code": {},
+  "final_issue_counts_by_code": {},
+  "final_issue_counts_by_object_type": {},
+  "initial_issue_examples": [],
+  "final_issue_examples": [],
+  "residual_issue_examples": [],
+  "correction_applied_count": 0,
+  "correction_skipped_count": 0,
+  "correction_action_counts_by_code": {},
+  "statement_level_observations": [
+    {
+      "code": "impulse_oscillation_resistance_statement_retained",
+      "statement": "气道总阻力R5、外周阻力R5-R20及近端阻力R35增高",
+      "statement_retained_as_item": true,
+      "statement_present_in_source_span": true,
+      "matching_item_ids": [
+        "item_006"
+      ],
+      "matching_source_span_item_ids": [
+        "item_006"
+      ]
+    }
+  ],
+  "case_structurer_output_counts": {
+    "clinical_sections": 3,
+    "structured_items": 16,
+    "timeline_events": 0,
+    "ambiguities": 1,
+    "structuring_warnings": 0
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "input_file": "data/01.txt",
+  "initial_case_structuring_result_file": "01/01_initial_case_structuring_result.json",
+  "initial_source_span_validation_report_file": "01/02_initial_source_span_validation_report.json",
+  "corrected_case_structuring_result_file": "01/03_corrected_case_structuring_result.json",
+  "source_span_correction_report_file": "01/04_source_span_correction_report.json",
+  "final_source_span_validation_report_file": "01/05_final_source_span_validation_report.json",
+  "validation_correction_position": "after SourceSpanResolver and after CaseStructuringResult assembly",
+  "case_structuring_result_mutated_in_place": false,
+  "case_structuring_result_changed_by_correction": true,
+  "initial_is_valid": false,
+  "final_is_valid": false,
+  "residual_issues_fail_test": false,
+  "validation_correction_outcome": "residual_issues",
+  "initial_issue_count": 2,
+  "final_issue_count": 1,
+  "residual_issue_count": 1,
+  "initial_issue_counts_by_severity": {
+    "info": 0,
+    "warning": 0,
+    "error": 2
+  },
+  "final_issue_counts_by_severity": {
+    "info": 0,
+    "warning": 0,
+    "error": 1
+  },
+  "initial_issue_counts_by_code": {
+    "item_source_span_insufficient_support": 2
+  },
+  "final_issue_counts_by_code": {
+    "item_source_span_insufficient_support": 1
+  },
+  "final_issue_counts_by_object_type": {
+    "StructuredClinicalItem": 1
+  },
+  "initial_issue_examples": [
+    {
+      "severity": "error",
+      "code": "item_source_span_insufficient_support",
+      "message": "StructuredClinicalItem fields are not sufficiently supported by the item's source_spans. Unsupported fields: time_text.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_015",
+      "span_id": null,
+      "quoted_text": "考虑为“肺部感染”"
+    },
+    {
+      "severity": "error",
+      "code": "item_source_span_insufficient_support",
+      "message": "StructuredClinicalItem fields are not sufficiently supported by the item's source_spans. Unsupported fields: time_text.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": null,
+      "quoted_text": "治疗上给予抗感染（具体不详）治疗"
+    }
+  ],
+  "final_issue_examples": [
+    {
+      "severity": "error",
+      "code": "item_source_span_insufficient_support",
+      "message": "StructuredClinicalItem fields are not sufficiently supported by the item's source_spans. Unsupported fields: time_text.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": null,
+      "quoted_text": "治疗上给予抗感染（具体不详）治疗 2024 6 11"
+    }
+  ],
+  "residual_issue_examples": [
+    {
+      "severity": "error",
+      "code": "item_source_span_insufficient_support",
+      "message": "StructuredClinicalItem fields are not sufficiently supported by the item's source_spans. Unsupported fields: time_text.",
+      "object_type": "StructuredClinicalItem",
+      "object_id": "item_016",
+      "span_id": null,
+      "quoted_text": "治疗上给予抗感染（具体不详）治疗 2024 6 11"
+    }
+  ],
+  "correction_applied_count": 4,
+  "correction_skipped_count": 3,
+  "correction_action_counts_by_code": {
+    "item_source_span_insufficient_support": 7
+  },
+  "statement_level_observations": [
+    {
+      "code": "chief_complaint_statement_retained",
+      "statement": "间断咳嗽咳痰伴胸闷气短8年",
+      "statement_retained_as_item": true,
+      "statement_present_in_source_span": true,
+      "matching_item_ids": [
+        "item_002"
+      ],
+      "matching_source_span_item_ids": [
+        "item_002"
+      ]
+    }
+  ],
+  "case_structurer_output_counts": {
+    "clinical_sections": 5,
+    "structured_items": 19,
+    "timeline_events": 8,
+    "ambiguities": 2,
+    "structuring_warnings": 0
+  }
+}

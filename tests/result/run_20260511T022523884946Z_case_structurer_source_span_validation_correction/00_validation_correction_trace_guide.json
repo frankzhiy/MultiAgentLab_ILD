@@ -1,0 +1,39 @@
+{
+  "trace_model": "case_structurer_source_span_validation_correction_trace",
+  "important_note": "This test uses the public CaseStructurerAgent.run_with_validation() facade, the real CaseStructurerPipeline underneath it, and real LLM outputs. No mocked LLM client or cached CaseStructuringResult fixture is used. Source-span validation and deterministic correction run after SourceSpanResolver and after initial CaseStructuringResult assembly.",
+  "validation_correction_effect": [
+    "The initial CaseStructuringResult is not mutated in place.",
+    "The corrected CaseStructuringResult is the stage output used by run().",
+    "The observable bundle includes initial validation, correction actions, final validation, and residual issues.",
+    "Residual ERROR issues are recorded in JSON reports and summaries, but they do not fail the unittest run.",
+    "Missing runtime dependencies or missing ChatAnywhere API configuration fail the test instead of skipping it, because this is a real LLM trace.",
+    "The test also records whether selected source-level clinical statements are preserved as statement-level StructuredClinicalItem objects instead of being atomized.",
+    "Pipeline or assembly failures still fail the test because no final validation/correction bundle would be available to inspect."
+  ],
+  "output_files_per_input": [
+    {
+      "file": "01_initial_case_structuring_result.json",
+      "role": "Initial Case Structurer output before strict source-span validation."
+    },
+    {
+      "file": "02_initial_source_span_validation_report.json",
+      "role": "StrictSourceSpanValidator output before correction."
+    },
+    {
+      "file": "03_corrected_case_structuring_result.json",
+      "role": "Corrected Case Structurer output used by run()."
+    },
+    {
+      "file": "04_source_span_correction_report.json",
+      "role": "Deterministic SourceSpanCorrector action report."
+    },
+    {
+      "file": "05_final_source_span_validation_report.json",
+      "role": "StrictSourceSpanValidator output after correction."
+    },
+    {
+      "file": "06_validation_correction_summary.json",
+      "role": "Compact comparison of initial/final validity and correction actions."
+    }
+  ]
+}

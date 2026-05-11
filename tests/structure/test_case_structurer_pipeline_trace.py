@@ -15,6 +15,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from src.agents.case_structurer.pipeline import CaseStructurerPipeline
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
+from src.validators.case_structurer import validate_and_correct_source_spans
 
 T = TypeVar("T")
 
@@ -22,7 +23,9 @@ TRACE_GUIDE: dict[str, Any] = {
     "trace_model": "pipeline_stage_trace",
     "important_note": (
         "This folder is a pipeline trace, not a one-file-per-schema export. "
-        "Some files show intermediate states such as extracted and normalized."
+        "Some files show intermediate states such as extracted and normalized. "
+        "The assembled result is then passed through source-span validation and "
+        "deterministic correction; public run() returns the corrected result."
     ),
     "why_normalized_after_extracted": [
         "extracted means the first-pass clinical objects recognized from raw text.",
@@ -104,20 +107,27 @@ TRACE_GUIDE: dict[str, Any] = {
             "role": "Raw-text provenance: where an object came from in the source text.",
             "formal_output_location": (
                 "Nested under clinical_sections[], structured_items[], "
-                "timeline_events[], and ambiguities[] as source_spans[]."
+                "timeline_events[], and ambiguities[] as source_spans[] in "
+                "12_source_span_validation_correction.json#/corrected_result."
             ),
             "trace_files": [
                 "09_source_spans_resolved.json",
                 "11_source_span_index.json",
                 "10_case_structuring_result.json",
+                "12_source_span_validation_correction.json",
             ],
             "top_level_in_final_result": False,
         },
         {
             "schema": "CaseStructuringResult",
             "role": "Computer packaging layer: the single formal output object.",
-            "formal_output_location": "10_case_structuring_result.json#/",
-            "trace_files": ["10_case_structuring_result.json"],
+            "formal_output_location": (
+                "12_source_span_validation_correction.json#/corrected_result"
+            ),
+            "trace_files": [
+                "10_case_structuring_result.json",
+                "12_source_span_validation_correction.json",
+            ],
             "top_level_in_final_result": "wrapper",
         },
     ],
@@ -193,6 +203,16 @@ TRACE_GUIDE: dict[str, Any] = {
             "step": "TraceDebugExport",
             "state": "schema_oriented_debug_view",
             "primary_schemas": ["SourceSpan"],
+        },
+        {
+            "file": "12_source_span_validation_correction.json",
+            "step": "SourceSpanValidationCorrection",
+            "state": "validated_and_corrected",
+            "primary_schemas": [
+                "CaseStructuringResult",
+                "SourceSpanValidationReport",
+                "SourceSpanCorrectionReport",
+            ],
         },
     ],
 }
@@ -489,6 +509,14 @@ class TestCaseStructurerPipelineTrace(unittest.TestCase):
             source_span_index,
         )
 
+        validation_correction = self._run_stage(
+            "SourceSpanValidationCorrection",
+            "12_source_span_validation_correction.json",
+            lambda: validate_and_correct_source_spans(final_result),
+        )
+        corrected_result = validation_correction.corrected_result
+        corrected_source_span_index = self._source_span_index(corrected_result)
+
         self._write_json(
             "run_summary.json",
             {
@@ -496,25 +524,41 @@ class TestCaseStructurerPipelineTrace(unittest.TestCase):
                 "trace_model": "pipeline_stage_trace",
                 "input_file": str(self.input_path.relative_to(self.repo_root)),
                 "output_dir": str(self.output_dir.relative_to(self.repo_root)),
-                "case_id": final_result.input.case_id,
-                "input_id": final_result.input.input_id,
+                "case_id": corrected_result.input.case_id,
+                "input_id": corrected_result.input.input_id,
+                "initial_source_span_validation_is_valid": (
+                    validation_correction.initial_validation_report.is_valid
+                ),
+                "final_source_span_validation_is_valid": (
+                    validation_correction.final_validation_report.is_valid
+                ),
+                "residual_issue_count": len(validation_correction.residual_issues),
+                "correction_applied_count": (
+                    validation_correction.correction_report.applied_count
+                ),
+                "correction_skipped_count": (
+                    validation_correction.correction_report.skipped_count
+                ),
                 "counts": {
-                    "clinical_sections": len(final_result.clinical_sections),
-                    "structured_items": len(final_result.structured_items),
-                    "timeline_events": len(final_result.timeline_events),
-                    "ambiguities": len(final_result.ambiguities),
-                    "source_spans": source_span_index["count"],
-                    "structuring_warnings": len(final_result.structuring_warnings),
+                    "clinical_sections": len(corrected_result.clinical_sections),
+                    "structured_items": len(corrected_result.structured_items),
+                    "timeline_events": len(corrected_result.timeline_events),
+                    "ambiguities": len(corrected_result.ambiguities),
+                    "source_spans_after_resolver": source_span_index["count"],
+                    "source_spans_after_correction": corrected_source_span_index[
+                        "count"
+                    ],
+                    "structuring_warnings": len(corrected_result.structuring_warnings),
                 },
                 "ready_for_evidence_atomization": (
-                    final_result.ready_for_evidence_atomization
+                    corrected_result.ready_for_evidence_atomization
                 ),
                 "written_files": self.written_files,
             },
         )
 
         print(f"Case Structurer trace output: {self.output_dir}")
-        self.assertIsInstance(final_result, CaseStructuringResult)
+        self.assertIsInstance(corrected_result, CaseStructuringResult)
         for file_name in self.written_files:
             self.assertTrue(
                 (self.output_dir / file_name).exists(),
