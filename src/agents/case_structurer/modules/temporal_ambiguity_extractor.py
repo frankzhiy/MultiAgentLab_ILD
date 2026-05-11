@@ -27,6 +27,7 @@ from src.schemas.case_structurer.structured_clinical_item import StructuredClini
 from src.schemas.case_structurer.timeline_event import TimelineEvent, TimelineEventType
 
 from .base_llm_extractor import BaseLLMExtractor
+from .grounding import ground_source_text
 
 
 class TemporalAmbiguityExtractionResult(BaseModel):
@@ -157,7 +158,10 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
                 "text field."
             )
 
-        event_time_text = self.coerce_optional_text(payload.get("event_time_text"))
+        event_time_text = ground_source_text(
+            self.coerce_optional_text(payload.get("event_time_text")),
+            raw_input.raw_text,
+        )
         time_expression_type = self.coerce_enum_value(
             payload.get("time_expression_type"),
             TimeExpressionType,
@@ -165,6 +169,13 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
         )
         if event_time_text is None:
             time_expression_type = "unknown"
+            normalized_time = None
+            relative_time = None
+        else:
+            normalized_time = self.coerce_optional_text(
+                payload.get("normalized_time")
+            )
+            relative_time = self.coerce_optional_text(payload.get("relative_time"))
 
         related_item_ids = payload.get("related_item_ids") or []
         if not isinstance(related_item_ids, list):
@@ -183,10 +194,8 @@ class TemporalAmbiguityExtractor(BaseLLMExtractor):
             ),
             "event_time_text": event_time_text,
             "time_expression_type": time_expression_type,
-            "normalized_time": self.coerce_optional_text(
-                payload.get("normalized_time")
-            ),
-            "relative_time": self.coerce_optional_text(payload.get("relative_time")),
+            "normalized_time": normalized_time,
+            "relative_time": relative_time,
             "description": description,
             "related_item_ids": related_item_ids,
             "source_spans": self.prepare_source_spans(

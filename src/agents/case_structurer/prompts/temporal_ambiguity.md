@@ -70,6 +70,7 @@ Good AmbiguityItem:
 - Use only section_id values listed in Available Clinical Sections.
 - Do not invent item_id or section_id.
 - Extract timeline events only when temporal information exists.
+- event_time_text must be the original source expression. If timing is only inferred from context or ordering, use null and time_expression_type="unknown".
 - If no item is directly related to a timeline event, use an empty related_item_ids array.
 - Create AmbiguityItem when information is unclear, insufficient, conflicting, or should not be forced into a definite interpretation.
 - Use temporary event ids such as event_001, event_002.

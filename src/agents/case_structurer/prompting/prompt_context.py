@@ -43,6 +43,11 @@ def format_source_span_policy(input_id: str) -> str:
             "- Set char_start and char_end to null unless you are certain.",
             "- Code will resolve exact offsets later.",
             "- Never invent source text.",
+            (
+                "- Free-text fields that represent source content must be "
+                "grounded in raw_text; use null or unknown when the source "
+                "does not explicitly state the value."
+            ),
         ]
     )
 

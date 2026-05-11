@@ -80,12 +80,12 @@ Bad example:
 - Use temporary span ids that match the object they support when possible.
 - Preserve source-level clinical statements. If several symptoms, measurements, values, or predicates are expressed as one continuous statement, keep that statement as one StructuredClinicalItem.
 - Do not split coordinated statements into separate evidence atoms. Evidence Atomizer is responsible for later atomization.
-- The item label should stay close to the original statement. Optional fields such as value, unit, body_site, and time_text may add light structure, but they must not drive statement atomization.
+- The item label should stay close to the original statement. Optional fields such as value, unit, body_site, and time_text may add light structure only when the source explicitly supports the value; otherwise use null.
 - source_spans quoted_text must remain copied exactly from raw_text.
 - Use the shortest continuous original statement that supports the item.
 - Do not copy an entire section as an item span unless the entire section is needed to support the statement.
 - Extract only concrete source-supported facts.
-- Do not infer unsupported facts.
+- Do not infer unsupported facts or compose source-level fields from surrounding context.
 - Use JSON strings or null for value, unit, body_site, time_text, and notes. Quote numeric values such as ages, doses, and counts.
 - If the text states a suspected, possible, previous, or reported diagnosis, represent it as a source-level item only; do not present it as your own diagnosis.
 - If no item can be safely extracted, return {"structured_items": []}.

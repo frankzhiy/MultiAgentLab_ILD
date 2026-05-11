@@ -31,6 +31,13 @@ _GENERIC_ITEM_VALUES = {
     "yes",
     "no",
 }
+_SOURCE_GROUNDED_ITEM_FIELDS = {
+    "body_site",
+    "label",
+    "time_text",
+    "unit",
+    "value",
+}
 
 
 @dataclass(frozen=True)
@@ -221,6 +228,9 @@ def should_validate_item_field(
 
     if field_name == "value" and cleaned.lower() in _GENERIC_ITEM_VALUES:
         return False
+
+    if field_name in _SOURCE_GROUNDED_ITEM_FIELDS:
+        return True
 
     if has_cjk(cleaned):
         return True

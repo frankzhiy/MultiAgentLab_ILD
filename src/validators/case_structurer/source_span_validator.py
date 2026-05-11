@@ -73,6 +73,7 @@ class StrictSourceSpanValidator:
                 )
 
         issues.extend(self._validate_item_spans_inside_parent_sections(result))
+        issues.extend(self._validate_source_level_time_texts(result))
         issues.extend(self._validate_structured_item_source_support(result))
 
         is_valid = not any(
@@ -250,6 +251,56 @@ class StrictSourceSpanValidator:
                             span=span,
                         )
                     )
+
+        return issues
+
+    def _validate_source_level_time_texts(
+        self,
+        result: CaseStructuringResult,
+    ) -> list[SourceSpanValidationIssue]:
+        issues: list[SourceSpanValidationIssue] = []
+        raw_text = result.input.raw_text
+
+        for item in result.structured_items:
+            if item.time_text is None or quoted_text_exists(raw_text, item.time_text):
+                continue
+
+            issues.append(
+                SourceSpanValidationIssue(
+                    severity=ValidationSeverity.ERROR,
+                    code="source_time_text_not_found",
+                    message=(
+                        "StructuredClinicalItem.time_text must be an original "
+                        "source text expression, not a synthesized or inferred "
+                        "time phrase."
+                    ),
+                    object_type="StructuredClinicalItem",
+                    object_id=item.item_id,
+                    quoted_text=item.time_text,
+                )
+            )
+
+        for event in result.timeline_events:
+            if event.event_time_text is None or quoted_text_exists(
+                raw_text,
+                event.event_time_text,
+            ):
+                continue
+
+            issues.append(
+                SourceSpanValidationIssue(
+                    severity=ValidationSeverity.ERROR,
+                    code="source_time_text_not_found",
+                    message=(
+                        "TimelineEvent.event_time_text must be an original "
+                        "source text expression, not a synthesized or inferred "
+                        "time phrase."
+                    ),
+                    object_type="TimelineEvent",
+                    object_id=event.event_id,
+                    quoted_text=event.event_time_text,
+                )
+            )
 
         return issues
 

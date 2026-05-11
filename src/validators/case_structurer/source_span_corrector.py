@@ -727,6 +727,9 @@ def _missing_support_values(
     ).lower() and find_all_occurrences(raw_text, cleaned, preferred_ranges):
         return [cleaned]
 
+    if field_name in {"time_text", "unit"}:
+        return []
+
     missing: list[str] = []
     normalized_source = normalize_text_for_match(source_text).lower()
     for chunk in cjk_chunks(cleaned):
