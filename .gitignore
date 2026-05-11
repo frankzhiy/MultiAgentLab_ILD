@@ -21,3 +21,6 @@ Thumbs.db
 
 # Environment files
 .env
+
+# Tests and generated test artifacts
+tests/
