@@ -1,0 +1,22 @@
+{
+  "round_index": 1,
+  "selected_file": "data/01.txt",
+  "case_id": "case_20260514_f0f93d43",
+  "input_id": "input_20260514_72d49ebc",
+  "parent_input_id": null,
+  "input_order": 1,
+  "case_structuring_result_id": "case_structuring_result_20260514_b5694e52",
+  "ready_for_evidence_atomization": true,
+  "number_of_clinical_sections": 5,
+  "number_of_structured_items": 18,
+  "number_of_timeline_events": 5,
+  "number_of_ambiguities": 2,
+  "atomization_result_id": "atomization_result_20260514_cb7b1fb4",
+  "number_of_evidence_atoms": 18,
+  "number_of_item_to_evidence_links": 18,
+  "number_of_deferred_items": 0,
+  "number_of_atomization_warnings": 0,
+  "evidence_atomization_validation_accepted": true,
+  "evidence_atomization_validation_issue_counts_by_severity": {},
+  "evidence_atomization_validation_issue_counts_by_code": {}
+}

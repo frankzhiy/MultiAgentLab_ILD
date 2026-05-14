@@ -1,0 +1,738 @@
+{
+  "case_structuring_result_id": "case_structuring_result_20260514_22c0c472",
+  "input": {
+    "input_id": "input_20260514_8cd6b8a4",
+    "case_id": "case_20260514_f0f93d43",
+    "raw_text": "入院后完善检查：胸部CT：1、双肺间质性增粗；2、右肺中叶、下叶感染性病灶；3、左肺舌段局限性不张。A1.通气功能：中度呼吸储备功能(最大通气量)减损；轻度阻塞性通气功能障碍，V-V曲线符合阻塞性改变；残气容积占肺总量百分比增高。2.换气功能：中度弥散功能障碍。3.脉冲振荡：呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常；中心阻抗Rc及周边阻抗Rp均增大，Rp>Rc；电抗X5负值增大；共振频率Fres增高，电抗面积AX增大；Ers正常。血常规）:风湿相关检验无异常，淋巴细胞百分比LYM% 17.7%,单核细胞绝对值# 0.65*109/L,肝功四项:ALB 31.04g/L, 肾功四项:eGFR 70.88ml/(min*1.73m^2), 新型冠状病毒IgG/IgM抗体:2019-nCoV IgG 10.926S/CO,D2聚体:D-D 0.71ug/mL FEU,术前八项:HBeAb 1.790index,HBcAb 2.010index血沉CRP 41.8mg/L,结核感染T细胞(IFN-γ)检测: 阳性,其余检查无明显异常。",
+    "received_at": "2026-05-14T08:31:51.334421Z",
+    "input_order": 2,
+    "parent_input_id": "input_20260514_72d49ebc"
+  },
+  "stage_context": {
+    "stage_id": "stage_20260514_32d3d860",
+    "case_id": "case_20260514_f0f93d43",
+    "input_id": "input_20260514_8cd6b8a4",
+    "stage_order": 2,
+    "stage_type": "new_test_result",
+    "relation_to_previous_stage": "adds_information",
+    "previous_stage_id": null,
+    "is_initial_stage": false,
+    "created_at": "2026-05-14T08:31:55.204570Z",
+    "classification_confidence": "high",
+    "classification_basis": "Detailed diagnostic test results following initial input, providing new clinical data."
+  },
+  "clinical_sections": [
+    {
+      "section_id": "section_001",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_type": "imaging",
+      "title": null,
+      "normalized_text": "入院后完善检查：胸部CT：1、双肺间质性增粗；2、右肺中叶、下叶感染性病灶；3、左肺舌段局限性不张。",
+      "source_spans": [
+        {
+          "span_id": "span_section_001",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "入院后完善检查：胸部CT：1、双肺间质性增粗；2、右肺中叶、下叶感染性病灶；3、左肺舌段局限性不张。",
+          "char_start": 0,
+          "char_end": 50
+        }
+      ],
+      "section_order": 1,
+      "classification_confidence": "high",
+      "parent_section_id": null,
+      "notes": null
+    },
+    {
+      "section_id": "section_002",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_type": "pulmonary_function_test",
+      "title": null,
+      "normalized_text": "A1.通气功能：中度呼吸储备功能(最大通气量)减损；轻度阻塞性通气功能障碍，V-V曲线符合阻塞性改变；残气容积占肺总量百分比增高。2.换气功能：中度弥散功能障碍。3.脉冲振荡：呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常；中心阻抗Rc及周边阻抗Rp均增大，Rp>Rc；电抗X5负值增大；共振频率Fres增高，电抗面积AX增大；Ers正常。",
+      "source_spans": [
+        {
+          "span_id": "span_section_002",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "A1.通气功能：中度呼吸储备功能(最大通气量)减损；轻度阻塞性通气功能障碍，V-V曲线符合阻塞性改变；残气容积占肺总量百分比增高。2.换气功能：中度弥散功能障碍。3.脉冲振荡：呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常；中心阻抗Rc及周边阻抗Rp均增大，Rp>Rc；电抗X5负值增大；共振频率Fres增高，电抗面积AX增大；Ers正常。",
+          "char_start": 50,
+          "char_end": 246
+        }
+      ],
+      "section_order": 2,
+      "classification_confidence": "high",
+      "parent_section_id": null,
+      "notes": null
+    },
+    {
+      "section_id": "section_003",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_type": "laboratory_test",
+      "title": null,
+      "normalized_text": "血常规）:风湿相关检验无异常，淋巴细胞百分比LYM% 17.7%,单核细胞绝对值# 0.65*109/L,肝功四项:ALB 31.04g/L, 肾功四项:eGFR 70.88ml/(min*1.73m^2), 新型冠状病毒IgG/IgM抗体:2019-nCoV IgG 10.926S/CO,D2聚体:D-D 0.71ug/mL FEU,术前八项:HBeAb 1.790index,HBcAb 2.010index血沉CRP 41.8mg/L,结核感染T细胞(IFN-γ)检测: 阳性,其余检查无明显异常。",
+      "source_spans": [
+        {
+          "span_id": "span_section_003",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "血常规）:风湿相关检验无异常，淋巴细胞百分比LYM% 17.7%,单核细胞绝对值# 0.65*109/L,肝功四项:ALB 31.04g/L, 肾功四项:eGFR 70.88ml/(min*1.73m^2), 新型冠状病毒IgG/IgM抗体:2019-nCoV IgG 10.926S/CO,D2聚体:D-D 0.71ug/mL FEU,术前八项:HBeAb 1.790index,HBcAb 2.010index血沉CRP 41.8mg/L,结核感染T细胞(IFN-γ)检测: 阳性,其余检查无明显异常。",
+          "char_start": 246,
+          "char_end": 499
+        }
+      ],
+      "section_order": 3,
+      "classification_confidence": "high",
+      "parent_section_id": null,
+      "notes": null
+    }
+  ],
+  "structured_items": [
+    {
+      "item_id": "item_001",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_001",
+      "item_type": "imaging_finding",
+      "label": "双肺间质性增粗",
+      "value": null,
+      "unit": null,
+      "body_site": "双肺",
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_001",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "双肺间质性增粗",
+          "char_start": 15,
+          "char_end": 22
+        }
+      ],
+      "item_order": 1,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_002",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_001",
+      "item_type": "imaging_finding",
+      "label": "右肺中叶、下叶感染性病灶",
+      "value": null,
+      "unit": null,
+      "body_site": "右肺中叶、下叶",
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_002",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "右肺中叶、下叶感染性病灶",
+          "char_start": 25,
+          "char_end": 37
+        }
+      ],
+      "item_order": 2,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_003",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_001",
+      "item_type": "imaging_finding",
+      "label": "左肺舌段局限性不张",
+      "value": null,
+      "unit": null,
+      "body_site": "左肺舌段",
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_003",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "左肺舌段局限性不张",
+          "char_start": 40,
+          "char_end": 49
+        }
+      ],
+      "item_order": 3,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_004",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_002",
+      "item_type": "pulmonary_function",
+      "label": "中度呼吸储备功能(最大通气量)减损",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_004",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "中度呼吸储备功能(最大通气量)减损",
+          "char_start": 58,
+          "char_end": 75
+        }
+      ],
+      "item_order": 4,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_005",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_002",
+      "item_type": "pulmonary_function",
+      "label": "轻度阻塞性通气功能障碍，V-V曲线符合阻塞性改变",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_005",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "轻度阻塞性通气功能障碍，V-V曲线符合阻塞性改变",
+          "char_start": 76,
+          "char_end": 100
+        }
+      ],
+      "item_order": 5,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_006",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_002",
+      "item_type": "pulmonary_function",
+      "label": "残气容积占肺总量百分比增高",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_006",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "残气容积占肺总量百分比增高",
+          "char_start": 101,
+          "char_end": 114
+        }
+      ],
+      "item_order": 6,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_007",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_002",
+      "item_type": "pulmonary_function",
+      "label": "中度弥散功能障碍",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_007",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "中度弥散功能障碍",
+          "char_start": 122,
+          "char_end": 130
+        }
+      ],
+      "item_order": 7,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_008",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_002",
+      "item_type": "pulmonary_function",
+      "label": "呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_008",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常",
+          "char_start": 138,
+          "char_end": 187
+        }
+      ],
+      "item_order": 8,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_009",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_002",
+      "item_type": "pulmonary_function",
+      "label": "中心阻抗Rc及周边阻抗Rp均增大，Rp>Rc",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_009",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "中心阻抗Rc及周边阻抗Rp均增大，Rp>Rc",
+          "char_start": 188,
+          "char_end": 210
+        }
+      ],
+      "item_order": 9,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_010",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_002",
+      "item_type": "pulmonary_function",
+      "label": "电抗X5负值增大",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_010",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "电抗X5负值增大",
+          "char_start": 211,
+          "char_end": 219
+        }
+      ],
+      "item_order": 10,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_011",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_002",
+      "item_type": "pulmonary_function",
+      "label": "共振频率Fres增高，电抗面积AX增大",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_011",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "共振频率Fres增高，电抗面积AX增大",
+          "char_start": 220,
+          "char_end": 239
+        }
+      ],
+      "item_order": 11,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_012",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_002",
+      "item_type": "pulmonary_function",
+      "label": "Ers正常",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_012",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "Ers正常",
+          "char_start": 240,
+          "char_end": 245
+        }
+      ],
+      "item_order": 12,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_013",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "风湿相关检验无异常",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_013",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "风湿相关检验无异常",
+          "char_start": 251,
+          "char_end": 260
+        }
+      ],
+      "item_order": 13,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_014",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "淋巴细胞百分比LYM% 17.7%",
+      "value": "17.7",
+      "unit": "%",
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_014",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "淋巴细胞百分比LYM% 17.7%",
+          "char_start": 261,
+          "char_end": 278
+        }
+      ],
+      "item_order": 14,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_015",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "单核细胞绝对值# 0.65*109/L",
+      "value": "0.65",
+      "unit": "*109/L",
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_015",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "单核细胞绝对值# 0.65*109/L",
+          "char_start": 279,
+          "char_end": 298
+        }
+      ],
+      "item_order": 15,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_016",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "ALB 31.04g/L",
+      "value": "31.04",
+      "unit": "g/L",
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_016",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "ALB 31.04g/L",
+          "char_start": 304,
+          "char_end": 316
+        }
+      ],
+      "item_order": 16,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_017",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "eGFR 70.88ml/(min*1.73m^2)",
+      "value": "70.88",
+      "unit": "ml/(min*1.73m^2)",
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_017",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "eGFR 70.88ml/(min*1.73m^2)",
+          "char_start": 323,
+          "char_end": 349
+        }
+      ],
+      "item_order": 17,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_018",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "2019-nCoV IgG 10.926S/CO",
+      "value": "10.926",
+      "unit": "S/CO",
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_018",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "2019-nCoV IgG 10.926S/CO",
+          "char_start": 367,
+          "char_end": 391
+        }
+      ],
+      "item_order": 18,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_019",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "D-D 0.71ug/mL FEU",
+      "value": "0.71",
+      "unit": "ug/mL FEU",
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_019",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "D-D 0.71ug/mL FEU",
+          "char_start": 397,
+          "char_end": 414
+        }
+      ],
+      "item_order": 19,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_020",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "HBeAb 1.790index",
+      "value": "1.790",
+      "unit": "index",
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_020",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "HBeAb 1.790index",
+          "char_start": 420,
+          "char_end": 436
+        }
+      ],
+      "item_order": 20,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_021",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "HBcAb 2.010index",
+      "value": "2.010",
+      "unit": "index",
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_021",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "HBcAb 2.010index",
+          "char_start": 437,
+          "char_end": 453
+        }
+      ],
+      "item_order": 21,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_022",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "CRP 41.8mg/L",
+      "value": "41.8",
+      "unit": "mg/L",
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_022",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "CRP 41.8mg/L",
+          "char_start": 455,
+          "char_end": 467
+        }
+      ],
+      "item_order": 22,
+      "classification_confidence": "high",
+      "notes": null
+    },
+    {
+      "item_id": "item_023",
+      "input_id": "input_20260514_8cd6b8a4",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "label": "结核感染T细胞(IFN-γ)检测: 阳性",
+      "value": null,
+      "unit": null,
+      "body_site": null,
+      "temporality": "current",
+      "time_text": null,
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_023",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "结核感染T细胞(IFN-γ)检测: 阳性",
+          "char_start": 468,
+          "char_end": 488
+        }
+      ],
+      "item_order": 23,
+      "classification_confidence": "high",
+      "notes": null
+    }
+  ],
+  "timeline_events": [
+    {
+      "event_id": "event_001",
+      "input_id": "input_20260514_8cd6b8a4",
+      "event_type": "test_performed",
+      "event_time_text": "入院后完善检查",
+      "time_expression_type": "relative",
+      "normalized_time": null,
+      "relative_time": null,
+      "description": "Performed chest CT, pulmonary function tests, and laboratory tests after hospitalization.",
+      "related_item_ids": [
+        "item_001",
+        "item_002",
+        "item_003",
+        "item_004",
+        "item_005",
+        "item_006",
+        "item_007",
+        "item_008",
+        "item_009",
+        "item_010",
+        "item_011",
+        "item_012",
+        "item_013",
+        "item_014",
+        "item_015",
+        "item_016",
+        "item_017",
+        "item_018",
+        "item_019",
+        "item_020",
+        "item_021",
+        "item_022",
+        "item_023"
+      ],
+      "source_spans": [
+        {
+          "span_id": "span_event_001",
+          "input_id": "input_20260514_8cd6b8a4",
+          "quoted_text": "入院后完善检查：胸部CT：1、双肺间质性增粗；2、右肺中叶、下叶感染性病灶；3、左肺舌段局限性不张。A1.通气功能：中度呼吸储备功能(最大通气量)减损；轻度阻塞性通气功能障碍，V-V曲线符合阻塞性改变；残气容积占肺总量百分比增高。2.换气功能：中度弥散功能障碍。3.脉冲振荡：呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常；中心阻抗Rc及周边阻抗Rp均增大，Rp>Rc；电抗X5负值增大；共振频率Fres增高，电抗面积AX增大；Ers正常。血常规）:风湿相关检验无异常，淋巴细胞百分比LYM% 17.7%,单核细胞绝对值# 0.65*109/L,肝功四项:ALB 31.04g/L, 肾功四项:eGFR 70.88ml/(min*1.73m^2), 新型冠状病毒IgG/IgM抗体:2019-nCoV IgG 10.926S/CO,D2聚体:D-D 0.71ug/mL FEU,术前八项:HBeAb 1.790index,HBcAb 2.010index血沉CRP 41.8mg/L,结核感染T细胞(IFN-γ)检测: 阳性,其余检查无明显异常。",
+          "char_start": 0,
+          "char_end": 499
+        }
+      ],
+      "event_order": 1,
+      "classification_confidence": "high",
+      "notes": null
+    }
+  ],
+  "ambiguities": [],
+  "structuring_warnings": [],
+  "ready_for_evidence_atomization": true
+}

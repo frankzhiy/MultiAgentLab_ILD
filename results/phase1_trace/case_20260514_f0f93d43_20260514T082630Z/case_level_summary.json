@@ -1,0 +1,20 @@
+{
+  "case_id": "case_20260514_f0f93d43",
+  "total_rounds": 2,
+  "total_evidence_atoms_across_rounds": 41,
+  "total_deferred_items_across_rounds": 0,
+  "total_atomization_warnings_across_rounds": 0,
+  "all_round_input_ids": [
+    "input_20260514_72d49ebc",
+    "input_20260514_8cd6b8a4"
+  ],
+  "all_case_structuring_result_ids": [
+    "case_structuring_result_20260514_b5694e52",
+    "case_structuring_result_20260514_22c0c472"
+  ],
+  "all_atomization_result_ids": [
+    "atomization_result_20260514_cb7b1fb4",
+    "atomization_result_20260514_6faa0b02"
+  ],
+  "any_round_rejected_by_validator": false
+}
