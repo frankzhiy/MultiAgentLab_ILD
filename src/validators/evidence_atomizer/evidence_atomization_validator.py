@@ -332,6 +332,18 @@ class EvidenceAtomizationValidator:
                 continue
 
             if _text_contains(raw_text, atom.source_text):
+                issues.append(
+                    _issue(
+                        severity=ValidationSeverity.WARNING,
+                        code="source_text_found_in_raw_text_but_not_referenced_span",
+                        message=(
+                            "EvidenceAtom.source_text was found in raw_text but "
+                            "not in the referenced source span text. This may "
+                            "indicate imprecise source_span_ids."
+                        ),
+                        related_evidence_id=atom.evidence_id,
+                    )
+                )
                 continue
 
             issues.append(
@@ -473,7 +485,7 @@ class EvidenceAtomizationValidator:
             key = (
                 atom.normalized_label,
                 atom.value,
-                tuple(atom.source_item_ids),
+                tuple(sorted(atom.source_item_ids)),
                 atom.assertion_status,
                 atom.time_text,
             )
