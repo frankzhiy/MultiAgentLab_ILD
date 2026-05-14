@@ -35,9 +35,11 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
+from src.utils.id_generator import generate_case_structuring_result_id
+
 from .ambiguity_item import AmbiguityItem
 from .clinical_section import ClinicalSection
-from .common import ValidationSeverity
+from .common import CaseStructuringResultID, ValidationSeverity
 from .raw_text_input import RawTextInput
 from .stage_context import StageContext
 from .structured_clinical_item import StructuredClinicalItem
@@ -139,6 +141,15 @@ class CaseStructuringResult(BaseModel):
         extra="forbid",
         frozen=True,
         str_strip_whitespace=True,
+    )
+
+    case_structuring_result_id: CaseStructuringResultID = Field(
+        default_factory=generate_case_structuring_result_id,
+        description=(
+            "Stable id for this CaseStructuringResult. Downstream modules such "
+            "as Evidence Atomizer may reference this id as "
+            "source_structuring_result_id."
+        ),
     )
 
     input: RawTextInput = Field(

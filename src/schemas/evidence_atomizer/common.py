@@ -9,6 +9,7 @@ resolve conflicts, perform update tracing, run safety gates, or arbitrate
 between agents.
 """
 
+import re
 from enum import StrEnum
 from typing import TypeAlias
 
@@ -140,24 +141,30 @@ FORBIDDEN_REASONING_FIELD_NAMES = frozenset(
     }
 )
 
-FORBIDDEN_REASONING_TEXT_MARKERS = (
-    "diagnosis",
-    "hypothesis",
-    "support",
-    "supports",
-    "supported",
-    "refute",
-    "refutes",
-    "refuted",
-    "treatment recommendation",
-    "recommend treatment",
-    "management plan",
-    "action plan",
-    "update decision",
-    "update trace",
-    "conflict resolution",
-    "safety gate",
-    "arbitration",
+FORBIDDEN_REASONING_TEXT_PATTERNS = (
+    re.compile(
+        r"\b(?:support|supports|supported|refute|refutes|refuted)\b"
+        r"(?:\W+\w+){0,6}?\W+\b(?:diagnosis|hypothesis)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\b(?:diagnosis|hypothesis)\b(?:\W+\w+){0,3}?\W+\bis\s+"
+        r"(?:supported|refuted)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(r"\b(?:final|most likely)\s+diagnosis\b", re.IGNORECASE),
+    re.compile(r"\bdiagnosis\s+is\b", re.IGNORECASE),
+    re.compile(r"\brecommend(?:s|ed|ing)?\s+treatment\b", re.IGNORECASE),
+    re.compile(r"\btreatment\s+recommendation\b", re.IGNORECASE),
+    re.compile(r"\bshould\s+treat\b", re.IGNORECASE),
+    re.compile(r"\bmanagement\s+plan\b", re.IGNORECASE),
+    re.compile(r"\baction\s+plan\b", re.IGNORECASE),
+    re.compile(r"\bupdate\s+decision\b", re.IGNORECASE),
+    re.compile(r"\bupdate\s+trace\b", re.IGNORECASE),
+    re.compile(r"\bconflict\s+(?:is\s+)?resolved\b", re.IGNORECASE),
+    re.compile(r"\bconflict\s+resolution\b", re.IGNORECASE),
+    re.compile(r"\bsafety\s+gate\s+(?:passed|failed)\b", re.IGNORECASE),
+    re.compile(r"\barbitration\s+result\b", re.IGNORECASE),
 )
 
 
@@ -188,18 +195,20 @@ def reject_reasoning_scope_text(value: str | None, field_name: str) -> str | Non
     if cleaned is None:
         return None
 
-    lowered = cleaned.lower()
-    forbidden_markers = [
-        marker for marker in FORBIDDEN_REASONING_TEXT_MARKERS if marker in lowered
+    forbidden_patterns = [
+        pattern.pattern
+        for pattern in FORBIDDEN_REASONING_TEXT_PATTERNS
+        if pattern.search(cleaned)
     ]
 
-    if forbidden_markers:
+    if forbidden_patterns:
         raise ValueError(
             f"{field_name} must describe atomization quality only and must not "
-            "include diagnosis, hypothesis support/refute judgment, treatment "
-            "recommendation, conflict resolution, action plan, update decision, "
-            "safety gate result, or arbitration result. "
-            f"Forbidden markers: {forbidden_markers}"
+            "include explicit downstream judgment or action patterns such as "
+            "diagnosis/hypothesis support or refutation, diagnosis selection, "
+            "treatment recommendation, conflict resolution, action plan, update "
+            "decision, safety gate result, or arbitration result. "
+            f"Forbidden patterns: {forbidden_patterns}"
         )
 
     return cleaned

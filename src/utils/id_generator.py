@@ -12,6 +12,7 @@ from uuid import uuid4
 from src.schemas.case_structurer.common import (
     AmbiguityID,
     CaseID,
+    CaseStructuringResultID,
     EventID,
     InputID,
     ItemID,
@@ -44,6 +45,10 @@ def generate_id(prefix: str) -> str:
 
 def generate_case_id() -> CaseID:
     return CaseID(generate_id("case"))
+
+
+def generate_case_structuring_result_id() -> CaseStructuringResultID:
+    return CaseStructuringResultID(generate_id("case_structuring_result"))
 
 
 def generate_input_id() -> InputID:

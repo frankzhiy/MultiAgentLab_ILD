@@ -11,6 +11,8 @@ ActionPlan, UpdateTrace, Conflict, SafetyGateResult, or ArbitrationResult.
 from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+
+from src.schemas.case_structurer.common import CaseStructuringResultID
 from src.utils.id_generator import generate_atomization_result_id
 
 from .atomization_warning import AtomizationWarning
@@ -68,9 +70,12 @@ class EvidenceAtomizationResult(BaseModel):
         description="Optional StageContext id for this atomization result.",
     )
 
-    source_structuring_result_id: str | None = Field(
+    source_structuring_result_id: CaseStructuringResultID | None = Field(
         default=None,
-        description="Optional source CaseStructuringResult id if one exists.",
+        description=(
+            "Optional CaseStructuringResult.case_structuring_result_id that "
+            "this atomization result was derived from."
+        ),
     )
 
     evidence_atoms: list[EvidenceAtom] = Field(

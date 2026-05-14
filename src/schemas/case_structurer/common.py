@@ -15,6 +15,7 @@ from typing import TypeAlias
 # ---------------------------------------------------------------------
 
 CaseID: TypeAlias = str
+CaseStructuringResultID: TypeAlias = str
 StageID: TypeAlias = str
 InputID: TypeAlias = str
 SectionID: TypeAlias = str
