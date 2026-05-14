@@ -19,6 +19,10 @@ from src.schemas.case_structurer.common import (
     SpanID,
     StageID,
 )
+from src.schemas.evidence_atomizer.common import (
+    EvidenceAtomizationResultID,
+    EvidenceID,
+)
 
 _PREFIX_PATTERN = re.compile(r"^[a-z0-9_]+$")
 
@@ -84,3 +88,11 @@ def generate_timeline_event_id() -> EventID:
 
 def generate_ambiguity_id() -> AmbiguityID:
     return AmbiguityID(generate_id("ambiguity"))
+
+
+def generate_evidence_id() -> EvidenceID:
+    return EvidenceID(generate_id("evidence"))
+
+
+def generate_atomization_result_id() -> EvidenceAtomizationResultID:
+    return EvidenceAtomizationResultID(generate_id("atomization_result"))
