@@ -545,11 +545,11 @@ def render_clinical_attributes_table(attributes: list[Any]) -> list[str]:
     lines = [
         "## Clinical Attributes",
         "",
-        "| attribute_id | source_item_id | attribute_role | span_text | normalized_value | normalized_unit | normalized_text | extraction_confidence | source_span_id | source_text |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| attribute_id | source_item_id | attribute_role | attribute_scope | span_text | applies_to_text | context_text | normalized_value | normalized_unit | normalized_text | extraction_confidence | source_span_id |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     if not attributes:
-        lines.append(empty_markdown_row(10, "No clinical attributes produced."))
+        lines.append(empty_markdown_row(12, "No clinical attributes produced."))
         return lines
 
     for attribute in attributes:
@@ -560,13 +560,15 @@ def render_clinical_attributes_table(attributes: list[Any]) -> list[str]:
                     object_field(attribute, "attribute_id"),
                     object_field(attribute, "source_item_id"),
                     object_field(attribute, "attribute_role"),
+                    object_field(attribute, "attribute_scope"),
                     object_field(attribute, "span_text"),
+                    object_field(attribute, "applies_to_text"),
+                    object_field(attribute, "context_text"),
                     object_field(attribute, "normalized_value"),
                     object_field(attribute, "normalized_unit"),
                     object_field(attribute, "normalized_text"),
                     object_field(attribute, "extraction_confidence"),
                     object_field(source_span, "span_id"),
-                    object_field(source_span, "quoted_text"),
                 ]
             )
         )

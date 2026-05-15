@@ -99,6 +99,53 @@ Return exactly one JSON object with keys:
 Detailed skeleton:
 {{ output_skeleton }}
 
+# Clinical Attribute Use
+Clinical attributes are not independent facts. They are modifier relations
+attached to a source item. Use them to preserve duration, dose, frequency,
+abnormal direction, qualitative result, age, sex, or other useful modifiers
+when splitting source-level items into evidence atoms.
+
+When an attribute has attribute_scope = coordinated_objects, the modifier may
+apply to multiple evidence atoms derived from the same source item.
+
+When an evidence atom uses an attribute, include that attribute_id in
+source_attribute_ids.
+
+Example:
+item:
+"间断咳嗽咳痰伴胸闷气短8年"
+
+attribute:
+span_text="8年"
+attribute_role="symptom_duration"
+attribute_scope="coordinated_objects"
+applies_to_text="间断咳嗽咳痰伴胸闷气短"
+
+Expected atoms:
+- "间断咳嗽8年" source_attribute_ids=[that attribute_id]
+- "间断咳痰8年" source_attribute_ids=[that attribute_id]
+- "胸闷8年" source_attribute_ids=[that attribute_id]
+- "气短8年" source_attribute_ids=[that attribute_id]
+
+Example:
+item:
+"气道总阻力R5、外周阻力R5-R20及近端阻力R35增高"
+
+attribute:
+span_text="增高"
+attribute_role="abnormal_direction"
+attribute_scope="coordinated_objects"
+applies_to_text="气道总阻力R5、外周阻力R5-R20及近端阻力R35"
+
+Expected atoms:
+- "气道总阻力R5增高" source_attribute_ids=[that attribute_id]
+- "外周阻力R5-R20增高" source_attribute_ids=[that attribute_id]
+- "近端阻力R35增高" source_attribute_ids=[that attribute_id]
+
+Do not create an atom that is just "增高".
+Do not create an atom that is just "8年".
+ClinicalAttribute modifies evidence atoms; it is not itself an evidence atom.
+
 # Rules
 - Return JSON only. Do not include Markdown, code fences, or commentary.
 - Do not invent persistent IDs.
@@ -109,6 +156,7 @@ Detailed skeleton:
 - Do not output value, unit, time_text, or body_site fields.
 - Preserve negation, certainty, and temporality.
 - Preserve source_item_ids and source_span_ids from the input candidates.
+- Use ClinicalAttribute objects as modifier information sources, not as standalone atoms.
 - Reference relevant ClinicalAttribute objects through source_attribute_ids.
 - If an atom statement uses attribute content such as duration, age, qualitative result, abnormal direction, dose, frequency, route, or body site, include the corresponding source_attribute_ids.
 - source_text must be copied from candidate source text.

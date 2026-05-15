@@ -5,12 +5,14 @@ from enum import StrEnum
 from typing import Any
 
 from src.schemas.attribute_extractor.attribute_role import AttributeRole
+from src.schemas.attribute_extractor.attribute_scope import AttributeScope
 from src.schemas.attribute_extractor.common import ConfidenceLevel, ValidationSeverity
 
 
 def attribute_span_role_labeling_contract() -> dict[str, Any]:
     return {
         "allowed_attribute_role_values": _format_enum_values(AttributeRole),
+        "allowed_attribute_scope_values": _format_enum_values(AttributeScope),
         "allowed_confidence_values": _format_enum_values(ConfidenceLevel),
         "allowed_warning_severity_values": _format_enum_values(ValidationSeverity),
         "attribute_span_fields": _lines(
@@ -18,6 +20,8 @@ def attribute_span_role_labeling_contract() -> dict[str, Any]:
                 "source_item_id",
                 "span_text",
                 "attribute_role",
+                "attribute_scope",
+                "applies_to_text",
                 "normalized_value",
                 "normalized_unit",
                 "normalized_text",

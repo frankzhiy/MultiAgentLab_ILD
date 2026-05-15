@@ -19,7 +19,7 @@ from .base_llm_extractor import BaseLLMExtractor
 
 
 class AttributeSpanRoleExtractor(BaseLLMExtractor):
-    """LLM extractive span role labeler for StructuredClinicalItem text."""
+    """LLM target-grounded attribute relation labeler for source item text."""
 
     def extract(self, structuring_result: CaseStructuringResult) -> dict[str, Any]:
         item_payload = build_attribute_item_payload(structuring_result)
@@ -47,14 +47,14 @@ class AttributeSpanRoleExtractor(BaseLLMExtractor):
             },
             instruction=(
                 "Return exactly one JSON object with keys attribute_spans and "
-                "extraction_warnings."
+                "extraction_warnings. Do not output context_text."
             ),
             template_vars=template_vars,
             response_format="json_object",
         )
         payload = self.parse_json_content(content)
         if not isinstance(payload, dict):
-            raise ValueError("Attribute span role payload must be a JSON object.")
+            raise ValueError("Attribute relation payload must be a JSON object.")
 
         for key in ("attribute_spans", "extraction_warnings"):
             if key not in payload:

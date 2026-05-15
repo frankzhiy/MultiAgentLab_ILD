@@ -8,11 +8,17 @@ from src.schemas.case_structurer.source_span import SourceSpan
 from src.utils.id_generator import generate_attribute_id
 
 from .attribute_role import AttributeRole
+from .attribute_scope import AttributeScope
 from .common import AttributeID, CaseID, ConfidenceLevel, InputID, ItemID
 
 
 class ClinicalAttribute(BaseModel):
-    """A source-copied attribute span role-labeled from a StructuredClinicalItem."""
+    """A target-grounded attribute modifier relation on a StructuredClinicalItem.
+
+    ClinicalAttribute is not a standalone clinical fact. It answers:
+    what modifier span appears in this item, what role it plays, and what
+    source-copied object or phrase it modifies.
+    """
 
     model_config = ConfigDict(
         extra="forbid",
@@ -33,14 +39,37 @@ class ClinicalAttribute(BaseModel):
         ...,
         description="StructuredClinicalItem.item_id that owns this attribute.",
     )
-    attribute_role: AttributeRole = Field(
-        ...,
-        description="Role label assigned to this copied source span.",
-    )
     span_text: str = Field(
         ...,
         min_length=1,
-        description="Exact continuous source substring selected from item source text.",
+        description="Exact continuous attribute modifier substring from item source text.",
+    )
+    attribute_role: AttributeRole = Field(
+        ...,
+        description="Semantic role played by span_text as a modifier.",
+    )
+    attribute_scope: AttributeScope = Field(
+        ...,
+        description=(
+            "Scope of the source-copied phrase modified by this attribute: the "
+            "whole item, a local phrase, multiple coordinated objects, or uncertain."
+        ),
+    )
+    applies_to_text: str | None = Field(
+        default=None,
+        description=(
+            "The source-copied object or phrase that this attribute modifies. "
+            "When present, it must be a continuous substring of the source item's text."
+        ),
+    )
+    context_text: str = Field(
+        ...,
+        min_length=1,
+        description=(
+            "The full source item text that provides context for interpreting this "
+            "attribute. This should be filled deterministically from the owning "
+            "StructuredClinicalItem."
+        ),
     )
     source_span: SourceSpan = Field(
         ...,
@@ -60,22 +89,23 @@ class ClinicalAttribute(BaseModel):
     )
     extraction_confidence: ConfidenceLevel = Field(
         ...,
-        description="Confidence in span-role extraction, not diagnostic confidence.",
+        description="Confidence in extracting this attribute relation, not diagnostic confidence.",
     )
     notes: str | None = Field(
         default=None,
         description="Optional extraction note. Must not contain downstream reasoning.",
     )
 
-    @field_validator("span_text", mode="after")
+    @field_validator("span_text", "context_text", mode="after")
     @classmethod
-    def span_text_must_not_be_blank(cls, value: str) -> str:
+    def required_text_must_not_be_blank(cls, value: str) -> str:
         cleaned = value.strip()
         if not cleaned:
-            raise ValueError("span_text must not be empty.")
+            raise ValueError("Required ClinicalAttribute text must not be empty.")
         return cleaned
 
     @field_validator(
+        "applies_to_text",
         "normalized_unit",
         "normalized_text",
         "notes",

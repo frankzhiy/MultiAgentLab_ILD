@@ -58,12 +58,12 @@ def format_attribute_items(items: list[dict[str, Any]]) -> str:
 def format_attribute_boundary() -> str:
     return "\n".join(
         [
-            "- Attribute Extractor performs extractive span role labeling.",
-            "- It selects continuous original spans from StructuredClinicalItem.source_text.",
-            "- It assigns semantic attribute_role values to copied spans.",
+            "- Attribute Extractor extracts target-grounded attribute modifier relations.",
+            "- Each attribute has a copied span_text, attribute_role, attribute_scope, and applies_to_text.",
+            "- context_text is filled by code from the owning source item text.",
             "- It may add lightweight normalized_value, normalized_unit, or normalized_text.",
+            "- It extracts only attributes useful for downstream evidence atomization.",
             "- It does not create evidence atoms, downstream reasoning objects, diagnoses, or treatment advice.",
-            "- It must not output fields named value, unit, or time_text.",
         ]
     )
 

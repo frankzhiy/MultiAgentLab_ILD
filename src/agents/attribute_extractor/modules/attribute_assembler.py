@@ -6,6 +6,7 @@ from src.schemas.attribute_extractor.attribute_extraction_result import (
     AttributeExtractionResult,
     AttributeExtractionWarning,
 )
+from src.schemas.attribute_extractor.attribute_scope import AttributeScope
 from src.schemas.attribute_extractor.clinical_attribute import ClinicalAttribute
 from src.schemas.attribute_extractor.common import ConfidenceLevel, ValidationSeverity
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
@@ -23,14 +24,40 @@ class AttributeAssembler:
     ) -> AttributeExtractionResult:
         warnings = list(payload.warnings)
         attributes: list[ClinicalAttribute] = []
+        items_by_id = {
+            item.item_id: item
+            for item in structuring_result.structured_items
+        }
 
         for attribute_payload in payload.attribute_payloads:
+            source_item_id = attribute_payload["source_item_id"]
+            item = items_by_id.get(source_item_id)
+            item_source_text = _item_source_text(item) if item is not None else ""
+            attribute_scope = attribute_payload.get("attribute_scope")
+            if not attribute_scope:
+                warnings.append(
+                    AttributeExtractionWarning(
+                        severity=ValidationSeverity.WARNING,
+                        code="missing_attribute_scope",
+                        message=(
+                            "Validated attribute payload lacked attribute_scope "
+                            "and was assembled with uncertain scope."
+                        ),
+                        related_item_id=source_item_id,
+                    )
+                )
+                attribute_scope = AttributeScope.UNCERTAIN.value
+
             data = {
                 "case_id": structuring_result.input.case_id,
                 "input_id": structuring_result.input.input_id,
-                "source_item_id": attribute_payload["source_item_id"],
-                "attribute_role": attribute_payload["attribute_role"],
+                "source_item_id": source_item_id,
                 "span_text": attribute_payload["span_text"],
+                "attribute_role": attribute_payload["attribute_role"],
+                "attribute_scope": attribute_scope,
+                "applies_to_text": attribute_payload.get("applies_to_text"),
+                "context_text": attribute_payload.get("context_text")
+                or item_source_text,
                 "source_span": attribute_payload["source_span"],
                 "normalized_value": attribute_payload.get("normalized_value"),
                 "normalized_unit": attribute_payload.get("normalized_unit"),
@@ -69,3 +96,8 @@ class AttributeAssembler:
             extraction_warnings=warnings,
             ready_for_evidence_atomization=not has_error_warning,
         )
+
+
+def _item_source_text(item: object) -> str:
+    source_spans = getattr(item, "source_spans", []) or []
+    return "\n".join(span.quoted_text for span in source_spans)

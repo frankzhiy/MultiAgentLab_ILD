@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 
 from src.schemas.attribute_extractor.attribute_role import AttributeRole
+from src.schemas.attribute_extractor.attribute_scope import AttributeScope
 from src.schemas.attribute_extractor.common import ConfidenceLevel, ValidationSeverity
 
 
@@ -14,6 +15,8 @@ def attribute_span_role_labeling_skeleton() -> str:
                     "source_item_id": "item_001",
                     "span_text": "...",
                     "attribute_role": AttributeRole.OTHER_ATTRIBUTE.value,
+                    "attribute_scope": AttributeScope.UNCERTAIN.value,
+                    "applies_to_text": "...",
                     "normalized_value": None,
                     "normalized_unit": None,
                     "normalized_text": None,

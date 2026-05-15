@@ -71,7 +71,7 @@ def format_atomization_boundary() -> str:
     return "\n".join(
         [
             "- Evidence Atomizer receives validated StructuredClinicalItem material.",
-            "- Attribute spans are supplied as ClinicalAttribute summaries.",
+            "- ClinicalAttribute summaries are target-grounded modifier relations, not independent facts.",
             "- It creates minimal source-grounded evidence atom drafts.",
             "- It preserves source item ids, source attribute ids, and source span ids.",
             "- It does not decide disease support, refutation, diagnosis, or action.",
@@ -118,8 +118,11 @@ def _format_attributes(candidate: AtomizationCandidate) -> str:
     return "[" + "; ".join(
         (
             f"{attribute.attribute_id}:"
-            f"{attribute.attribute_role}="
-            f"{_compact_text(attribute.span_text, limit=40)}"
+            f"role={attribute.attribute_role},"
+            f"scope={attribute.attribute_scope},"
+            f"span={_compact_text(attribute.span_text, limit=40)},"
+            f"applies_to={_compact_text(str(attribute.applies_to_text or ''), limit=50)},"
+            f"context={_compact_text(attribute.context_text, limit=70)}"
         )
         for attribute in candidate.attributes
     ) + "]"

@@ -16,7 +16,7 @@ from src.schemas.case_structurer.case_structuring_result import CaseStructuringR
 
 
 class AttributeExtractionValidator:
-    """Validate AttributeExtractionResult against CaseStructuringResult."""
+    """Validate target-grounded attributes against CaseStructuringResult."""
 
     def validate(
         self,
@@ -87,6 +87,30 @@ class AttributeExtractionValidator:
                 continue
 
             item_source_text = "\n".join(span.quoted_text for span in item.source_spans)
+            if not attribute.context_text.strip():
+                issues.append(
+                    _issue(
+                        severity=ValidationSeverity.ERROR,
+                        code="attribute_context_text_missing",
+                        message="ClinicalAttribute.context_text must not be empty.",
+                        related_item_id=attribute.source_item_id,
+                        related_attribute_id=attribute.attribute_id,
+                    )
+                )
+            elif attribute.context_text != item_source_text:
+                issues.append(
+                    _issue(
+                        severity=ValidationSeverity.ERROR,
+                        code="attribute_context_text_mismatch",
+                        message=(
+                            "ClinicalAttribute.context_text must equal the full "
+                            "source text of its owning StructuredClinicalItem."
+                        ),
+                        related_item_id=attribute.source_item_id,
+                        related_attribute_id=attribute.attribute_id,
+                    )
+                )
+
             if attribute.span_text not in item_source_text:
                 issues.append(
                     _issue(
@@ -95,6 +119,22 @@ class AttributeExtractionValidator:
                         message=(
                             "ClinicalAttribute.span_text must be present in its "
                             "source item's source text."
+                        ),
+                        related_item_id=attribute.source_item_id,
+                        related_attribute_id=attribute.attribute_id,
+                    )
+                )
+            if (
+                attribute.applies_to_text is not None
+                and attribute.applies_to_text not in item_source_text
+            ):
+                issues.append(
+                    _issue(
+                        severity=ValidationSeverity.ERROR,
+                        code="attribute_target_text_not_in_source_item",
+                        message=(
+                            "ClinicalAttribute.applies_to_text must be present "
+                            "in its source item's source text when provided."
                         ),
                         related_item_id=attribute.source_item_id,
                         related_attribute_id=attribute.attribute_id,

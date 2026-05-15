@@ -1,0 +1,1211 @@
+[
+  {
+    "evidence_id": "evidence_20260515_31e003dd",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "demographic",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "患者***,女,77岁",
+    "normalized_label": "female, 77 years old",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "unknown",
+    "source_item_ids": [
+      "item_001"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_1a9049f8",
+      "attribute_20260515_71a56b64"
+    ],
+    "source_span_ids": [
+      "span_item_001"
+    ],
+    "source_text": "患者***,女,77岁",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_10b41850",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "间断咳嗽8年",
+    "normalized_label": "intermittent cough for 8 years",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_002"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_ce14370e"
+    ],
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "source_text": "间断咳嗽咳痰伴胸闷气短8年",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_d9039029",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "间断咳痰8年",
+    "normalized_label": "intermittent sputum production for 8 years",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_002"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_ce14370e"
+    ],
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "source_text": "间断咳嗽咳痰伴胸闷气短8年",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_8cb2c627",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "胸闷8年",
+    "normalized_label": "chest tightness for 8 years",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_002"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_ce14370e"
+    ],
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "source_text": "间断咳嗽咳痰伴胸闷气短8年",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_2c46a328",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "气短8年",
+    "normalized_label": "shortness of breath for 8 years",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_002"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_ce14370e"
+    ],
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "source_text": "间断咳嗽咳痰伴胸闷气短8年",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_c6e0f28f",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "加重2月",
+    "normalized_label": "worsening for 2 months",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_003"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_aa7a5233"
+    ],
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "source_text": "加重2月",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_3631ae7a",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "uncertain",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "一般健康状况：良好",
+    "normalized_label": "general health status: good",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_004"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "source_text": "一般健康状况：良好",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_b8c5cb47",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "comorbidity",
+    "clinical_domain": "cardiovascular",
+    "granularity": "atomic",
+    "statement": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+    "normalized_label": "history of hypertension for 8 years, currently taking sacubitril valsartan tablets 2 tablets per dose, once daily; history of diabetes and coronary heart disease",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_005"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_9f0e916f",
+      "attribute_20260515_630cccb4",
+      "attribute_20260515_877df203"
+    ],
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "source_text": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_85840e0c",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "procedure",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "40年前左下肢骨折固定术",
+    "normalized_label": "left lower limb fracture fixation surgery 40 years ago",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_2957c107"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_text": "40年前左下肢骨折固定术",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_a587a26c",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "无咳嗽，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no cough since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_c7f0a91e",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "无咳痰，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no sputum since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_434607e5",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "无胸闷，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no chest tightness since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_0fe40dc3",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "无气短，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no shortness of breath since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_5e5e21c4",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无发热，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no fever since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_4cc951b0",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无寒战，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no chills since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_0f3fa970",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "无胸痛，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no chest pain since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_f8feb49d",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "无咯血，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no hemoptysis since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_46d27902",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无乏力，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no fatigue since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_97c43e2e",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无盗汗，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no night sweats since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_b06f01b9",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无恶心，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no nausea since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_c070dcde",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无呕吐，8年前，痰液为黏白色，量少，夜间为著",
+    "normalized_label": "no vomiting since 8 years ago, sputum sticky white, small amount, worse at night",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_318da445",
+      "attribute_20260515_4c219fc8",
+      "attribute_20260515_40ab7815",
+      "attribute_20260515_09acfd68"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": "Negated symptom with modifiers"
+  },
+  {
+    "evidence_id": "evidence_20260515_4edce8b9",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "咳嗽，1年前新冠病毒感染后再次出现，痰液为黏白色，量少，活动后明显，输液1周余后有所改善",
+    "normalized_label": "cough 1 year ago after COVID-19 infection, sputum sticky white, small amount, worsened after activity, improved after about 1 week infusion",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_e98e460f",
+      "attribute_20260515_0927332d",
+      "attribute_20260515_89b572ab",
+      "attribute_20260515_aad3129b",
+      "attribute_20260515_05689af6"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_80d0efee",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "咳痰，1年前新冠病毒感染后再次出现，痰液为黏白色，量少，活动后明显，输液1周余后有所改善",
+    "normalized_label": "sputum production 1 year ago after COVID-19 infection, sputum sticky white, small amount, worsened after activity, improved after about 1 week infusion",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_e98e460f",
+      "attribute_20260515_0927332d",
+      "attribute_20260515_89b572ab",
+      "attribute_20260515_aad3129b",
+      "attribute_20260515_05689af6"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_994b19a5",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "胸闷，1年前新冠病毒感染后再次出现，痰液为黏白色，量少，活动后明显，输液1周余后有所改善",
+    "normalized_label": "chest tightness 1 year ago after COVID-19 infection, sputum sticky white, small amount, worsened after activity, improved after about 1 week infusion",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_e98e460f",
+      "attribute_20260515_0927332d",
+      "attribute_20260515_89b572ab",
+      "attribute_20260515_aad3129b",
+      "attribute_20260515_05689af6"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_31f93551",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "气短，1年前新冠病毒感染后再次出现，痰液为黏白色，量少，活动后明显，输液1周余后有所改善",
+    "normalized_label": "shortness of breath 1 year ago after COVID-19 infection, sputum sticky white, small amount, worsened after activity, improved after about 1 week infusion",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_e98e460f",
+      "attribute_20260515_0927332d",
+      "attribute_20260515_89b572ab",
+      "attribute_20260515_aad3129b",
+      "attribute_20260515_05689af6"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_dbab3ac7",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无咳嗽",
+    "normalized_label": "no cough 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_4b09e9f3",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无咳痰",
+    "normalized_label": "no sputum 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_c33559b5",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无胸闷",
+    "normalized_label": "no chest tightness 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_41483d10",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无气短",
+    "normalized_label": "no shortness of breath 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_c74fdb9d",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "2月前无发热",
+    "normalized_label": "no fever 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_5bd08769",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "2月前无寒战",
+    "normalized_label": "no chills 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_c4c7302d",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无胸痛",
+    "normalized_label": "no chest pain 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_04280395",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无咯血",
+    "normalized_label": "no hemoptysis 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_159d25e8",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "2月前无恶心",
+    "normalized_label": "no nausea 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_0b6f2980",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "symptom",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "2月前无呕吐",
+    "normalized_label": "no vomiting 2 months ago",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_36a8bdc6"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_cb106149",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+    "normalized_label": "Chest CT on 2024-06-11 shows bilateral lung interstitial thickening with distorted texture, increased lung field density, patchy solid high-density shadows in right middle and lower lobes and left lingual segment, with blurred lesion edges in right middle and lower lobes",
+    "assertion_status": "present",
+    "certainty": "possible",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_010"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_a946e37b",
+      "attribute_20260515_fbc194cd",
+      "attribute_20260515_42f93b53",
+      "attribute_20260515_84f9772c",
+      "attribute_20260515_04d0d89a"
+    ],
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "atomization_confidence": "high",
+    "notes": "Excludes diagnostic interpretation"
+  },
+  {
+    "evidence_id": "evidence_20260515_1fd2ed9b",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "treatment_response",
+    "clinical_domain": "treatment",
+    "granularity": "atomic",
+    "statement": "治疗上给予抗感染（具体不详）治疗后，胸闷症状改善不明显",
+    "normalized_label": "chest tightness symptom improved not obvious after anti-infective treatment (details unknown)",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_011"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "source_text": "治疗上给予抗感染（具体不详）治疗后，胸闷气短症状改善不明显",
+    "atomization_confidence": "high",
+    "notes": "Split chest tightness and shortness of breath symptoms for treatment response"
+  },
+  {
+    "evidence_id": "evidence_20260515_a4ec82ee",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "treatment_response",
+    "clinical_domain": "treatment",
+    "granularity": "atomic",
+    "statement": "治疗上给予抗感染（具体不详）治疗后，气短症状改善不明显",
+    "normalized_label": "shortness of breath symptom improved not obvious after anti-infective treatment (details unknown)",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_011"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "source_text": "治疗上给予抗感染（具体不详）治疗后，胸闷气短症状改善不明显",
+    "atomization_confidence": "high",
+    "notes": "Split chest tightness and shortness of breath symptoms for treatment response"
+  },
+  {
+    "evidence_id": "evidence_20260515_f6637aeb",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "diagnosis_history",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "以“间质性肺炎，肺部感染”收住我科",
+    "normalized_label": "admitted to our department with 'interstitial pneumonia, pulmonary infection'",
+    "assertion_status": "present",
+    "certainty": "possible",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_012"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "source_text": "以“间质性肺炎，肺部感染”收住我科",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_ca3a5865",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "sign",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无病程中",
+    "normalized_label": "no during course of disease",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": "Negated sign"
+  },
+  {
+    "evidence_id": "evidence_20260515_8dfc6e6a",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "sign",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无患者神志清",
+    "normalized_label": "no patient consciousness clear",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": "Negated sign"
+  },
+  {
+    "evidence_id": "evidence_20260515_f5898f05",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "sign",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无精神可",
+    "normalized_label": "no good spirit",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": "Negated sign"
+  },
+  {
+    "evidence_id": "evidence_20260515_253ce74b",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "sign",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无饮食睡眠",
+    "normalized_label": "no eating and sleeping",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": "Negated sign"
+  },
+  {
+    "evidence_id": "evidence_20260515_12159c71",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "sign",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无大小便正常",
+    "normalized_label": "no normal urination and defecation",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": "Negated sign"
+  },
+  {
+    "evidence_id": "evidence_20260515_7efe9da1",
+    "case_id": "case_20260515_fa3552fe",
+    "input_id": "input_20260515_e9018bf3",
+    "stage_id": "stage_20260515_dedff8ec",
+    "evidence_type": "sign",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "无体重无明显变化",
+    "normalized_label": "no significant weight change",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": "Negated sign"
+  }
+]

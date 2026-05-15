@@ -5,6 +5,7 @@ from __future__ import annotations
 from importlib import import_module
 
 from .attribute_role import AttributeRole
+from .attribute_scope import AttributeScope
 from .common import (
     AttributeExtractionResultID,
     AttributeID,
@@ -29,6 +30,7 @@ __all__ = [
     "AttributeExtractionWarning",
     "AttributeID",
     "AttributeRole",
+    "AttributeScope",
     "CaseID",
     "CaseStructuringResultID",
     "ClinicalAttribute",

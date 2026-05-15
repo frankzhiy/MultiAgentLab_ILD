@@ -1,4 +1,4 @@
-"""Attribute roles produced by extractive span role labeling."""
+"""Attribute roles produced by target-grounded attribute labeling."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ from enum import StrEnum
 
 
 class AttributeRole(StrEnum):
-    """Semantic role for a source-copied ClinicalAttribute span."""
+    """Semantic role played by a source-copied attribute modifier span."""
 
     AGE = "age"
     SEX = "sex"

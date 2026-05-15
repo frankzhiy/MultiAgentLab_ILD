@@ -11,7 +11,7 @@ from src.schemas.case_structurer.case_structuring_result import CaseStructuringR
 
 
 class ClinicalAttributeSummary(BaseModel):
-    """Compact LLM-ready representation of one ClinicalAttribute."""
+    """Compact LLM-ready representation of one ClinicalAttribute relation."""
 
     model_config = ConfigDict(
         extra="forbid",
@@ -21,7 +21,10 @@ class ClinicalAttributeSummary(BaseModel):
 
     attribute_id: str
     attribute_role: str
+    attribute_scope: str
     span_text: str
+    applies_to_text: str | None = None
+    context_text: str
     normalized_value: str | int | float | None = None
     normalized_unit: str | None = None
     normalized_text: str | None = None
@@ -68,7 +71,10 @@ class AtomizationCandidateBuilder:
                 ClinicalAttributeSummary(
                     attribute_id=attribute.attribute_id,
                     attribute_role=_value(attribute.attribute_role),
+                    attribute_scope=_value(attribute.attribute_scope),
                     span_text=attribute.span_text,
+                    applies_to_text=attribute.applies_to_text,
+                    context_text=attribute.context_text,
                     normalized_value=attribute.normalized_value,
                     normalized_unit=attribute.normalized_unit,
                     normalized_text=attribute.normalized_text,

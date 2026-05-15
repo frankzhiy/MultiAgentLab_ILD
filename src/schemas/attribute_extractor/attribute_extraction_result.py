@@ -55,7 +55,7 @@ class AttributeExtractionWarning(BaseModel):
 
 
 class AttributeExtractionResult(BaseModel):
-    """Validated Attribute Extractor result for one CaseStructuringResult."""
+    """Validated target-grounded attribute extraction result for one CaseStructuringResult."""
 
     model_config = ConfigDict(
         extra="forbid",
