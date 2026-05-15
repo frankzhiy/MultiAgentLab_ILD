@@ -61,6 +61,7 @@ def format_coverage_units(coverage_units: list[CoverageUnit]) -> str:
                     f"assertion_scope_text={_compact_text(str(unit.assertion_scope_text or ''))}",
                     f"clinical_object_type={unit.clinical_object_type}",
                     f"clinical_object_assertion_id={unit.clinical_object_assertion_id}",
+                    f"source_assertion_ids={unit.source_assertion_ids}",
                     f"source_frame_node_ids={unit.source_frame_node_ids}",
                     f"context_frame_node_ids={unit.context_frame_node_ids}",
                     f"parent_frame_node_id={unit.parent_frame_node_id}",

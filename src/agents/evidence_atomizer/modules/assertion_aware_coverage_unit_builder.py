@@ -194,6 +194,7 @@ class AssertionAwareCoverageUnitBuilder:
                 assertion_scope_text=assertion.assertion_scope_text,
                 clinical_object_type=assertion.object_type.value,
                 clinical_object_assertion_id=assertion.object_id,
+                source_assertion_ids=[assertion.object_id],
             )
             for index, assertion in enumerate(assertions, start=1)
         ]
@@ -339,6 +340,7 @@ class AssertionAwareCoverageUnitBuilder:
             temporality=candidate.temporality,
             split_basis=split_basis,
             required=True,
+            source_assertion_ids=[],
         )
 
 

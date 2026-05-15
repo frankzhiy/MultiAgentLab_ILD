@@ -84,6 +84,50 @@ class FrameAwareCoverageUnitBuilder:
         assertions: list[ClinicalObjectAssertion],
         warnings: list[AtomizationWarning],
     ) -> list[CoverageUnit]:
+        if any(
+            getattr(warning, "severity", None) == ValidationSeverity.ERROR
+            for warning in frame.frame_warnings
+        ):
+            warnings.append(
+                _warning(
+                    code="frame_failed_validation_skip_coverage",
+                    message=(
+                        "Coverage units were not generated because the EvidenceEventFrame contains validation errors."
+                    ),
+                    related_item_id=candidate.item_id,
+                    severity=ValidationSeverity.ERROR,
+                )
+            )
+            return []
+
+        missing_assertion_ids = _missing_assertion_ids(frame, assertions)
+        if missing_assertion_ids:
+            warnings.append(
+                _warning(
+                    code="frame_assertion_coverage_missing",
+                    message=(
+                        "Coverage units were not generated because the frame did not cover all ClinicalObjectAssertions. "
+                        f"missing={sorted(missing_assertion_ids)}"
+                    ),
+                    related_item_id=candidate.item_id,
+                    severity=ValidationSeverity.ERROR,
+                )
+            )
+            return []
+
+        if _is_degenerate_frame_for_coverage(candidate, assertions, frame):
+            warnings.append(
+                _warning(
+                    code="degenerate_frame_skip_coverage",
+                    message=(
+                        "Coverage units were not generated because the frame collapsed a multi-assertion item into a single full-source atomizable node."
+                    ),
+                    related_item_id=candidate.item_id,
+                    severity=ValidationSeverity.ERROR,
+                )
+            )
+            return []
+
         nodes_by_id = {node.frame_node_id: node for node in frame.frame_nodes}
         units: list[CoverageUnit] = []
         unit_index = 1
@@ -95,6 +139,45 @@ class FrameAwareCoverageUnitBuilder:
                 AtomizationPolicy.DO_NOT_GENERATE_CONTEXT_ONLY,
                 AtomizationPolicy.DEFER,
             }:
+                continue
+            if (
+                len(assertions) > 1
+                and node.node_type == FrameNodeType.MAIN_EVENT
+                and node.parent_node_id is None
+                and node.node_text.strip() == candidate.source_text.strip()
+            ):
+                warnings.append(
+                    _warning(
+                        code="skip_full_source_main_event_coverage_unit",
+                        message=(
+                            "A full-source main_event node for a multi-assertion item was not allowed to generate a coverage unit."
+                        ),
+                        related_item_id=candidate.item_id,
+                    )
+                )
+                continue
+            if (
+                not node.source_assertion_ids
+                and node.atomization_policy
+                != AtomizationPolicy.GENERATE_GROUP_MODIFIER_ATOM
+            ):
+                warnings.append(
+                    _warning(
+                        code="skip_unmapped_frame_node_coverage_unit",
+                        message=(
+                            "An atomizable frame node without source_assertion_ids was skipped during coverage unit generation."
+                        ),
+                        related_item_id=candidate.item_id,
+                    )
+                )
+                continue
+            if (
+                node.node_type in {
+                    FrameNodeType.TEMPORAL_CONTEXT,
+                    FrameNodeType.TRIGGER_OR_BACKGROUND_CONTEXT,
+                }
+                and not node.source_assertion_ids
+            ):
                 continue
 
             context_nodes = _context_nodes(node, nodes_by_id)
@@ -181,8 +264,15 @@ class FrameAwareCoverageUnitBuilder:
                     ),
                     clinical_object_type=node.node_type.value,
                     clinical_object_assertion_id=(
-                        assertion.object_id if assertion is not None else None
+                        assertion.object_id
+                        if assertion is not None
+                        else (
+                            node.source_assertion_ids[0]
+                            if len(node.source_assertion_ids) == 1
+                            else None
+                        )
                     ),
+                    source_assertion_ids=_dedupe(node.source_assertion_ids),
                     source_frame_node_ids=[node.frame_node_id],
                     context_frame_node_ids=[
                         context_node.frame_node_id for context_node in context_nodes
@@ -291,6 +381,15 @@ def _matching_assertion(
     node: EvidenceFrameNode,
     assertions: list[ClinicalObjectAssertion],
 ) -> ClinicalObjectAssertion | None:
+    if node.source_assertion_ids:
+        assertions_by_id = {
+            assertion.object_id: assertion
+            for assertion in assertions
+        }
+        for assertion_id in node.source_assertion_ids:
+            assertion = assertions_by_id.get(assertion_id)
+            if assertion is not None:
+                return assertion
     for assertion in assertions:
         if assertion.object_text == node.node_text:
             return assertion
@@ -298,6 +397,37 @@ def _matching_assertion(
         if assertion.object_text in node.node_text or node.node_text in assertion.object_text:
             return assertion
     return None
+
+
+def _missing_assertion_ids(
+    frame: EvidenceEventFrame,
+    assertions: list[ClinicalObjectAssertion],
+) -> set[str]:
+    valid_assertion_ids = {assertion.object_id for assertion in assertions}
+    mapped_assertion_ids = {
+        assertion_id
+        for node in frame.frame_nodes
+        for assertion_id in node.source_assertion_ids
+    }
+    return valid_assertion_ids - mapped_assertion_ids - set(frame.deferred_assertion_ids)
+
+
+def _is_degenerate_frame_for_coverage(
+    candidate: AtomizationCandidate,
+    assertions: list[ClinicalObjectAssertion],
+    frame: EvidenceEventFrame,
+) -> bool:
+    if len(assertions) < 2:
+        return False
+    atomizable_nodes = [node for node in frame.frame_nodes if node.atomizable]
+    if len(atomizable_nodes) != 1:
+        return False
+    node = atomizable_nodes[0]
+    return (
+        node.node_type == FrameNodeType.MAIN_EVENT
+        and node.parent_node_id is None
+        and node.node_text.strip() == candidate.source_text.strip()
+    )
 
 
 def _looks_cjk(text: str) -> bool:

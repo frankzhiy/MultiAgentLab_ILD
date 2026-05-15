@@ -1,0 +1,68 @@
+{
+  "accepted": true,
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "frame_context_not_reflected_in_statement",
+      "message": "EvidenceAtom statement may not reflect inherited frame context from its CoverageUnit. [coverage_unit_id=item_007__frame_unit_001]",
+      "related_item_id": "item_007",
+      "related_evidence_id": "evidence_20260515_1bfc4258",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_context_not_reflected_in_statement",
+      "message": "EvidenceAtom statement may not reflect inherited frame context from its CoverageUnit. [coverage_unit_id=item_007__frame_unit_002]",
+      "related_item_id": "item_007",
+      "related_evidence_id": "evidence_20260515_7f938872",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_context_not_reflected_in_statement",
+      "message": "EvidenceAtom statement may not reflect inherited frame context from its CoverageUnit. [coverage_unit_id=item_007__frame_unit_010]",
+      "related_item_id": "item_007",
+      "related_evidence_id": "evidence_20260515_8ecf3c12",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_context_not_reflected_in_statement",
+      "message": "EvidenceAtom statement may not reflect inherited frame context from its CoverageUnit. [coverage_unit_id=item_007__frame_unit_011]",
+      "related_item_id": "item_007",
+      "related_evidence_id": "evidence_20260515_3e014714",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_context_not_reflected_in_statement",
+      "message": "EvidenceAtom statement may not reflect inherited frame context from its CoverageUnit. [coverage_unit_id=item_007__frame_unit_012]",
+      "related_item_id": "item_007",
+      "related_evidence_id": "evidence_20260515_259a57f7",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_context_not_reflected_in_statement",
+      "message": "EvidenceAtom statement may not reflect inherited frame context from its CoverageUnit. [coverage_unit_id=item_007__frame_unit_013]",
+      "related_item_id": "item_007",
+      "related_evidence_id": "evidence_20260515_31539872",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "present_atom_has_negation_surface",
+      "message": "EvidenceAtom statement begins with a negation expression while assertion_status is present.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_7aab6972",
+      "related_span_id": null,
+      "related_attribute_id": null
+    }
+  ]
+}

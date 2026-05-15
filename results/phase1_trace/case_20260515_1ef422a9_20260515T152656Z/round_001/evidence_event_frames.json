@@ -1,0 +1,2134 @@
+{
+  "frames": [
+    {
+      "frame_id": "evidence_frame_20260515_ad997479",
+      "source_item_id": "item_001",
+      "source_text": "患者***,女,77岁",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_2753648d",
+          "source_item_id": "item_001",
+          "node_type": "uncertain_or_other",
+          "node_text": "患者***,女,77岁",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "unknown",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_839ac65a",
+            "attribute_20260515_72d3e886"
+          ],
+          "source_span_ids": [
+            "span_item_001"
+          ],
+          "context_role": "uncertain",
+          "atomizable": false,
+          "atomization_policy": "defer",
+          "confidence": "low",
+          "notes": null
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": [
+        {
+          "severity": "warning",
+          "code": "frame_builder_fallback_used",
+          "message": "No ClinicalObjectAssertions were available for a complex candidate, so the fallback frame was marked non-atomizable and deferred.",
+          "related_item_id": "item_001",
+          "related_evidence_id": null,
+          "related_span_id": null
+        }
+      ]
+    },
+    {
+      "frame_id": "evidence_frame_20260515_68c48aac",
+      "source_item_id": "item_002",
+      "source_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_2820de42",
+          "source_item_id": "item_002",
+          "node_type": "symptom_modifier",
+          "node_text": "间断咳嗽咳痰伴胸闷气短8年",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_14aaba1e",
+            "clinical_object_assertion_20260515_52890efe",
+            "clinical_object_assertion_20260515_766a4be5",
+            "clinical_object_assertion_20260515_25f0d60b"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_774509fb"
+          ],
+          "source_span_ids": [
+            "span_item_002"
+          ],
+          "context_role": "local_content",
+          "atomizable": false,
+          "atomization_policy": "do_not_generate_context_only",
+          "confidence": "high",
+          "notes": "Grouped symptoms with chronic duration of 8 years."
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_db669ef9",
+          "source_item_id": "item_002",
+          "node_type": "symptom_modifier",
+          "node_text": "加重2月",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": "evidence_frame_node_20260515_2820de42",
+          "relation_to_parent": "modifier_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_2820de42"
+          ],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_a64125bd"
+          ],
+          "source_span_ids": [
+            "span_item_002"
+          ],
+          "context_role": "modifier_context",
+          "atomizable": false,
+          "atomization_policy": "do_not_generate_context_only",
+          "confidence": "medium",
+          "notes": "Worsening interval modifier of 2 months."
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": [
+        {
+          "severity": "warning",
+          "code": "frame_orphan_modifier",
+          "message": "Symptom modifier frame node does not have a clear modifier target.",
+          "related_item_id": "item_002",
+          "related_evidence_id": null,
+          "related_span_id": null
+        },
+        {
+          "severity": "warning",
+          "code": "frame_no_atomizable_node",
+          "message": "EvidenceEventFrame contains no atomizable nodes after validation and will not generate coverage units.",
+          "related_item_id": "item_002",
+          "related_evidence_id": null,
+          "related_span_id": null
+        }
+      ]
+    },
+    {
+      "frame_id": "evidence_frame_20260515_870d3a00",
+      "source_item_id": "item_003",
+      "source_text": "一般健康状况：良好",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_5e707e0e",
+          "source_item_id": "item_003",
+          "node_type": "uncertain_or_other",
+          "node_text": "一般健康状况：良好",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_003"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "low",
+          "notes": null
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": [
+        {
+          "severity": "warning",
+          "code": "frame_builder_fallback_used",
+          "message": "No ClinicalObjectAssertions were available, so a simple single-node fallback frame was used for this candidate.",
+          "related_item_id": "item_003",
+          "related_evidence_id": null,
+          "related_span_id": null
+        }
+      ]
+    },
+    {
+      "frame_id": "evidence_frame_20260515_d7945666",
+      "source_item_id": "item_004",
+      "source_text": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_59d4759e",
+          "source_item_id": "item_004",
+          "node_type": "clinical_object",
+          "node_text": "既往高血压8年",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_18d4a4c6"
+          ],
+          "source_span_ids": [
+            "span_item_004"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_b3f68ded",
+          "source_item_id": "item_004",
+          "node_type": "treatment_event",
+          "node_text": "口服沙库巴曲缬沙坦片 2片/次 1次/日 口服",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_59d4759e"
+          ],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_2092c707",
+            "attribute_20260515_47372265",
+            "attribute_20260515_67ba6756"
+          ],
+          "source_span_ids": [
+            "span_item_004"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_73b1f314",
+          "source_item_id": "item_004",
+          "node_type": "clinical_object",
+          "node_text": "糖尿病",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "unknown",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_004"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "medium",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_724c300c",
+          "source_item_id": "item_004",
+          "node_type": "clinical_object",
+          "node_text": "冠心病病史",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "unknown",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_004"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "medium",
+          "notes": null
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_a7f045d2",
+      "source_item_id": "item_005",
+      "source_text": "40年前左下肢骨折固定术",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_b0d6c7a1",
+          "source_item_id": "item_005",
+          "node_type": "uncertain_or_other",
+          "node_text": "40年前左下肢骨折固定术",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_09941ea8"
+          ],
+          "source_span_ids": [
+            "span_item_005"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "low",
+          "notes": null
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": [
+        {
+          "severity": "warning",
+          "code": "frame_builder_fallback_used",
+          "message": "No ClinicalObjectAssertions were available, so a simple single-node fallback frame was used for this candidate.",
+          "related_item_id": "item_005",
+          "related_evidence_id": null,
+          "related_span_id": null
+        }
+      ]
+    },
+    {
+      "frame_id": "evidence_frame_20260515_c3d19655",
+      "source_item_id": "item_006",
+      "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_3a24ddc6",
+          "source_item_id": "item_006",
+          "node_type": "clinical_object",
+          "node_text": "咳嗽",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_9b3e53e7"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_390c50b0",
+          "source_item_id": "item_006",
+          "node_type": "clinical_object",
+          "node_text": "咳痰",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_12f36bad"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_b50bb754",
+          "source_item_id": "item_006",
+          "node_type": "clinical_object",
+          "node_text": "痰液为黏白色",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_0263e156"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_b615c02a",
+          "source_item_id": "item_006",
+          "node_type": "clinical_object",
+          "node_text": "量少",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_c2215fa4"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_0fca6b45",
+          "source_item_id": "item_006",
+          "node_type": "clinical_object",
+          "node_text": "易咳出",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_bbbbbf42"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_364ddc44",
+          "source_item_id": "item_006",
+          "node_type": "clinical_object",
+          "node_text": "胸闷",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_cae7de18"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_4b005a8e",
+          "source_item_id": "item_006",
+          "node_type": "clinical_object",
+          "node_text": "气短",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_0d7031e5"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_c5f81996",
+          "source_item_id": "item_006",
+          "node_type": "clinical_object",
+          "node_text": "夜间为著",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_d10e831e"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_6e287698",
+          "source_item_id": "item_006",
+          "node_type": "negative_finding",
+          "node_text": "发热",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_5957d2c1"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_fd6fbafe",
+          "source_item_id": "item_006",
+          "node_type": "negative_finding",
+          "node_text": "寒战",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_d7883f47"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_2e94c05c",
+          "source_item_id": "item_006",
+          "node_type": "negative_finding",
+          "node_text": "胸痛",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_55d1cbcb"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_a1d45411",
+          "source_item_id": "item_006",
+          "node_type": "negative_finding",
+          "node_text": "咯血",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_82505ef4"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_69f4d555",
+          "source_item_id": "item_006",
+          "node_type": "negative_finding",
+          "node_text": "午后低热",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_b76eda22"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_34c6976c",
+          "source_item_id": "item_006",
+          "node_type": "negative_finding",
+          "node_text": "乏力",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_c963fd4c"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_7c4783bb",
+          "source_item_id": "item_006",
+          "node_type": "negative_finding",
+          "node_text": "盗汗",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_7bdb34cc"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_2a6abbe0",
+          "source_item_id": "item_006",
+          "node_type": "negative_finding",
+          "node_text": "恶心",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_29f9e734"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_c54729f3",
+          "source_item_id": "item_006",
+          "node_type": "negative_finding",
+          "node_text": "呕吐",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_e5cb1377"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_7d4bfd56",
+          "source_item_id": "item_006",
+          "node_type": "management_event",
+          "node_text": "未予重视及诊疗",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_ffa812f2"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_44d93664",
+            "attribute_20260515_da58c084",
+            "attribute_20260515_24fd0d0d",
+            "attribute_20260515_1d45bad2"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "low",
+          "notes": null
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": [
+        {
+          "severity": "warning",
+          "code": "frame_builder_fallback_used",
+          "message": "A conservative assertion-grounded EvidenceEventFrame fallback was used after draft validation failed. Each ClinicalObjectAssertion was preserved as its own frame node or context node.",
+          "related_item_id": "item_006",
+          "related_evidence_id": null,
+          "related_span_id": null
+        },
+        {
+          "severity": "warning",
+          "code": "frame_builder_fallback_mapping_warning",
+          "message": "A finding assertion was conservatively mapped to a clinical_object node because no safe parent relation was available in fallback mode.",
+          "related_item_id": "item_006",
+          "related_evidence_id": null,
+          "related_span_id": null
+        },
+        {
+          "severity": "warning",
+          "code": "frame_builder_fallback_mapping_warning",
+          "message": "A finding assertion was conservatively mapped to a clinical_object node because no safe parent relation was available in fallback mode.",
+          "related_item_id": "item_006",
+          "related_evidence_id": null,
+          "related_span_id": null
+        }
+      ]
+    },
+    {
+      "frame_id": "evidence_frame_20260515_3fb80d5a",
+      "source_item_id": "item_007",
+      "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_a03f7c02",
+          "source_item_id": "item_007",
+          "node_type": "temporal_context",
+          "node_text": "1年前",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_c0fafd5e"
+          ],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": false,
+          "atomization_policy": "do_not_generate_context_only",
+          "confidence": "medium",
+          "notes": "Onset time for symptom recurrence"
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_3b5e2d22",
+          "source_item_id": "item_007",
+          "node_type": "main_event",
+          "node_text": "1年前新冠病毒感染后再次出现咳嗽咳痰",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_a03f7c02",
+          "relation_to_parent": "temporal_context_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_a03f7c02"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_6d7072e3",
+            "clinical_object_assertion_20260515_414b3672"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": false,
+          "atomization_policy": "do_not_generate_context_only",
+          "confidence": "high",
+          "notes": "Symptom recurrence event after COVID-19 infection 1 year ago"
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_0fc86762",
+          "source_item_id": "item_007",
+          "node_type": "clinical_object",
+          "node_text": "咳嗽",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_3b5e2d22",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_a03f7c02",
+            "evidence_frame_node_20260515_3b5e2d22"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_6d7072e3"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_e2f5bfad",
+          "source_item_id": "item_007",
+          "node_type": "clinical_object",
+          "node_text": "咳痰",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_3b5e2d22",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_a03f7c02",
+            "evidence_frame_node_20260515_3b5e2d22"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_414b3672"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_38b95679",
+          "source_item_id": "item_007",
+          "node_type": "object_property",
+          "node_text": "痰液为黏白色",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_e2f5bfad",
+          "relation_to_parent": "property_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_a03f7c02",
+            "evidence_frame_node_20260515_3b5e2d22",
+            "evidence_frame_node_20260515_e2f5bfad"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_1971c8f9"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_e8f436b0"
+          ],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "modifier_context",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_d4a224eb",
+          "source_item_id": "item_007",
+          "node_type": "object_property",
+          "node_text": "量少",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_e2f5bfad",
+          "relation_to_parent": "property_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_a03f7c02",
+            "evidence_frame_node_20260515_3b5e2d22",
+            "evidence_frame_node_20260515_e2f5bfad"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_56da972e"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_e3247cfe"
+          ],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "modifier_context",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_cc62e55e",
+          "source_item_id": "item_007",
+          "node_type": "object_property",
+          "node_text": "易咳出",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_e2f5bfad",
+          "relation_to_parent": "property_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_a03f7c02",
+            "evidence_frame_node_20260515_3b5e2d22",
+            "evidence_frame_node_20260515_e2f5bfad"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_c9fa265f"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "modifier_context",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_5454b206",
+          "source_item_id": "item_007",
+          "node_type": "clinical_object",
+          "node_text": "胸闷",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_3b5e2d22",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_a03f7c02",
+            "evidence_frame_node_20260515_3b5e2d22"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_b583d1c9"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_c0811201",
+          "source_item_id": "item_007",
+          "node_type": "clinical_object",
+          "node_text": "气短",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_3b5e2d22",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_a03f7c02",
+            "evidence_frame_node_20260515_3b5e2d22"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_d8ece1c3"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_5ecc03dc",
+          "source_item_id": "item_007",
+          "node_type": "symptom_modifier",
+          "node_text": "活动后明显",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_5454b206",
+          "relation_to_parent": "modifier_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_a03f7c02",
+            "evidence_frame_node_20260515_3b5e2d22",
+            "evidence_frame_node_20260515_5454b206"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_02d22bf6"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_bb986cf0"
+          ],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "modifier_context",
+          "atomizable": true,
+          "atomization_policy": "generate_group_modifier_atom",
+          "confidence": "high",
+          "notes": "Indicates symptom severity or exacerbation after activity"
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_0ed8cda0",
+          "source_item_id": "item_007",
+          "node_type": "treatment_event",
+          "node_text": "于当地诊所输液1周余（具体不详）",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_c232d48f"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_028ee26d"
+          ],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "medium",
+          "notes": "Treatment duration approximate, details unspecified"
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_d52b1c0d",
+          "source_item_id": "item_007",
+          "node_type": "main_event",
+          "node_text": "感咳嗽咳痰、胸闷气短有所改善",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_0ed8cda0",
+          "relation_to_parent": "response_after",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_0ed8cda0"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_55d36ac8",
+            "clinical_object_assertion_20260515_dad45d08",
+            "clinical_object_assertion_20260515_6765f58e",
+            "clinical_object_assertion_20260515_1cd4b196"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": false,
+          "atomization_policy": "do_not_generate_context_only",
+          "confidence": "high",
+          "notes": "Symptom improvement after treatment"
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_2d22ded4",
+          "source_item_id": "item_007",
+          "node_type": "clinical_object",
+          "node_text": "咳嗽",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_d52b1c0d",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_0ed8cda0",
+            "evidence_frame_node_20260515_d52b1c0d"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_55d36ac8"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": "Improved symptom after treatment"
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_c33097c8",
+          "source_item_id": "item_007",
+          "node_type": "clinical_object",
+          "node_text": "咳痰",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_d52b1c0d",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_0ed8cda0",
+            "evidence_frame_node_20260515_d52b1c0d"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_dad45d08"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": "Improved symptom after treatment"
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_f62b9705",
+          "source_item_id": "item_007",
+          "node_type": "clinical_object",
+          "node_text": "胸闷",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_d52b1c0d",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_0ed8cda0",
+            "evidence_frame_node_20260515_d52b1c0d"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_6765f58e"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": "Improved symptom after treatment"
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_a9460a58",
+          "source_item_id": "item_007",
+          "node_type": "clinical_object",
+          "node_text": "气短",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": "evidence_frame_node_20260515_d52b1c0d",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_0ed8cda0",
+            "evidence_frame_node_20260515_d52b1c0d"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_1cd4b196"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": "Improved symptom after treatment"
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_68e7800e",
+      "source_item_id": "item_008",
+      "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适，遂就诊于当地医院",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_3a21767e",
+          "source_item_id": "item_008",
+          "node_type": "main_event",
+          "node_text": "2月前无明显诱因再次出现咳嗽咳痰",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_e4db62b0",
+            "clinical_object_assertion_20260515_826a5935"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_ceb30487"
+          ],
+          "source_span_ids": [
+            "span_item_008"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": "Symptom onset 2 months ago without obvious cause, symptoms present."
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_ba1ca8d8",
+          "source_item_id": "item_008",
+          "node_type": "clinical_object",
+          "node_text": "胸闷",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_3a21767e",
+          "relation_to_parent": "associated_with",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_3a21767e"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_c8dfbc2b"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_008"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": "Symptom accompanies cough and sputum."
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_7632404f",
+          "source_item_id": "item_008",
+          "node_type": "clinical_object",
+          "node_text": "气短",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_3a21767e",
+          "relation_to_parent": "associated_with",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_3a21767e"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_c6e775a8"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_008"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": "Symptom accompanies cough and sputum."
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_4096451c",
+          "source_item_id": "item_008",
+          "node_type": "negative_finding",
+          "node_text": "无发热寒战",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_69f21dc7",
+            "clinical_object_assertion_20260515_2a84ed69"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_b8458eba"
+          ],
+          "source_span_ids": [
+            "span_item_008"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": "Negation cue '无' applies locally to fever and chills."
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_85de0e9a",
+          "source_item_id": "item_008",
+          "node_type": "negative_finding",
+          "node_text": "无胸痛咯血",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_aab360b4",
+            "clinical_object_assertion_20260515_174bdc63"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_2243123c"
+          ],
+          "source_span_ids": [
+            "span_item_008"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": "Negation cue '无' applies locally to chest pain and hemoptysis."
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_011e3059",
+          "source_item_id": "item_008",
+          "node_type": "negative_finding",
+          "node_text": "无恶心呕吐等不适",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_1544fdb3",
+            "clinical_object_assertion_20260515_0fd4935d"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_76a73321"
+          ],
+          "source_span_ids": [
+            "span_item_008"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": "Negation cue '无' applies locally to nausea, vomiting, and other discomforts."
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_9c420e83",
+          "source_item_id": "item_008",
+          "node_type": "management_event",
+          "node_text": "遂就诊于当地医院",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_5aefb72e"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_008"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": "Patient sought care at local hospital."
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_b99d5051",
+      "source_item_id": "item_009",
+      "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_3bd2b85b",
+          "source_item_id": "item_009",
+          "node_type": "temporal_context",
+          "node_text": "2024年6月11日胸部CT示",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_3f47b10f"
+          ],
+          "source_span_ids": [
+            "span_item_009"
+          ],
+          "context_role": "local_content",
+          "atomizable": false,
+          "atomization_policy": "do_not_generate_context_only",
+          "confidence": "medium",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_2494c197",
+          "source_item_id": "item_009",
+          "node_type": "clinical_object",
+          "node_text": "双肺间质增粗纹理走形杂乱",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_3bd2b85b",
+          "relation_to_parent": "temporal_context_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_3bd2b85b"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_d5aec0f8"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_e8c82932"
+          ],
+          "source_span_ids": [
+            "span_item_009"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_db888672",
+          "source_item_id": "item_009",
+          "node_type": "clinical_object",
+          "node_text": "肺野密度增高",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_3bd2b85b",
+          "relation_to_parent": "temporal_context_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_3bd2b85b"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_5fe45635"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_48c7f591"
+          ],
+          "source_span_ids": [
+            "span_item_009"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_8083cb81",
+          "source_item_id": "item_009",
+          "node_type": "clinical_object",
+          "node_text": "右肺中叶、下叶、左肺舌段条片状实性高密度影",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_3bd2b85b",
+          "relation_to_parent": "temporal_context_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_3bd2b85b"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_7adf509b"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_dd5cd253"
+          ],
+          "source_span_ids": [
+            "span_item_009"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": "Part of coordinated objects"
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_a24a3e26",
+          "source_item_id": "item_009",
+          "node_type": "object_property",
+          "node_text": "右肺中叶、下叶病灶边缘模糊",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_8083cb81",
+          "relation_to_parent": "property_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_3bd2b85b"
+          ],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_e71af2f0"
+          ],
+          "source_attribute_ids": [
+            "attribute_20260515_d9049680"
+          ],
+          "source_span_ids": [
+            "span_item_009"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_5050bd14",
+      "source_item_id": "item_010",
+      "source_text": "考虑为“肺部感染”",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_446ea985",
+          "source_item_id": "item_010",
+          "node_type": "clinical_object",
+          "node_text": "肺部感染",
+          "assertion_status": "present",
+          "certainty": "possible",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_84bdeb49"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_010"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": "The phrase '考虑为' indicates a possible diagnosis, not confirmed; negation present refers to uncertainty, not absence."
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_34d48404",
+      "source_item_id": "item_011",
+      "source_text": "治疗上给予抗感染（具体不详）治疗后，胸闷气短症状改善不明显",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_cf2a558a",
+          "source_item_id": "item_011",
+          "node_type": "treatment_event",
+          "node_text": "治疗上给予抗感染（具体不详）治疗后",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_011"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "medium",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_deefcf85",
+          "source_item_id": "item_011",
+          "node_type": "clinical_object",
+          "node_text": "胸闷气短症状",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_e332588c",
+          "relation_to_parent": "property_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_cf2a558a"
+          ],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_011"
+          ],
+          "context_role": "local_content",
+          "atomizable": false,
+          "atomization_policy": "do_not_generate_context_only",
+          "confidence": "medium",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_e332588c",
+          "source_item_id": "item_011",
+          "node_type": "treatment_response",
+          "node_text": "改善不明显",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_cf2a558a",
+          "relation_to_parent": "response_after",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_cf2a558a"
+          ],
+          "source_assertion_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_011"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "medium",
+          "notes": null
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_70caa2fa",
+      "source_item_id": "item_012",
+      "source_text": "请我科医师会诊后，以“间质性肺炎，肺部感染”收住我科",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_195aaf43",
+          "source_item_id": "item_012",
+          "node_type": "clinical_object",
+          "node_text": "间质性肺炎",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_5f77ab57"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_012"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_c78265ab",
+          "source_item_id": "item_012",
+          "node_type": "clinical_object",
+          "node_text": "肺部感染",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_5ce11770"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_012"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": null
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_35624c0f",
+      "source_item_id": "item_013",
+      "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_001bfae2",
+          "source_item_id": "item_013",
+          "node_type": "clinical_object",
+          "node_text": "神志清",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_0af2898e"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_013"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_dea497ea",
+          "source_item_id": "item_013",
+          "node_type": "clinical_object",
+          "node_text": "精神可",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_4119e21e"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_013"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_ca1fd9c1",
+          "source_item_id": "item_013",
+          "node_type": "clinical_object",
+          "node_text": "饮食睡眠、大小便正常",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_d63a471e"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_013"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_8b14e8c4",
+          "source_item_id": "item_013",
+          "node_type": "negative_finding",
+          "node_text": "体重无明显变化",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_assertion_ids": [
+            "clinical_object_assertion_20260515_9746b5c6"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_013"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom",
+          "confidence": "high",
+          "notes": "No significant weight change indicates absence of weight loss or gain"
+        }
+      ],
+      "deferred_assertion_ids": [],
+      "frame_warnings": []
+    }
+  ],
+  "warnings": [
+    {
+      "severity": "warning",
+      "code": "frame_no_atomizable_node",
+      "message": "EvidenceEventFrame contains no atomizable nodes after validation and will not generate coverage units.",
+      "related_item_id": "item_001",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_used",
+      "message": "No ClinicalObjectAssertions were available for a complex candidate, so the fallback frame was marked non-atomizable and deferred.",
+      "related_item_id": "item_001",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_orphan_modifier",
+      "message": "Symptom modifier frame node does not have a clear modifier target.",
+      "related_item_id": "item_002",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_no_atomizable_node",
+      "message": "EvidenceEventFrame contains no atomizable nodes after validation and will not generate coverage units.",
+      "related_item_id": "item_002",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_no_atomizable_node",
+      "message": "EvidenceEventFrame contains no atomizable nodes after validation and will not generate coverage units.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_used",
+      "message": "No ClinicalObjectAssertions were available, so a simple single-node fallback frame was used for this candidate.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_no_atomizable_node",
+      "message": "EvidenceEventFrame contains no atomizable nodes after validation and will not generate coverage units.",
+      "related_item_id": "item_005",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_used",
+      "message": "No ClinicalObjectAssertions were available, so a simple single-node fallback frame was used for this candidate.",
+      "related_item_id": "item_005",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_coverage_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=16 total=18 missing=['clinical_object_assertion_20260515_7bdb34cc', 'clinical_object_assertion_20260515_c963fd4c']",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "deferred_assertion_without_reason",
+      "message": "A deferred assertion did not have a corresponding frame warning explaining the deferral. assertion_id=clinical_object_assertion_20260515_7bdb34cc",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "deferred_assertion_without_reason",
+      "message": "A deferred assertion did not have a corresponding frame warning explaining the deferral. assertion_id=clinical_object_assertion_20260515_c963fd4c",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_coverage_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=13 total=18 missing=['clinical_object_assertion_20260515_82505ef4', 'clinical_object_assertion_20260515_d7883f47', 'clinical_object_assertion_20260515_e5cb1377']",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_used",
+      "message": "A conservative assertion-grounded EvidenceEventFrame fallback was used after draft validation failed. Each ClinicalObjectAssertion was preserved as its own frame node or context node.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_mapping_warning",
+      "message": "A finding assertion was conservatively mapped to a clinical_object node because no safe parent relation was available in fallback mode.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_mapping_warning",
+      "message": "A finding assertion was conservatively mapped to a clinical_object node because no safe parent relation was available in fallback mode.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_invalid_node",
+      "message": "Frame node failed schema validation and was discarded.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_invalid_node",
+      "message": "Frame node failed schema validation and was discarded.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_invalid_node",
+      "message": "Frame node failed schema validation and was discarded.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_invalid_node",
+      "message": "Frame node failed schema validation and was discarded.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_coverage_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=4 total=11 missing=['clinical_object_assertion_20260515_0fd4935d', 'clinical_object_assertion_20260515_1544fdb3', 'clinical_object_assertion_20260515_174bdc63', 'clinical_object_assertion_20260515_2a84ed69', 'clinical_object_assertion_20260515_5aefb72e', 'clinical_object_assertion_20260515_69f21dc7', 'clinical_object_assertion_20260515_aab360b4']",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    }
+  ]
+}

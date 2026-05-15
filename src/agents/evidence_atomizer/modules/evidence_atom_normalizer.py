@@ -164,6 +164,26 @@ class EvidenceAtomNormalizer:
                 )
                 continue
 
+            coverage_units = context.coverage_units_for_draft(draft)
+            if _has_degenerate_coverage_unit(coverage_units, source_item_ids, context):
+                warnings.append(
+                    _warning(
+                        code="degenerate_coverage_unit_rejected",
+                        message=(
+                            "Evidence atom draft referenced a degenerate full-source coverage unit and was deferred."
+                        ),
+                        related_item_id=source_item_ids[0],
+                    )
+                )
+                deferred_items.extend(
+                    context.defer_items(
+                        source_item_ids,
+                        DeferredReason.TOO_AMBIGUOUS,
+                        "Coverage unit was degenerate and could not safely generate an evidence atom.",
+                    )
+                )
+                continue
+
             if len(source_contexts) > 1:
                 warnings.append(
                     _warning(
@@ -396,6 +416,16 @@ class EvidenceAtomNormalizer:
                 *_list_text(draft.get("parent_frame_node_ids")),
             ]
         )
+        source_assertion_ids = _dedupe_strings(
+            [
+                *[
+                    assertion_id
+                    for unit in coverage_units
+                    for assertion_id in unit.source_assertion_ids
+                ],
+                *_list_text(draft.get("source_assertion_ids")),
+            ]
+        )
         atom_context_text = _first_text(draft, ("atom_context_text",))
         local_content_text = _first_text(draft, ("local_content_text",))
         if coverage_units:
@@ -460,6 +490,7 @@ class EvidenceAtomNormalizer:
             "source_item_ids": source_item_ids,
             "source_attribute_ids": source_attribute_ids,
             "source_span_ids": source_span_ids,
+            "source_assertion_ids": source_assertion_ids,
             "source_contexts": source_contexts,
             "source_frame_node_ids": frame_source_node_ids,
             "context_frame_node_ids": frame_context_node_ids,
@@ -896,6 +927,27 @@ class _NormalizationContext:
             except (TypeError, ValueError, ValidationError):
                 continue
         return deferred_items
+
+
+def _has_degenerate_coverage_unit(
+    coverage_units: list[CoverageUnit],
+    source_item_ids: list[str],
+    context: "_NormalizationContext",
+) -> bool:
+    if len(coverage_units) != 1:
+        return False
+    if len(source_item_ids) != 1:
+        return False
+    coverage_unit = coverage_units[0]
+    candidate = context.candidates_by_item_id.get(source_item_ids[0])
+    if candidate is None:
+        return False
+    return (
+        not coverage_unit.source_assertion_ids
+        and coverage_unit.parent_frame_node_id is None
+        and coverage_unit.local_content_text == candidate.source_text
+        and coverage_unit.surface_text == candidate.source_text
+    )
 
 
 def _array(payload: dict[str, Any], key: str) -> list[Any]:

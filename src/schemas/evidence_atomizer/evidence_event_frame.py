@@ -99,6 +99,14 @@ class EvidenceFrameNode(BaseModel):
 
     inherited_context_node_ids: list[str] = Field(default_factory=list)
 
+    source_assertion_ids: list[str] = Field(
+        default_factory=list,
+        description=(
+            "ClinicalObjectAssertion ids that this frame node represents or is grounded in. "
+            "Every ClinicalObjectAssertion for the candidate must be mapped to at least one "
+            "EvidenceFrameNode.source_assertion_ids unless explicitly deferred by the frame."
+        ),
+    )
     source_attribute_ids: list[str] = Field(default_factory=list)
     source_span_ids: list[SpanID] = Field(default_factory=list)
 
@@ -118,6 +126,17 @@ class EvidenceFrameNode(BaseModel):
     @classmethod
     def optional_text_must_not_be_blank(cls, value: str | None) -> str | None:
         return normalize_optional_text(value)
+
+    @field_validator("source_assertion_ids", mode="after")
+    @classmethod
+    def normalize_source_assertion_ids(cls, value: list[str]) -> list[str]:
+        cleaned: list[str] = []
+        for assertion_id in value:
+            normalized = normalize_optional_text(assertion_id)
+            if normalized is None or normalized in cleaned:
+                continue
+            cleaned.append(normalized)
+        return cleaned
 
     @model_validator(mode="after")
     def validate_parent_relation_consistency(self) -> "EvidenceFrameNode":
@@ -150,12 +169,30 @@ class EvidenceEventFrame(BaseModel):
     source_text: str
 
     frame_nodes: list[EvidenceFrameNode] = Field(default_factory=list)
+    deferred_assertion_ids: list[str] = Field(
+        default_factory=list,
+        description=(
+            "ClinicalObjectAssertion ids that were not converted into frame nodes. "
+            "Each deferred assertion must have a corresponding frame warning explaining why."
+        ),
+    )
     frame_warnings: list[AtomizationWarning] = Field(default_factory=list)
 
     @field_validator("frame_id", "source_item_id", "source_text", mode="after")
     @classmethod
     def required_text_must_not_be_blank(cls, value: str) -> str:
         return require_non_empty_text(value, "Required text fields")
+
+    @field_validator("deferred_assertion_ids", mode="after")
+    @classmethod
+    def normalize_deferred_assertion_ids(cls, value: list[str]) -> list[str]:
+        cleaned: list[str] = []
+        for assertion_id in value:
+            normalized = normalize_optional_text(assertion_id)
+            if normalized is None or normalized in cleaned:
+                continue
+            cleaned.append(normalized)
+        return cleaned
 
     @model_validator(mode="after")
     def validate_frame_integrity(self) -> "EvidenceEventFrame":
@@ -180,11 +217,6 @@ class EvidenceEventFrame(BaseModel):
                 raise ValueError(
                     "inherited_context_node_ids must reference existing nodes."
                 )
-
-        if self.frame_nodes and not any(node.atomizable for node in self.frame_nodes):
-            raise ValueError(
-                "EvidenceEventFrame must contain at least one atomizable node."
-            )
 
         validate_no_forbidden_schema_fields(
             model_name=type(self).__name__,

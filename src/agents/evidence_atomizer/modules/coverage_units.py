@@ -31,6 +31,7 @@ class CoverageUnit(BaseModel):
     assertion_scope_text: str | None = None
     clinical_object_type: str | None = None
     clinical_object_assertion_id: str | None = None
+    source_assertion_ids: list[str] = Field(default_factory=list)
     source_frame_node_ids: list[str] = Field(default_factory=list)
     context_frame_node_ids: list[str] = Field(default_factory=list)
     parent_frame_node_id: str | None = None

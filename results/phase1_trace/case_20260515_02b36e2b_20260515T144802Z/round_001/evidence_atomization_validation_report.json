@@ -1,0 +1,158 @@
+{
+  "accepted": false,
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "structured_item_not_accounted_for",
+      "message": "StructuredClinicalItem is not referenced by any evidence atom, item-evidence link, or deferred item.",
+      "related_item_id": "item_001",
+      "related_evidence_id": null,
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "structured_item_not_accounted_for",
+      "message": "StructuredClinicalItem is not referenced by any evidence atom, item-evidence link, or deferred item.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "structured_item_not_accounted_for",
+      "message": "StructuredClinicalItem is not referenced by any evidence atom, item-evidence link, or deferred item.",
+      "related_item_id": "item_004",
+      "related_evidence_id": null,
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "structured_item_not_accounted_for",
+      "message": "StructuredClinicalItem is not referenced by any evidence atom, item-evidence link, or deferred item.",
+      "related_item_id": "item_005",
+      "related_evidence_id": null,
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "structured_item_not_accounted_for",
+      "message": "StructuredClinicalItem is not referenced by any evidence atom, item-evidence link, or deferred item.",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "error",
+      "code": "coverage_unit_not_covered",
+      "message": "Required CoverageUnit must be referenced by at least one EvidenceAtom. [coverage_unit_id=item_002__frame_unit_002]",
+      "related_item_id": "item_002",
+      "related_evidence_id": null,
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "error",
+      "code": "coverage_unit_not_covered",
+      "message": "Required CoverageUnit must be referenced by at least one EvidenceAtom. [coverage_unit_id=item_002__frame_unit_003]",
+      "related_item_id": "item_002",
+      "related_evidence_id": null,
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "error",
+      "code": "coverage_unit_not_covered",
+      "message": "Required CoverageUnit must be referenced by at least one EvidenceAtom. [coverage_unit_id=item_002__frame_unit_004]",
+      "related_item_id": "item_002",
+      "related_evidence_id": null,
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "absent_atom_has_positive_surface",
+      "message": "EvidenceAtom statement contains a positive cue while assertion_status is absent.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_6b24c29c",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "absent_atom_has_positive_surface",
+      "message": "EvidenceAtom statement contains a positive cue while assertion_status is absent.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_0f2bdeb1",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "absent_atom_has_positive_surface",
+      "message": "EvidenceAtom statement contains a positive cue while assertion_status is absent.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_05203802",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "absent_atom_has_positive_surface",
+      "message": "EvidenceAtom statement contains a positive cue while assertion_status is absent.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_85a30613",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "absent_atom_has_positive_surface",
+      "message": "EvidenceAtom statement contains a positive cue while assertion_status is absent.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_b2642f6f",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "absent_atom_has_positive_surface",
+      "message": "EvidenceAtom statement contains a positive cue while assertion_status is absent.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_8e96c3f1",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "absent_atom_has_positive_surface",
+      "message": "EvidenceAtom statement contains a positive cue while assertion_status is absent.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_1f3e1536",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "absent_atom_has_positive_surface",
+      "message": "EvidenceAtom statement contains a positive cue while assertion_status is absent.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_783a22a6",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "absent_atom_has_positive_surface",
+      "message": "EvidenceAtom statement contains a positive cue while assertion_status is absent.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_916acb6b",
+      "related_span_id": null,
+      "related_attribute_id": null
+    }
+  ]
+}

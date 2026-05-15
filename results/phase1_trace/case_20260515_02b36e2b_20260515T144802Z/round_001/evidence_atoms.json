@@ -1,0 +1,1679 @@
+[
+  {
+    "evidence_id": "evidence_20260515_1d1e364c",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "normalized_label": "间断咳嗽",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_002"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_54dea621",
+      "attribute_20260515_608b40c4"
+    ],
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_aac1f548"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_002",
+        "section_type": "chief_complaint",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_fd952aa5"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_2d1b256e"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_2d1b256e"
+    ],
+    "atom_context_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "local_content_text": "间断咳嗽",
+    "source_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_8d67ca7b",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出",
+    "normalized_label": "痰液为黏白色，量少，易咳出",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_ad87e3ec"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_ba132417"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "痰液为黏白色，量少，易咳出",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_fb9de71b",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，胸闷",
+    "normalized_label": "胸闷",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_3c9447e2"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_64932bef"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "胸闷",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_9dbc9fa7",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，气短",
+    "normalized_label": "气短",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_9fc3aaba"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_189e2c06"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "气短",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_9188f109",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "compound",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰胸闷，夜间为著",
+    "normalized_label": "夜间为著",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_7f10431b"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_6deeb97f"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b",
+      "evidence_frame_node_20260515_64932bef"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_64932bef"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰胸闷",
+    "local_content_text": "夜间为著",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_6b24c29c",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，发热",
+    "normalized_label": "发热",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_ab6270e3"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_9a575935"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "发热",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_0f2bdeb1",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，寒战",
+    "normalized_label": "寒战",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_f35aba02"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_5e7dbd3c"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "寒战",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_05203802",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，胸痛",
+    "normalized_label": "胸痛",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_65f6c221"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_bff36013"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "胸痛",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_85a30613",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，咯血",
+    "normalized_label": "咯血",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_e015a8a7"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_951eae98"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "咯血",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_b2642f6f",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，午后低热",
+    "normalized_label": "午后低热",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_f573965c"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_051ee7c9"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "午后低热",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_8e96c3f1",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，乏力",
+    "normalized_label": "乏力",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_4fe0aba2"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_0577d0e2"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "乏力",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_1f3e1536",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，盗汗",
+    "normalized_label": "盗汗",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_75e495f3"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_9e51d032"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "盗汗",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_783a22a6",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，恶心",
+    "normalized_label": "恶心",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_a97f1689"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_9b3e3ba6"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "恶心",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_916acb6b",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，呕吐",
+    "normalized_label": "呕吐",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_4faf9002"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_753869d6"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "呕吐",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_1af0944b",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "other",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "8年前患者于8年前无明显诱因出现咳嗽咳痰，未予重视及诊疗",
+    "normalized_label": "未予重视及诊疗",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c805e07e"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_96256ea4"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_5fee9d7c"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_53549a06",
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_45d0931b"
+    ],
+    "atom_context_text": "8年前患者于8年前无明显诱因出现咳嗽咳痰",
+    "local_content_text": "未予重视及诊疗",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_9a877fab",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "1年前再次出现咳嗽咳痰，痰液为黏白色",
+    "normalized_label": "痰液为黏白色",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_28e99288"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_f00f9644"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_b72613d9"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_51fd87ea",
+      "evidence_frame_node_20260515_b43c041c"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_b43c041c"
+    ],
+    "atom_context_text": "1年前再次出现咳嗽咳痰",
+    "local_content_text": "痰液为黏白色",
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_ab76d6c7",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "1年前再次出现咳嗽咳痰，量少",
+    "normalized_label": "量少",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_28e99288"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_dbd504b8"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_aeac6c32"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_51fd87ea",
+      "evidence_frame_node_20260515_b43c041c"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_b43c041c"
+    ],
+    "atom_context_text": "1年前再次出现咳嗽咳痰",
+    "local_content_text": "量少",
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_78f5d1a3",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "1年前再次出现咳嗽咳痰，易咳出",
+    "normalized_label": "易咳出",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_28e99288"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_9971f2e8"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_52ab96fc"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_51fd87ea",
+      "evidence_frame_node_20260515_b43c041c"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_b43c041c"
+    ],
+    "atom_context_text": "1年前再次出现咳嗽咳痰",
+    "local_content_text": "易咳出",
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_ff88e1b3",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "1年前再次出现咳嗽咳痰，胸闷气短",
+    "normalized_label": "胸闷气短",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_28e99288"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_e0324454",
+      "clinical_object_assertion_20260515_234e50c8"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_a4a07d79"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_51fd87ea",
+      "evidence_frame_node_20260515_b43c041c"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_b43c041c"
+    ],
+    "atom_context_text": "1年前再次出现咳嗽咳痰",
+    "local_content_text": "胸闷气短",
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_dce4839f",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "1年前再次出现咳嗽咳痰胸闷气短，活动后明显",
+    "normalized_label": "活动后明显",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_28e99288"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_01cc76d8"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_adc45390"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_51fd87ea",
+      "evidence_frame_node_20260515_b43c041c",
+      "evidence_frame_node_20260515_a4a07d79"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_a4a07d79"
+    ],
+    "atom_context_text": "1年前再次出现咳嗽咳痰胸闷气短",
+    "local_content_text": "活动后明显",
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_b183a78d",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "treatment",
+    "clinical_domain": "treatment",
+    "granularity": "atomic",
+    "statement": "1年前，于当地诊所输液1周余（具体不详）",
+    "normalized_label": "于当地诊所输液1周余（具体不详）",
+    "assertion_status": "present",
+    "certainty": "uncertain",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_17d18ce5",
+      "attribute_20260515_28e99288"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_5e981f3e"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_fc40269a"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_51fd87ea"
+    ],
+    "parent_frame_node_ids": [],
+    "atom_context_text": "1年前",
+    "local_content_text": "于当地诊所输液1周余（具体不详）",
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_1398545c",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "treatment_response",
+    "clinical_domain": "treatment",
+    "granularity": "atomic",
+    "statement": "于当地诊所输液1周余（具体不详）1年前，咳嗽咳痰、胸闷气短有所改善",
+    "normalized_label": "咳嗽咳痰、胸闷气短有所改善",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_17d18ce5",
+      "attribute_20260515_28e99288"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_b07dc424"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_b3d0e230"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_fc40269a",
+      "evidence_frame_node_20260515_51fd87ea"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_fc40269a"
+    ],
+    "atom_context_text": "于当地诊所输液1周余（具体不详）1年前",
+    "local_content_text": "咳嗽咳痰、胸闷气短有所改善",
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_3aeaf159",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无明显诱因再次出现咳嗽咳痰",
+    "normalized_label": "2月前无明显诱因再次出现咳嗽咳痰",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_5dbb4227"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_0df4c9d5",
+      "clinical_object_assertion_20260515_a762ce27"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_42e2a8df"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "2月前无明显诱因再次出现咳嗽咳痰",
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_ab012d49",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无明显诱因再次出现咳嗽咳痰，胸闷",
+    "normalized_label": "胸闷",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_5dbb4227"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_5ff446b3"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_b0fb64cb"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_42e2a8df"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_42e2a8df"
+    ],
+    "atom_context_text": "2月前无明显诱因再次出现咳嗽咳痰",
+    "local_content_text": "胸闷",
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_2f0c2c0a",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无明显诱因再次出现咳嗽咳痰，气短",
+    "normalized_label": "气短",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_5dbb4227"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_926a1fee"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_3bc34217"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_42e2a8df"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_42e2a8df"
+    ],
+    "atom_context_text": "2月前无明显诱因再次出现咳嗽咳痰",
+    "local_content_text": "气短",
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_b2e77ce4",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "2024年6月11日胸部CT示，双肺间质增粗纹理走形杂乱",
+    "normalized_label": "双肺间质增粗纹理走形杂乱",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_afe967e3",
+      "attribute_20260515_b430becd"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_d6e10845"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_23738a0c"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_a4aba859"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_a4aba859"
+    ],
+    "atom_context_text": "2024年6月11日胸部CT示",
+    "local_content_text": "双肺间质增粗纹理走形杂乱",
+    "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_c545ac0e",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "2024年6月11日胸部CT示，肺野密度增高",
+    "normalized_label": "肺野密度增高",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_9b3110bc",
+      "attribute_20260515_b430becd"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_9b75d2b1"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_bb68df03"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_a4aba859"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_a4aba859"
+    ],
+    "atom_context_text": "2024年6月11日胸部CT示",
+    "local_content_text": "肺野密度增高",
+    "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_8cd44b6e",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "2024年6月11日胸部CT示，右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "normalized_label": "右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_79480106",
+      "attribute_20260515_b430becd"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_d75cbe10"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_6328f8a4"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_a4aba859"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_a4aba859"
+    ],
+    "atom_context_text": "2024年6月11日胸部CT示",
+    "local_content_text": "右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_a7f034e9",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "2024年6月11日胸部CT示右肺中叶、下叶、左肺舌段条片状实性高密度影，右肺中叶、下叶病灶边缘模糊",
+    "normalized_label": "右肺中叶、下叶病灶边缘模糊",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_23c26ccb",
+      "attribute_20260515_b430becd",
+      "attribute_20260515_79480106"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_e4a9b2e7"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_9828faaf"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_a4aba859",
+      "evidence_frame_node_20260515_6328f8a4"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_6328f8a4"
+    ],
+    "atom_context_text": "2024年6月11日胸部CT示右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "local_content_text": "右肺中叶、下叶病灶边缘模糊",
+    "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_3df040a7",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "diagnosis_history",
+    "clinical_domain": "infectious_disease",
+    "granularity": "atomic",
+    "statement": "肺部感染",
+    "normalized_label": "肺部感染",
+    "assertion_status": "present",
+    "certainty": "possible",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_010"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_c6f1b430"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_6fccf711"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "肺部感染",
+    "source_text": "考虑为“肺部感染”",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_bcba1d00",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "diagnosis_history",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "间质性肺炎",
+    "normalized_label": "间质性肺炎",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_012"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_8b8bc0aa"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_0773087c"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "间质性肺炎",
+    "source_text": "以“间质性肺炎，肺部感染”收住我科",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_e44e593b",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "diagnosis_history",
+    "clinical_domain": "infectious_disease",
+    "granularity": "atomic",
+    "statement": "肺部感染",
+    "normalized_label": "肺部感染",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_012"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_14d317e8"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_2c012155"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "肺部感染",
+    "source_text": "以“间质性肺炎，肺部感染”收住我科",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_f3b6755c",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "sign",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "神志清",
+    "normalized_label": "神志清",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_08348940"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_dc162171"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "神志清",
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_bd848145",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "sign",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "精神可",
+    "normalized_label": "精神可",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_72a18be9"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_d0a27713"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "精神可",
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_e590bd79",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "sign",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "饮食睡眠、大小便正常",
+    "normalized_label": "饮食睡眠、大小便正常",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_2b5feb85"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_1d50b1bf"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "饮食睡眠、大小便正常",
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_6ad12f2c",
+    "case_id": "case_20260515_02b36e2b",
+    "input_id": "input_20260515_54c25801",
+    "stage_id": "stage_20260515_011ef493",
+    "evidence_type": "uncertain",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "体重无明显变化",
+    "normalized_label": "体重无明显变化",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_assertion_ids": [
+      "clinical_object_assertion_20260515_9fa9fe3b"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_09ca49cc"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "体重无明显变化",
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": null
+  }
+]

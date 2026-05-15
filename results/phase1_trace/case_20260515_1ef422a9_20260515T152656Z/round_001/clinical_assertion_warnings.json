@@ -1,0 +1,50 @@
+[
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_scope_not_grounded",
+    "message": "Clinical assertion assertion_scope_text was not a contiguous substring of source_text and was cleared.",
+    "related_item_id": "item_006",
+    "related_evidence_id": null,
+    "related_span_id": "span_item_006"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_scope_not_grounded",
+    "message": "Clinical assertion assertion_scope_text was not a contiguous substring of source_text and was cleared.",
+    "related_item_id": "item_006",
+    "related_evidence_id": null,
+    "related_span_id": "span_item_006"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_not_grounded",
+    "message": "Clinical assertion draft was dropped because object_text was not a contiguous substring of source_text.",
+    "related_item_id": "item_009",
+    "related_evidence_id": null,
+    "related_span_id": "span_item_009"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_not_grounded",
+    "message": "Clinical assertion draft was dropped because object_text was not a contiguous substring of source_text.",
+    "related_item_id": "item_009",
+    "related_evidence_id": null,
+    "related_span_id": "span_item_009"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_type_corrected",
+    "message": "Clinical assertion object_type was invalid and was corrected to uncertain.",
+    "related_item_id": "item_012",
+    "related_evidence_id": null,
+    "related_span_id": "span_item_012"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_type_corrected",
+    "message": "Clinical assertion object_type was invalid and was corrected to uncertain.",
+    "related_item_id": "item_012",
+    "related_evidence_id": null,
+    "related_span_id": "span_item_012"
+  }
+]

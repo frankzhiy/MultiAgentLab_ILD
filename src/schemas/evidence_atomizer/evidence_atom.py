@@ -140,6 +140,13 @@ class EvidenceAtom(BaseModel):
         description="SourceSpan ids grounding this atom in the original text.",
     )
 
+    source_assertion_ids: list[str] = Field(
+        default_factory=list,
+        description=(
+            "ClinicalObjectAssertion ids that contributed to this evidence atom through frame nodes or coverage units."
+        ),
+    )
+
     source_contexts: list[EvidenceSourceContext] = Field(
         ...,
         min_length=1,

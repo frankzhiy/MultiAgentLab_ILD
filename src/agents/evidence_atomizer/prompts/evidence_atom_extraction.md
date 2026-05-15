@@ -168,7 +168,10 @@ Preserve source_frame_node_ids and context_frame_node_ids when provided by the
 coverage unit. These ids may be copied into the draft, and code will also
 enforce them during normalization.
 
-15. Source grounding
+15. Assertion provenance
+Preserve source_assertion_ids when they are present on the coverage unit.
+
+16. Source grounding
 Every atom must preserve source_item_ids, source_span_ids, and relevant
 source_attribute_ids from the input.
 
@@ -182,6 +185,7 @@ source_attribute_ids from the input.
 - Do not strip inherited context from coverage_unit.surface_text.
 - Preserve coverage_unit assertion_status by default.
 - Preserve source_frame_node_ids and context_frame_node_ids when provided.
+- Preserve source_assertion_ids when provided.
 - Preserve certainty and temporality from the coverage unit or source item unless the coverage unit indicates otherwise.
 - Use ClinicalAttribute objects only as modifier information sources.
 - Include source_attribute_ids when the atom statement uses attribute content.

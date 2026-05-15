@@ -417,6 +417,363 @@ def source_contexts_text(contexts: list[Any]) -> str:
     return "; ".join(labels)
 
 
+def compact_trace_text(value: Any, limit: int = 120) -> str:
+    text = enum_text(value)
+    text = " ".join(text.replace("\n", " ").replace("\r", " ").split())
+    if len(text) <= limit:
+        return text
+    return f"{text[: limit - 3]}..."
+
+
+def short_trace_id(value: Any, keep: int = 8) -> str:
+    text = enum_text(value).strip()
+    if not text:
+        return ""
+    if len(text) <= max(keep, 12):
+        return text
+    return text[-keep:]
+
+
+def frame_mapped_assertion_ids(frame: Any) -> list[str]:
+    frame_nodes = object_list_field(frame, "frame_nodes")
+    return sorted(
+        {
+            assertion_id
+            for node in frame_nodes
+            for assertion_id in object_list_field(node, "source_assertion_ids")
+        }
+    )
+
+
+def frame_degenerate_warning_count(frame: Any) -> int:
+    return sum(
+        1
+        for warning in object_list_field(frame, "frame_warnings")
+        if str(object_field(warning, "code", "")).startswith("degenerate_frame")
+    )
+
+
+def render_evidence_frame_tree_preview(
+    *,
+    frames: list[Any],
+    atoms: list[Any],
+) -> list[str]:
+    lines = [
+        "## Evidence Event Frame Tree Preview",
+        "",
+        "- Tree-first view for reading parent/child frame structure.",
+        "- Full report file: evidence_event_frames_tree.md.",
+        "",
+    ]
+    if not frames:
+        lines.append("No evidence event frames produced.")
+        return lines
+
+    for frame in frames:
+        lines.extend(
+            render_single_frame_tree_section(
+                frame=frame,
+                atoms=atoms,
+                node_text_limit=48,
+                atom_statement_limit=72,
+                include_warning_details=False,
+            )
+        )
+        lines.append("")
+
+    return lines
+
+
+def render_evidence_frame_tree_report(
+    *,
+    round_summary: dict[str, Any],
+    frames: list[Any],
+    atoms: list[Any],
+) -> str:
+    lines = [
+        f"# Evidence Event Frame Tree Report Round {round_summary['round_index']:03d}",
+        "",
+        f"- case_id: {round_summary['case_id']}",
+        f"- input_id: {round_summary['input_id']}",
+        f"- atomization_result_id: {round_summary['atomization_result_id']}",
+        f"- frames: {len(frames)}",
+        f"- evidence_atoms: {len(atoms)}",
+        "",
+    ]
+    if not frames:
+        lines.append("No evidence event frames produced.")
+        lines.append("")
+        return "\n".join(lines)
+
+    for frame in frames:
+        lines.extend(
+            render_single_frame_tree_section(
+                frame=frame,
+                atoms=atoms,
+                node_text_limit=88,
+                atom_statement_limit=120,
+                include_warning_details=True,
+            )
+        )
+        lines.append("")
+
+    return "\n".join(lines)
+
+
+def render_single_frame_tree_section(
+    *,
+    frame: Any,
+    atoms: list[Any],
+    node_text_limit: int,
+    atom_statement_limit: int,
+    include_warning_details: bool,
+) -> list[str]:
+    frame_nodes = object_list_field(frame, "frame_nodes")
+    frame_warnings = object_list_field(frame, "frame_warnings")
+    mapped_assertion_ids = frame_mapped_assertion_ids(frame)
+    deferred_assertion_ids = object_list_field(frame, "deferred_assertion_ids")
+    atomizable_count = sum(
+        1 for node in frame_nodes if bool(object_field(node, "atomizable"))
+    )
+    source_item_id = enum_text(object_field(frame, "source_item_id"))
+    frame_id = enum_text(object_field(frame, "frame_id"))
+
+    lines = [
+        f"### Frame {source_item_id}",
+        "",
+        f"- frame_id: {frame_id}",
+        f"- source_text: {compact_trace_text(object_field(frame, 'source_text'), limit=220)}",
+        f"- frame_node_count: {len(frame_nodes)}",
+        f"- atomizable_node_count: {atomizable_count}",
+        f"- mapped_assertion_count: {len(mapped_assertion_ids)}",
+        f"- deferred_assertion_count: {len(deferred_assertion_ids)}",
+        f"- degenerate_frame_warnings: {frame_degenerate_warning_count(frame)}",
+    ]
+
+    if mapped_assertion_ids:
+        lines.append(
+            f"- mapped_assertion_ids: {', '.join(mapped_assertion_ids)}"
+        )
+    if deferred_assertion_ids:
+        lines.append(
+            f"- deferred_assertion_ids: {', '.join(enum_text(value) for value in deferred_assertion_ids)}"
+        )
+
+    lines.extend(["", "```text"])
+    lines.extend(
+        build_frame_tree_lines(
+            frame=frame,
+            atoms=atoms,
+            node_text_limit=node_text_limit,
+            atom_statement_limit=atom_statement_limit,
+        )
+    )
+    lines.append("```")
+
+    if include_warning_details and frame_warnings:
+        lines.extend(["", "Warnings:"])
+        for warning in frame_warnings:
+            lines.append(
+                f"- [{enum_text(object_field(warning, 'severity'))}] "
+                f"{enum_text(object_field(warning, 'code'))}: "
+                f"{compact_trace_text(object_field(warning, 'message'), limit=220)}"
+            )
+
+    return lines
+
+
+def build_frame_tree_lines(
+    *,
+    frame: Any,
+    atoms: list[Any],
+    node_text_limit: int,
+    atom_statement_limit: int,
+) -> list[str]:
+    frame_nodes = object_list_field(frame, "frame_nodes")
+    if not frame_nodes:
+        return ["(empty frame)"]
+
+    nodes_by_id = {
+        enum_text(object_field(node, "frame_node_id")): node
+        for node in frame_nodes
+        if object_field(node, "frame_node_id")
+    }
+    children_by_parent: dict[str, list[Any]] = {}
+    roots: list[Any] = []
+    for node in frame_nodes:
+        parent_node_id = enum_text(object_field(node, "parent_node_id"))
+        if not parent_node_id:
+            roots.append(node)
+            continue
+        children_by_parent.setdefault(parent_node_id, []).append(node)
+
+    atoms_by_source_node_id: dict[str, list[Any]] = {}
+    atoms_by_context_node_id: dict[str, list[Any]] = {}
+    frame_source_item_id = enum_text(object_field(frame, "source_item_id"))
+    for atom in atoms:
+        atom_item_ids = {
+            enum_text(item_id)
+            for item_id in object_list_field(atom, "source_item_ids")
+        }
+        if frame_source_item_id and frame_source_item_id not in atom_item_ids:
+            continue
+        for node_id in object_list_field(atom, "source_frame_node_ids"):
+            node_key = enum_text(node_id)
+            if not node_key:
+                continue
+            atoms_by_source_node_id.setdefault(node_key, []).append(atom)
+        for node_id in object_list_field(atom, "context_frame_node_ids"):
+            node_key = enum_text(node_id)
+            if not node_key:
+                continue
+            atoms_by_context_node_id.setdefault(node_key, []).append(atom)
+
+    ordered_roots = sort_frame_nodes(
+        frame_nodes=roots or frame_nodes,
+        source_text=enum_text(object_field(frame, "source_text")),
+    )
+    lines: list[str] = []
+    seen_node_ids: set[str] = set()
+    for index, root in enumerate(ordered_roots):
+        lines.extend(
+            render_frame_tree_node(
+                node=root,
+                source_text=enum_text(object_field(frame, "source_text")),
+                children_by_parent=children_by_parent,
+                atoms_by_source_node_id=atoms_by_source_node_id,
+                atoms_by_context_node_id=atoms_by_context_node_id,
+                node_text_limit=node_text_limit,
+                atom_statement_limit=atom_statement_limit,
+                prefix="",
+                is_last=index == len(ordered_roots) - 1,
+                seen_node_ids=seen_node_ids,
+            )
+        )
+
+    return lines or ["(unable to render frame tree)"]
+
+
+def render_frame_tree_node(
+    *,
+    node: Any,
+    source_text: str,
+    children_by_parent: dict[str, list[Any]],
+    atoms_by_source_node_id: dict[str, list[Any]],
+    atoms_by_context_node_id: dict[str, list[Any]],
+    node_text_limit: int,
+    atom_statement_limit: int,
+    prefix: str,
+    is_last: bool,
+    seen_node_ids: set[str],
+) -> list[str]:
+    frame_node_id = enum_text(object_field(node, "frame_node_id"))
+    if frame_node_id in seen_node_ids:
+        connector = "└─ " if is_last else "├─ "
+        return [f"{prefix}{connector}(cycle prevented at {short_trace_id(frame_node_id)})"]
+    seen_node_ids.add(frame_node_id)
+
+    connector = "└─ " if is_last else "├─ "
+    child_prefix = prefix + ("   " if is_last else "│  ")
+    source_atoms = sort_atoms_for_trace(atoms_by_source_node_id.get(frame_node_id, []))
+    context_atoms = sort_atoms_for_trace(atoms_by_context_node_id.get(frame_node_id, []))
+
+    node_type = enum_text(object_field(node, "node_type"))
+    node_text = compact_trace_text(object_field(node, "node_text"), limit=node_text_limit)
+    relation = enum_text(object_field(node, "relation_to_parent"))
+    context_role = enum_text(object_field(node, "context_role"))
+    atomizable = bool(object_field(node, "atomizable"))
+    atomization_policy = enum_text(object_field(node, "atomization_policy"))
+    source_assertion_ids = object_list_field(node, "source_assertion_ids")
+
+    metadata: list[str] = []
+    if relation:
+        metadata.append(f"rel={relation}")
+    if source_assertion_ids:
+        metadata.append(
+            "assertions="
+            + ",".join(enum_text(assertion_id) for assertion_id in source_assertion_ids)
+        )
+    if atomizable:
+        metadata.append(f"atom={atomization_policy or 'yes'}")
+    else:
+        metadata.append(f"role={context_role or 'non_atomizable'}")
+    if source_atoms:
+        metadata.append(f"atoms={len(source_atoms)}")
+    elif context_atoms:
+        metadata.append(f"context_for={len(context_atoms)}")
+
+    line = (
+        f"{prefix}{connector}{node_type} [{short_trace_id(frame_node_id)}] {node_text}"
+    )
+    if metadata:
+        line += " {" + "; ".join(metadata) + "}"
+
+    lines = [line]
+
+    for atom in source_atoms:
+        lines.append(
+            f"{child_prefix}↳ atom[{short_trace_id(object_field(atom, 'evidence_id'))}] "
+            f"{compact_trace_text(object_field(atom, 'statement'), limit=atom_statement_limit)}"
+        )
+
+    if context_atoms and not source_atoms:
+        lines.append(
+            f"{child_prefix}↳ context_for_atoms: "
+            + ", ".join(
+                f"{short_trace_id(object_field(atom, 'evidence_id'))}"
+                for atom in context_atoms[:5]
+            )
+            + (" ..." if len(context_atoms) > 5 else "")
+        )
+
+    ordered_children = sort_frame_nodes(
+        frame_nodes=children_by_parent.get(frame_node_id, []),
+        source_text=source_text,
+    )
+    for index, child in enumerate(ordered_children):
+        lines.extend(
+            render_frame_tree_node(
+                node=child,
+                source_text=source_text,
+                children_by_parent=children_by_parent,
+                atoms_by_source_node_id=atoms_by_source_node_id,
+                atoms_by_context_node_id=atoms_by_context_node_id,
+                node_text_limit=node_text_limit,
+                atom_statement_limit=atom_statement_limit,
+                prefix=child_prefix,
+                is_last=index == len(ordered_children) - 1,
+                seen_node_ids=seen_node_ids,
+            )
+        )
+
+    return lines
+
+
+def sort_frame_nodes(*, frame_nodes: list[Any], source_text: str) -> list[Any]:
+    def sort_key(node: Any) -> tuple[int, int, str]:
+        node_text = enum_text(object_field(node, "node_text"))
+        position = source_text.find(node_text) if node_text else -1
+        if position < 0:
+            position = 10**9
+        return (
+            position,
+            len(node_text),
+            enum_text(object_field(node, "frame_node_id")),
+        )
+
+    return sorted(frame_nodes, key=sort_key)
+
+
+def sort_atoms_for_trace(atoms: list[Any]) -> list[Any]:
+    return sorted(
+        atoms,
+        key=lambda atom: (
+            enum_text(object_field(atom, "statement")),
+            enum_text(object_field(atom, "evidence_id")),
+        ),
+    )
+
+
 def render_stage_context_table(stage_context: Any) -> list[str]:
     lines = [
         "### Stage Context",
@@ -721,38 +1078,49 @@ def render_round_markdown_summary(
             "",
             "## Evidence Event Frames (debug)",
             "",
-            "| frame_id | source_item_id | number_of_nodes | atomizable_node_count | warning_count |",
-            "| --- | --- | --- | --- | --- |",
+            "| frame_id | source_item_id | assertion_count | mapped_assertion_count | deferred_assertion_count | number_of_nodes | atomizable_node_count | degenerate_frame_warnings | warning_count |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     if frames:
         for frame in frames:
             frame_nodes = object_list_field(frame, "frame_nodes")
             frame_warnings = object_list_field(frame, "frame_warnings")
+            mapped_assertion_ids = frame_mapped_assertion_ids(frame)
+            deferred_assertion_ids = object_list_field(frame, "deferred_assertion_ids")
             atomizable_count = sum(
                 1 for node in frame_nodes if bool(object_field(node, "atomizable"))
             )
+            degenerate_warning_count = frame_degenerate_warning_count(frame)
+            assertion_count = len(set(mapped_assertion_ids) | set(deferred_assertion_ids))
             lines.append(
                 markdown_row(
                     [
                         object_field(frame, "frame_id"),
                         object_field(frame, "source_item_id"),
+                        str(assertion_count),
+                        str(len(mapped_assertion_ids)),
+                        str(len(deferred_assertion_ids)),
                         str(len(frame_nodes)),
                         str(atomizable_count),
+                        str(degenerate_warning_count),
                         str(len(frame_warnings)),
                     ]
                 )
             )
     else:
-        lines.append(empty_markdown_row(5, "No evidence event frames produced."))
+        lines.append(empty_markdown_row(9, "No evidence event frames produced."))
+
+    lines.extend([""])
+    lines.extend(render_evidence_frame_tree_preview(frames=frames, atoms=atoms))
 
     lines.extend(
         [
             "",
             "## Evidence Atoms",
             "",
-            "| evidence_id | evidence_type | clinical_domain | statement | normalized_label | assertion_status | certainty | temporality | source_item_ids | source_attribute_ids | source_span_ids | source_frame_node_ids | context_frame_node_ids | local_content_text | atom_context_text | source_contexts | source_text |",
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+            "| evidence_id | evidence_type | clinical_domain | statement | normalized_label | assertion_status | certainty | temporality | source_item_ids | source_attribute_ids | source_span_ids | source_assertion_ids | source_frame_node_ids | context_frame_node_ids | local_content_text | atom_context_text | source_contexts | source_text |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     for atom in atoms:
@@ -772,6 +1140,9 @@ def render_round_markdown_summary(
                         object_field(atom, "source_attribute_ids", [])
                     ),
                     join_markdown_values(object_field(atom, "source_span_ids", [])),
+                    join_markdown_values(
+                        object_field(atom, "source_assertion_ids", [])
+                    ),
                     join_markdown_values(
                         object_field(atom, "source_frame_node_ids", [])
                     ),
@@ -1278,6 +1649,14 @@ def write_round_summaries(
             attribute_validation_report=attribute_validation_report,
             validation_report=validation_report,
             evidence_event_frame_build_result=evidence_event_frame_build_result,
+        ),
+    )
+    write_text(
+        round_dir / "evidence_event_frames_tree.md",
+        render_evidence_frame_tree_report(
+            round_summary=summary,
+            frames=object_list_field(evidence_event_frame_build_result, "frames"),
+            atoms=object_list_field(atomization_result, "evidence_atoms"),
         ),
     )
     return summary
