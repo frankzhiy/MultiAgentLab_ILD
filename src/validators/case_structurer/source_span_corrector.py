@@ -25,7 +25,6 @@ from src.validators.case_structurer.source_span_utils import (
     range_distance,
     required_alnum_tokens,
     resolved_range,
-    span_slice_matches,
     unsupported_item_fields,
     valid_ranges,
 )
@@ -722,9 +721,11 @@ def _missing_support_values(
     if not cleaned:
         return []
 
-    if not normalize_text_for_match(cleaned).lower() in normalize_text_for_match(
-        source_text
-    ).lower() and find_all_occurrences(raw_text, cleaned, preferred_ranges):
+    if (
+        normalize_text_for_match(cleaned).lower()
+        not in normalize_text_for_match(source_text).lower()
+        and find_all_occurrences(raw_text, cleaned, preferred_ranges)
+    ):
         return [cleaned]
 
     if field_name in {"time_text", "unit"}:

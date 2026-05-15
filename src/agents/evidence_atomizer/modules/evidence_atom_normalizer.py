@@ -26,6 +26,7 @@ from src.schemas.evidence_atomizer.evidence_atom import EvidenceAtom
 from src.schemas.evidence_atomizer.item_evidence_link import ItemEvidenceLink
 
 from .atomization_candidate_builder import AtomizationCandidate
+from .coverage_units import CoverageUnit
 
 
 class NormalizedEvidenceAtomizationPayload(BaseModel):
@@ -41,6 +42,7 @@ class NormalizedEvidenceAtomizationPayload(BaseModel):
     item_to_evidence_links: list[ItemEvidenceLink] = Field(default_factory=list)
     deferred_items: list[DeferredStructuredItem] = Field(default_factory=list)
     atomization_warnings: list[AtomizationWarning] = Field(default_factory=list)
+    evidence_id_to_coverage_unit_ids: dict[str, list[str]] = Field(default_factory=dict)
 
 
 class EvidenceAtomNormalizer:
@@ -50,13 +52,16 @@ class EvidenceAtomNormalizer:
         self,
         structuring_result: CaseStructuringResult,
         candidates: list[AtomizationCandidate],
+        coverage_units: list[CoverageUnit],
         draft_payload: dict[str, Any],
     ) -> NormalizedEvidenceAtomizationPayload:
+        _ = coverage_units
         context = _NormalizationContext(structuring_result, candidates)
         warnings: list[AtomizationWarning] = []
         deferred_items: list[DeferredStructuredItem] = []
         evidence_atoms: list[EvidenceAtom] = []
         draft_id_to_evidence_id: dict[str, str] = {}
+        evidence_id_to_coverage_unit_ids: dict[str, list[str]] = {}
 
         for index, draft in enumerate(_array(draft_payload, "evidence_atom_drafts"), start=1):
             if not isinstance(draft, dict):
@@ -154,6 +159,9 @@ class EvidenceAtomNormalizer:
                 continue
 
             evidence_atoms.append(atom)
+            evidence_id_to_coverage_unit_ids[atom.evidence_id] = (
+                _coverage_unit_ids_from_draft(draft)
+            )
             draft_ref = _draft_ref(draft, index)
             if draft_ref is not None:
                 draft_id_to_evidence_id[draft_ref] = atom.evidence_id
@@ -188,6 +196,7 @@ class EvidenceAtomNormalizer:
             item_to_evidence_links=links,
             deferred_items=_dedupe_deferred_items(deferred_items),
             atomization_warnings=warnings,
+            evidence_id_to_coverage_unit_ids=evidence_id_to_coverage_unit_ids,
         )
 
     def _build_atom_payload(
@@ -645,7 +654,14 @@ def _list_text(value: Any) -> list[str]:
         cleaned = value.strip()
         return [cleaned] if cleaned else []
     if isinstance(value, dict):
-        for key in ("item_id", "source_item_id", "span_id", "source_span_id", "id"):
+        for key in (
+            "item_id",
+            "source_item_id",
+            "span_id",
+            "source_span_id",
+            "coverage_unit_id",
+            "id",
+        ):
             text = _optional_text(value.get(key))
             if text is not None:
                 return [text]
@@ -757,6 +773,16 @@ def _evidence_ids_from_link_draft(
     )
     resolved = [draft_id_to_evidence_id.get(value, value) for value in values]
     return _dedupe_strings(resolved)
+
+
+def _coverage_unit_ids_from_draft(draft: dict[str, Any]) -> list[str]:
+    return _dedupe_strings(
+        _list_text(
+            draft.get("coverage_unit_ids")
+            or draft.get("coverage_units")
+            or draft.get("coverage_unit_id")
+        )
+    )
 
 
 def _safe_link(

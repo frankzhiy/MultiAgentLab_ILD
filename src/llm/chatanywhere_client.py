@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from openai import OpenAI
+from typing import Any
 
 from src.config.settings import Settings
 
@@ -8,10 +8,7 @@ from src.config.settings import Settings
 class ChatAnywhereClient:
     def __init__(self, settings: Settings | None = None) -> None:
         self.settings = settings or Settings.from_env()
-        self.client = OpenAI(
-            api_key=self.settings.chatanywhere_api_key,
-            base_url=self.settings.chatanywhere_base_url,
-        )
+        self.client: Any = _build_openai_client(self.settings)
 
     def generate_json(
         self,
@@ -37,3 +34,18 @@ class ChatAnywhereClient:
             raise RuntimeError("LLM returned empty content.")
 
         return content
+
+
+def _build_openai_client(settings: Settings) -> Any:
+    try:
+        from openai import OpenAI
+    except ModuleNotFoundError as exc:
+        raise RuntimeError(
+            "ChatAnywhereClient requires the openai package. Install project "
+            "dependencies before running real LLM pipelines."
+        ) from exc
+
+    return OpenAI(
+        api_key=settings.chatanywhere_api_key,
+        base_url=settings.chatanywhere_base_url,
+    )

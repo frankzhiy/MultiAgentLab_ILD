@@ -11,7 +11,6 @@ from src.validators.case_structurer.source_span_utils import (
     StructuredSourceObject,
     combined_existing_span_text,
     get_all_structured_objects,
-    normalize_text_for_match,
     offsets_in_bounds,
     quoted_text_exists,
     range_inside_any_parent,

@@ -30,6 +30,15 @@ case_structuring_result_id: {{ case_structuring_result_id }}
 # Atomization Candidates
 {{ atomization_candidates }}
 
+# Required Coverage Units
+Each coverage unit represents a minimal clinical fact that must be covered.
+Every evidence_atom_draft must reference one or more coverage_unit_ids.
+Normally one evidence_atom_draft should reference exactly one coverage_unit_id.
+Do not ignore required coverage units.
+Do not merge multiple coverage units into one draft unless the unit is explicitly indivisible.
+
+{{ coverage_units }}
+
 # Draft Schema Contract
 EvidenceAtom draft fields:
 {{ evidence_atom_draft_fields }}
@@ -94,7 +103,9 @@ Detailed skeleton:
 - Return JSON only. Do not include Markdown, code fences, or commentary.
 - Do not invent persistent IDs.
 - Temporary draft IDs are allowed only for linking inside the draft, and code will replace them.
-- Split compound clinical statements into atomic evidence drafts.
+- Transform required coverage units into atomic evidence drafts instead of deciding coverage from scratch.
+- Split compound clinical statements according to the required coverage units.
+- Include coverage_unit_ids on every evidence_atom_draft.
 - Preserve negation, certainty, temporality, time_text, value, unit, and body_site.
 - Preserve source_item_ids and source_span_ids from the input candidates.
 - source_text must be copied from candidate source text.

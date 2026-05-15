@@ -22,6 +22,7 @@ def evidence_atomization_skeleton() -> str:
             "evidence_atom_drafts": [
                 {
                     "draft_id": "draft_001",
+                    "coverage_unit_ids": ["item_001__unit_001"],
                     "evidence_type": EvidenceType.SYMPTOM.value,
                     "clinical_domain": ClinicalDomain.RESPIRATORY.value,
                     "granularity": EvidenceGranularity.ATOMIC.value,

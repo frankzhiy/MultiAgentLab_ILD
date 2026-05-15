@@ -6,6 +6,7 @@ from enum import StrEnum
 from src.agents.evidence_atomizer.modules.atomization_candidate_builder import (
     AtomizationCandidate,
 )
+from src.agents.evidence_atomizer.modules.coverage_units import CoverageUnit
 
 
 def format_atomization_candidates(candidates: list[AtomizationCandidate]) -> str:
@@ -35,6 +36,36 @@ def format_atomization_candidates(candidates: list[AtomizationCandidate]) -> str
                     f"section_type={candidate.section_type}",
                     f"section_title={candidate.section_title}",
                     f"source_spans=[{span_text}]",
+                ]
+            )
+        )
+    return "\n".join(f"- {line}" for line in lines)
+
+
+def format_coverage_units(coverage_units: list[CoverageUnit]) -> str:
+    if not coverage_units:
+        return "(none)"
+
+    lines: list[str] = []
+    for unit in coverage_units:
+        lines.append(
+            " | ".join(
+                [
+                    f"coverage_unit_id={unit.unit_id}",
+                    f"source_item_id={unit.source_item_id}",
+                    f"source_span_ids={unit.source_span_ids}",
+                    f"surface_text={_compact_text(unit.surface_text)}",
+                    f"clinical_object={_compact_text(unit.clinical_object)}",
+                    f"status_or_direction={unit.status_or_direction}",
+                    f"value={unit.value}",
+                    f"unit={unit.unit}",
+                    f"body_site={unit.body_site}",
+                    f"assertion_status={unit.assertion_status}",
+                    f"certainty={unit.certainty}",
+                    f"temporality={unit.temporality}",
+                    f"time_text={unit.time_text}",
+                    f"split_basis={unit.split_basis}",
+                    f"required={unit.required}",
                 ]
             )
         )

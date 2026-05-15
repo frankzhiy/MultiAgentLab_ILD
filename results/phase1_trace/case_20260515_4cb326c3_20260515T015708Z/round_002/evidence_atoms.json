@@ -1,0 +1,812 @@
+[
+  {
+    "evidence_id": "evidence_20260515_8bbedd19",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "双肺间质性增粗",
+    "normalized_label": "双肺间质性增粗",
+    "value": null,
+    "unit": null,
+    "body_site": "双肺",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_001"
+    ],
+    "source_span_ids": [
+      "span_item_001"
+    ],
+    "source_text": "双肺间质性增粗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_02dbff56",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "右肺中叶、下叶感染性病灶",
+    "normalized_label": "右肺中叶、下叶感染性病灶",
+    "value": null,
+    "unit": null,
+    "body_site": "右肺中叶、下叶",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_002"
+    ],
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "source_text": "右肺中叶、下叶感染性病灶",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_5c7f5a13",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "左肺舌段局限性不张",
+    "normalized_label": "左肺舌段局限性不张",
+    "value": null,
+    "unit": null,
+    "body_site": "左肺舌段",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_003"
+    ],
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "source_text": "左肺舌段局限性不张",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_e1335717",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "中度呼吸储备功能(最大通气量)减损",
+    "normalized_label": "中度呼吸储备功能(最大通气量)减损",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_004"
+    ],
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "source_text": "中度呼吸储备功能(最大通气量)减损",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_369429f3",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "轻度阻塞性通气功能障碍，V-V曲线符合阻塞性改变",
+    "normalized_label": "轻度阻塞性通气功能障碍，V-V曲线符合阻塞性改变",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_005"
+    ],
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "source_text": "轻度阻塞性通气功能障碍，V-V曲线符合阻塞性改变",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_ee4cb4a7",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "残气容积占肺总量百分比增高",
+    "normalized_label": "残气容积占肺总量百分比增高",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_text": "残气容积占肺总量百分比增高",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_82ecbcad",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "中度弥散功能障碍",
+    "normalized_label": "中度弥散功能障碍",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_text": "中度弥散功能障碍",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_948e490a",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "呼吸总阻抗Zrs增高",
+    "normalized_label": "Zrs增高",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_text": "呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_cdede446",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "气道总阻力R5增高",
+    "normalized_label": "R5增高",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_text": "呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_61acc93e",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "外周阻力R5-R20增高",
+    "normalized_label": "R5-R20增高",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_text": "呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_cdc78027",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "近端阻力R35增高",
+    "normalized_label": "R35增高",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_text": "呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_7f94d851",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "中心阻力R20正常",
+    "normalized_label": "R20正常",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_text": "呼吸总阻抗Zrs增高，气道总阻力R5、外周阻力R5-R20及近端阻力R35增高，中心阻力R20正常",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_3d373963",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "中心阻抗Rc增大",
+    "normalized_label": "Rc增大",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "中心阻抗Rc及周边阻抗Rp均增大，Rp>Rc",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_c10c9ad4",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "周边阻抗Rp增大",
+    "normalized_label": "Rp增大",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_text": "中心阻抗Rc及周边阻抗Rp均增大，Rp>Rc",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_ecde30d4",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "电抗X5负值增大",
+    "normalized_label": "X5增大",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_010"
+    ],
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "source_text": "电抗X5负值增大",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_0b2e0eb3",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "共振频率Fres增高",
+    "normalized_label": "Fres增高",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_011"
+    ],
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "source_text": "共振频率Fres增高，电抗面积AX增大",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_17b0593a",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "电抗面积AX增大",
+    "normalized_label": "AX增高",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_011"
+    ],
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "source_text": "共振频率Fres增高，电抗面积AX增大",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_d3006dd2",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "pulmonary_function",
+    "clinical_domain": "pulmonary_function",
+    "granularity": "atomic",
+    "statement": "Ers正常",
+    "normalized_label": "Ers正常",
+    "value": null,
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_012"
+    ],
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "source_text": "Ers正常",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_50279b2a",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "风湿相关检验无异常",
+    "normalized_label": "风湿相关检验无异常",
+    "value": "异常",
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_013"
+    ],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "source_text": "风湿相关检验无异常",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_00d5152a",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "淋巴细胞百分比LYM% 17.7%",
+    "normalized_label": "淋巴细胞百分比LYM%",
+    "value": "17.7",
+    "unit": "%",
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_014"
+    ],
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "source_text": "淋巴细胞百分比LYM% 17.7%",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_66ffd436",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "单核细胞绝对值# 0.65*109/L",
+    "normalized_label": "单核细胞绝对值",
+    "value": "0.65",
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_015"
+    ],
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "source_text": "单核细胞绝对值# 0.65*109/L",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_80470338",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "ALB 31.04g/L",
+    "normalized_label": "ALB",
+    "value": "31.04",
+    "unit": "g/L",
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_016"
+    ],
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "source_text": "ALB 31.04g/L",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_fa5deccb",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "eGFR 70.88ml/(min*1.73m^2)",
+    "normalized_label": "eGFR",
+    "value": "70.88",
+    "unit": "ml/(min*1.73m^2)",
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_017"
+    ],
+    "source_span_ids": [
+      "span_item_017"
+    ],
+    "source_text": "eGFR 70.88ml/(min*1.73m^2)",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_f3ba9636",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "2019-nCoV IgG 10.926S/CO",
+    "normalized_label": "IgG",
+    "value": "10.926",
+    "unit": "S/CO",
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_018"
+    ],
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "source_text": "2019-nCoV IgG 10.926S/CO",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_1e4a6beb",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "D-D 0.71ug/mL FEU",
+    "normalized_label": "D-D",
+    "value": "0.71",
+    "unit": "ug/mL FEU",
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_019"
+    ],
+    "source_span_ids": [
+      "span_item_019"
+    ],
+    "source_text": "D-D 0.71ug/mL FEU",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_db30ed6d",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "HBeAb 1.790index",
+    "normalized_label": "HBeAb",
+    "value": "1.79",
+    "unit": "index",
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_020"
+    ],
+    "source_span_ids": [
+      "span_item_020"
+    ],
+    "source_text": "HBeAb 1.790index",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_b512120d",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "HBcAb 2.010index",
+    "normalized_label": "HBcAb",
+    "value": "2.01",
+    "unit": "index",
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_021"
+    ],
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "source_text": "HBcAb 2.010index",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_45a88d73",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "血沉CRP 41.8mg/L",
+    "normalized_label": "血沉CRP",
+    "value": "41.8",
+    "unit": "mg/L",
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_022"
+    ],
+    "source_span_ids": [
+      "span_item_022"
+    ],
+    "source_text": "血沉CRP 41.8mg/L",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_e62e2890",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "结核感染T细胞(IFN-γ)",
+    "normalized_label": "结核感染T细胞(IFN-γ)",
+    "value": "-",
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_023"
+    ],
+    "source_span_ids": [
+      "span_item_023"
+    ],
+    "source_text": "结核感染T细胞(IFN-γ)检测: 阳性",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_0e8493df",
+    "case_id": "case_20260515_4cb326c3",
+    "input_id": "input_20260515_6d519ae9",
+    "stage_id": "stage_20260515_a6e1f7bd",
+    "evidence_type": "lab_result",
+    "clinical_domain": "laboratory",
+    "granularity": "atomic",
+    "statement": "检测阳性",
+    "normalized_label": "检测",
+    "value": "阳性",
+    "unit": null,
+    "body_site": null,
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "time_text": null,
+    "source_item_ids": [
+      "item_023"
+    ],
+    "source_span_ids": [
+      "span_item_023"
+    ],
+    "source_text": "结核感染T细胞(IFN-γ)检测: 阳性",
+    "atomization_confidence": "high",
+    "notes": null
+  }
+]

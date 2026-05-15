@@ -4,6 +4,7 @@ from .output_skeletons import evidence_atomization_skeleton
 from .prompt_context import (
     format_atomization_boundary,
     format_atomization_candidates,
+    format_coverage_units,
     format_enum_options,
     format_forbidden_downstream_objects,
 )
@@ -14,6 +15,7 @@ __all__ = [
     "evidence_atomization_skeleton",
     "format_atomization_boundary",
     "format_atomization_candidates",
+    "format_coverage_units",
     "format_enum_options",
     "format_forbidden_downstream_objects",
 ]

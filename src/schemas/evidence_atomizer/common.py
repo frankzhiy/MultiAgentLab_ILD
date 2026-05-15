@@ -26,6 +26,32 @@ from src.schemas.case_structurer.common import (
     ValidationSeverity,
 )
 
+__all__ = [
+    "AtomizationTransformationType",
+    "CaseID",
+    "CertaintyLevel",
+    "ClinicalDomain",
+    "ConfidenceLevel",
+    "DeferredReason",
+    "EvidenceAtomizationResultID",
+    "EvidenceGranularity",
+    "EvidenceID",
+    "EvidenceType",
+    "FORBIDDEN_REASONING_FIELD_NAMES",
+    "FORBIDDEN_REASONING_TEXT_PATTERNS",
+    "InputID",
+    "ItemID",
+    "NegationStatus",
+    "SpanID",
+    "StageID",
+    "TemporalRelation",
+    "ValidationSeverity",
+    "normalize_optional_text",
+    "reject_reasoning_scope_text",
+    "require_non_empty_text",
+    "validate_no_forbidden_schema_fields",
+]
+
 
 # ---------------------------------------------------------------------
 # ID aliases

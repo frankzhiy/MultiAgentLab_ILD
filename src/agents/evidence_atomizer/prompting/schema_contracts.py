@@ -23,6 +23,7 @@ def evidence_atomization_contract() -> dict[str, Any]:
         "evidence_atom_draft_fields": _lines(
             [
                 "draft_id: temporary id for this response only",
+                "coverage_unit_ids: required coverage unit ids covered by this draft",
                 "evidence_type: source-level evidence category",
                 "clinical_domain: routing domain, not diagnosis",
                 "granularity: atom boundary quality",

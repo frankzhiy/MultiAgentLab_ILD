@@ -8,6 +8,7 @@ from src.agents.evidence_atomizer.prompting.output_skeletons import (
 from src.agents.evidence_atomizer.prompting.prompt_context import (
     format_atomization_boundary,
     format_atomization_candidates,
+    format_coverage_units,
     format_forbidden_downstream_objects,
 )
 from src.agents.evidence_atomizer.prompting.schema_contracts import (
@@ -17,6 +18,7 @@ from src.schemas.case_structurer.case_structuring_result import CaseStructuringR
 
 from .atomization_candidate_builder import AtomizationCandidate
 from .base_llm_extractor import BaseLLMExtractor
+from .coverage_units import CoverageUnit
 
 
 class EvidenceAtomExtractor(BaseLLMExtractor):
@@ -26,10 +28,15 @@ class EvidenceAtomExtractor(BaseLLMExtractor):
         self,
         structuring_result: CaseStructuringResult,
         candidates: list[AtomizationCandidate],
+        coverage_units: list[CoverageUnit],
     ) -> dict[str, Any]:
         candidate_payload = [
             candidate.model_dump(mode="json")
             for candidate in candidates
+        ]
+        coverage_unit_payload = [
+            coverage_unit.model_dump(mode="json")
+            for coverage_unit in coverage_units
         ]
         template_vars = {
             **evidence_atomization_contract(),
@@ -42,6 +49,7 @@ class EvidenceAtomExtractor(BaseLLMExtractor):
             "atomization_boundary": format_atomization_boundary(),
             "forbidden_downstream_objects": format_forbidden_downstream_objects(),
             "atomization_candidates": format_atomization_candidates(candidates),
+            "coverage_units": format_coverage_units(coverage_units),
             "output_skeleton": evidence_atomization_skeleton(),
         }
 
@@ -55,11 +63,13 @@ class EvidenceAtomExtractor(BaseLLMExtractor):
                     structuring_result.case_structuring_result_id
                 ),
                 "atomization_candidates": candidate_payload,
+                "coverage_units": coverage_unit_payload,
             },
             instruction=(
                 "Return exactly one JSON object with keys evidence_atom_drafts, "
                 "item_to_evidence_links, deferred_items, and "
-                "atomization_warnings."
+                "atomization_warnings. Every evidence_atom_draft must include "
+                "coverage_unit_ids."
             ),
             template_vars=template_vars,
             response_format="json_object",

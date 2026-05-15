@@ -1,11 +1,13 @@
 from __future__ import annotations
 
-import json
-import os
-import sys
 from dataclasses import asdict, is_dataclass
 from datetime import datetime, timezone
 from enum import Enum
+import json
+import os
+import sys
+from threading import Event, Thread
+from time import perf_counter
 from os import walk
 from pathlib import Path
 from typing import Any
@@ -52,6 +54,63 @@ def make_timestamp() -> str:
 
 def utc_now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def format_duration(seconds: float) -> str:
+    if seconds < 1:
+        return f"{seconds * 1000:.0f} ms"
+    if seconds < 60:
+        return f"{seconds:.2f} s"
+
+    minutes, remainder = divmod(seconds, 60)
+    return f"{int(minutes)} min {remainder:.1f} s"
+
+
+class LiveTimer:
+    """Render a single-line elapsed timer while a blocking stage runs."""
+
+    def __init__(self, label: str, refresh_seconds: float = 1.0) -> None:
+        self.label = label
+        self.refresh_seconds = refresh_seconds
+        self.elapsed_seconds = 0.0
+        self._started_at = 0.0
+        self._stop_event = Event()
+        self._thread: Thread | None = None
+
+    def __enter__(self) -> "LiveTimer":
+        self._started_at = perf_counter()
+        self._render()
+        self._thread = Thread(target=self._render_loop, daemon=True)
+        self._thread.start()
+        return self
+
+    def __exit__(self, exc_type: object, exc: object, traceback: object) -> bool:
+        self.elapsed_seconds = perf_counter() - self._started_at
+        self._stop_event.set()
+        if self._thread is not None:
+            self._thread.join(timeout=self.refresh_seconds + 0.2)
+        self._clear_line()
+
+        status = "failed after" if exc_type is not None else "completed in"
+        print(f"{self.label} {status} {format_duration(self.elapsed_seconds)}.")
+        return False
+
+    def _render_loop(self) -> None:
+        while not self._stop_event.wait(self.refresh_seconds):
+            self.elapsed_seconds = perf_counter() - self._started_at
+            self._render()
+
+    def _render(self) -> None:
+        print(
+            f"\r{self.label} running... elapsed "
+            f"{format_duration(perf_counter() - self._started_at)}",
+            end="",
+            flush=True,
+        )
+
+    @staticmethod
+    def _clear_line() -> None:
+        print("\r" + " " * 100 + "\r", end="", flush=True)
 
 
 def is_hidden_path(path: Path) -> bool:
@@ -285,6 +344,279 @@ def markdown_cell(value: Any) -> str:
     return text.strip()
 
 
+def object_field(obj: Any, field_name: str, default: Any = None) -> Any:
+    if isinstance(obj, dict):
+        return obj.get(field_name, default)
+    return getattr(obj, field_name, default)
+
+
+def object_list_field(obj: Any, field_name: str) -> list[Any]:
+    value = object_field(obj, field_name, [])
+    if value is None:
+        return []
+    return list(value)
+
+
+def markdown_row(values: list[Any]) -> str:
+    return "| " + " | ".join(markdown_cell(value) for value in values) + " |"
+
+
+def empty_markdown_row(column_count: int, message: str) -> str:
+    values = [""] * column_count
+    if values:
+        values[0] = message
+    return markdown_row(values)
+
+
+def join_markdown_values(values: Any, separator: str = ", ") -> str:
+    if values is None:
+        return ""
+    if isinstance(values, str):
+        return values
+    return separator.join(enum_text(value) for value in values)
+
+
+def source_span_ids(spans: list[Any]) -> str:
+    return join_markdown_values(
+        [
+            object_field(span, "span_id")
+            for span in spans
+            if object_field(span, "span_id")
+        ]
+    )
+
+
+def source_span_text(spans: list[Any]) -> str:
+    return " / ".join(
+        enum_text(object_field(span, "quoted_text"))
+        for span in spans
+        if object_field(span, "quoted_text")
+    )
+
+
+def render_stage_context_table(stage_context: Any) -> list[str]:
+    lines = [
+        "### Stage Context",
+        "",
+        "| stage_id | stage_order | stage_type | relation_to_previous_stage | previous_stage_id | is_initial_stage | classification_confidence | classification_basis |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
+    ]
+    if stage_context is None:
+        lines.append(empty_markdown_row(8, "No stage context produced."))
+        return lines
+
+    lines.append(
+        markdown_row(
+            [
+                object_field(stage_context, "stage_id"),
+                object_field(stage_context, "stage_order"),
+                object_field(stage_context, "stage_type"),
+                object_field(stage_context, "relation_to_previous_stage"),
+                object_field(stage_context, "previous_stage_id"),
+                object_field(stage_context, "is_initial_stage"),
+                object_field(stage_context, "classification_confidence"),
+                object_field(stage_context, "classification_basis"),
+            ]
+        )
+    )
+    return lines
+
+
+def render_clinical_sections_table(sections: list[Any]) -> list[str]:
+    lines = [
+        "### Clinical Sections",
+        "",
+        "| section_id | section_order | section_type | title | parent_section_id | classification_confidence | source_span_ids | normalized_text |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
+    ]
+    if not sections:
+        lines.append(empty_markdown_row(8, "No clinical sections produced."))
+        return lines
+
+    for section in sections:
+        spans = object_list_field(section, "source_spans")
+        lines.append(
+            markdown_row(
+                [
+                    object_field(section, "section_id"),
+                    object_field(section, "section_order"),
+                    object_field(section, "section_type"),
+                    object_field(section, "title"),
+                    object_field(section, "parent_section_id"),
+                    object_field(section, "classification_confidence"),
+                    source_span_ids(spans),
+                    object_field(section, "normalized_text"),
+                ]
+            )
+        )
+    return lines
+
+
+def render_structured_items_table(items: list[Any]) -> list[str]:
+    lines = [
+        "### Structured Clinical Items",
+        "",
+        "| item_id | item_order | section_id | item_type | label | value | unit | body_site | temporality | time_text | certainty | negation | classification_confidence | source_span_ids | source_text |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+    ]
+    if not items:
+        lines.append(empty_markdown_row(15, "No structured clinical items produced."))
+        return lines
+
+    for item in items:
+        spans = object_list_field(item, "source_spans")
+        lines.append(
+            markdown_row(
+                [
+                    object_field(item, "item_id"),
+                    object_field(item, "item_order"),
+                    object_field(item, "section_id"),
+                    object_field(item, "item_type"),
+                    object_field(item, "label"),
+                    object_field(item, "value"),
+                    object_field(item, "unit"),
+                    object_field(item, "body_site"),
+                    object_field(item, "temporality"),
+                    object_field(item, "time_text"),
+                    object_field(item, "certainty"),
+                    object_field(item, "negation"),
+                    object_field(item, "classification_confidence"),
+                    source_span_ids(spans),
+                    source_span_text(spans),
+                ]
+            )
+        )
+    return lines
+
+
+def render_timeline_events_table(events: list[Any]) -> list[str]:
+    lines = [
+        "### Timeline Events",
+        "",
+        "| event_id | event_order | event_type | event_time_text | time_expression_type | normalized_time | relative_time | description | related_item_ids | classification_confidence | source_span_ids | source_text |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+    ]
+    if not events:
+        lines.append(empty_markdown_row(12, "No timeline events produced."))
+        return lines
+
+    for event in events:
+        spans = object_list_field(event, "source_spans")
+        lines.append(
+            markdown_row(
+                [
+                    object_field(event, "event_id"),
+                    object_field(event, "event_order"),
+                    object_field(event, "event_type"),
+                    object_field(event, "event_time_text"),
+                    object_field(event, "time_expression_type"),
+                    object_field(event, "normalized_time"),
+                    object_field(event, "relative_time"),
+                    object_field(event, "description"),
+                    join_markdown_values(object_field(event, "related_item_ids", [])),
+                    object_field(event, "classification_confidence"),
+                    source_span_ids(spans),
+                    source_span_text(spans),
+                ]
+            )
+        )
+    return lines
+
+
+def render_ambiguities_table(ambiguities: list[Any]) -> list[str]:
+    lines = [
+        "### Ambiguities",
+        "",
+        "| ambiguity_id | ambiguity_type | ambiguous_text | possible_interpretations | reason | related_section_ids | related_item_ids | needs_clarification | classification_confidence | source_span_ids | source_text |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+    ]
+    if not ambiguities:
+        lines.append(empty_markdown_row(11, "No ambiguities produced."))
+        return lines
+
+    for ambiguity in ambiguities:
+        spans = object_list_field(ambiguity, "source_spans")
+        lines.append(
+            markdown_row(
+                [
+                    object_field(ambiguity, "ambiguity_id"),
+                    object_field(ambiguity, "ambiguity_type"),
+                    object_field(ambiguity, "ambiguous_text"),
+                    join_markdown_values(
+                        object_field(ambiguity, "possible_interpretations", []),
+                        separator="; ",
+                    ),
+                    object_field(ambiguity, "reason"),
+                    join_markdown_values(
+                        object_field(ambiguity, "related_section_ids", [])
+                    ),
+                    join_markdown_values(
+                        object_field(ambiguity, "related_item_ids", [])
+                    ),
+                    object_field(ambiguity, "needs_clarification"),
+                    object_field(ambiguity, "classification_confidence"),
+                    source_span_ids(spans),
+                    source_span_text(spans),
+                ]
+            )
+        )
+    return lines
+
+
+def render_structuring_warnings_table(warnings: list[Any]) -> list[str]:
+    lines = [
+        "### Structuring Warnings",
+        "",
+        "| severity | code | message | related_object_id |",
+        "| --- | --- | --- | --- |",
+    ]
+    if not warnings:
+        lines.append(empty_markdown_row(4, "No structuring warnings produced."))
+        return lines
+
+    for warning in warnings:
+        lines.append(
+            markdown_row(
+                [
+                    object_field(warning, "severity"),
+                    object_field(warning, "code"),
+                    object_field(warning, "message"),
+                    object_field(warning, "related_object_id"),
+                ]
+            )
+        )
+    return lines
+
+
+def render_case_structurer_result_tables(corrected_result: Any) -> list[str]:
+    lines = [
+        "## Case Structurer Results",
+        "",
+    ]
+    table_sections = [
+        render_stage_context_table(object_field(corrected_result, "stage_context")),
+        render_clinical_sections_table(
+            object_list_field(corrected_result, "clinical_sections")
+        ),
+        render_structured_items_table(
+            object_list_field(corrected_result, "structured_items")
+        ),
+        render_timeline_events_table(
+            object_list_field(corrected_result, "timeline_events")
+        ),
+        render_ambiguities_table(object_list_field(corrected_result, "ambiguities")),
+        render_structuring_warnings_table(
+            object_list_field(corrected_result, "structuring_warnings")
+        ),
+    ]
+
+    for table_section in table_sections:
+        lines.extend(table_section)
+        lines.append("")
+
+    return lines
+
+
 def render_round_markdown_summary(
     *,
     round_summary: dict[str, Any],
@@ -292,8 +624,8 @@ def render_round_markdown_summary(
     atomization_result: Any,
     validation_report: Any,
 ) -> str:
-    issues = getattr(validation_report, "issues", []) or []
-    atoms = getattr(atomization_result, "evidence_atoms", []) or []
+    issues = object_list_field(validation_report, "issues")
+    atoms = object_list_field(atomization_result, "evidence_atoms")
 
     lines: list[str] = [
         f"# Phase 1 Trace Round {round_summary['round_index']:03d}",
@@ -304,6 +636,9 @@ def render_round_markdown_summary(
         f"- parent_input_id: {round_summary['parent_input_id']}",
         f"- input_order: {round_summary['input_order']}",
         f"- case_structuring_result_id: {round_summary['case_structuring_result_id']}",
+        f"- case_structurer_duration: {format_duration(round_summary['case_structurer_duration_seconds'])}",
+        f"- evidence_atomizer_duration: {format_duration(round_summary['evidence_atomizer_duration_seconds'])}",
+        f"- round_duration: {format_duration(round_summary['round_duration_seconds'])}",
         "",
         "## Structuring Summary",
         "",
@@ -313,18 +648,25 @@ def render_round_markdown_summary(
         f"- timeline_events: {round_summary['number_of_timeline_events']}",
         f"- ambiguities: {round_summary['number_of_ambiguities']}",
         "",
-        "## Atomization Summary",
-        "",
-        f"- atomization_result_id: {round_summary['atomization_result_id']}",
-        f"- evidence_atoms: {round_summary['number_of_evidence_atoms']}",
-        f"- item_to_evidence_links: {round_summary['number_of_item_to_evidence_links']}",
-        f"- deferred_items: {round_summary['number_of_deferred_items']}",
-        f"- atomization_warnings: {round_summary['number_of_atomization_warnings']}",
-        f"- validation_accepted: {round_summary['evidence_atomization_validation_accepted']}",
-        "",
-        "## Validation Issues",
-        "",
     ]
+
+    lines.extend(render_case_structurer_result_tables(corrected_result))
+
+    lines.extend(
+        [
+            "## Atomization Summary",
+            "",
+            f"- atomization_result_id: {round_summary['atomization_result_id']}",
+            f"- evidence_atoms: {round_summary['number_of_evidence_atoms']}",
+            f"- item_to_evidence_links: {round_summary['number_of_item_to_evidence_links']}",
+            f"- deferred_items: {round_summary['number_of_deferred_items']}",
+            f"- atomization_warnings: {round_summary['number_of_atomization_warnings']}",
+            f"- validation_accepted: {round_summary['evidence_atomization_validation_accepted']}",
+            "",
+            "## Evidence Atomizer Validation Issues",
+            "",
+        ]
+    )
 
     if issues:
         lines.extend(
@@ -335,18 +677,16 @@ def render_round_markdown_summary(
         )
         for issue in issues:
             lines.append(
-                "| "
-                + " | ".join(
+                markdown_row(
                     [
-                        markdown_cell(getattr(issue, "severity", None)),
-                        markdown_cell(getattr(issue, "code", None)),
-                        markdown_cell(getattr(issue, "message", None)),
-                        markdown_cell(getattr(issue, "related_item_id", None)),
-                        markdown_cell(getattr(issue, "related_evidence_id", None)),
-                        markdown_cell(getattr(issue, "related_span_id", None)),
+                        object_field(issue, "severity"),
+                        object_field(issue, "code"),
+                        object_field(issue, "message"),
+                        object_field(issue, "related_item_id"),
+                        object_field(issue, "related_evidence_id"),
+                        object_field(issue, "related_span_id"),
                     ]
                 )
-                + " |"
             )
     else:
         lines.append("No validation issues.")
@@ -362,33 +702,29 @@ def render_round_markdown_summary(
     )
     for atom in atoms:
         lines.append(
-            "| "
-            + " | ".join(
+            markdown_row(
                 [
-                    markdown_cell(getattr(atom, "evidence_id", None)),
-                    markdown_cell(getattr(atom, "evidence_type", None)),
-                    markdown_cell(getattr(atom, "clinical_domain", None)),
-                    markdown_cell(getattr(atom, "statement", None)),
-                    markdown_cell(getattr(atom, "normalized_label", None)),
-                    markdown_cell(getattr(atom, "value", None)),
-                    markdown_cell(getattr(atom, "unit", None)),
-                    markdown_cell(getattr(atom, "assertion_status", None)),
-                    markdown_cell(getattr(atom, "certainty", None)),
-                    markdown_cell(getattr(atom, "temporality", None)),
-                    markdown_cell(getattr(atom, "time_text", None)),
-                    markdown_cell(", ".join(getattr(atom, "source_item_ids", []) or [])),
-                    markdown_cell(", ".join(getattr(atom, "source_span_ids", []) or [])),
-                    markdown_cell(getattr(atom, "source_text", None)),
+                    object_field(atom, "evidence_id"),
+                    object_field(atom, "evidence_type"),
+                    object_field(atom, "clinical_domain"),
+                    object_field(atom, "statement"),
+                    object_field(atom, "normalized_label"),
+                    object_field(atom, "value"),
+                    object_field(atom, "unit"),
+                    object_field(atom, "assertion_status"),
+                    object_field(atom, "certainty"),
+                    object_field(atom, "temporality"),
+                    object_field(atom, "time_text"),
+                    join_markdown_values(object_field(atom, "source_item_ids", [])),
+                    join_markdown_values(object_field(atom, "source_span_ids", [])),
+                    object_field(atom, "source_text"),
                 ]
             )
-            + " |"
         )
 
     if not atoms:
-        lines.append("|  |  |  | No evidence atoms produced. |  |  |  |  |  |  |  |  |  |  |")
+        lines.append(empty_markdown_row(14, "No evidence atoms produced."))
 
-    # Keep this boundary explicit: this script records round traces only.
-    del corrected_result
     lines.extend(["", "## Boundary Note", "", MULTI_ROUND_NOTE, ""])
     return "\n".join(lines)
 
@@ -400,6 +736,9 @@ def build_round_summary(
     corrected_result: Any,
     atomization_result: Any,
     validation_report: Any,
+    case_structurer_duration_seconds: float,
+    evidence_atomizer_duration_seconds: float,
+    round_duration_seconds: float,
 ) -> dict[str, Any]:
     return {
         "round_index": round_index,
@@ -430,6 +769,15 @@ def build_round_summary(
         "evidence_atomization_validation_issue_counts_by_code": (
             issue_counts_by_code(validation_report)
         ),
+        "case_structurer_duration_seconds": round(
+            case_structurer_duration_seconds,
+            3,
+        ),
+        "evidence_atomizer_duration_seconds": round(
+            evidence_atomizer_duration_seconds,
+            3,
+        ),
+        "round_duration_seconds": round(round_duration_seconds, 3),
     }
 
 
@@ -546,6 +894,18 @@ def print_round_console_summary(
     print(f"- deferred_items: {summary['number_of_deferred_items']}")
     print(f"- atomization_warnings: {summary['number_of_atomization_warnings']}")
     print(
+        "- case structurer duration: "
+        f"{format_duration(summary['case_structurer_duration_seconds'])}"
+    )
+    print(
+        "- evidence atomizer duration: "
+        f"{format_duration(summary['evidence_atomizer_duration_seconds'])}"
+    )
+    print(
+        "- total round duration: "
+        f"{format_duration(summary['round_duration_seconds'])}"
+    )
+    print(
         "- validation accepted: "
         f"{summary['evidence_atomization_validation_accepted']}"
     )
@@ -584,22 +944,27 @@ def run_case_structurer_round(
     case_id: str | None,
     input_order: int,
     parent_input_id: str | None,
-) -> tuple[Any, Any]:
+) -> tuple[Any, Any, float]:
+    timer = LiveTimer("Case Structurer")
     try:
-        case_bundle = case_structurer_agent.run_with_validation(
-            raw_text=raw_text,
-            case_id=case_id,
-            input_order=input_order,
-            parent_input_id=parent_input_id,
-        )
+        with timer:
+            case_bundle = case_structurer_agent.run_with_validation(
+                raw_text=raw_text,
+                case_id=case_id,
+                input_order=input_order,
+                parent_input_id=parent_input_id,
+            )
     except Exception as exc:
         write_json(round_dir / "error.json", exception_payload("case_structurer", exc))
         print(
-            f"ERROR: Case Structurer failed ({type(exc).__name__}): {exc}",
+            "ERROR: Case Structurer failed after "
+            f"{format_duration(timer.elapsed_seconds)} "
+            f"({type(exc).__name__}): {exc}",
             file=sys.stderr,
         )
         raise
 
+    duration = timer.elapsed_seconds
     corrected_result = case_bundle.corrected_result
     write_json(
         round_dir / "case_structuring_corrected.json",
@@ -609,7 +974,7 @@ def run_case_structurer_round(
         round_dir / "case_structuring_validation_bundle.json",
         safe_validation_bundle_payload(case_bundle),
     )
-    return case_bundle, corrected_result
+    return case_bundle, corrected_result, duration
 
 
 def run_evidence_atomizer_round(
@@ -617,19 +982,24 @@ def run_evidence_atomizer_round(
     corrected_result: Any,
     round_dir: Path,
     evidence_atomizer_agent: Any,
-) -> tuple[Any, Any]:
+) -> tuple[Any, Any, float]:
+    timer = LiveTimer("Evidence Atomizer")
     try:
-        atomization_bundle = evidence_atomizer_agent.run_with_validation(
-            corrected_result
-        )
+        with timer:
+            atomization_bundle = evidence_atomizer_agent.run_with_validation(
+                corrected_result
+            )
     except Exception as exc:
         write_json(round_dir / "error.json", exception_payload("evidence_atomizer", exc))
         print(
-            f"ERROR: Evidence Atomizer failed ({type(exc).__name__}): {exc}",
+            "ERROR: Evidence Atomizer failed after "
+            f"{format_duration(timer.elapsed_seconds)} "
+            f"({type(exc).__name__}): {exc}",
             file=sys.stderr,
         )
         raise
 
+    duration = timer.elapsed_seconds
     atomization_result = atomization_bundle.atomization_result
     validation_report = atomization_bundle.validation_report
 
@@ -645,7 +1015,7 @@ def run_evidence_atomizer_round(
         round_dir / "evidence_atoms.json",
         [atom.model_dump(mode="json") for atom in atomization_result.evidence_atoms],
     )
-    return atomization_result, validation_report
+    return atomization_result, validation_report, duration
 
 
 def write_round_summaries(
@@ -656,6 +1026,9 @@ def write_round_summaries(
     corrected_result: Any,
     atomization_result: Any,
     validation_report: Any,
+    case_structurer_duration_seconds: float,
+    evidence_atomizer_duration_seconds: float,
+    round_duration_seconds: float,
 ) -> dict[str, Any]:
     summary = build_round_summary(
         round_index=round_index,
@@ -663,6 +1036,9 @@ def write_round_summaries(
         corrected_result=corrected_result,
         atomization_result=atomization_result,
         validation_report=validation_report,
+        case_structurer_duration_seconds=case_structurer_duration_seconds,
+        evidence_atomizer_duration_seconds=evidence_atomizer_duration_seconds,
+        round_duration_seconds=round_duration_seconds,
     )
     write_json(round_dir / "round_summary.json", summary)
     write_text(
@@ -783,9 +1159,14 @@ def main() -> int:
             f"\nRunning round {round_index}: {display_path(selected_file)} "
             f"(input_order={input_order}, parent_input_id={parent_input_id})"
         )
+        round_start = perf_counter()
 
         try:
-            _case_bundle, corrected_result = run_case_structurer_round(
+            (
+                _case_bundle,
+                corrected_result,
+                case_structurer_duration_seconds,
+            ) = run_case_structurer_round(
                 raw_text=raw_text,
                 round_dir=round_dir,
                 case_structurer_agent=case_structurer_agent,
@@ -805,7 +1186,11 @@ def main() -> int:
             round_dir = result_root / f"round_{round_index:03d}"
 
         try:
-            atomization_result, validation_report = run_evidence_atomizer_round(
+            (
+                atomization_result,
+                validation_report,
+                evidence_atomizer_duration_seconds,
+            ) = run_evidence_atomizer_round(
                 corrected_result=corrected_result,
                 round_dir=round_dir,
                 evidence_atomizer_agent=evidence_atomizer_agent,
@@ -814,6 +1199,12 @@ def main() -> int:
             print(f"Partial round trace saved at: {round_dir}", file=sys.stderr)
             return 1
 
+        round_duration_seconds = perf_counter() - round_start
+        print(
+            f"Round {round_index} completed in "
+            f"{format_duration(round_duration_seconds)}."
+        )
+
         summary = write_round_summaries(
             round_index=round_index,
             selected_file=selected_file,
@@ -821,6 +1212,9 @@ def main() -> int:
             corrected_result=corrected_result,
             atomization_result=atomization_result,
             validation_report=validation_report,
+            case_structurer_duration_seconds=case_structurer_duration_seconds,
+            evidence_atomizer_duration_seconds=evidence_atomizer_duration_seconds,
+            round_duration_seconds=round_duration_seconds,
         )
         previous_input_id = corrected_result.input.input_id
         round_summaries.append(summary)

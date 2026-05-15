@@ -1,0 +1,13 @@
+{
+  "accepted": true,
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "source_text_not_found_in_source_span",
+      "message": "EvidenceAtom.source_text was not found in referenced source span text or raw_text after whitespace-normalized matching.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_ef801218",
+      "related_span_id": null
+    }
+  ]
+}

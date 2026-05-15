@@ -1,0 +1,28 @@
+{
+  "case_id": "case_20260515_4cb326c3",
+  "created_at": "2026-05-15T01:57:08.312552+00:00",
+  "total_rounds": 2,
+  "result_root": "/Users/frank_zhiy/Documents/1. PhD/MultiAgentLab_ILD/results/phase1_trace/case_20260515_4cb326c3_20260515T015708Z",
+  "rounds": [
+    {
+      "round_index": 1,
+      "selected_file": "data/01.txt",
+      "input_id": "input_20260515_893571a9",
+      "parent_input_id": null,
+      "case_structuring_result_id": "case_structuring_result_20260515_3dcb91ba",
+      "atomization_result_id": "atomization_result_20260515_872d4930",
+      "evidence_atom_count": 49,
+      "validation_accepted": true
+    },
+    {
+      "round_index": 2,
+      "selected_file": "data/02.txt",
+      "input_id": "input_20260515_6d519ae9",
+      "parent_input_id": "input_20260515_893571a9",
+      "case_structuring_result_id": "case_structuring_result_20260515_d6923225",
+      "atomization_result_id": "atomization_result_20260515_a8c63845",
+      "evidence_atom_count": 30,
+      "validation_accepted": true
+    }
+  ]
+}
