@@ -151,6 +151,37 @@ class EvidenceAtom(BaseModel):
         ),
     )
 
+    source_frame_node_ids: list[str] = Field(
+        default_factory=list,
+        description="EvidenceEventFrame node ids that directly produced this atom.",
+    )
+
+    context_frame_node_ids: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Inherited EvidenceEventFrame context node ids used to make this "
+            "atom context-complete."
+        ),
+    )
+
+    parent_frame_node_ids: list[str] = Field(
+        default_factory=list,
+        description="Optional parent frame node ids for this atom's local content.",
+    )
+
+    atom_context_text: str | None = Field(
+        default=None,
+        description="Optional inherited context text used during atom generation.",
+    )
+
+    local_content_text: str | None = Field(
+        default=None,
+        description=(
+            "Optional local content represented by this atom before context "
+            "inheritance."
+        ),
+    )
+
     source_text: str = Field(
         ...,
         min_length=1,
@@ -179,6 +210,8 @@ class EvidenceAtom(BaseModel):
 
     @field_validator(
         "normalized_label",
+        "atom_context_text",
+        "local_content_text",
         mode="after",
     )
     @classmethod

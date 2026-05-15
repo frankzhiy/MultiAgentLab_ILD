@@ -294,6 +294,134 @@ class EvidenceAtomNormalizer:
             warnings=warnings,
             related_item_id=source_item_ids[0] if source_item_ids else None,
         )
+        if len(coverage_units) == 1:
+            coverage_unit = coverage_units[0]
+            source_attribute_ids = _dedupe_strings(
+                [*coverage_unit.source_attribute_ids, *source_attribute_ids]
+            )
+            source_span_ids = _dedupe_strings(
+                [*coverage_unit.source_span_ids, *source_span_ids]
+            )
+            if coverage_unit.inherited_context_text and (
+                statement is None
+                or not _statement_reflects_context(statement, coverage_unit)
+            ):
+                warnings.append(
+                    _warning(
+                        code="context_stripped_from_atom",
+                        message=(
+                            "Evidence atom draft did not preserve inherited "
+                            "frame context from its coverage unit."
+                        ),
+                        related_item_id=source_item_ids[0] if source_item_ids else None,
+                    )
+                )
+                statement = coverage_unit.surface_text
+                warnings.append(
+                    _warning(
+                        code="coverage_unit_statement_substituted",
+                        message=(
+                            "Evidence atom statement was replaced with the "
+                            "frame-aware coverage unit surface_text to preserve "
+                            "inherited context."
+                        ),
+                        related_item_id=source_item_ids[0] if source_item_ids else None,
+                    )
+                )
+        elif coverage_units:
+            policies = {
+                unit.atomization_policy
+                for unit in coverage_units
+                if unit.atomization_policy is not None
+            }
+            if policies != {"generate_group_modifier_atom"}:
+                warnings.append(
+                    _warning(
+                        code="multi_coverage_unit_atom_without_group_policy",
+                        message=(
+                            "Evidence atom draft referenced multiple coverage "
+                            "units without an explicit group modifier policy."
+                        ),
+                        related_item_id=source_item_ids[0] if source_item_ids else None,
+                    )
+                )
+            source_attribute_ids = _dedupe_strings(
+                [
+                    *[
+                        attribute_id
+                        for unit in coverage_units
+                        for attribute_id in unit.source_attribute_ids
+                    ],
+                    *source_attribute_ids,
+                ]
+            )
+            source_span_ids = _dedupe_strings(
+                [
+                    *[
+                        span_id
+                        for unit in coverage_units
+                        for span_id in unit.source_span_ids
+                    ],
+                    *source_span_ids,
+                ]
+            )
+
+        frame_source_node_ids = _dedupe_strings(
+            [
+                *[
+                    node_id
+                    for unit in coverage_units
+                    for node_id in unit.source_frame_node_ids
+                ],
+                *_list_text(draft.get("source_frame_node_ids")),
+            ]
+        )
+        frame_context_node_ids = _dedupe_strings(
+            [
+                *[
+                    node_id
+                    for unit in coverage_units
+                    for node_id in unit.context_frame_node_ids
+                ],
+                *_list_text(draft.get("context_frame_node_ids")),
+            ]
+        )
+        parent_frame_node_ids = _dedupe_strings(
+            [
+                *[
+                    unit.parent_frame_node_id
+                    for unit in coverage_units
+                    if unit.parent_frame_node_id is not None
+                ],
+                *_list_text(draft.get("parent_frame_node_ids")),
+            ]
+        )
+        atom_context_text = _first_text(draft, ("atom_context_text",))
+        local_content_text = _first_text(draft, ("local_content_text",))
+        if coverage_units:
+            atom_context_text = _compose_optional_text(
+                [unit.inherited_context_text for unit in coverage_units]
+            ) or atom_context_text
+            local_content_text = _compose_optional_text(
+                [unit.local_content_text for unit in coverage_units]
+            ) or local_content_text
+            if frame_context_node_ids and atom_context_text and statement is not None:
+                if not _statement_contains_any_context_fragment(
+                    statement,
+                    atom_context_text,
+                ):
+                    warnings.append(
+                        _warning(
+                            code="frame_context_missing_in_atom",
+                            message=(
+                                "Evidence atom carries frame context provenance "
+                                "but the statement may not express inherited context."
+                            ),
+                            related_item_id=(
+                                source_item_ids[0] if source_item_ids else None
+                            ),
+                        )
+                    )
 
         return {
             "case_id": structuring_result.input.case_id,
@@ -333,6 +461,11 @@ class EvidenceAtomNormalizer:
             "source_attribute_ids": source_attribute_ids,
             "source_span_ids": source_span_ids,
             "source_contexts": source_contexts,
+            "source_frame_node_ids": frame_source_node_ids,
+            "context_frame_node_ids": frame_context_node_ids,
+            "parent_frame_node_ids": parent_frame_node_ids,
+            "atom_context_text": atom_context_text,
+            "local_content_text": local_content_text,
             "source_text": context.source_text_for_spans(
                 source_item_ids,
                 source_span_ids,
@@ -978,6 +1111,57 @@ def _coverage_unit_ids_from_draft(draft: dict[str, Any]) -> list[str]:
             or draft.get("coverage_unit_id")
         )
     )
+
+
+def _statement_reflects_context(statement: str, coverage_unit: CoverageUnit) -> bool:
+    context_text = _optional_text(coverage_unit.inherited_context_text)
+    if context_text is None:
+        return True
+    if statement == coverage_unit.surface_text:
+        return True
+    if context_text in statement:
+        return True
+    context_fragments = _context_fragments(context_text)
+    if not context_fragments:
+        return True
+    return any(fragment in statement for fragment in context_fragments)
+
+
+def _statement_contains_any_context_fragment(
+    statement: str,
+    context_text: str,
+) -> bool:
+    if context_text in statement:
+        return True
+    fragments = _context_fragments(context_text)
+    return bool(fragments) and any(fragment in statement for fragment in fragments)
+
+
+def _context_fragments(context_text: str) -> list[str]:
+    separators = ("，", ",", "。", ";", "；", "、", " ")
+    fragments = [context_text]
+    for separator in separators:
+        next_fragments: list[str] = []
+        for fragment in fragments:
+            next_fragments.extend(fragment.split(separator))
+        fragments = next_fragments
+    return [
+        fragment.strip()
+        for fragment in fragments
+        if len(fragment.strip()) >= 2
+    ]
+
+
+def _compose_optional_text(values: list[str | None]) -> str | None:
+    parts = _dedupe_strings(value for value in values if value is not None)
+    if not parts:
+        return None
+    separator = "，" if any(_looks_cjk(part) for part in parts) else "; "
+    return separator.join(parts)
+
+
+def _looks_cjk(text: str) -> bool:
+    return any("\u4e00" <= char <= "\u9fff" for char in text)
 
 
 def _safe_link(

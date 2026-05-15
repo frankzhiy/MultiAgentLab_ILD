@@ -1,0 +1,536 @@
+{
+  "frames": [
+    {
+      "frame_id": "evidence_frame_20260515_7e45e8fe",
+      "source_item_id": "item_001",
+      "source_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_21e68659",
+          "source_item_id": "item_001",
+          "node_type": "main_event",
+          "node_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_c01f982c",
+            "attribute_20260515_0b7413fe"
+          ],
+          "source_span_ids": [
+            "span_item_001"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": "Symptoms are described as the main reason for admission with definite chronicity and worsening over 2 months."
+        }
+      ],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_b266637b",
+      "source_item_id": "item_002",
+      "source_text": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_82a06612",
+          "source_item_id": "item_002",
+          "node_type": "main_event",
+          "node_text": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_db50e7f1",
+            "attribute_20260515_a6bb28d7",
+            "attribute_20260515_55bff4cc",
+            "attribute_20260515_1c794860"
+          ],
+          "source_span_ids": [
+            "span_item_002"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "medium",
+          "notes": null
+        }
+      ],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_7575dbc7",
+      "source_item_id": "item_003",
+      "source_text": "40年前左下肢骨折固定术",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_c9a5a718",
+          "source_item_id": "item_003",
+          "node_type": "negative_finding",
+          "node_text": "40年前左下肢骨折固定术",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_6eaa64ac"
+          ],
+          "source_span_ids": [
+            "span_item_003"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "medium",
+          "notes": null
+        }
+      ],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_a8df9d10",
+      "source_item_id": "item_004",
+      "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_3ea97b5d",
+          "source_item_id": "item_004",
+          "node_type": "main_event",
+          "node_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "chronic",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_ef3b910b",
+            "attribute_20260515_ed40d3a6",
+            "attribute_20260515_ec94195a",
+            "attribute_20260515_81c02d65"
+          ],
+          "source_span_ids": [
+            "span_item_004"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "medium",
+          "notes": null
+        }
+      ],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_52986ac4",
+      "source_item_id": "item_005",
+      "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_5d7a793d",
+          "source_item_id": "item_005",
+          "node_type": "main_event",
+          "node_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "past",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_a565e7cf",
+            "attribute_20260515_5d1a1ef5",
+            "attribute_20260515_2c57ae6a",
+            "attribute_20260515_9982035c",
+            "attribute_20260515_a475209a"
+          ],
+          "source_span_ids": [
+            "span_item_005"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "medium",
+          "notes": null
+        }
+      ],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_a05270e2",
+      "source_item_id": "item_006",
+      "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_be804d42",
+          "source_item_id": "item_006",
+          "node_type": "main_event",
+          "node_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [
+            "attribute_20260515_57b1ba36"
+          ],
+          "source_span_ids": [
+            "span_item_006"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "medium",
+          "notes": null
+        }
+      ],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_3069b52a",
+      "source_item_id": "item_007",
+      "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_ab2f0de2",
+          "source_item_id": "item_007",
+          "node_type": "temporal_context",
+          "node_text": "2024年6月11日胸部CT示",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": false,
+          "atomization_policy": "do_not_generate_context_only",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_e6a98581",
+          "source_item_id": "item_007",
+          "node_type": "main_event",
+          "node_text": "双肺间质增粗纹理走形杂乱",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_ab2f0de2",
+          "relation_to_parent": "temporal_context_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_ab2f0de2"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_a64a335f",
+          "source_item_id": "item_007",
+          "node_type": "main_event",
+          "node_text": "肺野密度增高",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_ab2f0de2",
+          "relation_to_parent": "temporal_context_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_ab2f0de2"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_d40e872a",
+          "source_item_id": "item_007",
+          "node_type": "main_event",
+          "node_text": "右肺中叶、下叶、左肺舌段条片状实性高密度影",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_ab2f0de2",
+          "relation_to_parent": "temporal_context_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_ab2f0de2"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_a5d9a773",
+          "source_item_id": "item_007",
+          "node_type": "object_property",
+          "node_text": "右肺中叶、下叶病灶边缘模糊",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_d40e872a",
+          "relation_to_parent": "property_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_ab2f0de2",
+            "evidence_frame_node_20260515_d40e872a"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_9ca439e1",
+          "source_item_id": "item_007",
+          "node_type": "trigger_or_background_context",
+          "node_text": "考虑为“肺部感染”",
+          "assertion_status": "present",
+          "certainty": "probable",
+          "temporality": "recent_worsening",
+          "parent_node_id": "evidence_frame_node_20260515_ab2f0de2",
+          "relation_to_parent": "trigger_context_of",
+          "inherited_context_node_ids": [
+            "evidence_frame_node_20260515_ab2f0de2"
+          ],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_007"
+          ],
+          "context_role": "inherited_context",
+          "atomizable": false,
+          "atomization_policy": "do_not_generate_context_only",
+          "confidence": "medium",
+          "notes": "The phrase '考虑为' indicates suspicion, so status is possible."
+        }
+      ],
+      "frame_warnings": [
+        {
+          "severity": "warning",
+          "code": "frame_orphan_property",
+          "message": "Object property frame node does not have a clear clinical-object parent.",
+          "related_item_id": "item_007",
+          "related_evidence_id": null,
+          "related_span_id": null
+        }
+      ]
+    },
+    {
+      "frame_id": "evidence_frame_20260515_459d0f50",
+      "source_item_id": "item_008",
+      "source_text": "治疗上给予抗感染（具体不详）治疗后，胸闷气短症状改善不明显",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_2cd63c2d",
+          "source_item_id": "item_008",
+          "node_type": "main_event",
+          "node_text": "治疗上给予抗感染（具体不详）治疗后，胸闷气短症状改善不明显",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "recent_worsening",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_008"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "medium",
+          "notes": null
+        }
+      ],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_5c402e60",
+      "source_item_id": "item_009",
+      "source_text": "请我科医师会诊后，以“间质性肺炎，肺部感染”收住我科",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_39a86db9",
+          "source_item_id": "item_009",
+          "node_type": "main_event",
+          "node_text": "请我科医师会诊后，以“间质性肺炎，肺部感染”收住我科",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_009"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "medium",
+          "notes": null
+        }
+      ],
+      "frame_warnings": []
+    },
+    {
+      "frame_id": "evidence_frame_20260515_8512d39c",
+      "source_item_id": "item_010",
+      "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+      "frame_nodes": [
+        {
+          "frame_node_id": "evidence_frame_node_20260515_fc8ae580",
+          "source_item_id": "item_010",
+          "node_type": "main_event",
+          "node_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": null,
+          "relation_to_parent": null,
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_010"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "medium",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_b5a44de2",
+          "source_item_id": "item_010",
+          "node_type": "clinical_object",
+          "node_text": "神志清",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": "evidence_frame_node_20260515_fc8ae580",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_010"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_9f376eab",
+          "source_item_id": "item_010",
+          "node_type": "clinical_object",
+          "node_text": "精神可",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": "evidence_frame_node_20260515_fc8ae580",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_010"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_6227aeb1",
+          "source_item_id": "item_010",
+          "node_type": "clinical_object",
+          "node_text": "饮食睡眠、大小便正常",
+          "assertion_status": "present",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": "evidence_frame_node_20260515_fc8ae580",
+          "relation_to_parent": "occurrence_of",
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_010"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": null
+        },
+        {
+          "frame_node_id": "evidence_frame_node_20260515_f1fd2b8c",
+          "source_item_id": "item_010",
+          "node_type": "negative_finding",
+          "node_text": "体重无明显变化",
+          "assertion_status": "absent",
+          "certainty": "definite",
+          "temporality": "current",
+          "parent_node_id": "evidence_frame_node_20260515_fc8ae580",
+          "relation_to_parent": "negative_contrast_of",
+          "inherited_context_node_ids": [],
+          "source_attribute_ids": [],
+          "source_span_ids": [
+            "span_item_010"
+          ],
+          "context_role": "local_content",
+          "atomizable": true,
+          "atomization_policy": "generate_atom_with_inherited_context",
+          "confidence": "high",
+          "notes": "No significant weight change indicates absence of weight loss or gain"
+        }
+      ],
+      "frame_warnings": []
+    }
+  ],
+  "warnings": [
+    {
+      "severity": "warning",
+      "code": "frame_orphan_property",
+      "message": "Object property frame node does not have a clear clinical-object parent.",
+      "related_item_id": "item_007",
+      "related_evidence_id": null,
+      "related_span_id": null
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "round_index": 1,
+  "selected_file": "data/01.txt",
+  "case_id": "case_20260515_191ff2c7",
+  "input_id": "input_20260515_a4c78f35",
+  "parent_input_id": null,
+  "input_order": 1,
+  "case_structuring_result_id": "case_structuring_result_20260515_6e358692",
+  "ready_for_attribute_extraction": true,
+  "ready_for_evidence_atomization": true,
+  "number_of_clinical_sections": 5,
+  "number_of_structured_items": 10,
+  "attribute_extraction_result_id": "attribute_extraction_result_20260515_0bdf9bac",
+  "number_of_clinical_attributes": 17,
+  "number_of_attribute_extraction_warnings": 0,
+  "attribute_extraction_validation_accepted": true,
+  "attribute_extraction_validation_issue_counts_by_severity": {},
+  "attribute_extraction_validation_issue_counts_by_code": {},
+  "atomization_result_id": "atomization_result_20260515_147fa9b9",
+  "number_of_evidence_atoms": 16,
+  "number_of_item_to_evidence_links": 10,
+  "number_of_deferred_items": 0,
+  "number_of_atomization_warnings": 13,
+  "number_of_evidence_event_frames": 10,
+  "number_of_evidence_event_frame_warnings": 1,
+  "evidence_atomization_validation_accepted": false,
+  "evidence_atomization_validation_issue_counts_by_severity": {
+    "error": 1
+  },
+  "evidence_atomization_validation_issue_counts_by_code": {
+    "coverage_unit_not_covered": 1
+  },
+  "case_structurer_duration_seconds": 74.882,
+  "attribute_extraction_duration_seconds": 31.277,
+  "evidence_atomizer_duration_seconds": 240.571,
+  "round_duration_seconds": 346.74
+}

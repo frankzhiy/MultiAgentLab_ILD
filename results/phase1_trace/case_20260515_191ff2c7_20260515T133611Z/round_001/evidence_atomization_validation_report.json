@@ -1,0 +1,14 @@
+{
+  "accepted": false,
+  "issues": [
+    {
+      "severity": "error",
+      "code": "coverage_unit_not_covered",
+      "message": "Required CoverageUnit must be referenced by at least one EvidenceAtom. [coverage_unit_id=item_010__frame_unit_001]",
+      "related_item_id": "item_010",
+      "related_evidence_id": null,
+      "related_span_id": null,
+      "related_attribute_id": null
+    }
+  ]
+}

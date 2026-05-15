@@ -33,18 +33,22 @@ from src.validators.evidence_atomizer.evidence_atomization_coverage_validator im
 )
 
 from .modules import (
-    AssertionAwareCoverageUnitBuilder,
     AtomizationCandidateBuilder,
     ClinicalAssertionResolver,
-    CoverageUnitBuilder,
+    EvidenceAtomDeduplicator,
     EvidenceAtomExtractor,
     EvidenceAtomizationAssembler,
     EvidenceAtomizerInputGuard,
     EvidenceAtomNormalizer,
+    EvidenceEventFrameBuilder,
+    FrameAwareCoverageUnitBuilder,
 )
 from src.schemas.evidence_atomizer import AtomizationWarning
 from src.schemas.evidence_atomizer.clinical_object_assertion import (
     ClinicalAssertionResolutionResult,
+)
+from src.schemas.evidence_atomizer.evidence_event_frame import (
+    EvidenceEventFrameBuildResult,
 )
 
 if TYPE_CHECKING:
@@ -75,12 +79,17 @@ class EvidenceAtomizerPipeline:
             self.llm_client,
             agent_name=agent_name,
         )
-        self.coverage_unit_builder = AssertionAwareCoverageUnitBuilder()
+        self.evidence_event_frame_builder = EvidenceEventFrameBuilder(
+            self.llm_client,
+            agent_name=agent_name,
+        )
+        self.coverage_unit_builder = FrameAwareCoverageUnitBuilder()
         self.evidence_atom_extractor = EvidenceAtomExtractor(
             self.llm_client,
             agent_name=agent_name,
         )
         self.evidence_atom_normalizer = EvidenceAtomNormalizer()
+        self.evidence_atom_deduplicator = EvidenceAtomDeduplicator()
         self.assembler = EvidenceAtomizationAssembler()
         self.coverage_validator = EvidenceAtomizationCoverageValidator()
         self.validator = EvidenceAtomizationValidator()
@@ -141,6 +150,7 @@ class EvidenceAtomizerPipeline:
                 atomization_result=atomization_result,
                 validation_report=validation_report,
                 clinical_assertion_resolution=ClinicalAssertionResolutionResult(),
+                evidence_event_frame_build_result=EvidenceEventFrameBuildResult(),
             )
 
         candidates = self._run_step(
@@ -154,11 +164,19 @@ class EvidenceAtomizerPipeline:
             "ClinicalAssertionResolver",
             lambda: self.clinical_assertion_resolver.resolve(candidates),
         )
+        frame_build_result = self._run_step(
+            "EvidenceEventFrameBuilder",
+            lambda: self.evidence_event_frame_builder.build(
+                candidates=candidates,
+                assertions=assertion_result.clinical_object_assertions,
+            ),
+        )
         coverage_build_result = self._run_step(
-            "AssertionAwareCoverageUnitBuilder",
+            "FrameAwareCoverageUnitBuilder",
             lambda: self.coverage_unit_builder.build(
                 candidates=candidates,
                 assertions=assertion_result.clinical_object_assertions,
+                frames=frame_build_result.frames,
             ),
         )
         coverage_units = coverage_build_result.coverage_units
@@ -181,11 +199,19 @@ class EvidenceAtomizerPipeline:
                 draft_payload,
             ),
         )
+        normalized_payload = self._run_step(
+            "EvidenceAtomDeduplicator",
+            lambda: self.evidence_atom_deduplicator.deduplicate(
+                normalized_payload=normalized_payload,
+                coverage_units=coverage_units,
+            ),
+        )
         normalized_payload = normalized_payload.model_copy(
             update={
                 "atomization_warnings": _merge_atomization_warnings(
                     normalized_payload.atomization_warnings,
                     assertion_result.assertion_warnings,
+                    frame_build_result.warnings,
                     coverage_build_result.warnings,
                 ),
             }
@@ -224,6 +250,7 @@ class EvidenceAtomizerPipeline:
             atomization_result=atomization_result,
             validation_report=validation_report,
             clinical_assertion_resolution=assertion_result,
+            evidence_event_frame_build_result=frame_build_result,
         )
 
     @staticmethod
@@ -291,15 +318,19 @@ def _coverage_issue_message(
 def _merge_atomization_warnings(
     existing_warnings: list[AtomizationWarning],
     assertion_warnings: list[AtomizationWarning],
-    coverage_build_warnings: list[str],
+    frame_build_warnings: list[AtomizationWarning],
+    coverage_build_warnings: list[AtomizationWarning | str],
 ) -> list[AtomizationWarning]:
-    warnings = [*existing_warnings, *assertion_warnings]
-    warnings.extend(
-        AtomizationWarning(
-            severity=ValidationSeverity.WARNING,
-            code="coverage_unit_builder_warning",
-            message=message,
+    warnings = [*existing_warnings, *assertion_warnings, *frame_build_warnings]
+    for warning in coverage_build_warnings:
+        if isinstance(warning, AtomizationWarning):
+            warnings.append(warning)
+            continue
+        warnings.append(
+            AtomizationWarning(
+                severity=ValidationSeverity.WARNING,
+                code="coverage_unit_builder_warning",
+                message=str(warning),
+            )
         )
-        for message in coverage_build_warnings
-    )
     return warnings

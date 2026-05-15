@@ -35,6 +35,8 @@ def evidence_atomization_contract() -> dict[str, Any]:
                 "normalized_label",
                 "assertion_status, certainty, temporality",
                 "source_item_ids, source_attribute_ids, source_span_ids",
+                "source_frame_node_ids, context_frame_node_ids, parent_frame_node_ids",
+                "atom_context_text, local_content_text",
                 "atomization_confidence, notes",
             ]
         ),

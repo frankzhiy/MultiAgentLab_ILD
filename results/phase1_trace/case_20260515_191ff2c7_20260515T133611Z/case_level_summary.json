@@ -1,0 +1,21 @@
+{
+  "case_id": "case_20260515_191ff2c7",
+  "total_rounds": 1,
+  "total_evidence_atoms_across_rounds": 16,
+  "total_clinical_attributes_across_rounds": 17,
+  "total_deferred_items_across_rounds": 0,
+  "total_atomization_warnings_across_rounds": 13,
+  "all_round_input_ids": [
+    "input_20260515_a4c78f35"
+  ],
+  "all_case_structuring_result_ids": [
+    "case_structuring_result_20260515_6e358692"
+  ],
+  "all_attribute_extraction_result_ids": [
+    "attribute_extraction_result_20260515_0bdf9bac"
+  ],
+  "all_atomization_result_ids": [
+    "atomization_result_20260515_147fa9b9"
+  ],
+  "any_round_rejected_by_validator": true
+}

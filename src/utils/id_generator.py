@@ -107,6 +107,14 @@ def generate_atomization_result_id() -> EvidenceAtomizationResultID:
     return EvidenceAtomizationResultID(generate_id("atomization_result"))
 
 
+def generate_evidence_frame_id() -> str:
+    return generate_id("evidence_frame")
+
+
+def generate_evidence_frame_node_id() -> str:
+    return generate_id("evidence_frame_node")
+
+
 def generate_attribute_id() -> AttributeID:
     return AttributeID(generate_id("attribute"))
 

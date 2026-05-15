@@ -6,6 +6,9 @@ from src.schemas.evidence_atomizer import ClinicalAssertionResolutionResult
 from src.schemas.evidence_atomizer.evidence_atomization_result import (
     EvidenceAtomizationResult,
 )
+from src.schemas.evidence_atomizer.evidence_event_frame import (
+    EvidenceEventFrameBuildResult,
+)
 from src.validators.evidence_atomizer import EvidenceAtomizationValidationReport
 
 
@@ -29,6 +32,10 @@ class EvidenceAtomizationValidationResult(BaseModel):
     clinical_assertion_resolution: ClinicalAssertionResolutionResult = Field(
         default_factory=ClinicalAssertionResolutionResult,
         description="Internal object-level clinical assertion resolution payload.",
+    )
+    evidence_event_frame_build_result: EvidenceEventFrameBuildResult = Field(
+        default_factory=EvidenceEventFrameBuildResult,
+        description="Internal EvidenceEventFrame construction debug payload.",
     )
 
     @property

@@ -25,4 +25,5 @@ agents:
     response_format: json_object
     prompts:
       clinical_assertion_labeling: src/agents/evidence_atomizer/prompts/clinical_assertion_labeling.md
+      evidence_event_frame_building: src/agents/evidence_atomizer/prompts/evidence_event_frame_building.md
       evidence_atom_extraction: src/agents/evidence_atomizer/prompts/evidence_atom_extraction.md

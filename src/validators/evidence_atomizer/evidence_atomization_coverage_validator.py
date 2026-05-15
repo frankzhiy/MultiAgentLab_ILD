@@ -120,7 +120,10 @@ class EvidenceAtomizationCoverageValidator:
         for evidence_id, coverage_unit_ids in evidence_id_to_coverage_unit_ids.items():
             unique_coverage_unit_ids = _dedupe_strings(coverage_unit_ids)
 
-            if len(unique_coverage_unit_ids) > 1:
+            if len(unique_coverage_unit_ids) > 1 and not _allows_multi_unit_atom(
+                unique_coverage_unit_ids,
+                coverage_units_by_id,
+            ):
                 issues.append(
                     _issue(
                         severity=ValidationSeverity.WARNING,
@@ -157,6 +160,13 @@ class EvidenceAtomizationCoverageValidator:
                             atom_assertion_status=_atom_assertion_label(
                                 getattr(atom.assertion_status, "value", atom.assertion_status)
                             ),
+                            coverage_unit=coverage_units_by_id[coverage_unit_id],
+                            related_evidence_id=evidence_id,
+                        )
+                    )
+                    issues.extend(
+                        _frame_provenance_issues(
+                            atom=atom,
                             coverage_unit=coverage_units_by_id[coverage_unit_id],
                             related_evidence_id=evidence_id,
                         )
@@ -274,6 +284,112 @@ def _assertion_consistency_issues(
             related_evidence_id=related_evidence_id,
             related_coverage_unit_id=coverage_unit.unit_id,
         )
+    ]
+
+
+def _allows_multi_unit_atom(
+    coverage_unit_ids: list[str],
+    coverage_units_by_id: dict[str, CoverageUnit],
+) -> bool:
+    units = [
+        coverage_units_by_id[coverage_unit_id]
+        for coverage_unit_id in coverage_unit_ids
+        if coverage_unit_id in coverage_units_by_id
+    ]
+    return bool(units) and all(
+        unit.atomization_policy == "generate_group_modifier_atom"
+        for unit in units
+    )
+
+
+def _frame_provenance_issues(
+    *,
+    atom: object,
+    coverage_unit: CoverageUnit,
+    related_evidence_id: str,
+) -> list[EvidenceAtomizationCoverageIssue]:
+    issues: list[EvidenceAtomizationCoverageIssue] = []
+    atom_source_frame_ids = set(getattr(atom, "source_frame_node_ids", []) or [])
+    atom_context_frame_ids = set(getattr(atom, "context_frame_node_ids", []) or [])
+
+    if coverage_unit.source_frame_node_ids and not atom_source_frame_ids:
+        issues.append(
+            _issue(
+                severity=ValidationSeverity.WARNING,
+                code="frame_source_nodes_missing_in_atom",
+                message="EvidenceAtom is missing source_frame_node_ids from its frame-aware CoverageUnit.",
+                related_item_id=coverage_unit.source_item_id,
+                related_evidence_id=related_evidence_id,
+                related_coverage_unit_id=coverage_unit.unit_id,
+            )
+        )
+    elif coverage_unit.source_frame_node_ids and not set(
+        coverage_unit.source_frame_node_ids
+    ).issubset(atom_source_frame_ids):
+        issues.append(
+            _issue(
+                severity=ValidationSeverity.WARNING,
+                code="frame_source_nodes_incomplete_in_atom",
+                message="EvidenceAtom source_frame_node_ids do not fully cover its CoverageUnit frame nodes.",
+                related_item_id=coverage_unit.source_item_id,
+                related_evidence_id=related_evidence_id,
+                related_coverage_unit_id=coverage_unit.unit_id,
+            )
+        )
+
+    if coverage_unit.context_frame_node_ids and not atom_context_frame_ids:
+        issues.append(
+            _issue(
+                severity=ValidationSeverity.WARNING,
+                code="frame_context_nodes_missing_in_atom",
+                message="EvidenceAtom is missing context_frame_node_ids from its frame-aware CoverageUnit.",
+                related_item_id=coverage_unit.source_item_id,
+                related_evidence_id=related_evidence_id,
+                related_coverage_unit_id=coverage_unit.unit_id,
+            )
+        )
+
+    context_text = normalize_optional_text(coverage_unit.inherited_context_text)
+    atom_context_text = normalize_optional_text(
+        getattr(atom, "atom_context_text", None)
+    )
+    statement = getattr(atom, "statement", "")
+    if context_text and atom_context_text and not _statement_reflects_context(
+        statement,
+        context_text,
+    ):
+        issues.append(
+            _issue(
+                severity=ValidationSeverity.WARNING,
+                code="frame_context_not_reflected_in_statement",
+                message="EvidenceAtom statement may not reflect inherited frame context from its CoverageUnit.",
+                related_item_id=coverage_unit.source_item_id,
+                related_evidence_id=related_evidence_id,
+                related_coverage_unit_id=coverage_unit.unit_id,
+            )
+        )
+
+    return issues
+
+
+def _statement_reflects_context(statement: str, context_text: str) -> bool:
+    if context_text in statement:
+        return True
+    fragments = _context_fragments(context_text)
+    return bool(fragments) and any(fragment in statement for fragment in fragments)
+
+
+def _context_fragments(context_text: str) -> list[str]:
+    fragments = [context_text]
+    for separator in ("，", ",", "。", ";", "；", "、", " "):
+        next_fragments: list[str] = []
+        for fragment in fragments:
+            next_fragments.extend(fragment.split(separator))
+        fragments = next_fragments
+    return [
+        fragment.strip()
+        for fragment in fragments
+        if len(fragment.strip()) >= 2
     ]
 
 

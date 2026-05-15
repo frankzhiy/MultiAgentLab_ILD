@@ -1,0 +1,10 @@
+[
+  {
+    "severity": "warning",
+    "code": "clinical_object_not_grounded",
+    "message": "Clinical assertion draft was dropped because object_text was not a contiguous substring of source_text.",
+    "related_item_id": "item_005",
+    "related_evidence_id": null,
+    "related_span_id": "span_item_005"
+  }
+]

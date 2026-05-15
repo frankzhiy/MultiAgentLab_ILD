@@ -600,11 +600,13 @@ def render_round_markdown_summary(
     atomization_result: Any,
     attribute_validation_report: Any,
     validation_report: Any,
+    evidence_event_frame_build_result: Any | None = None,
 ) -> str:
     issues = object_list_field(validation_report, "issues")
     attribute_issues = object_list_field(attribute_validation_report, "issues")
     attributes = object_list_field(attribute_result, "clinical_attributes")
     atoms = object_list_field(atomization_result, "evidence_atoms")
+    frames = object_list_field(evidence_event_frame_build_result, "frames")
 
     lines: list[str] = [
         f"# Phase 1 Trace Round {round_summary['round_index']:03d}",
@@ -681,6 +683,8 @@ def render_round_markdown_summary(
             f"- item_to_evidence_links: {round_summary['number_of_item_to_evidence_links']}",
             f"- deferred_items: {round_summary['number_of_deferred_items']}",
             f"- atomization_warnings: {round_summary['number_of_atomization_warnings']}",
+            f"- evidence_event_frames: {round_summary['number_of_evidence_event_frames']}",
+            f"- evidence_event_frame_warnings: {round_summary['number_of_evidence_event_frame_warnings']}",
             f"- validation_accepted: {round_summary['evidence_atomization_validation_accepted']}",
             "",
             "## Evidence Atomizer Validation Issues",
@@ -715,10 +719,40 @@ def render_round_markdown_summary(
     lines.extend(
         [
             "",
+            "## Evidence Event Frames (debug)",
+            "",
+            "| frame_id | source_item_id | number_of_nodes | atomizable_node_count | warning_count |",
+            "| --- | --- | --- | --- | --- |",
+        ]
+    )
+    if frames:
+        for frame in frames:
+            frame_nodes = object_list_field(frame, "frame_nodes")
+            frame_warnings = object_list_field(frame, "frame_warnings")
+            atomizable_count = sum(
+                1 for node in frame_nodes if bool(object_field(node, "atomizable"))
+            )
+            lines.append(
+                markdown_row(
+                    [
+                        object_field(frame, "frame_id"),
+                        object_field(frame, "source_item_id"),
+                        str(len(frame_nodes)),
+                        str(atomizable_count),
+                        str(len(frame_warnings)),
+                    ]
+                )
+            )
+    else:
+        lines.append(empty_markdown_row(5, "No evidence event frames produced."))
+
+    lines.extend(
+        [
+            "",
             "## Evidence Atoms",
             "",
-            "| evidence_id | evidence_type | clinical_domain | statement | normalized_label | assertion_status | certainty | temporality | source_item_ids | source_attribute_ids | source_span_ids | source_contexts | source_text |",
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+            "| evidence_id | evidence_type | clinical_domain | statement | normalized_label | assertion_status | certainty | temporality | source_item_ids | source_attribute_ids | source_span_ids | source_frame_node_ids | context_frame_node_ids | local_content_text | atom_context_text | source_contexts | source_text |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     for atom in atoms:
@@ -738,6 +772,14 @@ def render_round_markdown_summary(
                         object_field(atom, "source_attribute_ids", [])
                     ),
                     join_markdown_values(object_field(atom, "source_span_ids", [])),
+                    join_markdown_values(
+                        object_field(atom, "source_frame_node_ids", [])
+                    ),
+                    join_markdown_values(
+                        object_field(atom, "context_frame_node_ids", [])
+                    ),
+                    object_field(atom, "local_content_text"),
+                    object_field(atom, "atom_context_text"),
                     source_contexts_text(object_list_field(atom, "source_contexts")),
                     object_field(atom, "source_text"),
                 ]
@@ -745,7 +787,7 @@ def render_round_markdown_summary(
         )
 
     if not atoms:
-        lines.append(empty_markdown_row(13, "No evidence atoms produced."))
+        lines.append(empty_markdown_row(17, "No evidence atoms produced."))
 
     lines.extend(["", "## Boundary Note", "", MULTI_ROUND_NOTE, ""])
     return "\n".join(lines)
@@ -764,7 +806,16 @@ def build_round_summary(
     attribute_extraction_duration_seconds: float,
     evidence_atomizer_duration_seconds: float,
     round_duration_seconds: float,
+    evidence_event_frame_build_result: Any | None = None,
 ) -> dict[str, Any]:
+    evidence_event_frames = object_list_field(
+        evidence_event_frame_build_result,
+        "frames",
+    )
+    evidence_event_frame_warning_count = sum(
+        len(object_list_field(frame, "frame_warnings"))
+        for frame in evidence_event_frames
+    )
     return {
         "round_index": round_index,
         "selected_file": display_path(selected_file),
@@ -806,6 +857,10 @@ def build_round_summary(
         ),
         "number_of_deferred_items": len(atomization_result.deferred_items),
         "number_of_atomization_warnings": len(atomization_result.atomization_warnings),
+        "number_of_evidence_event_frames": len(evidence_event_frames),
+        "number_of_evidence_event_frame_warnings": (
+            evidence_event_frame_warning_count
+        ),
         "evidence_atomization_validation_accepted": validation_report.accepted,
         "evidence_atomization_validation_issue_counts_by_severity": (
             issue_counts_by_severity(validation_report)
@@ -1158,11 +1213,26 @@ def run_evidence_atomizer_round(
                 for warning in clinical_assertion_resolution.assertion_warnings
             ],
         )
+    evidence_event_frame_build_result = getattr(
+        atomization_bundle,
+        "evidence_event_frame_build_result",
+        None,
+    )
+    if evidence_event_frame_build_result is not None:
+        write_json(
+            round_dir / "evidence_event_frames.json",
+            evidence_event_frame_build_result.model_dump(mode="json"),
+        )
     write_json(
         round_dir / "evidence_atoms.json",
         [atom.model_dump(mode="json") for atom in atomization_result.evidence_atoms],
     )
-    return atomization_result, validation_report, duration
+    return (
+        atomization_result,
+        validation_report,
+        duration,
+        evidence_event_frame_build_result,
+    )
 
 
 def write_round_summaries(
@@ -1179,6 +1249,7 @@ def write_round_summaries(
     attribute_extraction_duration_seconds: float,
     evidence_atomizer_duration_seconds: float,
     round_duration_seconds: float,
+    evidence_event_frame_build_result: Any | None = None,
 ) -> dict[str, Any]:
     summary = build_round_summary(
         round_index=round_index,
@@ -1188,6 +1259,7 @@ def write_round_summaries(
         atomization_result=atomization_result,
         attribute_validation_report=attribute_validation_report,
         validation_report=validation_report,
+        evidence_event_frame_build_result=evidence_event_frame_build_result,
         case_structurer_duration_seconds=case_structurer_duration_seconds,
         attribute_extraction_duration_seconds=(
             attribute_extraction_duration_seconds
@@ -1205,6 +1277,7 @@ def write_round_summaries(
             atomization_result=atomization_result,
             attribute_validation_report=attribute_validation_report,
             validation_report=validation_report,
+            evidence_event_frame_build_result=evidence_event_frame_build_result,
         ),
     )
     return summary
@@ -1373,6 +1446,7 @@ def main() -> int:
                 atomization_result,
                 validation_report,
                 evidence_atomizer_duration_seconds,
+                evidence_event_frame_build_result,
             ) = run_evidence_atomizer_round(
                 corrected_result=corrected_result,
                 attribute_result=attribute_result,
@@ -1404,6 +1478,7 @@ def main() -> int:
             ),
             evidence_atomizer_duration_seconds=evidence_atomizer_duration_seconds,
             round_duration_seconds=round_duration_seconds,
+            evidence_event_frame_build_result=evidence_event_frame_build_result,
         )
         previous_input_id = corrected_result.input.input_id
         round_summaries.append(summary)

@@ -8,12 +8,16 @@ from .clinical_assertion_resolver import ClinicalAssertionResolver
 from .clinical_assertion_validator import ClinicalAssertionValidator
 from .coverage_unit_builder import CoverageUnitBuilder
 from .coverage_units import CoverageUnit, CoverageUnitBuildResult
+from .evidence_atom_deduplicator import EvidenceAtomDeduplicator
 from .evidence_atom_extractor import EvidenceAtomExtractor
 from .evidence_atom_normalizer import (
     EvidenceAtomNormalizer,
     NormalizedEvidenceAtomizationPayload,
 )
 from .evidence_atomization_assembler import EvidenceAtomizationAssembler
+from .evidence_event_frame_builder import EvidenceEventFrameBuilder
+from .evidence_event_frame_validator import EvidenceEventFrameValidator
+from .frame_aware_coverage_unit_builder import FrameAwareCoverageUnitBuilder
 from .input_guard import EvidenceAtomizerInputGuard
 
 __all__ = [
@@ -27,8 +31,12 @@ __all__ = [
     "CoverageUnitBuildResult",
     "CoverageUnitBuilder",
     "EvidenceAtomExtractor",
+    "EvidenceAtomDeduplicator",
     "EvidenceAtomNormalizer",
     "EvidenceAtomizationAssembler",
+    "EvidenceEventFrameBuilder",
+    "EvidenceEventFrameValidator",
     "EvidenceAtomizerInputGuard",
+    "FrameAwareCoverageUnitBuilder",
     "NormalizedEvidenceAtomizationPayload",
 ]

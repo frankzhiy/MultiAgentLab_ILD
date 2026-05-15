@@ -1,0 +1,666 @@
+[
+  {
+    "evidence_id": "evidence_20260515_6fa572b2",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "normalized_label": "间断咳嗽咳痰伴胸闷气短8年，加重2月",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_001"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_c01f982c",
+      "attribute_20260515_0b7413fe"
+    ],
+    "source_span_ids": [
+      "span_item_001"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_002",
+        "section_type": "chief_complaint",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_21e68659"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "source_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_9b11deff",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "comorbidity",
+    "clinical_domain": "cardiovascular",
+    "granularity": "atomic",
+    "statement": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+    "normalized_label": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_002"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_db50e7f1",
+      "attribute_20260515_a6bb28d7",
+      "attribute_20260515_55bff4cc",
+      "attribute_20260515_1c794860"
+    ],
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_004",
+        "section_type": "past_medical_history",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_82a06612"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+    "source_text": "既往高血压8年，目前口服沙库巴曲缬沙坦片 2片/次 1次/日 口服、糖尿病、冠心病病史",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_c240bf90",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "procedure",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "40年前左下肢骨折固定术",
+    "normalized_label": "左下肢骨折固定术 40年前",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_003"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_6eaa64ac"
+    ],
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_004",
+        "section_type": "past_medical_history",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_c9a5a718"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "40年前左下肢骨折固定术",
+    "source_text": "40年前左下肢骨折固定术",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_e65486fb",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "normalized_label": "咳嗽咳痰伴胸闷气短，痰液黏白色，量少，夜间为著",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "chronic",
+    "source_item_ids": [
+      "item_004"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_ef3b910b",
+      "attribute_20260515_ed40d3a6",
+      "attribute_20260515_ec94195a",
+      "attribute_20260515_81c02d65"
+    ],
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_3ea97b5d"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_3b70a63e",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "normalized_label": "新冠病毒感染后咳嗽咳痰伴胸闷气短，痰液黏白色，量少，活动后明显，输液1周余后症状改善",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "past",
+    "source_item_ids": [
+      "item_005"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_a565e7cf",
+      "attribute_20260515_5d1a1ef5",
+      "attribute_20260515_2c57ae6a",
+      "attribute_20260515_9982035c",
+      "attribute_20260515_a475209a"
+    ],
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_5d7a793d"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_4a6216e3",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "symptom",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "normalized_label": "2月前再次出现咳嗽咳痰伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_006"
+    ],
+    "source_attribute_ids": [
+      "attribute_20260515_57b1ba36"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_be804d42"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_3ca1f118",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "2024年6月11日胸部CT示，双肺间质增粗纹理走形杂乱",
+    "normalized_label": "双肺间质增粗纹理走形杂乱",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_e6a98581"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_ab2f0de2"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_ab2f0de2"
+    ],
+    "atom_context_text": "2024年6月11日胸部CT示",
+    "local_content_text": "双肺间质增粗纹理走形杂乱",
+    "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_51aae7cb",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "2024年6月11日胸部CT示，肺野密度增高",
+    "normalized_label": "肺野密度增高",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_a64a335f"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_ab2f0de2"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_ab2f0de2"
+    ],
+    "atom_context_text": "2024年6月11日胸部CT示",
+    "local_content_text": "肺野密度增高",
+    "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_2f31c93a",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "imaging_finding",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "2024年6月11日胸部CT示，右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "normalized_label": "右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_d40e872a"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_ab2f0de2"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_ab2f0de2"
+    ],
+    "atom_context_text": "2024年6月11日胸部CT示",
+    "local_content_text": "右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_d294b210",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "uncertain",
+    "clinical_domain": "radiology",
+    "granularity": "atomic",
+    "statement": "2024年6月11日胸部CT示右肺中叶、下叶、左肺舌段条片状实性高密度影，右肺中叶、下叶病灶边缘模糊",
+    "normalized_label": "右肺中叶、下叶、左肺舌段条片状实性高密度影，病灶边缘模糊",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_007"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_a5d9a773"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_ab2f0de2",
+      "evidence_frame_node_20260515_d40e872a"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_d40e872a"
+    ],
+    "atom_context_text": "2024年6月11日胸部CT示右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "local_content_text": "右肺中叶、下叶病灶边缘模糊",
+    "source_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_83e2680c",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "treatment",
+    "clinical_domain": "treatment",
+    "granularity": "atomic",
+    "statement": "治疗上给予抗感染（具体不详）治疗后，胸闷气短症状改善不明显",
+    "normalized_label": "抗感染治疗后胸闷气短症状改善不明显",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "recent_worsening",
+    "source_item_ids": [
+      "item_008"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_2cd63c2d"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "治疗上给予抗感染（具体不详）治疗后，胸闷气短症状改善不明显",
+    "source_text": "治疗上给予抗感染（具体不详）治疗后，胸闷气短症状改善不明显",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_5b04d29e",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "diagnosis_history",
+    "clinical_domain": "respiratory",
+    "granularity": "atomic",
+    "statement": "请我科医师会诊后，以“间质性肺炎，肺部感染”收住我科",
+    "normalized_label": "间质性肺炎，肺部感染收住我科",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_009"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_39a86db9"
+    ],
+    "context_frame_node_ids": [],
+    "parent_frame_node_ids": [],
+    "atom_context_text": null,
+    "local_content_text": "请我科医师会诊后，以“间质性肺炎，肺部感染”收住我科",
+    "source_text": "请我科医师会诊后，以“间质性肺炎，肺部感染”收住我科",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_c848c0c5",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "uncertain",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "normalized_label": "神志清",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_010"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_b5a44de2"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_fc8ae580"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_fc8ae580"
+    ],
+    "atom_context_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "local_content_text": "神志清",
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_b384db7e",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "uncertain",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "精神可",
+    "normalized_label": "精神可",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_010"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_9f376eab"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_fc8ae580"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_fc8ae580"
+    ],
+    "atom_context_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "local_content_text": "精神可",
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_2be1f610",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "uncertain",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "饮食睡眠、大小便正常",
+    "normalized_label": "饮食睡眠、大小便正常",
+    "assertion_status": "present",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_010"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_6227aeb1"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_fc8ae580"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_fc8ae580"
+    ],
+    "atom_context_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "local_content_text": "饮食睡眠、大小便正常",
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": null
+  },
+  {
+    "evidence_id": "evidence_20260515_e9e7a40d",
+    "case_id": "case_20260515_191ff2c7",
+    "input_id": "input_20260515_a4c78f35",
+    "stage_id": "stage_20260515_53c577f0",
+    "evidence_type": "uncertain",
+    "clinical_domain": "general",
+    "granularity": "atomic",
+    "statement": "体重无明显变化",
+    "normalized_label": "体重无明显变化",
+    "assertion_status": "absent",
+    "certainty": "definite",
+    "temporality": "current",
+    "source_item_ids": [
+      "item_010"
+    ],
+    "source_attribute_ids": [],
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "source_contexts": [
+      {
+        "section_id": "section_005",
+        "section_type": "history_of_present_illness",
+        "section_title": null
+      }
+    ],
+    "source_frame_node_ids": [
+      "evidence_frame_node_20260515_f1fd2b8c"
+    ],
+    "context_frame_node_ids": [
+      "evidence_frame_node_20260515_fc8ae580"
+    ],
+    "parent_frame_node_ids": [
+      "evidence_frame_node_20260515_fc8ae580"
+    ],
+    "atom_context_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "local_content_text": "体重无明显变化",
+    "source_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "atomization_confidence": "high",
+    "notes": null
+  }
+]
