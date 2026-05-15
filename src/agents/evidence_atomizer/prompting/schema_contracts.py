@@ -16,6 +16,10 @@ from src.schemas.evidence_atomizer.common import (
     TemporalRelation,
     ValidationSeverity,
 )
+from src.schemas.evidence_atomizer.clinical_object_assertion import (
+    ClinicalObjectAssertionStatus,
+    ClinicalObjectType,
+)
 
 
 def evidence_atomization_contract() -> dict[str, Any]:
@@ -88,6 +92,38 @@ def evidence_atomization_contract() -> dict[str, Any]:
                 "Do not create conflict, update, safety gate, or arbitration fields.",
             ]
         ),
+    }
+
+
+def clinical_assertion_labeling_contract() -> dict[str, Any]:
+    return {
+        "clinical_object_assertion_fields": _lines(
+            [
+                "source_item_id: must match the input candidate item_id",
+                "object_text: exact contiguous text copied from source_text",
+                "object_type",
+                "assertion_status",
+                "assertion_cue_text: exact cue text copied from source_text or null",
+                "assertion_scope_text: exact scope text copied from source_text or null",
+                "confidence",
+                "notes",
+            ]
+        ),
+        "assertion_warning_fields": _lines(
+            [
+                "severity",
+                "code",
+                "message",
+                "related_item_id",
+                "related_span_id",
+            ]
+        ),
+        "allowed_object_type_values": _format_enum_values(ClinicalObjectType),
+        "allowed_assertion_status_values": _format_enum_values(
+            ClinicalObjectAssertionStatus
+        ),
+        "allowed_confidence_values": _format_enum_values(ConfidenceLevel),
+        "allowed_warning_severity_values": _format_enum_values(ValidationSeverity),
     }
 
 

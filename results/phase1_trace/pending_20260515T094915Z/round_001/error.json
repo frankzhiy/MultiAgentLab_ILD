@@ -1,0 +1,5 @@
+{
+  "stage": "startup",
+  "exception_type": "SyntaxError",
+  "message": "invalid syntax (coverage_unit_builder.py, line 10)"
+}

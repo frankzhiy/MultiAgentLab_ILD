@@ -25,6 +25,10 @@ class CoverageUnit(BaseModel):
     temporality: str
     split_basis: str
     required: bool = True
+    assertion_cue_text: str | None = None
+    assertion_scope_text: str | None = None
+    clinical_object_type: str | None = None
+    clinical_object_assertion_id: str | None = None
 
 
 class CoverageUnitBuildResult(BaseModel):

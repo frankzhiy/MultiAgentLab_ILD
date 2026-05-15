@@ -2,6 +2,10 @@ from __future__ import annotations
 
 import json
 
+from src.schemas.evidence_atomizer.clinical_object_assertion import (
+    ClinicalObjectAssertionStatus,
+    ClinicalObjectType,
+)
 from src.schemas.evidence_atomizer.common import (
     AtomizationTransformationType,
     CertaintyLevel,
@@ -62,6 +66,36 @@ def evidence_atomization_skeleton() -> str:
                     "message": "...",
                     "related_item_id": "item_001",
                     "related_evidence_id": None,
+                    "related_span_id": None,
+                }
+            ],
+        },
+        ensure_ascii=False,
+        indent=2,
+    )
+
+
+def clinical_assertion_output_skeleton() -> str:
+    return json.dumps(
+        {
+            "clinical_object_assertions": [
+                {
+                    "source_item_id": "item_001",
+                    "object_text": "...",
+                    "object_type": ClinicalObjectType.SYMPTOM.value,
+                    "assertion_status": ClinicalObjectAssertionStatus.PRESENT.value,
+                    "assertion_cue_text": "...",
+                    "assertion_scope_text": "...",
+                    "confidence": ConfidenceLevel.MEDIUM.value,
+                    "notes": None,
+                }
+            ],
+            "assertion_warnings": [
+                {
+                    "severity": ValidationSeverity.WARNING.value,
+                    "code": "assertion_uncertain",
+                    "message": "...",
+                    "related_item_id": "item_001",
                     "related_span_id": None,
                 }
             ],

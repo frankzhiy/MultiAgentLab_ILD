@@ -151,6 +151,7 @@ class EvidenceAtomNormalizer:
                 source_item_ids=source_item_ids,
                 source_attribute_ids=source_attribute_ids,
                 source_span_ids=source_span_ids,
+                warnings=warnings,
             )
             try:
                 atom = EvidenceAtom(**atom_payload)
@@ -224,6 +225,7 @@ class EvidenceAtomNormalizer:
         source_item_ids: list[str],
         source_attribute_ids: list[str],
         source_span_ids: list[str],
+        warnings: list[AtomizationWarning],
     ) -> dict[str, Any]:
         source_items = [
             context.candidates_by_item_id[item_id]
@@ -231,6 +233,7 @@ class EvidenceAtomNormalizer:
             if item_id in context.candidates_by_item_id
         ]
         primary = source_items[0] if source_items else None
+        coverage_units = context.coverage_units_for_draft(draft)
         evidence_type_default = _evidence_type_default(primary)
         evidence_type = _coerce_enum(
             draft.get("evidence_type") or draft.get("type") or evidence_type_default,
@@ -242,10 +245,20 @@ class EvidenceAtomNormalizer:
             draft,
             ("statement", "evidence_statement", "normalized_statement", "label", "text"),
         )
+        if statement is None and len(coverage_units) == 1:
+            statement = coverage_units[0].surface_text
         if statement is None and primary is not None:
             statement = primary.label
         if statement is None:
             statement = context.source_text_for_spans(source_item_ids, source_span_ids)
+
+        assertion_status = _resolve_assertion_status(
+            draft=draft,
+            coverage_units=coverage_units,
+            source_items=source_items,
+            warnings=warnings,
+            related_item_id=source_item_ids[0] if source_item_ids else None,
+        )
 
         return {
             "case_id": structuring_result.input.case_id,
@@ -266,11 +279,7 @@ class EvidenceAtomNormalizer:
             "normalized_label": _optional_text(
                 draft.get("normalized_label") or draft.get("label")
             ),
-            "assertion_status": _coerce_enum(
-                draft.get("assertion_status") or draft.get("negation"),
-                NegationStatus,
-                _shared_candidate_enum(source_items, "negation", NegationStatus.UNKNOWN),
-            ),
+            "assertion_status": assertion_status,
             "certainty": _coerce_enum(
                 draft.get("certainty"),
                 CertaintyLevel,
@@ -653,6 +662,17 @@ class _NormalizationContext:
             if candidate.item_id in source_item_ids and candidate.source_text
         )
 
+    def coverage_units_for_draft(
+        self,
+        payload: dict[str, Any],
+    ) -> list[CoverageUnit]:
+        units: list[CoverageUnit] = []
+        for coverage_unit_id in _coverage_unit_ids_from_draft(payload):
+            coverage_unit = self.coverage_units_by_id.get(coverage_unit_id)
+            if coverage_unit is not None:
+                units.append(coverage_unit)
+        return units
+
     def defer_items(
         self,
         item_ids: list[str],
@@ -745,6 +765,67 @@ def _coerce_enum(value: Any, enum_type: type[StrEnum], default: StrEnum) -> StrE
     if isinstance(value, str) and value in allowed_values:
         return allowed_values[value]
     return default
+
+
+def _resolve_assertion_status(
+    *,
+    draft: dict[str, Any],
+    coverage_units: list[CoverageUnit],
+    source_items: list[AtomizationCandidate],
+    warnings: list[AtomizationWarning],
+    related_item_id: str | None,
+) -> NegationStatus:
+    coverage_assertion = _shared_coverage_unit_assertion_status(coverage_units)
+    draft_assertion = _coerce_enum(
+        draft.get("assertion_status") or draft.get("negation"),
+        NegationStatus,
+        _shared_candidate_enum(source_items, "negation", NegationStatus.UNKNOWN),
+    )
+
+    if coverage_assertion is None:
+        return draft_assertion
+
+    if draft_assertion != coverage_assertion:
+        warnings.append(
+            _warning(
+                code="assertion_status_corrected_from_coverage_unit",
+                message=(
+                    "Evidence atom assertion_status was corrected to match the "
+                    "assertion-aware coverage unit."
+                ),
+                related_item_id=related_item_id,
+            )
+        )
+    return coverage_assertion
+
+
+def _shared_coverage_unit_assertion_status(
+    coverage_units: list[CoverageUnit],
+) -> NegationStatus | None:
+    raw_statuses = _dedupe_strings(
+        _optional_text(coverage_unit.assertion_status)
+        for coverage_unit in coverage_units
+    )
+    if not raw_statuses:
+        return None
+    if len(raw_statuses) > 1:
+        return NegationStatus.UNKNOWN
+    return _map_coverage_assertion_status(raw_statuses[0])
+
+
+def _map_coverage_assertion_status(value: str | None) -> NegationStatus:
+    if value == NegationStatus.PRESENT.value:
+        return NegationStatus.PRESENT
+    if value in {NegationStatus.ABSENT.value, NegationStatus.DENIED.value}:
+        return NegationStatus.ABSENT
+    if value in {
+        NegationStatus.NOT_MENTIONED.value,
+        NegationStatus.UNKNOWN.value,
+        "possible",
+        "uncertain",
+    }:
+        return NegationStatus.UNKNOWN
+    return NegationStatus.UNKNOWN
 
 
 def _shared_candidate_enum(

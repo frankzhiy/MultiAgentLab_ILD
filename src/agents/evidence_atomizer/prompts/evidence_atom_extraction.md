@@ -36,6 +36,10 @@ Every evidence_atom_draft must reference one or more coverage_unit_ids.
 Normally one evidence_atom_draft should reference exactly one coverage_unit_id.
 Do not ignore required coverage units.
 Do not merge multiple coverage units into one draft unless the unit is explicitly indivisible.
+Coverage units are assertion-aware.
+When available, each coverage unit is derived from a ClinicalObjectAssertion.
+Do not override the assertion_status of a coverage unit unless the unit is internally inconsistent.
+Do not reinterpret a present object as absent just because the source sentence contains a negation cue outside its local scope.
 
 {{ coverage_units }}
 
@@ -146,6 +150,35 @@ Do not create an atom that is just "增高".
 Do not create an atom that is just "8年".
 ClinicalAttribute modifies evidence atoms; it is not itself an evidence atom.
 
+Example:
+source:
+"患者于8年前无明显诱因出现咳嗽咳痰，伴胸闷气短，无发热寒战"
+
+assertion-aware coverage units:
+- 明显诱因 / absent / 无明显诱因
+- 咳嗽 / present / 出现咳嗽咳痰
+- 咳痰 / present / 出现咳嗽咳痰
+- 胸闷 / present / 伴胸闷气短
+- 气短 / present / 伴胸闷气短
+- 发热 / absent / 无发热寒战
+- 寒战 / absent / 无发热寒战
+
+Expected evidence atoms include:
+- "8年前无明显诱因出现咳嗽" assertion_status=present
+- "8年前出现咳痰" assertion_status=present
+- "8年前伴胸闷" assertion_status=present
+- "8年前伴气短" assertion_status=present
+- "无发热" assertion_status=absent
+- "无寒战" assertion_status=absent
+
+Do not output:
+- "无咳嗽"
+- "无咳痰"
+- "否认胸闷"
+- "否认气短"
+
+unless the assertion-aware coverage unit explicitly marks those objects absent.
+
 # Rules
 - Return JSON only. Do not include Markdown, code fences, or commentary.
 - Do not invent persistent IDs.
@@ -153,6 +186,8 @@ ClinicalAttribute modifies evidence atoms; it is not itself an evidence atom.
 - Transform required coverage units into atomic evidence drafts instead of deciding coverage from scratch.
 - Split compound clinical statements according to the required coverage units.
 - Include coverage_unit_ids on every evidence_atom_draft.
+- Preserve coverage_unit assertion_status by default.
+- If a coverage_unit assertion_status is possible or uncertain, preserve the uncertainty semantically and use unknown if the output schema requires a NegationStatus value.
 - Do not output value, unit, time_text, or body_site fields.
 - Preserve negation, certainty, and temporality.
 - Preserve source_item_ids and source_span_ids from the input candidates.

@@ -31,6 +31,10 @@ from .common import (
 
 
 _LAZY_EXPORTS = {
+    "ClinicalAssertionResolutionResult": ".clinical_object_assertion",
+    "ClinicalObjectAssertion": ".clinical_object_assertion",
+    "ClinicalObjectAssertionStatus": ".clinical_object_assertion",
+    "ClinicalObjectType": ".clinical_object_assertion",
     "EvidenceAtom": ".evidence_atom",
     "ItemEvidenceLink": ".item_evidence_link",
     "DeferredStructuredItem": ".deferred_item",
@@ -43,6 +47,10 @@ __all__ = [
     "AtomizationWarning",
     "CaseID",
     "CertaintyLevel",
+    "ClinicalAssertionResolutionResult",
+    "ClinicalObjectAssertion",
+    "ClinicalObjectAssertionStatus",
+    "ClinicalObjectType",
     "ClinicalDomain",
     "ConfidenceLevel",
     "DeferredReason",

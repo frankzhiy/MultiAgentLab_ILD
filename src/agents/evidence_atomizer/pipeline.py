@@ -33,12 +33,18 @@ from src.validators.evidence_atomizer.evidence_atomization_coverage_validator im
 )
 
 from .modules import (
+    AssertionAwareCoverageUnitBuilder,
     AtomizationCandidateBuilder,
+    ClinicalAssertionResolver,
     CoverageUnitBuilder,
     EvidenceAtomExtractor,
     EvidenceAtomizationAssembler,
     EvidenceAtomizerInputGuard,
     EvidenceAtomNormalizer,
+)
+from src.schemas.evidence_atomizer import AtomizationWarning
+from src.schemas.evidence_atomizer.clinical_object_assertion import (
+    ClinicalAssertionResolutionResult,
 )
 
 if TYPE_CHECKING:
@@ -65,7 +71,11 @@ class EvidenceAtomizerPipeline:
 
         self.input_guard = EvidenceAtomizerInputGuard()
         self.candidate_builder = AtomizationCandidateBuilder()
-        self.coverage_unit_builder = CoverageUnitBuilder()
+        self.clinical_assertion_resolver = ClinicalAssertionResolver(
+            self.llm_client,
+            agent_name=agent_name,
+        )
+        self.coverage_unit_builder = AssertionAwareCoverageUnitBuilder()
         self.evidence_atom_extractor = EvidenceAtomExtractor(
             self.llm_client,
             agent_name=agent_name,
@@ -130,6 +140,7 @@ class EvidenceAtomizerPipeline:
             return EvidenceAtomizationValidationResult(
                 atomization_result=atomization_result,
                 validation_report=validation_report,
+                clinical_assertion_resolution=ClinicalAssertionResolutionResult(),
             )
 
         candidates = self._run_step(
@@ -139,9 +150,16 @@ class EvidenceAtomizerPipeline:
                 attribute_result,
             ),
         )
+        assertion_result = self._run_step(
+            "ClinicalAssertionResolver",
+            lambda: self.clinical_assertion_resolver.resolve(candidates),
+        )
         coverage_build_result = self._run_step(
-            "CoverageUnitBuilder",
-            lambda: self.coverage_unit_builder.build(candidates),
+            "AssertionAwareCoverageUnitBuilder",
+            lambda: self.coverage_unit_builder.build(
+                candidates=candidates,
+                assertions=assertion_result.clinical_object_assertions,
+            ),
         )
         coverage_units = coverage_build_result.coverage_units
         draft_payload = self._run_step(
@@ -162,6 +180,15 @@ class EvidenceAtomizerPipeline:
                 coverage_units,
                 draft_payload,
             ),
+        )
+        normalized_payload = normalized_payload.model_copy(
+            update={
+                "atomization_warnings": _merge_atomization_warnings(
+                    normalized_payload.atomization_warnings,
+                    assertion_result.assertion_warnings,
+                    coverage_build_result.warnings,
+                ),
+            }
         )
         atomization_result = self._run_step(
             "EvidenceAtomizationAssembler",
@@ -196,6 +223,7 @@ class EvidenceAtomizerPipeline:
         return EvidenceAtomizationValidationResult(
             atomization_result=atomization_result,
             validation_report=validation_report,
+            clinical_assertion_resolution=assertion_result,
         )
 
     @staticmethod
@@ -258,3 +286,20 @@ def _coverage_issue_message(
     if coverage_unit_id is None:
         return message
     return f"{message} [coverage_unit_id={coverage_unit_id}]"
+
+
+def _merge_atomization_warnings(
+    existing_warnings: list[AtomizationWarning],
+    assertion_warnings: list[AtomizationWarning],
+    coverage_build_warnings: list[str],
+) -> list[AtomizationWarning]:
+    warnings = [*existing_warnings, *assertion_warnings]
+    warnings.extend(
+        AtomizationWarning(
+            severity=ValidationSeverity.WARNING,
+            code="coverage_unit_builder_warning",
+            message=message,
+        )
+        for message in coverage_build_warnings
+    )
+    return warnings

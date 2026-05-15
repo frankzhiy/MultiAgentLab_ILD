@@ -94,6 +94,10 @@ class EvidenceAtomizationCoverageValidator:
             coverage_unit.unit_id: coverage_unit
             for coverage_unit in coverage_units
         }
+        evidence_atoms_by_id = {
+            atom.evidence_id: atom
+            for atom in atomization_result.evidence_atoms
+        }
         required_units = [
             coverage_unit
             for coverage_unit in coverage_units
@@ -146,6 +150,17 @@ class EvidenceAtomizationCoverageValidator:
                     continue
 
                 unit_to_evidence_ids[coverage_unit_id].append(evidence_id)
+                atom = evidence_atoms_by_id.get(evidence_id)
+                if atom is not None:
+                    issues.extend(
+                        _assertion_consistency_issues(
+                            atom_assertion_status=_atom_assertion_label(
+                                getattr(atom.assertion_status, "value", atom.assertion_status)
+                            ),
+                            coverage_unit=coverage_units_by_id[coverage_unit_id],
+                            related_evidence_id=evidence_id,
+                        )
+                    )
 
         for coverage_unit in required_units:
             evidence_ids = unit_to_evidence_ids.get(coverage_unit.unit_id, [])
@@ -184,6 +199,17 @@ class EvidenceAtomizationCoverageValidator:
                 )
             )
 
+        for atom in atomization_result.evidence_atoms:
+            issues.extend(
+                _statement_assertion_issues(
+                    statement=atom.statement,
+                    assertion_status=_atom_assertion_label(
+                        getattr(atom.assertion_status, "value", atom.assertion_status)
+                    ),
+                    related_evidence_id=atom.evidence_id,
+                )
+            )
+
         return CoverageValidationResult(
             accepted=not any(
                 issue.severity == ValidationSeverity.ERROR for issue in issues
@@ -219,3 +245,98 @@ def _dedupe_strings(values: list[str]) -> list[str]:
             continue
         result.append(cleaned)
     return result
+
+
+def _assertion_consistency_issues(
+    *,
+    atom_assertion_status: str,
+    coverage_unit: CoverageUnit,
+    related_evidence_id: str,
+) -> list[EvidenceAtomizationCoverageIssue]:
+    coverage_assertion_status = _coverage_assertion_label(coverage_unit.assertion_status)
+    if coverage_assertion_status == atom_assertion_status:
+        return []
+
+    severity = (
+        ValidationSeverity.ERROR
+        if {atom_assertion_status, coverage_assertion_status} == {"present", "absent"}
+        else ValidationSeverity.WARNING
+    )
+    return [
+        _issue(
+            severity=severity,
+            code="coverage_unit_assertion_status_mismatch",
+            message=(
+                "EvidenceAtom assertion_status conflicted with its assertion-aware "
+                "CoverageUnit."
+            ),
+            related_item_id=coverage_unit.source_item_id,
+            related_evidence_id=related_evidence_id,
+            related_coverage_unit_id=coverage_unit.unit_id,
+        )
+    ]
+
+
+def _statement_assertion_issues(
+    *,
+    statement: str,
+    assertion_status: str,
+    related_evidence_id: str,
+) -> list[EvidenceAtomizationCoverageIssue]:
+    negation_prefixes = ("未见", "未诉", "否认", "不伴", "无", "未")
+    positive_cues = ("再次出现", "出现", "伴")
+    compact_statement = " ".join(statement.split())
+
+    if (
+        assertion_status == "present"
+        and compact_statement.startswith(negation_prefixes)
+        and not any(cue in compact_statement for cue in positive_cues)
+    ):
+        return [
+            _issue(
+                severity=ValidationSeverity.WARNING,
+                code="present_atom_has_negation_surface",
+                message=(
+                    "EvidenceAtom statement begins with a negation expression while "
+                    "assertion_status is present."
+                ),
+                related_evidence_id=related_evidence_id,
+            )
+        ]
+
+    if (
+        assertion_status == "absent"
+        and any(cue in compact_statement for cue in positive_cues)
+        and not compact_statement.startswith(negation_prefixes)
+    ):
+        return [
+            _issue(
+                severity=ValidationSeverity.WARNING,
+                code="absent_atom_has_positive_surface",
+                message=(
+                    "EvidenceAtom statement contains a positive cue while "
+                    "assertion_status is absent."
+                ),
+                related_evidence_id=related_evidence_id,
+            )
+        ]
+
+    return []
+
+
+def _coverage_assertion_label(value: str | None) -> str:
+    normalized = normalize_optional_text(value) or "unknown"
+    if normalized in {"absent", "denied"}:
+        return "absent"
+    if normalized == "present":
+        return "present"
+    return "unknown"
+
+
+def _atom_assertion_label(value: str | None) -> str:
+    normalized = normalize_optional_text(value) or "unknown"
+    if normalized in {"absent", "denied"}:
+        return "absent"
+    if normalized == "present":
+        return "present"
+    return "unknown"

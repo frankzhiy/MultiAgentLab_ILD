@@ -1124,6 +1124,22 @@ def run_evidence_atomizer_round(
         round_dir / "evidence_atomization_validation_report.json",
         validation_report.model_dump(mode="json"),
     )
+    if getattr(atomization_bundle, "clinical_assertion_resolution", None) is not None:
+        clinical_assertion_resolution = atomization_bundle.clinical_assertion_resolution
+        write_json(
+            round_dir / "clinical_object_assertions.json",
+            [
+                assertion.model_dump(mode="json")
+                for assertion in clinical_assertion_resolution.clinical_object_assertions
+            ],
+        )
+        write_json(
+            round_dir / "clinical_assertion_warnings.json",
+            [
+                warning.model_dump(mode="json")
+                for warning in clinical_assertion_resolution.assertion_warnings
+            ],
+        )
     write_json(
         round_dir / "evidence_atoms.json",
         [atom.model_dump(mode="json") for atom in atomization_result.evidence_atoms],

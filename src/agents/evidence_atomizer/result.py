@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from src.schemas.evidence_atomizer import ClinicalAssertionResolutionResult
 from src.schemas.evidence_atomizer.evidence_atomization_result import (
     EvidenceAtomizationResult,
 )
@@ -24,6 +25,10 @@ class EvidenceAtomizationValidationResult(BaseModel):
     validation_report: EvidenceAtomizationValidationReport = Field(
         ...,
         description="Deterministic validation report for the atomization result.",
+    )
+    clinical_assertion_resolution: ClinicalAssertionResolutionResult = Field(
+        default_factory=ClinicalAssertionResolutionResult,
+        description="Internal object-level clinical assertion resolution payload.",
     )
 
     @property
