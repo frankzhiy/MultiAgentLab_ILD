@@ -1,0 +1,20 @@
+{
+  "case_id": "case_20260515_4825f920",
+  "created_at": "2026-05-15T08:57:52.319648+00:00",
+  "total_rounds": 1,
+  "result_root": "/Users/frank_zhiy/Documents/1. PhD/MultiAgentLab_ILD/results/phase1_trace/case_20260515_4825f920_20260515T085752Z",
+  "rounds": [
+    {
+      "round_index": 1,
+      "selected_file": "data/01.txt",
+      "input_id": "input_20260515_8c80fff4",
+      "parent_input_id": null,
+      "case_structuring_result_id": "case_structuring_result_20260515_e6a78159",
+      "attribute_extraction_result_id": "attribute_extraction_result_20260515_44c16dff",
+      "atomization_result_id": "atomization_result_20260515_2b471bb9",
+      "clinical_attribute_count": 9,
+      "evidence_atom_count": 50,
+      "validation_accepted": true
+    }
+  ]
+}
