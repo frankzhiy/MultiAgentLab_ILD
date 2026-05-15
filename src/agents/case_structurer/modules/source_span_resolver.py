@@ -2,12 +2,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from src.schemas.case_structurer.ambiguity_item import AmbiguityItem
 from src.schemas.case_structurer.clinical_section import ClinicalSection
 from src.schemas.case_structurer.raw_text_input import RawTextInput
 from src.schemas.case_structurer.source_span import SourceSpan
 from src.schemas.case_structurer.structured_clinical_item import StructuredClinicalItem
-from src.schemas.case_structurer.timeline_event import TimelineEvent
 
 SourceRange = tuple[int, int]
 
@@ -16,8 +14,6 @@ SourceRange = tuple[int, int]
 class ResolvedSourceObjects:
     sections: list[ClinicalSection]
     items: list[StructuredClinicalItem]
-    timeline_events: list[TimelineEvent]
-    ambiguities: list[AmbiguityItem]
 
 
 def _find_all_occurrences(text: str, query: str) -> list[SourceRange]:
@@ -158,17 +154,6 @@ def _resolved_range(span: SourceSpan) -> SourceRange | None:
     return (span.char_start, span.char_end)
 
 
-def _extend_ranges_for_ids(
-    object_ids: list[str],
-    range_map: dict[str, list[SourceRange]],
-) -> list[SourceRange]:
-    ranges: list[SourceRange] = []
-    for object_id in object_ids:
-        ranges.extend(range_map.get(object_id, []))
-
-    return ranges
-
-
 class SourceSpanResolver:
     """Resolve exact quoted_text offsets against the raw input."""
 
@@ -177,8 +162,6 @@ class SourceSpanResolver:
         raw_input: RawTextInput,
         sections: list[ClinicalSection],
         items: list[StructuredClinicalItem],
-        timeline_events: list[TimelineEvent],
-        ambiguities: list[AmbiguityItem],
     ) -> ResolvedSourceObjects:
         span_counter = 0
 
@@ -241,84 +224,19 @@ class SourceSpanResolver:
         # StructuredClinicalItem spans should resolve inside their parent section
         # first. This prevents repeated quoted_text from being mapped to an
         # earlier global occurrence in a different clinical section.
-        item_range_map: dict[str, list[SourceRange]] = {}
-        item_section_id_map: dict[str, str] = {}
         resolved_items: list[StructuredClinicalItem] = []
         for item in items:
-            item_section_id_map[item.item_id] = item.section_id
             parent_section_ranges = section_range_map.get(item.section_id, [])
             resolved_spans = [
                 resolve_single_span(span, preferred_ranges=parent_section_ranges)
                 for span in item.source_spans
             ]
 
-            for resolved_span in resolved_spans:
-                span_range = _resolved_range(resolved_span)
-                if span_range is not None:
-                    item_range_map.setdefault(item.item_id, []).append(span_range)
-
             resolved_items.append(
                 item.model_copy(update={"source_spans": resolved_spans})
-            )
-
-        def parent_section_ranges_for_item_ids(item_ids: list[str]) -> list[SourceRange]:
-            ranges: list[SourceRange] = []
-            for item_id in item_ids:
-                section_id = item_section_id_map.get(item_id)
-                if section_id is not None:
-                    ranges.extend(section_range_map.get(section_id, []))
-
-            return ranges
-
-        # TimelineEvent spans use related item ranges first, then their parent
-        # section ranges. This keeps event provenance near the clinical fact it
-        # references while still staying exact-match only.
-        resolved_timeline_events: list[TimelineEvent] = []
-        for event in timeline_events:
-            related_item_ranges = _extend_ranges_for_ids(
-                event.related_item_ids,
-                item_range_map,
-            )
-            related_section_ranges = parent_section_ranges_for_item_ids(
-                event.related_item_ids
-            )
-            resolved_spans = [
-                resolve_single_span(
-                    span,
-                    preferred_ranges=related_item_ranges,
-                    fallback_ranges=related_section_ranges,
-                )
-                for span in event.source_spans
-            ]
-            resolved_timeline_events.append(
-                event.model_copy(update={"source_spans": resolved_spans})
-            )
-
-        # AmbiguityItem spans use related item and section ids as context. This
-        # avoids forcing ambiguous repeated text back to the first global match.
-        resolved_ambiguities: list[AmbiguityItem] = []
-        for ambiguity in ambiguities:
-            preferred_ranges = _extend_ranges_for_ids(
-                ambiguity.related_item_ids,
-                item_range_map,
-            )
-            preferred_ranges.extend(
-                _extend_ranges_for_ids(
-                    ambiguity.related_section_ids,
-                    section_range_map,
-                )
-            )
-            resolved_spans = [
-                resolve_single_span(span, preferred_ranges=preferred_ranges)
-                for span in ambiguity.source_spans
-            ]
-            resolved_ambiguities.append(
-                ambiguity.model_copy(update={"source_spans": resolved_spans})
             )
 
         return ResolvedSourceObjects(
             sections=resolved_sections,
             items=resolved_items,
-            timeline_events=resolved_timeline_events,
-            ambiguities=resolved_ambiguities,
         )

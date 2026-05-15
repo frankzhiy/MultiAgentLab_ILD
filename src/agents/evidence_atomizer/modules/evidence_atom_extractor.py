@@ -15,6 +15,9 @@ from src.agents.evidence_atomizer.prompting.schema_contracts import (
     evidence_atomization_contract,
 )
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
+from src.schemas.attribute_extractor.attribute_extraction_result import (
+    AttributeExtractionResult,
+)
 
 from .atomization_candidate_builder import AtomizationCandidate
 from .base_llm_extractor import BaseLLMExtractor
@@ -27,6 +30,7 @@ class EvidenceAtomExtractor(BaseLLMExtractor):
     def extract(
         self,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
         candidates: list[AtomizationCandidate],
         coverage_units: list[CoverageUnit],
     ) -> dict[str, Any]:
@@ -61,6 +65,9 @@ class EvidenceAtomExtractor(BaseLLMExtractor):
                 "stage_id": structuring_result.stage_context.stage_id,
                 "case_structuring_result_id": (
                     structuring_result.case_structuring_result_id
+                ),
+                "attribute_extraction_result_id": (
+                    attribute_result.attribute_extraction_result_id
                 ),
                 "atomization_candidates": candidate_payload,
                 "coverage_units": coverage_unit_payload,

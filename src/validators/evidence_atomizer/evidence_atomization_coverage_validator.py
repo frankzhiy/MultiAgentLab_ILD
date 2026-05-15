@@ -51,8 +51,8 @@ class EvidenceAtomizationCoverageIssue(BaseModel):
         return normalize_optional_text(value)
 
 
-class EvidenceAtomizationCoverageReport(BaseModel):
-    """Validation report for EvidenceAtom coverage of CoverageUnit objects."""
+class CoverageValidationResult(BaseModel):
+    """Internal validation result for EvidenceAtom coverage of CoverageUnit objects."""
 
     model_config = ConfigDict(
         extra="forbid",
@@ -70,7 +70,7 @@ class EvidenceAtomizationCoverageReport(BaseModel):
     @model_validator(mode="after")
     def validate_acceptance_matches_errors(
         self,
-    ) -> "EvidenceAtomizationCoverageReport":
+    ) -> "CoverageValidationResult":
         expected_accepted = not self.has_errors
         if self.accepted != expected_accepted:
             raise ValueError(
@@ -88,7 +88,7 @@ class EvidenceAtomizationCoverageValidator:
         coverage_units: list[CoverageUnit],
         evidence_id_to_coverage_unit_ids: dict[str, list[str]],
         atomization_result: EvidenceAtomizationResult,
-    ) -> EvidenceAtomizationCoverageReport:
+    ) -> CoverageValidationResult:
         issues: list[EvidenceAtomizationCoverageIssue] = []
         coverage_units_by_id = {
             coverage_unit.unit_id: coverage_unit
@@ -184,7 +184,7 @@ class EvidenceAtomizationCoverageValidator:
                 )
             )
 
-        return EvidenceAtomizationCoverageReport(
+        return CoverageValidationResult(
             accepted=not any(
                 issue.severity == ValidationSeverity.ERROR for issue in issues
             ),

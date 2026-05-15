@@ -1,6 +1,7 @@
 from .atomization_candidate_builder import (
     AtomizationCandidate,
     AtomizationCandidateBuilder,
+    ClinicalAttributeSummary,
 )
 from .coverage_unit_builder import CoverageUnitBuilder
 from .coverage_units import CoverageUnit, CoverageUnitBuildResult
@@ -15,6 +16,7 @@ from .input_guard import EvidenceAtomizerInputGuard
 __all__ = [
     "AtomizationCandidate",
     "AtomizationCandidateBuilder",
+    "ClinicalAttributeSummary",
     "CoverageUnit",
     "CoverageUnitBuildResult",
     "CoverageUnitBuilder",

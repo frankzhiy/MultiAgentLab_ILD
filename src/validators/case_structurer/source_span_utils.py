@@ -18,26 +18,7 @@ _ASCII_WORD_RE = re.compile(r"[A-Za-z]+")
 _ALNUM_TOKEN_RE = re.compile(
     r"[A-Za-z0-9]+(?:[-_/+.][A-Za-z0-9]+)*|\d+(?:\.\d+)?%?"
 )
-_GENERIC_ITEM_VALUES = {
-    "absent",
-    "denied",
-    "false",
-    "none",
-    "not mentioned",
-    "null",
-    "present",
-    "true",
-    "unknown",
-    "yes",
-    "no",
-}
-_SOURCE_GROUNDED_ITEM_FIELDS = {
-    "body_site",
-    "label",
-    "time_text",
-    "unit",
-    "value",
-}
+_SOURCE_GROUNDED_ITEM_FIELDS = {"label"}
 
 
 @dataclass(frozen=True)
@@ -116,23 +97,6 @@ def get_all_structured_objects(
         )
         for item in result.structured_items
     )
-    objects.extend(
-        StructuredSourceObject(
-            object_type="TimelineEvent",
-            object_id=event.event_id,
-            source_spans=event.source_spans,
-        )
-        for event in result.timeline_events
-    )
-    objects.extend(
-        StructuredSourceObject(
-            object_type="AmbiguityItem",
-            object_id=ambiguity.ambiguity_id,
-            source_spans=ambiguity.source_spans,
-        )
-        for ambiguity in result.ambiguities
-    )
-
     return objects
 
 
@@ -187,10 +151,6 @@ def combined_existing_span_text(
 def item_field_values(item: StructuredClinicalItem) -> dict[str, str | None]:
     return {
         "label": item.label,
-        "value": item.value,
-        "unit": item.unit,
-        "body_site": item.body_site,
-        "time_text": item.time_text,
     }
 
 
@@ -200,13 +160,12 @@ def unsupported_item_fields(
 ) -> list[str]:
     unsupported_fields: list[str] = []
 
-    for field_name, value in item_field_values(item).items():
-        if not should_validate_item_field(field_name, value, source_text):
+    for field_name, field_text in item_field_values(item).items():
+        if not should_validate_item_field(field_name, field_text, source_text):
             continue
 
         if not item_field_supported_by_source(
-            field_name=field_name,
-            value=value or "",
+            field_text=field_text or "",
             source_text=source_text,
         ):
             unsupported_fields.append(field_name)
@@ -216,17 +175,14 @@ def unsupported_item_fields(
 
 def should_validate_item_field(
     field_name: str,
-    value: str | None,
+    field_text: str | None,
     source_text: str,
 ) -> bool:
-    if value is None:
+    if field_text is None:
         return False
 
-    cleaned = value.strip()
+    cleaned = field_text.strip()
     if not cleaned:
-        return False
-
-    if field_name == "value" and cleaned.lower() in _GENERIC_ITEM_VALUES:
         return False
 
     if field_name in _SOURCE_GROUNDED_ITEM_FIELDS:
@@ -242,19 +198,15 @@ def should_validate_item_field(
 
 
 def item_field_supported_by_source(
-    field_name: str,
-    value: str,
+    field_text: str,
     source_text: str,
 ) -> bool:
-    cleaned = value.strip()
+    cleaned = field_text.strip()
     if not cleaned:
         return True
 
     if normalized_contains(source_text, cleaned):
         return True
-
-    if field_name in {"time_text", "unit"}:
-        return False
 
     return source_like_text_covered_by_source(cleaned, source_text)
 

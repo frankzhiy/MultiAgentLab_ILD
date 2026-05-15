@@ -3,6 +3,9 @@ from __future__ import annotations
 from src.agents.evidence_atomizer.modules.evidence_atom_normalizer import (
     NormalizedEvidenceAtomizationPayload,
 )
+from src.schemas.attribute_extractor.attribute_extraction_result import (
+    AttributeExtractionResult,
+)
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.evidence_atomizer.common import ValidationSeverity
 from src.schemas.evidence_atomizer.evidence_atomization_result import (
@@ -16,8 +19,10 @@ class EvidenceAtomizationAssembler:
     def assemble(
         self,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
         normalized_payload: NormalizedEvidenceAtomizationPayload,
     ) -> EvidenceAtomizationResult:
+        _ = attribute_result
         has_error_warning = any(
             warning.severity == ValidationSeverity.ERROR
             for warning in normalized_payload.atomization_warnings

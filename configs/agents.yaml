@@ -9,7 +9,14 @@ agents:
       stage_context: src/agents/case_structurer/prompts/stage_context.md
       clinical_section: src/agents/case_structurer/prompts/clinical_section.md
       structured_item: src/agents/case_structurer/prompts/structured_item.md
-      temporal_ambiguity: src/agents/case_structurer/prompts/temporal_ambiguity.md
+  attribute_extractor:
+    provider: chatanywhere
+    model: gpt-4.1-mini
+    temperature: 0.0
+    max_tokens: 32000
+    response_format: json_object
+    prompts:
+      attribute_span_role_labeling: src/agents/attribute_extractor/prompts/attribute_span_role_labeling.md
   evidence_atomizer:
     provider: chatanywhere
     model: gpt-4.1-mini

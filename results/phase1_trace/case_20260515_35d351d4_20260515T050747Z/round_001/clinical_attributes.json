@@ -1,0 +1,282 @@
+[
+  {
+    "attribute_id": "attribute_20260515_99f8aee3",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_001",
+    "attribute_role": "sex",
+    "span_text": "女",
+    "source_span": {
+      "span_id": "span_attr_001",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "女",
+      "char_start": 6,
+      "char_end": 7
+    },
+    "normalized_value": null,
+    "normalized_unit": null,
+    "normalized_text": "female",
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_7f4c20ee",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_001",
+    "attribute_role": "age",
+    "span_text": "77岁",
+    "source_span": {
+      "span_id": "span_attr_002",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "77岁",
+      "char_start": 8,
+      "char_end": 11
+    },
+    "normalized_value": 77,
+    "normalized_unit": "year",
+    "normalized_text": null,
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_0ba2abbe",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_002",
+    "attribute_role": "symptom_duration",
+    "span_text": "8年",
+    "source_span": {
+      "span_id": "span_attr_003",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "8年",
+      "char_start": 26,
+      "char_end": 28
+    },
+    "normalized_value": 8,
+    "normalized_unit": "year",
+    "normalized_text": null,
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_182f90ae",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_003",
+    "attribute_role": "worsening_interval",
+    "span_text": "加重2月",
+    "source_span": {
+      "span_id": "span_attr_004",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "加重2月",
+      "char_start": 29,
+      "char_end": 33
+    },
+    "normalized_value": 2,
+    "normalized_unit": "month",
+    "normalized_text": null,
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_d95949ba",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_004",
+    "attribute_role": "uncertain_attribute",
+    "span_text": "良好",
+    "source_span": {
+      "span_id": "span_attr_005",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "良好",
+      "char_start": 45,
+      "char_end": 47
+    },
+    "normalized_value": null,
+    "normalized_unit": null,
+    "normalized_text": null,
+    "extraction_confidence": "medium",
+    "notes": "General health status"
+  },
+  {
+    "attribute_id": "attribute_20260515_7eb199e1",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_005",
+    "attribute_role": "disease_history_duration",
+    "span_text": "8年",
+    "source_span": {
+      "span_id": "span_attr_006",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "8年",
+      "char_start": 57,
+      "char_end": 59
+    },
+    "normalized_value": 8,
+    "normalized_unit": "year",
+    "normalized_text": null,
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_823cbc4e",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_006",
+    "attribute_role": "medication_dose",
+    "span_text": "2片/次",
+    "source_span": {
+      "span_id": "span_attr_007",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "2片/次",
+      "char_start": 73,
+      "char_end": 77
+    },
+    "normalized_value": "2",
+    "normalized_unit": "片/次",
+    "normalized_text": null,
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_8bf75cb6",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_006",
+    "attribute_role": "medication_frequency",
+    "span_text": "1次/日",
+    "source_span": {
+      "span_id": "span_attr_008",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "1次/日",
+      "char_start": 78,
+      "char_end": 82
+    },
+    "normalized_value": "1",
+    "normalized_unit": "次/日",
+    "normalized_text": null,
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_1ac61c4c",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_006",
+    "attribute_role": "medication_route",
+    "span_text": "口服",
+    "source_span": {
+      "span_id": "span_attr_009",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "口服",
+      "char_start": 62,
+      "char_end": 64
+    },
+    "normalized_value": null,
+    "normalized_unit": null,
+    "normalized_text": "oral",
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_c547c5fa",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_007",
+    "attribute_role": "other_attribute",
+    "span_text": "糖尿病",
+    "source_span": {
+      "span_id": "span_attr_010",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "糖尿病",
+      "char_start": 86,
+      "char_end": 89
+    },
+    "normalized_value": null,
+    "normalized_unit": null,
+    "normalized_text": "diabetes mellitus",
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_f32749ea",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_008",
+    "attribute_role": "other_attribute",
+    "span_text": "冠心病病史",
+    "source_span": {
+      "span_id": "span_attr_011",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "冠心病病史",
+      "char_start": 90,
+      "char_end": 95
+    },
+    "normalized_value": null,
+    "normalized_unit": null,
+    "normalized_text": "coronary heart disease history",
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_84cd79fa",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_009",
+    "attribute_role": "uncertain_attribute",
+    "span_text": "40年前",
+    "source_span": {
+      "span_id": "span_attr_012",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "40年前",
+      "char_start": 96,
+      "char_end": 100
+    },
+    "normalized_value": "40",
+    "normalized_unit": "年",
+    "normalized_text": null,
+    "extraction_confidence": "high",
+    "notes": "Time since procedure"
+  },
+  {
+    "attribute_id": "attribute_20260515_52a72c8e",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_009",
+    "attribute_role": "other_attribute",
+    "span_text": "左下肢骨折固定术",
+    "source_span": {
+      "span_id": "span_attr_013",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "左下肢骨折固定术",
+      "char_start": 100,
+      "char_end": 108
+    },
+    "normalized_value": null,
+    "normalized_unit": null,
+    "normalized_text": "left lower limb fracture fixation surgery",
+    "extraction_confidence": "high",
+    "notes": null
+  },
+  {
+    "attribute_id": "attribute_20260515_84deab49",
+    "case_id": "case_20260515_35d351d4",
+    "input_id": "input_20260515_64e010c7",
+    "source_item_id": "item_010",
+    "attribute_role": "onset_time",
+    "span_text": "8年前",
+    "source_span": {
+      "span_id": "span_attr_014",
+      "input_id": "input_20260515_64e010c7",
+      "quoted_text": "8年前",
+      "char_start": 116,
+      "char_end": 119
+    },
+    "normalized_value": "8",
+    "normalized_unit": "年",
+    "normalized_text": null,
+    "extraction_confidence": "high",
+    "notes": "Symptom onset time"
+  }
+]

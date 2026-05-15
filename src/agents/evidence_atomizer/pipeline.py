@@ -14,17 +14,22 @@ from src.agents.evidence_atomizer.errors import (
     EvidenceAtomizationValidationError,
 )
 from src.agents.evidence_atomizer.result import EvidenceAtomizationValidationResult
+from src.schemas.attribute_extractor.attribute_extraction_result import (
+    AttributeExtractionResult,
+)
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.evidence_atomizer.common import ValidationSeverity
 from src.schemas.evidence_atomizer.evidence_atomization_result import (
     EvidenceAtomizationResult,
 )
 from src.validators.evidence_atomizer import (
-    EvidenceAtomizationCoverageReport,
-    EvidenceAtomizationCoverageValidator,
     EvidenceAtomizationValidationIssue,
     EvidenceAtomizationValidationReport,
     EvidenceAtomizationValidator,
+)
+from src.validators.evidence_atomizer.evidence_atomization_coverage_validator import (
+    CoverageValidationResult,
+    EvidenceAtomizationCoverageValidator,
 )
 
 from .modules import (
@@ -73,8 +78,12 @@ class EvidenceAtomizerPipeline:
     def run(
         self,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
     ) -> EvidenceAtomizationResult:
-        validation_result = self.run_with_validation(structuring_result)
+        validation_result = self.run_with_validation(
+            structuring_result,
+            attribute_result,
+        )
         if not validation_result.validation_report.accepted:
             raise EvidenceAtomizationValidationError(
                 step="EvidenceAtomizationValidator",
@@ -86,10 +95,11 @@ class EvidenceAtomizerPipeline:
     def run_with_validation(
         self,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
     ) -> EvidenceAtomizationValidationResult:
         guard_warnings = self._run_step(
             "EvidenceAtomizerInputGuard",
-            lambda: self.input_guard.check(structuring_result),
+            lambda: self.input_guard.check(structuring_result, attribute_result),
         )
 
         if _has_error_warning(guard_warnings):
@@ -113,6 +123,7 @@ class EvidenceAtomizerPipeline:
                 "EvidenceAtomizationValidator",
                 lambda: self.validator.validate(
                     structuring_result=structuring_result,
+                    attribute_result=attribute_result,
                     atomization_result=atomization_result,
                 ),
             )
@@ -123,7 +134,10 @@ class EvidenceAtomizerPipeline:
 
         candidates = self._run_step(
             "AtomizationCandidateBuilder",
-            lambda: self.candidate_builder.build(structuring_result),
+            lambda: self.candidate_builder.build(
+                structuring_result,
+                attribute_result,
+            ),
         )
         coverage_build_result = self._run_step(
             "CoverageUnitBuilder",
@@ -134,6 +148,7 @@ class EvidenceAtomizerPipeline:
             "EvidenceAtomExtractor",
             lambda: self.evidence_atom_extractor.extract(
                 structuring_result,
+                attribute_result,
                 candidates,
                 coverage_units,
             ),
@@ -142,6 +157,7 @@ class EvidenceAtomizerPipeline:
             "EvidenceAtomNormalizer",
             lambda: self.evidence_atom_normalizer.normalize(
                 structuring_result,
+                attribute_result,
                 candidates,
                 coverage_units,
                 draft_payload,
@@ -151,10 +167,11 @@ class EvidenceAtomizerPipeline:
             "EvidenceAtomizationAssembler",
             lambda: self.assembler.assemble(
                 structuring_result,
+                attribute_result,
                 normalized_payload,
             ),
         )
-        coverage_report = self._run_step(
+        coverage_validation = self._run_step(
             "EvidenceAtomizationCoverageValidator",
             lambda: self.coverage_validator.validate(
                 coverage_units=coverage_units,
@@ -168,12 +185,13 @@ class EvidenceAtomizerPipeline:
             "EvidenceAtomizationValidator",
             lambda: self.validator.validate(
                 structuring_result=structuring_result,
+                attribute_result=attribute_result,
                 atomization_result=atomization_result,
             ),
         )
-        validation_report = _merge_coverage_report(
+        validation_report = _merge_coverage_validation(
             validation_report,
-            coverage_report,
+            coverage_validation,
         )
         return EvidenceAtomizationValidationResult(
             atomization_result=atomization_result,
@@ -207,9 +225,9 @@ def _has_error_warning(warnings: list[object]) -> bool:
     )
 
 
-def _merge_coverage_report(
+def _merge_coverage_validation(
     validation_report: EvidenceAtomizationValidationReport,
-    coverage_report: EvidenceAtomizationCoverageReport,
+    coverage_validation: CoverageValidationResult,
 ) -> EvidenceAtomizationValidationReport:
     issues = [
         *validation_report.issues,
@@ -222,7 +240,7 @@ def _merge_coverage_report(
                 related_evidence_id=issue.related_evidence_id,
                 related_span_id=None,
             )
-            for issue in coverage_report.issues
+            for issue in coverage_validation.issues
         ],
     ]
     return EvidenceAtomizationValidationReport(

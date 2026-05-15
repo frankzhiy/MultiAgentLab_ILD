@@ -4,7 +4,27 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from src.schemas.attribute_extractor.attribute_extraction_result import (
+    AttributeExtractionResult,
+)
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
+
+
+class ClinicalAttributeSummary(BaseModel):
+    """Compact LLM-ready representation of one ClinicalAttribute."""
+
+    model_config = ConfigDict(
+        extra="forbid",
+        frozen=True,
+        str_strip_whitespace=True,
+    )
+
+    attribute_id: str
+    attribute_role: str
+    span_text: str
+    normalized_value: str | int | float | None = None
+    normalized_unit: str | None = None
+    normalized_text: str | None = None
 
 
 class AtomizationCandidate(BaseModel):
@@ -19,13 +39,10 @@ class AtomizationCandidate(BaseModel):
     item_id: str
     item_type: str
     label: str
-    value: str | None = None
-    unit: str | None = None
-    body_site: str | None = None
     temporality: str
-    time_text: str | None = None
     certainty: str
     negation: str
+    attributes: list[ClinicalAttributeSummary] = Field(default_factory=list)
     source_spans: list[dict[str, Any]] = Field(default_factory=list)
     section_id: str
     section_type: str | None = None
@@ -39,11 +56,24 @@ class AtomizationCandidateBuilder:
     def build(
         self,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
     ) -> list[AtomizationCandidate]:
         sections_by_id = {
             section.section_id: section
             for section in structuring_result.clinical_sections
         }
+        attributes_by_item_id: dict[str, list[ClinicalAttributeSummary]] = {}
+        for attribute in attribute_result.clinical_attributes:
+            attributes_by_item_id.setdefault(attribute.source_item_id, []).append(
+                ClinicalAttributeSummary(
+                    attribute_id=attribute.attribute_id,
+                    attribute_role=_value(attribute.attribute_role),
+                    span_text=attribute.span_text,
+                    normalized_value=attribute.normalized_value,
+                    normalized_unit=attribute.normalized_unit,
+                    normalized_text=attribute.normalized_text,
+                )
+            )
 
         candidates: list[AtomizationCandidate] = []
         for item in structuring_result.structured_items:
@@ -69,13 +99,10 @@ class AtomizationCandidateBuilder:
                     item_id=item.item_id,
                     item_type=_value(item.item_type),
                     label=item.label,
-                    value=item.value,
-                    unit=item.unit,
-                    body_site=item.body_site,
                     temporality=_value(item.temporality),
-                    time_text=item.time_text,
                     certainty=_value(item.certainty),
                     negation=_value(item.negation),
+                    attributes=attributes_by_item_id.get(item.item_id, []),
                     source_spans=source_spans,
                     section_id=item.section_id,
                     section_type=_value(section.section_type) if section else None,

@@ -7,8 +7,7 @@ It assembles:
 - StageContext
 - ClinicalSection objects
 - StructuredClinicalItem objects
-- TimelineEvent objects
-- AmbiguityItem objects
+- StructuringWarning objects
 
 into one validated case-structuring package.
 
@@ -16,8 +15,6 @@ This schema performs cross-object consistency checks, such as:
 - all objects belong to the same RawTextInput;
 - stage context and raw input refer to the same case;
 - StructuredClinicalItem.section_id references existing ClinicalSection ids;
-- TimelineEvent.related_item_ids reference existing StructuredClinicalItem ids;
-- AmbiguityItem related ids reference existing section/item ids;
 - duplicate ids and duplicate ordering are detected.
 
 This schema must not contain:
@@ -37,13 +34,11 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 
 from src.utils.id_generator import generate_case_structuring_result_id
 
-from .ambiguity_item import AmbiguityItem
 from .clinical_section import ClinicalSection
 from .common import CaseStructuringResultID, ValidationSeverity
 from .raw_text_input import RawTextInput
 from .stage_context import StageContext
 from .structured_clinical_item import StructuredClinicalItem
-from .timeline_event import TimelineEvent
 
 
 class StructuringWarning(BaseModel):
@@ -89,7 +84,7 @@ class StructuringWarning(BaseModel):
         default=None,
         description=(
             "Optional id of the related object, such as section_id, item_id, "
-            "event_id, ambiguity_id, span_id, input_id, or stage_id."
+            "span_id, input_id, or stage_id."
         ),
     )
 
@@ -176,24 +171,9 @@ class CaseStructuringResult(BaseModel):
     structured_items: list[StructuredClinicalItem] = Field(
         default_factory=list,
         description=(
-            "Fine-grained clinical items extracted from clinical sections. "
-            "These are still case-structuring objects, not reasoning evidence."
-        ),
-    )
-
-    timeline_events: list[TimelineEvent] = Field(
-        default_factory=list,
-        description=(
-            "Time-related clinical events extracted from the raw input. "
-            "These describe chronology, not diagnostic interpretation."
-        ),
-    )
-
-    ambiguities: list[AmbiguityItem] = Field(
-        default_factory=list,
-        description=(
-            "Ambiguous, uncertain, conflicting, or under-specified statements "
-            "that should not be forced into definite structured interpretations."
+            "Source-level clinical statements extracted from clinical sections. "
+            "These are still case-structuring objects, not reasoning evidence "
+            "or parsed attribute spans."
         ),
     )
 
@@ -205,13 +185,13 @@ class CaseStructuringResult(BaseModel):
         ),
     )
 
-    ready_for_evidence_atomization: bool = Field(
+    ready_for_attribute_extraction: bool = Field(
         default=True,
         description=(
             "Whether this structuring result is considered ready for the "
-            "Evidence Atomizer. This is not the same as Pydantic validity. "
+            "Attribute Extractor. This is not the same as Pydantic validity. "
             "A result may be schema-valid but not ready for downstream evidence "
-            "atomization if it is too ambiguous or too incomplete."
+            "processing if it is too incomplete."
         ),
     )
 
@@ -251,18 +231,6 @@ class CaseStructuringResult(BaseModel):
             if item.input_id != expected_input_id
         ]
 
-        mismatched_events = [
-            event.event_id
-            for event in self.timeline_events
-            if event.input_id != expected_input_id
-        ]
-
-        mismatched_ambiguities = [
-            ambiguity.ambiguity_id
-            for ambiguity in self.ambiguities
-            if ambiguity.input_id != expected_input_id
-        ]
-
         errors: list[str] = []
 
         if mismatched_sections:
@@ -270,12 +238,6 @@ class CaseStructuringResult(BaseModel):
 
         if mismatched_items:
             errors.append(f"structured_items={mismatched_items}")
-
-        if mismatched_events:
-            errors.append(f"timeline_events={mismatched_events}")
-
-        if mismatched_ambiguities:
-            errors.append(f"ambiguities={mismatched_ambiguities}")
 
         if errors:
             raise ValueError(
@@ -296,16 +258,6 @@ class CaseStructuringResult(BaseModel):
         self._raise_if_duplicate(
             values=[item.item_id for item in self.structured_items],
             label="structured_items.item_id",
-        )
-
-        self._raise_if_duplicate(
-            values=[event.event_id for event in self.timeline_events],
-            label="timeline_events.event_id",
-        )
-
-        self._raise_if_duplicate(
-            values=[ambiguity.ambiguity_id for ambiguity in self.ambiguities],
-            label="ambiguities.ambiguity_id",
         )
 
         return self
@@ -333,75 +285,6 @@ class CaseStructuringResult(BaseModel):
         return self
 
     @model_validator(mode="after")
-    def validate_timeline_item_references(self) -> "CaseStructuringResult":
-        """Validate references from TimelineEvent to StructuredClinicalItem."""
-        item_ids = {item.item_id for item in self.structured_items}
-
-        missing_item_refs: list[dict[str, str]] = []
-
-        for event in self.timeline_events:
-            for related_item_id in event.related_item_ids:
-                if related_item_id not in item_ids:
-                    missing_item_refs.append(
-                        {
-                            "event_id": event.event_id,
-                            "missing_item_id": related_item_id,
-                        }
-                    )
-
-        if missing_item_refs:
-            raise ValueError(
-                "Every TimelineEvent.related_item_ids entry must reference an "
-                f"existing StructuredClinicalItem.item_id. Missing refs: {missing_item_refs}"
-            )
-
-        return self
-
-    @model_validator(mode="after")
-    def validate_ambiguity_references(self) -> "CaseStructuringResult":
-        """Validate references from AmbiguityItem to sections and items."""
-        section_ids = {section.section_id for section in self.clinical_sections}
-        item_ids = {item.item_id for item in self.structured_items}
-
-        missing_section_refs: list[dict[str, str]] = []
-        missing_item_refs: list[dict[str, str]] = []
-
-        for ambiguity in self.ambiguities:
-            for related_section_id in ambiguity.related_section_ids:
-                if related_section_id not in section_ids:
-                    missing_section_refs.append(
-                        {
-                            "ambiguity_id": ambiguity.ambiguity_id,
-                            "missing_section_id": related_section_id,
-                        }
-                    )
-
-            for related_item_id in ambiguity.related_item_ids:
-                if related_item_id not in item_ids:
-                    missing_item_refs.append(
-                        {
-                            "ambiguity_id": ambiguity.ambiguity_id,
-                            "missing_item_id": related_item_id,
-                        }
-                    )
-
-        errors: list[str] = []
-
-        if missing_section_refs:
-            errors.append(f"missing related_section_ids={missing_section_refs}")
-
-        if missing_item_refs:
-            errors.append(f"missing related_item_ids={missing_item_refs}")
-
-        if errors:
-            raise ValueError(
-                "AmbiguityItem related ids must reference existing objects. "
-                + "; ".join(errors)
-            )
-
-        return self
-
-    @model_validator(mode="after")
     def validate_no_duplicate_order_values(self) -> "CaseStructuringResult":
         """Validate that order fields do not duplicate within each category.
 
@@ -419,34 +302,27 @@ class CaseStructuringResult(BaseModel):
             label="structured_items.item_order",
         )
 
-        self._raise_if_duplicate(
-            values=[event.event_order for event in self.timeline_events],
-            label="timeline_events.event_order",
-        )
-
         return self
 
     @model_validator(mode="after")
     def validate_result_not_empty(self) -> "CaseStructuringResult":
         """Validate that the structuring result contains at least one output.
 
-        A CaseStructuringResult may contain only ambiguities if the input is too
-        unclear to structure safely. However, it should not contain no sections,
-        no items, no timeline events, and no ambiguities at the same time.
+        A CaseStructuringResult should not contain no sections and no items at
+        the same time.
         """
         has_any_structured_output = any(
             [
                 self.clinical_sections,
                 self.structured_items,
-                self.timeline_events,
-                self.ambiguities,
             ]
         )
 
-        if not has_any_structured_output:
+        if not has_any_structured_output and not self.structuring_warnings:
             raise ValueError(
                 "CaseStructuringResult must contain at least one clinical section, "
-                "structured item, timeline event, or ambiguity item."
+                "structured item, or structuring warning explaining why no "
+                "structure was produced."
             )
 
         return self
@@ -454,7 +330,7 @@ class CaseStructuringResult(BaseModel):
     @model_validator(mode="after")
     def validate_readiness_has_warning_when_false(self) -> "CaseStructuringResult":
         """Require an explanation when the result is not ready downstream."""
-        if self.ready_for_evidence_atomization:
+        if self.ready_for_attribute_extraction:
             return self
 
         has_warning_or_error = any(
@@ -467,7 +343,7 @@ class CaseStructuringResult(BaseModel):
 
         if not has_warning_or_error:
             raise ValueError(
-                "ready_for_evidence_atomization=False requires at least one "
+                "ready_for_attribute_extraction=False requires at least one "
                 "structuring warning with severity warning or error."
             )
 

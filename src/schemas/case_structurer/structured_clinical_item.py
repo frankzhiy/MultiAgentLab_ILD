@@ -1,18 +1,18 @@
 """Structured clinical item schema for the Case Structurer.
 
-StructuredClinicalItem represents a fine-grained clinical item extracted
+StructuredClinicalItem represents a source-level clinical statement extracted
 from one ClinicalSection.
 
 It answers one question:
 
-    What specific clinical fact or statement appears inside this section?
+    What source-level clinical statement appears inside this section?
 
 StructuredClinicalItem is still part of case structuring. It must not
-represent evidence atoms, diagnoses, hypotheses, conflicts, actions,
-treatment recommendations, or arbitration results.
+represent evidence atoms, parsed attributes, diagnoses, hypotheses, conflicts,
+actions, treatment recommendations, or arbitration results.
 
-Reasoning evidence for downstream hypothesis management belongs to
-EvidenceAtom, not StructuredClinicalItem.
+Minimal evidence-level splitting belongs to EvidenceAtomizer, and attribute
+role labeling belongs to Attribute Extractor.
 """
 
 from __future__ import annotations
@@ -82,17 +82,19 @@ class ClinicalItemType(StrEnum):
 
 
 class StructuredClinicalItem(BaseModel):
-    """A fine-grained clinical item extracted from one ClinicalSection.
+    """A source-level clinical statement extracted from one ClinicalSection.
 
-    StructuredClinicalItem turns section-level text into concrete clinical
-    facts or statements such as symptoms, lab results, medications,
-    exposures, imaging findings, pathology findings, or treatment response.
+    StructuredClinicalItem turns section-level text into stable source-level
+    clinical statements. It does not parse values, units, time expressions, or
+    body sites, and it does not split coordinated source statements into
+    minimal evidence atoms.
 
     It does not answer:
 
     - What diagnosis is likely?
     - What hypothesis does this item support or refute?
     - What evidence atom should be created?
+    - What attribute spans should be role-labeled?
     - What treatment should be recommended?
     - What conflict exists?
     - What action should be taken?
@@ -136,34 +138,11 @@ class StructuredClinicalItem(BaseModel):
         ...,
         min_length=1,
         description=(
-            "Normalized or source-level name of the clinical item, such as "
-            "'cough', 'dyspnea', 'ANA', 'hypertension', 'prednisone', "
-            "'honeycombing', 'FVC', or 'DLCO'."
-        ),
-    )
-
-    value: str | None = Field(
-        default=None,
-        description=(
-            "Optional value of the item, such as 'positive', '77', '8 years', "
-            "'elevated', 'decreased', or 'present'. Use None if no explicit "
-            "value is available."
-        ),
-    )
-
-    unit: str | None = Field(
-        default=None,
-        description=(
-            "Optional measurement unit, such as 'years', 'mg/L', 'mmHg', '%', "
-            "'L', or 'mg/day'. Use None when not applicable."
-        ),
-    )
-
-    body_site: str | None = Field(
-        default=None,
-        description=(
-            "Optional anatomical site or organ location, such as 'lung', "
-            "'bilateral lungs', 'left lower lobe', or 'lower limb'."
+            "Source-level clinical statement label that should stay close to "
+            "the original text. It may contain coordinated symptoms, findings, "
+            "or measurements when expressed as one continuous source statement. "
+            "Minimal evidence-level splitting and attribute role labeling "
+            "belong to downstream modules, not StructuredClinicalItem."
         ),
     )
 
@@ -172,15 +151,6 @@ class StructuredClinicalItem(BaseModel):
         description=(
             "Broad temporal status of this clinical item, such as current, "
             "past, chronic, recent_worsening, follow_up, or unknown."
-        ),
-    )
-
-    time_text: str | None = Field(
-        default=None,
-        description=(
-            "Optional time expression as written in the source text, such as "
-            "'8年', '2月', '40年前', '近期', or '入院前'. This field preserves "
-            "the source-level expression and does not require normalized time."
         ),
     )
 
@@ -248,10 +218,6 @@ class StructuredClinicalItem(BaseModel):
         return cleaned
 
     @field_validator(
-        "value",
-        "unit",
-        "body_site",
-        "time_text",
         "notes",
         mode="after",
     )

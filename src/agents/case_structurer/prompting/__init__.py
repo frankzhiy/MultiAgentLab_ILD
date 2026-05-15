@@ -4,7 +4,6 @@ from .output_skeletons import (
     clinical_section_skeleton,
     stage_context_skeleton,
     structured_item_skeleton,
-    temporal_ambiguity_skeleton,
 )
 from .prompt_context import (
     format_available_items,
@@ -20,7 +19,6 @@ from .schema_contracts import (
     format_enum_values,
     stage_context_contract,
     structured_item_contract,
-    temporal_ambiguity_contract,
 )
 from .template_renderer import PromptTemplateRenderer
 
@@ -40,6 +38,4 @@ __all__ = [
     "stage_context_skeleton",
     "structured_item_contract",
     "structured_item_skeleton",
-    "temporal_ambiguity_contract",
-    "temporal_ambiguity_skeleton",
 ]

@@ -2,12 +2,12 @@
 
 ## 1. Agent 定位
 
-`EvidenceAtomizerAgent` 是 Case Structurer 之后的证据原子化入口。它接收一个已经验证或校正过的 `CaseStructuringResult`，把其中的 `StructuredClinicalItem` 转换成 `EvidenceAtomizationResult`。
+`EvidenceAtomizerAgent` 是 Attribute Extractor 之后的证据原子化入口。它接收一个已经验证或校正过的 `CaseStructuringResult` 和对应的 `AttributeExtractionResult`，把 source-level `StructuredClinicalItem` 与抽取式 `ClinicalAttribute` 转换成 `EvidenceAtomizationResult`。
 
 它回答的问题是：
 
 - 哪些结构化临床项目可以被拆成最小证据单元？
-- 每个 EvidenceAtom 来自哪些 `StructuredClinicalItem`？
+- 每个 EvidenceAtom 来自哪些 `StructuredClinicalItem` 和 `ClinicalAttribute`？
 - 每个 EvidenceAtom 由哪些 source span 支撑？
 - 哪些结构化项目因为歧义、非临床内容或缺少来源而应被 deferred？
 - 原子化过程有哪些 warning 或 error？
@@ -24,9 +24,11 @@
 
 这些属于后续 Hypothesis、Conflict、Action、Update、SafetyGate 或 Arbitration 相关模块的职责。
 
-## 2. StructuredClinicalItem 与 EvidenceAtom
+## 2. StructuredClinicalItem、ClinicalAttribute 与 EvidenceAtom
 
 `StructuredClinicalItem` 是 Case Structurer 的输出。它保留原始病例文本中的结构化临床材料，粒度可以仍然比较粗，例如一个连续原文片段里同时包含多个症状、检查指标或时间变化。
+
+`ClinicalAttribute` 是 Attribute Extractor 的输出。它不是自由生成的字段，而是从 `StructuredClinicalItem.source_text` 中抽取连续原文片段并标注角色，例如 `77岁 -> age`、`8年 -> symptom_duration`、`阳性 -> qualitative_result`。
 
 `EvidenceAtom` 是更小的、可被后续推理阶段引用的证据单元。它仍然只描述来源中的临床事实，不描述诊断判断，也不包含 support/refute 关系。
 
@@ -34,6 +36,7 @@
 
 ```text
 StructuredClinicalItem = 结构化病例事实
+ClinicalAttribute = 原文属性 span + role label
 EvidenceAtom = 最小、可追溯、供后续推理引用的证据材料
 ```
 
@@ -42,6 +45,7 @@ EvidenceAtom = 最小、可追溯、供后续推理引用的证据材料
 公开入口只接收：
 
 - `structuring_result: CaseStructuringResult`
+- `attribute_result: AttributeExtractionResult`
 
 常用方式：
 
@@ -49,7 +53,7 @@ EvidenceAtom = 最小、可追溯、供后续推理引用的证据材料
 from src.agents.evidence_atomizer import EvidenceAtomizerAgent
 
 atomizer = EvidenceAtomizerAgent()
-bundle = atomizer.run_with_validation(structuring_result)
+bundle = atomizer.run_with_validation(structuring_result, attribute_result)
 
 result = bundle.atomization_result
 report = bundle.validation_report
@@ -70,14 +74,15 @@ report = bundle.validation_report
 1. `EvidenceAtomizerInputGuard`
 
    检查 `CaseStructuringResult` 是否适合进入原子化，包括 ready flag、是否存在 structured items、item 是否有 source spans。
+   同时检查 `AttributeExtractionResult` 是否属于同一个 case/input/structuring result，并且已 ready for atomization。
 
 2. `AtomizationCandidateBuilder`
 
-   将 `StructuredClinicalItem` 转换成紧凑的 atomization candidates。LLM 不会接收完整 `CaseStructuringResult`。
+   将 `StructuredClinicalItem` 和按 item 分组的 `ClinicalAttribute` 转换成紧凑的 atomization candidates。LLM 不会接收完整 `CaseStructuringResult`。
 
 3. `EvidenceAtomExtractor`
 
-   调用 LLM 一次，让 LLM 输出 draft JSON，包括 evidence atom drafts、item links、deferred items 和 warnings。
+   调用 LLM 一次，让 LLM 输出 draft JSON，包括 evidence atom drafts、item links、deferred items 和 warnings。draft 需要用 `source_attribute_ids` 引用相关属性，不允许输出旧的自由字段。
 
 4. `EvidenceAtomNormalizer`
 
@@ -89,7 +94,7 @@ report = bundle.validation_report
 
 6. `EvidenceAtomizationValidator`
 
-   验证结果是否能追溯到输入的 `CaseStructuringResult`，包括 item refs、span refs、link refs、deferred item refs 和 coverage。
+   验证结果是否能追溯到输入的 `CaseStructuringResult` 和 `AttributeExtractionResult`，包括 item refs、attribute refs、span refs、link refs、deferred item refs 和内部 coverage。
 
 ## 5. LLM 与确定性代码分工
 
@@ -119,6 +124,7 @@ LLM 负责：
 
 - atomization result identity 是否匹配 upstream structuring result。
 - EvidenceAtom.source_item_ids 是否引用现有 item。
+- EvidenceAtom.source_attribute_ids 是否引用现有 attribute，且 attribute 属于对应 source item。
 - EvidenceAtom.source_span_ids 是否属于对应 source items。
 - ItemEvidenceLink 是否引用现有 item 和 atom。
 - DeferredStructuredItem 是否引用现有 item。
@@ -156,9 +162,13 @@ Evidence Atomizer 不得：
 raw_text
   -> CaseStructurerAgent.run_with_validation()
   -> corrected CaseStructuringResult
-  -> StateWriter.write_case_structuring_result()
-  -> EvidenceAtomizerAgent.run_with_validation()
+  -> AttributeExtractorAgent.run_with_validation()
+  -> AttributeExtractionResult
+  -> EvidenceAtomizerAgent.run_with_validation(
+       CaseStructuringResult,
+       AttributeExtractionResult,
+     )
   -> inspect EvidenceAtomizationValidationReport
 ```
 
-`StateWriter.write_case_structuring_result()` 用于写入 Case Structurer 结果。Evidence Atomizer 当前没有 StateWriter 集成；调用方应显式检查 `run_with_validation()` 返回的 validation report。
+`EvidenceAtom` 不保存 `value/unit/time_text/body_site` 顶层字段；这些属性由 `ClinicalAttribute` 表示，并通过 `source_attribute_ids` 关联。

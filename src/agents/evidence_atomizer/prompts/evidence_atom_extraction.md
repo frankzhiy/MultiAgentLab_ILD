@@ -106,8 +106,11 @@ Detailed skeleton:
 - Transform required coverage units into atomic evidence drafts instead of deciding coverage from scratch.
 - Split compound clinical statements according to the required coverage units.
 - Include coverage_unit_ids on every evidence_atom_draft.
-- Preserve negation, certainty, temporality, time_text, value, unit, and body_site.
+- Do not output value, unit, time_text, or body_site fields.
+- Preserve negation, certainty, and temporality.
 - Preserve source_item_ids and source_span_ids from the input candidates.
+- Reference relevant ClinicalAttribute objects through source_attribute_ids.
+- If an atom statement uses attribute content such as duration, age, qualitative result, abnormal direction, dose, frequency, route, or body site, include the corresponding source_attribute_ids.
 - source_text must be copied from candidate source text.
 - Defer ambiguous or non-clinical items instead of guessing.
 - Produce item_to_evidence_links for atomized, deferred, or dropped items.

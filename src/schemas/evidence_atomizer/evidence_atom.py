@@ -13,6 +13,7 @@ It is different from StructuredClinicalItem:
 from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from src.schemas.attribute_extractor.common import AttributeID
 from src.utils.id_generator import generate_evidence_id
 
 from .common import (
@@ -97,21 +98,6 @@ class EvidenceAtom(BaseModel):
         description="Optional normalized label for this evidence atom.",
     )
 
-    value: str | None = Field(
-        default=None,
-        description="Optional value preserved from or normalized from the source.",
-    )
-
-    unit: str | None = Field(
-        default=None,
-        description="Optional measurement unit.",
-    )
-
-    body_site: str | None = Field(
-        default=None,
-        description="Optional anatomical site or organ location.",
-    )
-
     assertion_status: NegationStatus = Field(
         ...,
         description="Whether the evidence statement is present, absent, denied, or unknown.",
@@ -127,15 +113,15 @@ class EvidenceAtom(BaseModel):
         description="Broad temporal relation of this evidence atom.",
     )
 
-    time_text: str | None = Field(
-        default=None,
-        description="Optional time expression as written in the source text.",
-    )
-
     source_item_ids: list[ItemID] = Field(
         ...,
         min_length=1,
         description="StructuredClinicalItem ids used to produce this atom.",
+    )
+
+    source_attribute_ids: list[AttributeID] = Field(
+        default_factory=list,
+        description="ClinicalAttribute ids used to produce this atom.",
     )
 
     source_span_ids: list[SpanID] = Field(
@@ -172,10 +158,6 @@ class EvidenceAtom(BaseModel):
 
     @field_validator(
         "normalized_label",
-        "value",
-        "unit",
-        "body_site",
-        "time_text",
         mode="after",
     )
     @classmethod

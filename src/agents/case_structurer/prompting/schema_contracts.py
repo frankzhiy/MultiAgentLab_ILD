@@ -4,18 +4,15 @@ from collections.abc import Iterable
 from enum import StrEnum
 from typing import Any
 
-from src.schemas.case_structurer.ambiguity_item import AmbiguityType
 from src.schemas.case_structurer.clinical_section import ClinicalSectionType
 from src.schemas.case_structurer.common import (
     CertaintyLevel,
     ConfidenceLevel,
     NegationStatus,
     TemporalRelation,
-    TimeExpressionType,
 )
 from src.schemas.case_structurer.stage_context import StageRelation, StageType
 from src.schemas.case_structurer.structured_clinical_item import ClinicalItemType
-from src.schemas.case_structurer.timeline_event import TimelineEventType
 
 
 def enum_values(enum_cls: type[StrEnum]) -> list[str]:
@@ -63,20 +60,4 @@ def structured_item_contract() -> dict[str, Any]:
         "example_primary_item_type_value": ClinicalItemType.SYMPTOM.value,
         "example_duration_temporality_value": TemporalRelation.CHRONIC.value,
         "example_change_temporality_value": TemporalRelation.RECENT_WORSENING.value,
-    }
-
-
-def temporal_ambiguity_contract() -> dict[str, Any]:
-    return {
-        "allowed_event_type_values": format_enum_values(
-            enum_values(TimelineEventType)
-        ),
-        "allowed_time_expression_type_values": format_enum_values(
-            enum_values(TimeExpressionType)
-        ),
-        "allowed_ambiguity_type_values": format_enum_values(enum_values(AmbiguityType)),
-        "allowed_confidence_values": format_enum_values(enum_values(ConfidenceLevel)),
-        "example_source_uncertainty_type_value": (
-            AmbiguityType.UNCLEAR_DIAGNOSIS_STATUS.value
-        ),
     }

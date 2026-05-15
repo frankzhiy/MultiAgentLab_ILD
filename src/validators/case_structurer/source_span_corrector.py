@@ -7,12 +7,10 @@ from typing import Any, Sequence
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
-from src.schemas.case_structurer.ambiguity_item import AmbiguityItem
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.case_structurer.clinical_section import ClinicalSection
 from src.schemas.case_structurer.source_span import SourceSpan
 from src.schemas.case_structurer.structured_clinical_item import StructuredClinicalItem
-from src.schemas.case_structurer.timeline_event import TimelineEvent
 from src.validators.case_structurer.source_span_utils import (
     SourceRange,
     cjk_chunks,
@@ -105,31 +103,10 @@ class DeterministicSourceSpanCorrector:
             actions=actions,
         )
 
-        item_ranges = _item_range_map(corrected_items, raw_text)
-
-        corrected_events = self._correct_timeline_events(
-            events=result.timeline_events,
-            raw_text=raw_text,
-            expected_input_id=expected_input_id,
-            item_ranges=item_ranges,
-            actions=actions,
-        )
-
-        corrected_ambiguities = self._correct_ambiguities(
-            ambiguities=result.ambiguities,
-            raw_text=raw_text,
-            expected_input_id=expected_input_id,
-            ranges_by_section=ranges_by_section,
-            item_ranges=item_ranges,
-            actions=actions,
-        )
-
         corrected_result = _rebuild_result(
             result,
             clinical_sections=corrected_sections,
             structured_items=corrected_items,
-            timeline_events=corrected_events,
-            ambiguities=corrected_ambiguities,
         )
         report = _build_report(actions)
         return corrected_result, report
@@ -200,74 +177,6 @@ class DeterministicSourceSpanCorrector:
                     actions,
                     object_type="StructuredClinicalItem",
                     object_id=item.item_id,
-                )
-            )
-        return corrected
-
-    def _correct_timeline_events(
-        self,
-        events: Sequence[TimelineEvent],
-        raw_text: str,
-        expected_input_id: str,
-        item_ranges: dict[str, list[SourceRange]],
-        actions: list[SourceSpanCorrectionAction],
-    ) -> list[TimelineEvent]:
-        corrected: list[TimelineEvent] = []
-        for event in events:
-            preferred_ranges = _extend_ranges(event.related_item_ids, item_ranges)
-            spans = self._correct_object_spans(
-                object_type="TimelineEvent",
-                object_id=event.event_id,
-                source_spans=event.source_spans,
-                raw_text=raw_text,
-                expected_input_id=expected_input_id,
-                support_values=[event.description, event.event_time_text],
-                preferred_ranges=preferred_ranges,
-                actions=actions,
-            )
-            corrected.append(
-                _rebuild_object(
-                    event,
-                    {"input_id": expected_input_id, "source_spans": spans},
-                    actions,
-                    object_type="TimelineEvent",
-                    object_id=event.event_id,
-                )
-            )
-        return corrected
-
-    def _correct_ambiguities(
-        self,
-        ambiguities: Sequence[AmbiguityItem],
-        raw_text: str,
-        expected_input_id: str,
-        ranges_by_section: dict[str, list[SourceRange]],
-        item_ranges: dict[str, list[SourceRange]],
-        actions: list[SourceSpanCorrectionAction],
-    ) -> list[AmbiguityItem]:
-        corrected: list[AmbiguityItem] = []
-        for ambiguity in ambiguities:
-            preferred_ranges = _extend_ranges(ambiguity.related_item_ids, item_ranges)
-            preferred_ranges.extend(
-                _extend_ranges(ambiguity.related_section_ids, ranges_by_section)
-            )
-            spans = self._correct_object_spans(
-                object_type="AmbiguityItem",
-                object_id=ambiguity.ambiguity_id,
-                source_spans=ambiguity.source_spans,
-                raw_text=raw_text,
-                expected_input_id=expected_input_id,
-                support_values=[ambiguity.ambiguous_text],
-                preferred_ranges=preferred_ranges,
-                actions=actions,
-            )
-            corrected.append(
-                _rebuild_object(
-                    ambiguity,
-                    {"input_id": expected_input_id, "source_spans": spans},
-                    actions,
-                    object_type="AmbiguityItem",
-                    object_id=ambiguity.ambiguity_id,
                 )
             )
         return corrected
@@ -473,8 +382,7 @@ class DeterministicSourceSpanCorrector:
                 continue
 
             missing_values = _missing_support_values(
-                field_name=field_name,
-                value=value,
+                field_text=value,
                 source_text=combined_existing_span_text(raw_text, corrected_spans),
                 raw_text=raw_text,
                 preferred_ranges=preferred_ranges,
@@ -708,16 +616,15 @@ def _support_pieces(
 
 
 def _missing_support_values(
-    field_name: str,
-    value: str,
+    field_text: str,
     source_text: str,
     raw_text: str,
     preferred_ranges: Sequence[SourceRange],
 ) -> list[str]:
-    if item_field_supported_by_source(field_name, value, source_text):
+    if item_field_supported_by_source(field_text, source_text):
         return []
 
-    cleaned = value.strip()
+    cleaned = field_text.strip()
     if not cleaned:
         return []
 
@@ -727,9 +634,6 @@ def _missing_support_values(
         and find_all_occurrences(raw_text, cleaned, preferred_ranges)
     ):
         return [cleaned]
-
-    if field_name in {"time_text", "unit"}:
-        return []
 
     missing: list[str] = []
     normalized_source = normalize_text_for_match(source_text).lower()
@@ -753,19 +657,6 @@ def _has_equivalent_span(spans: Sequence[SourceSpan], candidate: SourceSpan) -> 
     return False
 
 
-def _item_range_map(
-    items: Sequence[StructuredClinicalItem],
-    raw_text: str,
-) -> dict[str, list[SourceRange]]:
-    ranges: dict[str, list[SourceRange]] = {}
-    for item in items:
-        for span in item.source_spans:
-            span_range = resolved_range(span, raw_text)
-            if span_range is not None:
-                ranges.setdefault(item.item_id, []).append(span_range)
-    return ranges
-
-
 def _section_ranges_from_sections(
     sections: Sequence[ClinicalSection],
     raw_text: str,
@@ -777,17 +668,6 @@ def _section_ranges_from_sections(
             if span_range is not None:
                 ranges.setdefault(section.section_id, []).append(span_range)
     return ranges
-
-
-def _extend_ranges(
-    object_ids: Sequence[str],
-    range_map: dict[str, list[SourceRange]],
-) -> list[SourceRange]:
-    ranges: list[SourceRange] = []
-    for object_id in object_ids:
-        ranges.extend(range_map.get(object_id, []))
-    return ranges
-
 
 def _rebuild_object(
     model: Any,

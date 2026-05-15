@@ -38,8 +38,8 @@ TRACE_GUIDE: dict[str, Any] = {
         {
             "schema": "RawTextInput",
             "role": "Computer input wrapper: what this input is.",
-            "formal_output_location": "10_case_structuring_result.json#/input",
-            "trace_files": ["01_raw_input.json", "10_case_structuring_result.json"],
+            "formal_output_location": "08_case_structuring_result.json#/input",
+            "trace_files": ["01_raw_input.json", "08_case_structuring_result.json"],
             "top_level_in_final_result": True,
         },
         {
@@ -48,57 +48,32 @@ TRACE_GUIDE: dict[str, Any] = {
                 "Medical workflow and system-stage context: initial input, "
                 "supplement, follow-up, or review."
             ),
-            "formal_output_location": "10_case_structuring_result.json#/stage_context",
-            "trace_files": ["02_stage_context.json", "10_case_structuring_result.json"],
+            "formal_output_location": "08_case_structuring_result.json#/stage_context",
+            "trace_files": ["02_stage_context.json", "08_case_structuring_result.json"],
             "top_level_in_final_result": True,
         },
         {
             "schema": "ClinicalSection",
             "role": "Clinical block: which large clinical sections the raw text contains.",
-            "formal_output_location": "10_case_structuring_result.json#/clinical_sections",
+            "formal_output_location": "08_case_structuring_result.json#/clinical_sections",
             "trace_files": [
                 "03_clinical_sections_extracted.json",
                 "04_clinical_sections_normalized.json",
-                "10_case_structuring_result.json",
+                "08_case_structuring_result.json",
             ],
             "top_level_in_final_result": True,
         },
         {
             "schema": "StructuredClinicalItem",
             "role": (
-                "Specific clinical item inside a section, with stable ids for later "
-                "reference."
+                "Source-level clinical statement inside a section, with stable ids "
+                "for downstream attribute extraction."
             ),
-            "formal_output_location": "10_case_structuring_result.json#/structured_items",
+            "formal_output_location": "08_case_structuring_result.json#/structured_items",
             "trace_files": [
                 "05_structured_items_extracted.json",
                 "06_structured_items_normalized.json",
-                "10_case_structuring_result.json",
-            ],
-            "top_level_in_final_result": True,
-        },
-        {
-            "schema": "TimelineEvent",
-            "role": "Clinical timeline event: what happened in what order or time frame.",
-            "formal_output_location": "10_case_structuring_result.json#/timeline_events",
-            "trace_files": [
-                "07_temporal_ambiguity_extracted.json",
-                "08_temporal_ambiguity_normalized.json",
-                "10_case_structuring_result.json",
-            ],
-            "top_level_in_final_result": True,
-        },
-        {
-            "schema": "AmbiguityItem",
-            "role": (
-                "Medical uncertainty and system-safety marker: where the system must "
-                "not force a hard judgment."
-            ),
-            "formal_output_location": "10_case_structuring_result.json#/ambiguities",
-            "trace_files": [
-                "07_temporal_ambiguity_extracted.json",
-                "08_temporal_ambiguity_normalized.json",
-                "10_case_structuring_result.json",
+                "08_case_structuring_result.json",
             ],
             "top_level_in_final_result": True,
         },
@@ -106,15 +81,15 @@ TRACE_GUIDE: dict[str, Any] = {
             "schema": "SourceSpan",
             "role": "Raw-text provenance: where an object came from in the source text.",
             "formal_output_location": (
-                "Nested under clinical_sections[], structured_items[], "
-                "timeline_events[], and ambiguities[] as source_spans[] in "
-                "12_source_span_validation_correction.json#/corrected_result."
+                "Nested under clinical_sections[] and structured_items[] as "
+                "source_spans[] in "
+                "10_source_span_validation_correction.json#/corrected_result."
             ),
             "trace_files": [
-                "09_source_spans_resolved.json",
-                "11_source_span_index.json",
-                "10_case_structuring_result.json",
-                "12_source_span_validation_correction.json",
+                "07_source_spans_resolved.json",
+                "09_source_span_index.json",
+                "08_case_structuring_result.json",
+                "10_source_span_validation_correction.json",
             ],
             "top_level_in_final_result": False,
         },
@@ -122,11 +97,11 @@ TRACE_GUIDE: dict[str, Any] = {
             "schema": "CaseStructuringResult",
             "role": "Computer packaging layer: the single formal output object.",
             "formal_output_location": (
-                "12_source_span_validation_correction.json#/corrected_result"
+                "10_source_span_validation_correction.json#/corrected_result"
             ),
             "trace_files": [
-                "10_case_structuring_result.json",
-                "12_source_span_validation_correction.json",
+                "08_case_structuring_result.json",
+                "10_source_span_validation_correction.json",
             ],
             "top_level_in_final_result": "wrapper",
         },
@@ -169,43 +144,29 @@ TRACE_GUIDE: dict[str, Any] = {
             "primary_schemas": ["StructuredClinicalItem"],
         },
         {
-            "file": "07_temporal_ambiguity_extracted.json",
-            "step": "TemporalAmbiguityExtractor",
-            "state": "extracted",
-            "primary_schemas": ["TimelineEvent", "AmbiguityItem"],
-        },
-        {
-            "file": "08_temporal_ambiguity_normalized.json",
-            "step": "TimelineAmbiguityNormalizer",
-            "state": "normalized",
-            "primary_schemas": ["TimelineEvent", "AmbiguityItem"],
-        },
-        {
-            "file": "09_source_spans_resolved.json",
+            "file": "07_source_spans_resolved.json",
             "step": "SourceSpanResolver",
             "state": "source_spans_resolved",
             "primary_schemas": [
                 "ClinicalSection",
                 "StructuredClinicalItem",
-                "TimelineEvent",
-                "AmbiguityItem",
                 "SourceSpan",
             ],
         },
         {
-            "file": "10_case_structuring_result.json",
+            "file": "08_case_structuring_result.json",
             "step": "CaseStructuringAssembler",
             "state": "assembled",
             "primary_schemas": ["CaseStructuringResult"],
         },
         {
-            "file": "11_source_span_index.json",
+            "file": "09_source_span_index.json",
             "step": "TraceDebugExport",
             "state": "schema_oriented_debug_view",
             "primary_schemas": ["SourceSpan"],
         },
         {
-            "file": "12_source_span_validation_correction.json",
+            "file": "10_source_span_validation_correction.json",
             "step": "SourceSpanValidationCorrection",
             "state": "validated_and_corrected",
             "primary_schemas": [
@@ -351,22 +312,6 @@ class TestCaseStructurerPipelineTrace(unittest.TestCase):
                 item.source_spans,
             )
 
-        for event in result.timeline_events:
-            add_spans(
-                "TimelineEvent",
-                "timeline_events",
-                event.event_id,
-                event.source_spans,
-            )
-
-        for ambiguity in result.ambiguities:
-            add_spans(
-                "AmbiguityItem",
-                "ambiguities",
-                ambiguity.ambiguity_id,
-                ambiguity.source_spans,
-            )
-
         return {
             "note": (
                 "Debug index only. The formal CaseStructuringResult keeps "
@@ -440,78 +385,40 @@ class TestCaseStructurerPipelineTrace(unittest.TestCase):
             },
         )
 
-        temporal_result = self._run_stage(
-            "TemporalAmbiguityExtractor",
-            "07_temporal_ambiguity_extracted.json",
-            lambda: pipeline.temporal_ambiguity_extractor.extract(
-                raw_input,
-                stage_context,
-                normalized_sections.sections,
-                normalized_items.items,
-            ),
-        )
-
-        valid_item_ids = {item.item_id for item in normalized_items.items}
-        normalized_temporal = self._run_stage(
-            "TimelineAmbiguityNormalizer",
-            "08_temporal_ambiguity_normalized.json",
-            lambda: pipeline.timeline_ambiguity_normalizer.normalize(
-                timeline_events=temporal_result.timeline_events,
-                ambiguities=temporal_result.ambiguities,
-                raw_input=raw_input,
-                valid_section_ids=valid_section_ids,
-                valid_item_ids=valid_item_ids,
-                section_id_map=normalized_sections.id_map,
-                item_id_map=normalized_items.id_map,
-            ),
-            lambda result: {
-                "event_id_map": result.event_id_map,
-                "ambiguity_id_map": result.ambiguity_id_map,
-                "timeline_events": result.timeline_events,
-                "ambiguities": result.ambiguities,
-            },
-        )
-
         resolved = self._run_stage(
             "SourceSpanResolver",
-            "09_source_spans_resolved.json",
+            "07_source_spans_resolved.json",
             lambda: pipeline.source_span_resolver.resolve(
                 raw_input=raw_input,
                 sections=normalized_sections.sections,
                 items=normalized_items.items,
-                timeline_events=normalized_temporal.timeline_events,
-                ambiguities=normalized_temporal.ambiguities,
             ),
             lambda result: {
                 "clinical_sections": result.sections,
                 "structured_items": result.items,
-                "timeline_events": result.timeline_events,
-                "ambiguities": result.ambiguities,
             },
         )
 
         final_result = self._run_stage(
             "CaseStructuringAssembler",
-            "10_case_structuring_result.json",
+            "08_case_structuring_result.json",
             lambda: pipeline.assembler.assemble(
                 raw_input=raw_input,
                 stage_context=stage_context,
                 sections=resolved.sections,
                 items=resolved.items,
-                timeline_events=resolved.timeline_events,
-                ambiguities=resolved.ambiguities,
             ),
         )
 
         source_span_index = self._source_span_index(final_result)
         self._write_json(
-            "11_source_span_index.json",
+            "09_source_span_index.json",
             source_span_index,
         )
 
         validation_correction = self._run_stage(
             "SourceSpanValidationCorrection",
-            "12_source_span_validation_correction.json",
+            "10_source_span_validation_correction.json",
             lambda: validate_and_correct_source_spans(final_result),
         )
         corrected_result = validation_correction.corrected_result
@@ -542,16 +449,14 @@ class TestCaseStructurerPipelineTrace(unittest.TestCase):
                 "counts": {
                     "clinical_sections": len(corrected_result.clinical_sections),
                     "structured_items": len(corrected_result.structured_items),
-                    "timeline_events": len(corrected_result.timeline_events),
-                    "ambiguities": len(corrected_result.ambiguities),
                     "source_spans_after_resolver": source_span_index["count"],
                     "source_spans_after_correction": corrected_source_span_index[
                         "count"
                     ],
                     "structuring_warnings": len(corrected_result.structuring_warnings),
                 },
-                "ready_for_evidence_atomization": (
-                    corrected_result.ready_for_evidence_atomization
+                "ready_for_attribute_extraction": (
+                    corrected_result.ready_for_attribute_extraction
                 ),
                 "written_files": self.written_files,
             },

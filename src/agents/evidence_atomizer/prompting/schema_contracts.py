@@ -28,9 +28,9 @@ def evidence_atomization_contract() -> dict[str, Any]:
                 "clinical_domain: routing domain, not diagnosis",
                 "granularity: atom boundary quality",
                 "statement: minimal source-grounded evidence statement",
-                "normalized_label, value, unit, body_site",
-                "assertion_status, certainty, temporality, time_text",
-                "source_item_ids, source_span_ids, source_text",
+                "normalized_label",
+                "assertion_status, certainty, temporality",
+                "source_item_ids, source_attribute_ids, source_span_ids, source_text",
                 "atomization_confidence, notes",
             ]
         ),

@@ -30,7 +30,6 @@ from src.schemas.case_structurer.structured_clinical_item import (
 )
 
 from .base_llm_extractor import BaseLLMExtractor
-from .grounding import ground_item_text_field
 
 
 class StructuredClinicalItemExtractor(BaseLLMExtractor):
@@ -132,11 +131,6 @@ class StructuredClinicalItemExtractor(BaseLLMExtractor):
                 negation = certainty
             certainty = CertaintyLevel.DEFINITE.value
 
-        value = self.coerce_optional_text(payload.get("value"))
-        unit = self.coerce_optional_text(payload.get("unit"))
-        body_site = self.coerce_optional_text(payload.get("body_site"))
-        time_text = self.coerce_optional_text(payload.get("time_text"))
-
         return {
             "item_id": payload.get("item_id") or f"item_{index:03d}",
             "input_id": raw_input.input_id,
@@ -147,22 +141,10 @@ class StructuredClinicalItemExtractor(BaseLLMExtractor):
                 "uncertain",
             ),
             "label": label,
-            "value": ground_item_text_field("value", value, raw_input.raw_text),
-            "unit": ground_item_text_field("unit", unit, raw_input.raw_text),
-            "body_site": ground_item_text_field(
-                "body_site",
-                body_site,
-                raw_input.raw_text,
-            ),
             "temporality": self.coerce_enum_value(
                 payload.get("temporality"),
                 TemporalRelation,
                 "unknown",
-            ),
-            "time_text": ground_item_text_field(
-                "time_text",
-                time_text,
-                raw_input.raw_text,
             ),
             "certainty": self.coerce_enum_value(
                 certainty,

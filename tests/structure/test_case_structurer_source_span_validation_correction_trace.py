@@ -249,10 +249,6 @@ class TestCaseStructurerSourceSpanValidationCorrectionTrace(unittest.TestCase):
     def _item_statement_text(item: Any) -> str:
         values = [
             item.label,
-            item.value,
-            item.unit,
-            item.body_site,
-            item.time_text,
             item.notes,
         ]
         return " ".join(value for value in values if value)
@@ -422,8 +418,6 @@ class TestCaseStructurerSourceSpanValidationCorrectionTrace(unittest.TestCase):
             "case_structurer_output_counts": {
                 "clinical_sections": len(bundle.corrected_result.clinical_sections),
                 "structured_items": len(bundle.corrected_result.structured_items),
-                "timeline_events": len(bundle.corrected_result.timeline_events),
-                "ambiguities": len(bundle.corrected_result.ambiguities),
                 "structuring_warnings": len(bundle.corrected_result.structuring_warnings),
             },
         }

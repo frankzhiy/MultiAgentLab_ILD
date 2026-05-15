@@ -65,11 +65,7 @@ def structured_item_skeleton(input_id: str) -> str:
                     "section_id": "section_001",
                     "item_type": "...",
                     "label": "...",
-                    "value": None,
-                    "unit": None,
-                    "body_site": None,
                     "temporality": TemporalRelation.UNKNOWN.value,
-                    "time_text": None,
                     "certainty": CertaintyLevel.DEFINITE.value,
                     "negation": NegationStatus.PRESENT.value,
                     "source_spans": [
@@ -82,62 +78,6 @@ def structured_item_skeleton(input_id: str) -> str:
                         }
                     ],
                     "item_order": 1,
-                    "classification_confidence": ConfidenceLevel.MEDIUM.value,
-                    "notes": None,
-                }
-            ]
-        }
-    )
-
-
-def temporal_ambiguity_skeleton(input_id: str) -> str:
-    return _format_json(
-        {
-            "timeline_events": [
-                {
-                    "event_id": "event_001",
-                    "input_id": input_id,
-                    "event_type": "...",
-                    "event_time_text": "...",
-                    "time_expression_type": "...",
-                    "normalized_time": None,
-                    "relative_time": None,
-                    "description": "...",
-                    "related_item_ids": ["item_001"],
-                    "source_spans": [
-                        {
-                            "span_id": "span_event_001",
-                            "input_id": input_id,
-                            "quoted_text": "...",
-                            "char_start": None,
-                            "char_end": None,
-                        }
-                    ],
-                    "event_order": 1,
-                    "classification_confidence": ConfidenceLevel.MEDIUM.value,
-                    "notes": None,
-                }
-            ],
-            "ambiguities": [
-                {
-                    "ambiguity_id": "ambiguity_001",
-                    "input_id": input_id,
-                    "ambiguity_type": "...",
-                    "ambiguous_text": "...",
-                    "possible_interpretations": ["..."],
-                    "reason": "...",
-                    "related_section_ids": ["section_001"],
-                    "related_item_ids": ["item_001"],
-                    "source_spans": [
-                        {
-                            "span_id": "span_ambiguity_001",
-                            "input_id": input_id,
-                            "quoted_text": "...",
-                            "char_start": None,
-                            "char_end": None,
-                        }
-                    ],
-                    "needs_clarification": True,
                     "classification_confidence": ConfidenceLevel.MEDIUM.value,
                     "notes": None,
                 }

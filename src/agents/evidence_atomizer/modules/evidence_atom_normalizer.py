@@ -6,6 +6,9 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
+from src.schemas.attribute_extractor.attribute_extraction_result import (
+    AttributeExtractionResult,
+)
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.evidence_atomizer.atomization_warning import AtomizationWarning
 from src.schemas.evidence_atomizer.common import (
@@ -51,12 +54,17 @@ class EvidenceAtomNormalizer:
     def normalize(
         self,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
         candidates: list[AtomizationCandidate],
         coverage_units: list[CoverageUnit],
         draft_payload: dict[str, Any],
     ) -> NormalizedEvidenceAtomizationPayload:
-        _ = coverage_units
-        context = _NormalizationContext(structuring_result, candidates)
+        context = _NormalizationContext(
+            structuring_result,
+            attribute_result,
+            candidates,
+            coverage_units,
+        )
         warnings: list[AtomizationWarning] = []
         deferred_items: list[DeferredStructuredItem] = []
         evidence_atoms: list[EvidenceAtom] = []
@@ -73,7 +81,9 @@ class EvidenceAtomNormalizer:
                 )
                 continue
 
-            forbidden_fields = _find_forbidden_fields(draft)
+            forbidden_fields = _find_forbidden_fields(draft) | (
+                set(draft) & {"value", "unit", "body_site", "time_text"}
+            )
             if forbidden_fields:
                 source_item_ids = context.source_item_ids_from_payload(draft)
                 warnings.append(
@@ -129,11 +139,17 @@ class EvidenceAtomNormalizer:
                 )
                 continue
 
+            source_attribute_ids = context.resolve_source_attribute_ids(
+                draft,
+                source_item_ids,
+            )
+
             atom_payload = self._build_atom_payload(
                 structuring_result=structuring_result,
                 context=context,
                 draft=draft,
                 source_item_ids=source_item_ids,
+                source_attribute_ids=source_attribute_ids,
                 source_span_ids=source_span_ids,
             )
             try:
@@ -206,6 +222,7 @@ class EvidenceAtomNormalizer:
         context: "_NormalizationContext",
         draft: dict[str, Any],
         source_item_ids: list[str],
+        source_attribute_ids: list[str],
         source_span_ids: list[str],
     ) -> dict[str, Any]:
         source_items = [
@@ -249,15 +266,6 @@ class EvidenceAtomNormalizer:
             "normalized_label": _optional_text(
                 draft.get("normalized_label") or draft.get("label")
             ),
-            "value": _optional_text(draft.get("value"))
-            if "value" in draft
-            else _shared_candidate_text(source_items, "value"),
-            "unit": _optional_text(draft.get("unit"))
-            if "unit" in draft
-            else _shared_candidate_text(source_items, "unit"),
-            "body_site": _optional_text(draft.get("body_site"))
-            if "body_site" in draft
-            else _shared_candidate_text(source_items, "body_site"),
             "assertion_status": _coerce_enum(
                 draft.get("assertion_status") or draft.get("negation"),
                 NegationStatus,
@@ -277,10 +285,8 @@ class EvidenceAtomNormalizer:
                     TemporalRelation.UNKNOWN,
                 ),
             ),
-            "time_text": _optional_text(draft.get("time_text"))
-            if "time_text" in draft
-            else _shared_candidate_text(source_items, "time_text"),
             "source_item_ids": source_item_ids,
+            "source_attribute_ids": source_attribute_ids,
             "source_span_ids": source_span_ids,
             "source_text": _optional_text(draft.get("source_text"))
             or context.source_text_for_spans(source_item_ids, source_span_ids),
@@ -492,15 +498,27 @@ class _NormalizationContext:
     def __init__(
         self,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
         candidates: list[AtomizationCandidate],
+        coverage_units: list[CoverageUnit],
     ) -> None:
         self.structuring_result = structuring_result
+        self.attribute_result = attribute_result
         self.candidates = candidates
+        self.coverage_units = coverage_units
         self.candidates_by_item_id = {
             candidate.item_id: candidate
             for candidate in candidates
         }
         self.valid_item_ids = set(self.candidates_by_item_id)
+        self.attributes_by_id = {
+            attribute.attribute_id: attribute
+            for attribute in attribute_result.clinical_attributes
+        }
+        self.coverage_units_by_id = {
+            coverage_unit.unit_id: coverage_unit
+            for coverage_unit in coverage_units
+        }
         self._item_order = {
             item.item_id: item.item_order
             for item in structuring_result.structured_items
@@ -557,6 +575,48 @@ class _NormalizationContext:
             for item_id in source_item_ids
             for span_id in self.span_ids_for_item(item_id)
         )
+
+    def resolve_source_attribute_ids(
+        self,
+        payload: dict[str, Any],
+        source_item_ids: list[str],
+    ) -> list[str]:
+        source_item_id_set = set(source_item_ids)
+        requested_attribute_ids = _list_text(
+            payload.get("source_attribute_ids")
+            or payload.get("attribute_ids")
+            or payload.get("source_attributes")
+            or payload.get("source_attribute_id")
+        )
+        valid_requested = [
+            attribute_id
+            for attribute_id in requested_attribute_ids
+            if self.attribute_belongs_to_items(attribute_id, source_item_id_set)
+        ]
+        if valid_requested:
+            return _dedupe_strings(valid_requested)
+
+        coverage_attribute_ids: list[str] = []
+        for coverage_unit_id in _coverage_unit_ids_from_draft(payload):
+            coverage_unit = self.coverage_units_by_id.get(coverage_unit_id)
+            if coverage_unit is None:
+                continue
+            coverage_attribute_ids.extend(coverage_unit.source_attribute_ids)
+        return _dedupe_strings(
+            attribute_id
+            for attribute_id in coverage_attribute_ids
+            if self.attribute_belongs_to_items(attribute_id, source_item_id_set)
+        )
+
+    def attribute_belongs_to_items(
+        self,
+        attribute_id: str,
+        source_item_ids: set[str],
+    ) -> bool:
+        attribute = self.attributes_by_id.get(attribute_id)
+        if attribute is None:
+            return False
+        return attribute.source_item_id in source_item_ids
 
     def span_ids_for_item(self, item_id: str) -> list[str]:
         candidate = self.candidates_by_item_id.get(item_id)
@@ -659,6 +719,8 @@ def _list_text(value: Any) -> list[str]:
             "source_item_id",
             "span_id",
             "source_span_id",
+            "attribute_id",
+            "source_attribute_id",
             "coverage_unit_id",
             "id",
         ):
@@ -683,20 +745,6 @@ def _coerce_enum(value: Any, enum_type: type[StrEnum], default: StrEnum) -> StrE
     if isinstance(value, str) and value in allowed_values:
         return allowed_values[value]
     return default
-
-
-def _shared_candidate_text(
-    candidates: list[AtomizationCandidate],
-    attr_name: str,
-) -> str | None:
-    values = {
-        value
-        for candidate in candidates
-        if (value := getattr(candidate, attr_name)) is not None
-    }
-    if len(values) == 1:
-        return next(iter(values))
-    return None
 
 
 def _shared_candidate_enum(

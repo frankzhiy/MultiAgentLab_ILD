@@ -99,11 +99,9 @@ final_report = bundle.final_validation_report
 - `input`: 系统包装后的 `RawTextInput`。
 - `stage_context`: 当前输入在病例流程中的阶段上下文。
 - `clinical_sections`: 从原文抽取出的粗粒度临床段落。
-- `structured_items`: 从临床段落中抽取出的细粒度临床事实。
-- `timeline_events`: 与时间相关的病例事件。
-- `ambiguities`: 不能安全确定解释的歧义项。
+- `structured_items`: 从临床段落中抽取出的 source-level 临床陈述。
 - `structuring_warnings`: 结构化过程中的警告。
-- `ready_for_evidence_atomization`: 是否适合进入 Evidence Atomizer。
+- `ready_for_attribute_extraction`: 是否适合进入 Attribute Extractor。
 
 `run_with_validation()` 返回 `SourceSpanValidationCorrectionResult`，其中包含初始结果、校验报告、确定性校正报告和最终校正结果。
 
@@ -143,8 +141,6 @@ agent 内部首先把这些信息包装成 `RawTextInput`：
 - 识别 `StageContext`。
 - 抽取 `ClinicalSection`。
 - 抽取 `StructuredClinicalItem`。
-- 抽取 `TimelineEvent`。
-- 抽取 `AmbiguityItem`。
 - 解析每个对象的 `source_spans`。
 - 组装成完整的 `CaseStructuringResult`。
 
@@ -157,7 +153,7 @@ agent 内部首先把这些信息包装成 `RawTextInput`：
 - 每个 source span 是否引用同一个 `RawTextInput`。
 - `char_start/char_end` 是否在原文范围内。
 - span 指向的原文片段是否和 `quoted_text` 一致。
-- section/item/event/ambiguity 是否都有可追溯 provenance。
+- section/item 是否都有可追溯 provenance。
 
 验证结果会形成 `initial_validation_report`。
 
@@ -230,31 +226,23 @@ agent 自己不持久化状态。调用方需要把结果交给 `StateWriter.wri
 
 5. `StructuredClinicalItemExtractor`
 
-   使用 LLM 从已识别段落中抽取细粒度临床项目，例如症状、体征、实验室结果、影像发现、病理发现、用药、暴露史、治疗反应等。
+   使用 LLM 从已识别段落中抽取 source-level 临床陈述，例如一段连续原文中的症状、体征、实验室结果、影像发现、病理发现、用药、暴露史、治疗反应等。这里不抽取 `value/unit/time_text/body_site`，也不拆成 evidence atoms。
 
 6. `ItemNormalizer`
 
    对 structured items 做确定性规范化，并校验它们引用的 section 是否存在。
 
-7. `TemporalAmbiguityExtractor`
-
-   使用 LLM 抽取时间线事件和歧义项。时间线事件描述“什么时候发生了什么”，歧义项保留原文中不能确定解释的内容。
-
-8. `TimelineAmbiguityNormalizer`
-
-   对 timeline events 和 ambiguities 做确定性规范化，校验它们引用的 section/item 是否有效。
-
-9. `SourceSpanResolver`
+7. `SourceSpanResolver`
 
    根据原始文本解析和修正 source spans，确保结构化对象可以追溯到原文片段。
 
-10. `CaseStructuringAssembler`
+8. `CaseStructuringAssembler`
 
-    把前面所有对象组装成最终 `CaseStructuringResult`。
+   把前面所有对象组装成最终 `CaseStructuringResult`。
 
-11. `SourceSpanValidationCorrection`
+9. `SourceSpanValidationCorrection`
 
-    `run_with_validation()` 会在初始组装后执行 source-span 验证和确定性校正。`run()` 返回的是校正后的结果。
+   `run_with_validation()` 会在初始组装后执行 source-span 验证和确定性校正。`run()` 返回的是校正后的结果。
 
 ## 7. Schema 语义边界
 
@@ -272,15 +260,9 @@ agent 自己不持久化状态。调用方需要把结果交给 `StateWriter.wri
 
 ### StructuredClinicalItem
 
-`StructuredClinicalItem` 是细粒度临床事实，例如某个症状、某项检验、某个影像发现、某种药物或某段治疗反应。它仍然只是结构化事实，不代表诊断证据的支持或反驳方向。
+`StructuredClinicalItem` 是 source-level clinical statement extracted from a `ClinicalSection`。它的 `label` 应贴近原文，可以保留连续陈述中的并列症状、发现或测量。最小 evidence 拆分和属性角色标注属于下游 Attribute Extractor / Evidence Atomizer，不属于 Case Structurer。
 
-### TimelineEvent
-
-`TimelineEvent` 描述病例时间线事件，例如症状起病、症状加重、检查完成、治疗开始、随访等。它不解释事件的诊断意义。
-
-### AmbiguityItem
-
-`AmbiguityItem` 保存原文中不能安全确定解释的内容。它的价值是避免 agent 为了结构化而强行猜测。
+它不保存 `value/unit/time_text/body_site` 顶层字段，也不表示诊断证据的支持或反驳方向。
 
 ## 8. Source Span 与校验
 
@@ -377,7 +359,6 @@ for order, raw_text in enumerate(raw_inputs, start=1):
   - `stage_context`
   - `clinical_section`
   - `structured_item`
-  - `temporal_ambiguity`
 
 运行时依赖环境变量：
 

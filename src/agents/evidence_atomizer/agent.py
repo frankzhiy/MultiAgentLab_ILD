@@ -4,6 +4,9 @@ from typing import TYPE_CHECKING
 
 from src.agents.evidence_atomizer.pipeline import EvidenceAtomizerPipeline
 from src.agents.evidence_atomizer.result import EvidenceAtomizationValidationResult
+from src.schemas.attribute_extractor.attribute_extraction_result import (
+    AttributeExtractionResult,
+)
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.evidence_atomizer.evidence_atomization_result import (
     EvidenceAtomizationResult,
@@ -29,11 +32,13 @@ class EvidenceAtomizerAgent:
     def run(
         self,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
     ) -> EvidenceAtomizationResult:
-        return self.pipeline.run(structuring_result)
+        return self.pipeline.run(structuring_result, attribute_result)
 
     def run_with_validation(
         self,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
     ) -> EvidenceAtomizationValidationResult:
-        return self.pipeline.run_with_validation(structuring_result)
+        return self.pipeline.run_with_validation(structuring_result, attribute_result)

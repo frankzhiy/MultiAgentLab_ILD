@@ -44,9 +44,9 @@ def format_source_span_policy(input_id: str) -> str:
             "- Code will resolve exact offsets later.",
             "- Never invent source text.",
             (
-                "- Free-text fields that represent source content must be "
-                "grounded in raw_text; use null or unknown when the source "
-                "does not explicitly state the value."
+                "- StructuredClinicalItem.label should stay close to the "
+                "continuous original statement. Attribute spans are extracted "
+                "later by Attribute Extractor."
             ),
         ]
     )
@@ -112,7 +112,6 @@ def format_available_items(items: list[StructuredClinicalItem]) -> str:
 
     lines = []
     for item in items:
-        time_text = item.time_text if item.time_text is not None else "None"
         lines.append(
             " | ".join(
                 [
@@ -120,7 +119,6 @@ def format_available_items(items: list[StructuredClinicalItem]) -> str:
                     item.section_id,
                     _value(item.item_type),
                     _compact_text(item.label),
-                    f"time_text={time_text}",
                 ]
             )
         )

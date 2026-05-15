@@ -17,6 +17,10 @@ from collections import defaultdict
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
+from src.schemas.attribute_extractor.attribute_extraction_result import (
+    AttributeExtractionResult,
+)
+from src.schemas.attribute_extractor.common import AttributeID
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.case_structurer.structured_clinical_item import StructuredClinicalItem
 from src.schemas.evidence_atomizer.common import (
@@ -74,6 +78,11 @@ class EvidenceAtomizationValidationIssue(BaseModel):
         description="Optional related SourceSpan id.",
     )
 
+    related_attribute_id: AttributeID | None = Field(
+        default=None,
+        description="Optional related ClinicalAttribute id.",
+    )
+
     @field_validator("code", "message", mode="after")
     @classmethod
     def required_text_must_not_be_blank(cls, value: str) -> str:
@@ -84,6 +93,7 @@ class EvidenceAtomizationValidationIssue(BaseModel):
         "related_item_id",
         "related_evidence_id",
         "related_span_id",
+        "related_attribute_id",
         mode="after",
     )
     @classmethod
@@ -149,6 +159,7 @@ class EvidenceAtomizationValidator:
         self,
         *,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
         atomization_result: EvidenceAtomizationResult,
     ) -> EvidenceAtomizationValidationReport:
         """Validate atomization output without mutating either input."""
@@ -158,12 +169,14 @@ class EvidenceAtomizationValidator:
         issues.extend(
             self._validate_result_identity(
                 structuring_result=structuring_result,
+                attribute_result=attribute_result,
                 atomization_result=atomization_result,
             )
         )
         issues.extend(
             self._validate_evidence_atom_sources(
                 structuring_result=structuring_result,
+                attribute_result=attribute_result,
                 atomization_result=atomization_result,
                 items_by_id=items_by_id,
             )
@@ -200,6 +213,7 @@ class EvidenceAtomizationValidator:
         self,
         *,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
         atomization_result: EvidenceAtomizationResult,
     ) -> list[EvidenceAtomizationValidationIssue]:
         issues: list[EvidenceAtomizationValidationIssue] = []
@@ -224,6 +238,45 @@ class EvidenceAtomizationValidator:
                     message=(
                         "EvidenceAtomizationResult.input_id must match "
                         "CaseStructuringResult.input.input_id."
+                    ),
+                )
+            )
+
+        if atomization_result.case_id != attribute_result.case_id:
+            issues.append(
+                _issue(
+                    severity=ValidationSeverity.ERROR,
+                    code="attribute_case_id_mismatch",
+                    message=(
+                        "EvidenceAtomizationResult.case_id must match "
+                        "AttributeExtractionResult.case_id."
+                    ),
+                )
+            )
+
+        if atomization_result.input_id != attribute_result.input_id:
+            issues.append(
+                _issue(
+                    severity=ValidationSeverity.ERROR,
+                    code="attribute_input_id_mismatch",
+                    message=(
+                        "EvidenceAtomizationResult.input_id must match "
+                        "AttributeExtractionResult.input_id."
+                    ),
+                )
+            )
+
+        if (
+            attribute_result.source_structuring_result_id
+            != structuring_result.case_structuring_result_id
+        ):
+            issues.append(
+                _issue(
+                    severity=ValidationSeverity.ERROR,
+                    code="attribute_source_structuring_result_id_mismatch",
+                    message=(
+                        "AttributeExtractionResult.source_structuring_result_id "
+                        "must match CaseStructuringResult.case_structuring_result_id."
                     ),
                 )
             )
@@ -272,14 +325,20 @@ class EvidenceAtomizationValidator:
         self,
         *,
         structuring_result: CaseStructuringResult,
+        attribute_result: AttributeExtractionResult,
         atomization_result: EvidenceAtomizationResult,
         items_by_id: dict[ItemID, StructuredClinicalItem],
     ) -> list[EvidenceAtomizationValidationIssue]:
         issues: list[EvidenceAtomizationValidationIssue] = []
         raw_text = structuring_result.input.raw_text
+        attributes_by_id = {
+            attribute.attribute_id: attribute
+            for attribute in attribute_result.clinical_attributes
+        }
 
         for atom in atomization_result.evidence_atoms:
             source_items: list[StructuredClinicalItem] = []
+            source_item_id_set = set(atom.source_item_ids)
 
             for item_id in atom.source_item_ids:
                 item = items_by_id.get(item_id)
@@ -299,6 +358,38 @@ class EvidenceAtomizationValidator:
                     continue
 
                 source_items.append(item)
+
+            for attribute_id in atom.source_attribute_ids:
+                attribute = attributes_by_id.get(attribute_id)
+                if attribute is None:
+                    issues.append(
+                        _issue(
+                            severity=ValidationSeverity.ERROR,
+                            code="missing_source_attribute",
+                            message=(
+                                "EvidenceAtom.source_attribute_ids must reference "
+                                "existing ClinicalAttribute.attribute_id values."
+                            ),
+                            related_evidence_id=atom.evidence_id,
+                            related_attribute_id=attribute_id,
+                        )
+                    )
+                    continue
+
+                if attribute.source_item_id not in source_item_id_set:
+                    issues.append(
+                        _issue(
+                            severity=ValidationSeverity.ERROR,
+                            code="source_attribute_not_owned_by_source_item",
+                            message=(
+                                "EvidenceAtom.source_attribute_ids must belong to "
+                                "one of the atom's source_item_ids."
+                            ),
+                            related_item_id=attribute.source_item_id,
+                            related_evidence_id=atom.evidence_id,
+                            related_attribute_id=attribute_id,
+                        )
+                    )
 
             spans_by_id = {
                 span.span_id: span
@@ -483,11 +574,12 @@ class EvidenceAtomizationValidator:
 
         for atom in atomization_result.evidence_atoms:
             key = (
+                atom.statement,
                 atom.normalized_label,
-                atom.value,
                 tuple(sorted(atom.source_item_ids)),
+                tuple(sorted(atom.source_attribute_ids)),
                 atom.assertion_status,
-                atom.time_text,
+                atom.temporality,
             )
             atom_ids_by_key[key].append(atom.evidence_id)
 
@@ -526,6 +618,7 @@ def _issue(
     related_item_id: ItemID | None = None,
     related_evidence_id: EvidenceID | None = None,
     related_span_id: SpanID | None = None,
+    related_attribute_id: AttributeID | None = None,
 ) -> EvidenceAtomizationValidationIssue:
     return EvidenceAtomizationValidationIssue(
         severity=severity,
@@ -534,6 +627,7 @@ def _issue(
         related_item_id=related_item_id,
         related_evidence_id=related_evidence_id,
         related_span_id=related_span_id,
+        related_attribute_id=related_attribute_id,
     )
 
 

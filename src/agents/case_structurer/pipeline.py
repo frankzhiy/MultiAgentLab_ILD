@@ -27,8 +27,6 @@ from .modules import (
     SourceSpanResolver,
     StageContextExtractor,
     StructuredClinicalItemExtractor,
-    TemporalAmbiguityExtractor,
-    TimelineAmbiguityNormalizer,
 )
 
 T = TypeVar("T")
@@ -60,11 +58,6 @@ class CaseStructurerPipeline:
             agent_name=agent_name,
         )
         self.item_normalizer = ItemNormalizer()
-        self.temporal_ambiguity_extractor = TemporalAmbiguityExtractor(
-            self.llm_client,
-            agent_name=agent_name,
-        )
-        self.timeline_ambiguity_normalizer = TimelineAmbiguityNormalizer()
         self.source_span_resolver = SourceSpanResolver()
         self.assembler = CaseStructuringAssembler()
 
@@ -156,38 +149,12 @@ class CaseStructurerPipeline:
             ),
         )
 
-        temporal_result = self._run_step(
-            "TemporalAmbiguityExtractor",
-            lambda: self.temporal_ambiguity_extractor.extract(
-                raw_input,
-                stage_context,
-                normalized_sections.sections,
-                normalized_items.items,
-            ),
-        )
-
-        valid_item_ids = {item.item_id for item in normalized_items.items}
-        normalized_temporal = self._run_step(
-            "TimelineAmbiguityNormalizer",
-            lambda: self.timeline_ambiguity_normalizer.normalize(
-                timeline_events=temporal_result.timeline_events,
-                ambiguities=temporal_result.ambiguities,
-                raw_input=raw_input,
-                valid_section_ids=valid_section_ids,
-                valid_item_ids=valid_item_ids,
-                section_id_map=normalized_sections.id_map,
-                item_id_map=normalized_items.id_map,
-            ),
-        )
-
         resolved = self._run_step(
             "SourceSpanResolver",
             lambda: self.source_span_resolver.resolve(
                 raw_input=raw_input,
                 sections=normalized_sections.sections,
                 items=normalized_items.items,
-                timeline_events=normalized_temporal.timeline_events,
-                ambiguities=normalized_temporal.ambiguities,
             ),
         )
 
@@ -198,8 +165,6 @@ class CaseStructurerPipeline:
                 stage_context=stage_context,
                 sections=resolved.sections,
                 items=resolved.items,
-                timeline_events=resolved.timeline_events,
-                ambiguities=resolved.ambiguities,
             ),
         )
 

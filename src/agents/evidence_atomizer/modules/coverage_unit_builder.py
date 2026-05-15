@@ -85,7 +85,7 @@ ANALYTE_VALUE_PATTERN = re.compile(
     r"[\u4e00-\u9fff][\u4e00-\u9fffA-Za-z0-9/+\-.()]{1,24})"
     r"\s*[:：]?\s*"
     r"(?:(?P<numeric_value>[<>≤≥]?\s*(?:\d+(?:\.\d+)?|\d+:\d+))"
-    r"\s*(?P<unit>[A-Za-z%μµ/.\-^0-9×*]+|[\u4e00-\u9fff/%]+)?|"
+    r"\s*(?P<unit_text>[A-Za-z%μµ/.\-^0-9×*]+|[\u4e00-\u9fff/%]+)?|"
     r"(?P<qualitative_value>[+-]|阳性|阴性|正常|异常|增高|升高|降低|减低))"
 )
 
@@ -107,8 +107,8 @@ class _TermMatch:
 @dataclass(frozen=True)
 class _AnalyteValuePair:
     analyte: str
-    value: str
-    unit: str | None
+    result_text: str
+    unit_text: str | None
     start: int
     end: int
 
@@ -152,10 +152,14 @@ class CoverageUnitBuilder:
                 self._unit(
                     candidate=candidate,
                     index=index,
-                    surface_text=_format_value_phrase(pair.analyte, pair.value, pair.unit),
+                    surface_text=_format_result_phrase(
+                        pair.analyte,
+                        pair.result_text,
+                        pair.unit_text,
+                    ),
                     clinical_object=pair.analyte,
-                    value=pair.value,
-                    unit=pair.unit,
+                    result_text=pair.result_text,
+                    unit_text=pair.unit_text,
                     split_basis="analyte_value_pair",
                 )
                 for index, pair in enumerate(analyte_pairs, start=1)
@@ -211,10 +215,14 @@ class CoverageUnitBuilder:
                 self._unit(
                     candidate=candidate,
                     index=1,
-                    surface_text=_format_value_phrase(pair.analyte, pair.value, pair.unit),
+                    surface_text=_format_result_phrase(
+                        pair.analyte,
+                        pair.result_text,
+                        pair.unit_text,
+                    ),
                     clinical_object=pair.analyte,
-                    value=pair.value,
-                    unit=pair.unit,
+                    result_text=pair.result_text,
+                    unit_text=pair.unit_text,
                     split_basis="atomic_candidate",
                 )
             ]
@@ -286,24 +294,27 @@ class CoverageUnitBuilder:
         clinical_object: str,
         split_basis: str,
         status_or_direction: str | None = None,
-        value: str | None = None,
-        unit: str | None = None,
+        result_text: str | None = None,
+        unit_text: str | None = None,
         assertion_status: str | None = None,
     ) -> CoverageUnit:
         return CoverageUnit(
             unit_id=f"{candidate.item_id}__unit_{index:03d}",
             source_item_id=candidate.item_id,
+            source_attribute_ids=_attribute_ids(candidate),
             source_span_ids=_span_ids(candidate),
             surface_text=_compact_text(surface_text),
             clinical_object=_compact_text(clinical_object),
             status_or_direction=_optional_text(status_or_direction),
-            value=_optional_text(value if value is not None else candidate.value),
-            unit=_optional_text(unit if unit is not None else candidate.unit),
-            body_site=_optional_text(candidate.body_site),
+            modifier_texts=_modifier_texts(
+                candidate=candidate,
+                status_or_direction=status_or_direction,
+                result_text=result_text,
+                unit_text=unit_text,
+            ),
             assertion_status=assertion_status or candidate.negation,
             certainty=candidate.certainty,
             temporality=candidate.temporality,
-            time_text=_optional_text(candidate.time_text),
             split_basis=split_basis,
             required=True,
         )
@@ -315,9 +326,6 @@ def _candidate_text(candidate: AtomizationCandidate) -> str:
 
     parts = [
         candidate.label,
-        candidate.value,
-        candidate.unit,
-        candidate.body_site,
         candidate.source_text,
     ]
     return " ".join(part.strip() for part in parts if part and part.strip())
@@ -361,16 +369,16 @@ def _find_analyte_value_pairs(
     pairs: list[_AnalyteValuePair] = []
     for match in ANALYTE_VALUE_PATTERN.finditer(text):
         analyte = _optional_text(match.group("analyte"))
-        value = _optional_text(
+        result_text = _optional_text(
             match.group("numeric_value") or match.group("qualitative_value")
         )
-        if analyte is None or value is None:
+        if analyte is None or result_text is None:
             continue
         pairs.append(
             _AnalyteValuePair(
                 analyte=analyte,
-                value=value,
-                unit=_optional_text(match.group("unit")),
+                result_text=result_text,
+                unit_text=_optional_text(match.group("unit_text")),
                 start=match.start(),
                 end=match.end(),
             )
@@ -402,7 +410,7 @@ def _dedupe_analyte_pairs(
     result: list[_AnalyteValuePair] = []
     seen: set[tuple[str, str, str | None]] = set()
     for pair in sorted(pairs, key=lambda item: item.start):
-        key = (pair.analyte, pair.value, pair.unit)
+        key = (pair.analyte, pair.result_text, pair.unit_text)
         if key in seen:
             continue
         seen.add(key)
@@ -414,8 +422,18 @@ def _first_direction(
     candidate: AtomizationCandidate,
     text: str,
 ) -> str | None:
-    if candidate.value in DIRECTION_TERMS:
-        return candidate.value
+    for attribute in candidate.attributes:
+        if attribute.attribute_role not in {"abnormal_direction", "qualitative_result"}:
+            continue
+        if attribute.span_text in DIRECTION_TERMS:
+            return attribute.span_text
+        if isinstance(attribute.normalized_text, str):
+            if attribute.normalized_text == "increased":
+                return "增高"
+            if attribute.normalized_text == "decreased":
+                return "降低"
+            if attribute.normalized_text == "normal":
+                return "正常"
     for term in DIRECTION_TERMS:
         if term in text:
             return term
@@ -456,16 +474,16 @@ def _split_candidate_label(candidate: AtomizationCandidate) -> list[str]:
     return [part for part in parts if part is not None]
 
 
-def _format_value_phrase(
+def _format_result_phrase(
     clinical_object: str,
-    value: str | None,
-    unit: str | None,
+    result_text: str | None,
+    unit_text: str | None,
 ) -> str:
-    if value is None:
+    if result_text is None:
         return clinical_object
-    if unit is None:
-        return f"{clinical_object} {value}"
-    return f"{clinical_object} {value} {unit}"
+    if unit_text is None:
+        return f"{clinical_object} {result_text}"
+    return f"{clinical_object} {result_text} {unit_text}"
 
 
 def _format_status_phrase(
@@ -478,10 +496,6 @@ def _format_status_phrase(
 
 
 def _atomic_surface_text(candidate: AtomizationCandidate) -> str:
-    if candidate.value and candidate.unit:
-        return f"{candidate.label} {candidate.value} {candidate.unit}"
-    if candidate.value:
-        return f"{candidate.label} {candidate.value}"
     return candidate.label
 
 
@@ -501,3 +515,25 @@ def _optional_text(value: str | None) -> str | None:
         return None
     cleaned = str(value).strip()
     return cleaned or None
+
+
+def _attribute_ids(candidate: AtomizationCandidate) -> list[str]:
+    return [attribute.attribute_id for attribute in candidate.attributes]
+
+
+def _modifier_texts(
+    *,
+    candidate: AtomizationCandidate,
+    status_or_direction: str | None,
+    result_text: str | None,
+    unit_text: str | None,
+) -> list[str]:
+    texts: list[str] = []
+    for attribute in candidate.attributes:
+        if attribute.span_text not in texts:
+            texts.append(attribute.span_text)
+    for candidate_text in (status_or_direction, result_text, unit_text):
+        cleaned = _optional_text(candidate_text)
+        if cleaned is not None and cleaned not in texts:
+            texts.append(cleaned)
+    return texts

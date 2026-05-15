@@ -24,6 +24,10 @@ from src.schemas.evidence_atomizer.common import (
     EvidenceAtomizationResultID,
     EvidenceID,
 )
+from src.schemas.attribute_extractor.common import (
+    AttributeExtractionResultID,
+    AttributeID,
+)
 
 _PREFIX_PATTERN = re.compile(r"^[a-z0-9_]+$")
 
@@ -101,3 +105,11 @@ def generate_evidence_id() -> EvidenceID:
 
 def generate_atomization_result_id() -> EvidenceAtomizationResultID:
     return EvidenceAtomizationResultID(generate_id("atomization_result"))
+
+
+def generate_attribute_id() -> AttributeID:
+    return AttributeID(generate_id("attribute"))
+
+
+def generate_attribute_extraction_result_id() -> AttributeExtractionResultID:
+    return AttributeExtractionResultID(generate_id("attribute_extraction_result"))

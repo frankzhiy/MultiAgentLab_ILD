@@ -14,17 +14,15 @@ class CoverageUnit(BaseModel):
 
     unit_id: str
     source_item_id: str
+    source_attribute_ids: list[str] = Field(default_factory=list)
     source_span_ids: list[str]
     surface_text: str
     clinical_object: str
     status_or_direction: str | None
-    value: str | None
-    unit: str | None
-    body_site: str | None
+    modifier_texts: list[str] = Field(default_factory=list)
     assertion_status: str
     certainty: str
     temporality: str
-    time_text: str | None
     split_basis: str
     required: bool = True
 
