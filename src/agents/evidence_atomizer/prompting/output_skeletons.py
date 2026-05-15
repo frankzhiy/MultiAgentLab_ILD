@@ -38,7 +38,6 @@ def evidence_atomization_skeleton() -> str:
                     "source_item_ids": ["item_001"],
                     "source_attribute_ids": ["attribute_001"],
                     "source_span_ids": ["span_item_001"],
-                    "source_text": "...",
                     "atomization_confidence": ConfidenceLevel.MEDIUM.value,
                     "notes": None,
                 }

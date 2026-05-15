@@ -143,6 +143,39 @@ class EvidenceAtomNormalizer:
                 draft,
                 source_item_ids,
             )
+            source_contexts = context.source_contexts_for_items(source_item_ids)
+            if not source_contexts:
+                warnings.append(
+                    _warning(
+                        code="missing_source_context",
+                        message=(
+                            "Evidence atom draft could not be linked to a "
+                            "ClinicalSection context and was deferred."
+                        ),
+                        related_item_id=source_item_ids[0],
+                    )
+                )
+                deferred_items.extend(
+                    context.defer_items(
+                        source_item_ids,
+                        DeferredReason.TOO_AMBIGUOUS,
+                        "No ClinicalSection provenance context was available.",
+                    )
+                )
+                continue
+
+            if len(source_contexts) > 1:
+                warnings.append(
+                    _warning(
+                        code="multi_section_evidence_atom",
+                        message=(
+                            "Evidence atom references source items from multiple "
+                            "ClinicalSections; this may indicate overly coarse "
+                            "atomization."
+                        ),
+                        related_item_id=source_item_ids[0],
+                    )
+                )
 
             atom_payload = self._build_atom_payload(
                 structuring_result=structuring_result,
@@ -151,6 +184,7 @@ class EvidenceAtomNormalizer:
                 source_item_ids=source_item_ids,
                 source_attribute_ids=source_attribute_ids,
                 source_span_ids=source_span_ids,
+                source_contexts=source_contexts,
                 warnings=warnings,
             )
             try:
@@ -225,6 +259,7 @@ class EvidenceAtomNormalizer:
         source_item_ids: list[str],
         source_attribute_ids: list[str],
         source_span_ids: list[str],
+        source_contexts: list[dict[str, Any]],
         warnings: list[AtomizationWarning],
     ) -> dict[str, Any]:
         source_items = [
@@ -297,8 +332,11 @@ class EvidenceAtomNormalizer:
             "source_item_ids": source_item_ids,
             "source_attribute_ids": source_attribute_ids,
             "source_span_ids": source_span_ids,
-            "source_text": _optional_text(draft.get("source_text"))
-            or context.source_text_for_spans(source_item_ids, source_span_ids),
+            "source_contexts": source_contexts,
+            "source_text": context.source_text_for_spans(
+                source_item_ids,
+                source_span_ids,
+            ),
             "atomization_confidence": _coerce_enum(
                 draft.get("atomization_confidence")
                 or draft.get("confidence")
@@ -616,6 +654,34 @@ class _NormalizationContext:
             for attribute_id in coverage_attribute_ids
             if self.attribute_belongs_to_items(attribute_id, source_item_id_set)
         )
+
+    def source_contexts_for_items(self, item_ids: list[str]) -> list[dict[str, Any]]:
+        contexts: list[dict[str, Any]] = []
+        seen: set[tuple[str, str, str | None]] = set()
+
+        for item_id in item_ids:
+            candidate = self.candidates_by_item_id.get(item_id)
+            if candidate is None or candidate.section_type is None:
+                continue
+
+            key = (
+                candidate.section_id,
+                candidate.section_type,
+                candidate.section_title,
+            )
+            if key in seen:
+                continue
+
+            seen.add(key)
+            contexts.append(
+                {
+                    "section_id": candidate.section_id,
+                    "section_type": candidate.section_type,
+                    "section_title": candidate.section_title,
+                }
+            )
+
+        return contexts
 
     def attribute_belongs_to_items(
         self,

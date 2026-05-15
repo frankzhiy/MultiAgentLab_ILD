@@ -335,6 +335,10 @@ class EvidenceAtomizationValidator:
             attribute.attribute_id: attribute
             for attribute in attribute_result.clinical_attributes
         }
+        sections_by_id = {
+            section.section_id: section
+            for section in structuring_result.clinical_sections
+        }
 
         for atom in atomization_result.evidence_atoms:
             source_items: list[StructuredClinicalItem] = []
@@ -358,6 +362,104 @@ class EvidenceAtomizationValidator:
                     continue
 
                 source_items.append(item)
+
+            context_section_ids = {
+                context.section_id
+                for context in atom.source_contexts
+            }
+            source_item_section_ids = {
+                item.section_id
+                for item in source_items
+            }
+
+            if not atom.source_contexts:
+                issues.append(
+                    _issue(
+                        severity=ValidationSeverity.ERROR,
+                        code="missing_source_context",
+                        message="EvidenceAtom.source_contexts must not be empty.",
+                        related_evidence_id=atom.evidence_id,
+                    )
+                )
+
+            for context in atom.source_contexts:
+                section = sections_by_id.get(context.section_id)
+                if section is None:
+                    issues.append(
+                        _issue(
+                            severity=ValidationSeverity.ERROR,
+                            code="source_context_section_not_found",
+                            message=(
+                                "EvidenceAtom.source_contexts.section_id must "
+                                "reference an existing ClinicalSection.section_id."
+                            ),
+                            related_evidence_id=atom.evidence_id,
+                        )
+                    )
+                    continue
+
+                if _enum_value(context.section_type) != _enum_value(
+                    section.section_type
+                ):
+                    issues.append(
+                        _issue(
+                            severity=ValidationSeverity.ERROR,
+                            code="source_context_section_type_mismatch",
+                            message=(
+                                "EvidenceAtom.source_contexts.section_type must "
+                                "match the referenced ClinicalSection.section_type."
+                            ),
+                            related_evidence_id=atom.evidence_id,
+                        )
+                    )
+
+                if (
+                    source_item_section_ids
+                    and context.section_id not in source_item_section_ids
+                ):
+                    issues.append(
+                        _issue(
+                            severity=ValidationSeverity.ERROR,
+                            code="source_context_without_source_item_section",
+                            message=(
+                                "EvidenceAtom.source_contexts entries must "
+                                "correspond to sections referenced by the "
+                                "atom's source_item_ids."
+                            ),
+                            related_evidence_id=atom.evidence_id,
+                        )
+                    )
+
+            for item in source_items:
+                if item.section_id in context_section_ids:
+                    continue
+
+                issues.append(
+                    _issue(
+                        severity=ValidationSeverity.ERROR,
+                        code="source_item_section_missing_from_context",
+                        message=(
+                            "Each EvidenceAtom.source_item_ids entry must have "
+                            "its StructuredClinicalItem.section_id represented "
+                            "in EvidenceAtom.source_contexts."
+                        ),
+                        related_item_id=item.item_id,
+                        related_evidence_id=atom.evidence_id,
+                    )
+                )
+
+            if len(source_item_section_ids) > 1:
+                issues.append(
+                    _issue(
+                        severity=ValidationSeverity.WARNING,
+                        code="multi_section_evidence_atom",
+                        message=(
+                            "Evidence atom references multiple clinical sections; "
+                            "check atom granularity."
+                        ),
+                        related_evidence_id=atom.evidence_id,
+                    )
+                )
 
             for attribute_id in atom.source_attribute_ids:
                 attribute = attributes_by_id.get(attribute_id)
@@ -648,3 +750,7 @@ def _text_contains(haystack: str, needle: str) -> bool:
 
 def _normalize_text_for_match(text: str) -> str:
     return " ".join(text.split())
+
+
+def _enum_value(value: object) -> object:
+    return getattr(value, "value", value)

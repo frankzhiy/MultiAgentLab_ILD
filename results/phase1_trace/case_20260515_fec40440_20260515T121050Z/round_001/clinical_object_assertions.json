@@ -1,0 +1,812 @@
+[
+  {
+    "object_id": "clinical_object_assertion_20260515_4270d672",
+    "source_item_id": "item_002",
+    "object_text": "间断咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "间断咳嗽咳痰伴胸闷气短8年",
+    "context_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": "Chronic intermittent cough present for 8 years"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_92ee8070",
+    "source_item_id": "item_002",
+    "object_text": "咳痰",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "间断咳嗽咳痰伴胸闷气短8年",
+    "context_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": "Chronic sputum production present for 8 years"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_9c64012c",
+    "source_item_id": "item_002",
+    "object_text": "胸闷",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "间断咳嗽咳痰伴胸闷气短8年",
+    "context_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": "Chronic chest tightness present for 8 years"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_7e8c1663",
+    "source_item_id": "item_002",
+    "object_text": "气短",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "间断咳嗽咳痰伴胸闷气短8年",
+    "context_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": "Chronic shortness of breath present for 8 years"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_74a29d99",
+    "source_item_id": "item_002",
+    "object_text": "加重",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "加重2月",
+    "assertion_scope_text": "加重2月",
+    "context_text": "主因“间断咳嗽咳痰伴胸闷气短8年，加重2月”入院",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": "Symptoms worsened over the past 2 months"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_b4d7b3bc",
+    "source_item_id": "item_005",
+    "object_text": "咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "患者于8年前无明显诱因出现咳嗽咳痰",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Cough is described as present starting 8 years ago without clear cause."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_0dafbf67",
+    "source_item_id": "item_005",
+    "object_text": "咳痰",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "患者于8年前无明显诱因出现咳嗽咳痰",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Sputum production is present starting 8 years ago without clear cause."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_48537b65",
+    "source_item_id": "item_005",
+    "object_text": "痰液为黏白色",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "为",
+    "assertion_scope_text": "痰液为黏白色",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Sputum described as mucoid white."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_88318fa7",
+    "source_item_id": "item_005",
+    "object_text": "量少",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "量少",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Sputum amount described as small."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_ef7334ca",
+    "source_item_id": "item_005",
+    "object_text": "易咳出",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "易咳出",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "medium",
+    "notes": "Sputum is easy to cough out."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_09de01e9",
+    "source_item_id": "item_005",
+    "object_text": "胸闷",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴",
+    "assertion_scope_text": "伴胸闷气短",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Chest tightness and shortness of breath accompany the cough and sputum."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_92d39423",
+    "source_item_id": "item_005",
+    "object_text": "气短",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴",
+    "assertion_scope_text": "伴胸闷气短",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Chest tightness and shortness of breath accompany the cough and sputum."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_c27d5c08",
+    "source_item_id": "item_005",
+    "object_text": "夜间为著",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "夜间为著",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Symptoms are worse at night."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_04f2ca7f",
+    "source_item_id": "item_005",
+    "object_text": "发热",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无发热寒战",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Fever and chills are denied."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_263f5533",
+    "source_item_id": "item_005",
+    "object_text": "寒战",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无发热寒战",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Fever and chills are denied."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_7cff8066",
+    "source_item_id": "item_005",
+    "object_text": "胸痛",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无胸痛咯血",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Chest pain and hemoptysis are denied."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_4e49cc81",
+    "source_item_id": "item_005",
+    "object_text": "咯血",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无胸痛咯血",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Chest pain and hemoptysis are denied."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_6b2e63cb",
+    "source_item_id": "item_005",
+    "object_text": "午后低热",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无午后低热",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Afternoon low-grade fever is denied."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_75fd4d12",
+    "source_item_id": "item_005",
+    "object_text": "乏力",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": null,
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Fatigue is denied."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_8ee81f18",
+    "source_item_id": "item_005",
+    "object_text": "盗汗",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": null,
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Night sweats are denied."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_dfba483a",
+    "source_item_id": "item_005",
+    "object_text": "恶心",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无恶心呕吐等不适",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Nausea and vomiting are denied."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_9296d359",
+    "source_item_id": "item_005",
+    "object_text": "呕吐",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无恶心呕吐等不适",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "Nausea and vomiting are denied."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_acef8814",
+    "source_item_id": "item_005",
+    "object_text": "未予重视及诊疗",
+    "object_type": "care_seeking_or_management",
+    "assertion_status": "present",
+    "assertion_cue_text": "未予",
+    "assertion_scope_text": "未予重视及诊疗",
+    "context_text": "患者于8年前无明显诱因出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，夜间为著，无发热寒战，无胸痛咯血，无午后低热、乏力、盗汗，无恶心呕吐等不适，未予重视及诊疗",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": "No attention or treatment was given."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_c1b0f15f",
+    "source_item_id": "item_006",
+    "object_text": "咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "再次出现",
+    "assertion_scope_text": "1年前新冠病毒感染后再次出现咳嗽咳痰",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Cough reappeared 1 year ago after COVID-19 infection."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_5d0b0ae8",
+    "source_item_id": "item_006",
+    "object_text": "咳痰",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "再次出现",
+    "assertion_scope_text": "1年前新冠病毒感染后再次出现咳嗽咳痰",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Sputum production reappeared 1 year ago after COVID-19 infection."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_976d10e7",
+    "source_item_id": "item_006",
+    "object_text": "痰液为黏白色",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "痰液为黏白色",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Describes sputum characteristic."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_6c3a9336",
+    "source_item_id": "item_006",
+    "object_text": "量少",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "量少",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Sputum amount is small."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_9ffa3e3a",
+    "source_item_id": "item_006",
+    "object_text": "易咳出",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "易咳出",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Sputum is easy to expectorate."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_1a5c8b30",
+    "source_item_id": "item_006",
+    "object_text": "胸闷",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴",
+    "assertion_scope_text": "伴胸闷气短，活动后明显",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Chest tightness and shortness of breath present, more obvious after activity."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_367a8ff6",
+    "source_item_id": "item_006",
+    "object_text": "气短",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴",
+    "assertion_scope_text": "伴胸闷气短，活动后明显",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Chest tightness and shortness of breath present, more obvious after activity."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_5c568fe3",
+    "source_item_id": "item_006",
+    "object_text": "活动后明显",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "活动后明显",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Symptoms worsen after activity."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_8c9048a0",
+    "source_item_id": "item_006",
+    "object_text": "输液1周余",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "于当地诊所输液1周余",
+    "assertion_scope_text": "于当地诊所输液1周余（具体不详）",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "medium",
+    "notes": "Infusion treatment given for about 1 week at local clinic, details unclear."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_13e13f17",
+    "source_item_id": "item_006",
+    "object_text": "胸闷气短有所改善",
+    "object_type": "treatment_response",
+    "assertion_status": "present",
+    "assertion_cue_text": "后感",
+    "assertion_scope_text": "后感咳嗽咳痰、胸闷气短有所改善",
+    "context_text": "1年前新冠病毒感染后再次出现咳嗽咳痰，痰液为黏白色，量少，易咳出，伴胸闷气短，活动后明显，于当地诊所输液1周余（具体不详）后感咳嗽咳痰、胸闷气短有所改善",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Improvement in chest tightness and shortness of breath after treatment."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_a9333788",
+    "source_item_id": "item_007",
+    "object_text": "咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "再次出现",
+    "assertion_scope_text": "2月前无明显诱因再次出现咳嗽咳痰",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Cough is present with recent worsening starting 2 months ago."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_6382d125",
+    "source_item_id": "item_007",
+    "object_text": "咳痰",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "再次出现",
+    "assertion_scope_text": "2月前无明显诱因再次出现咳嗽咳痰",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Sputum production is present with recent worsening starting 2 months ago."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_cb79151c",
+    "source_item_id": "item_007",
+    "object_text": "胸闷",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴",
+    "assertion_scope_text": "伴胸闷气短",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Chest tightness and shortness of breath are present as accompanying symptoms."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_3a189749",
+    "source_item_id": "item_007",
+    "object_text": "气短",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴",
+    "assertion_scope_text": "伴胸闷气短",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Chest tightness and shortness of breath are present as accompanying symptoms."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_05fda94c",
+    "source_item_id": "item_007",
+    "object_text": "发热",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无发热寒战",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Fever is explicitly negated."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_4c5cb46b",
+    "source_item_id": "item_007",
+    "object_text": "寒战",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无发热寒战",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Chills are explicitly negated."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_c1112e2c",
+    "source_item_id": "item_007",
+    "object_text": "胸痛",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无胸痛咯血",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Chest pain is explicitly negated."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_a8968377",
+    "source_item_id": "item_007",
+    "object_text": "咯血",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无胸痛咯血",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Hemoptysis is explicitly negated."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_fedcf38a",
+    "source_item_id": "item_007",
+    "object_text": "恶心",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无恶心呕吐等不适",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Nausea and vomiting are explicitly negated."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_520aaa6d",
+    "source_item_id": "item_007",
+    "object_text": "呕吐",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无恶心呕吐等不适",
+    "context_text": "2月前无明显诱因再次出现咳嗽咳痰，伴胸闷气短，无发热寒战，无胸痛咯血，无恶心呕吐等不适",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Nausea and vomiting are explicitly negated."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_c30de1ec",
+    "source_item_id": "item_008",
+    "object_text": "双肺间质增粗纹理走形杂乱",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "示",
+    "assertion_scope_text": "双肺间质增粗纹理走形杂乱",
+    "context_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_880c188b",
+    "source_item_id": "item_008",
+    "object_text": "肺野密度增高",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "示",
+    "assertion_scope_text": "肺野密度增高",
+    "context_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_0f9197f9",
+    "source_item_id": "item_008",
+    "object_text": "右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "示",
+    "assertion_scope_text": "右肺中叶、下叶、左肺舌段条片状实性高密度影",
+    "context_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_c7b76184",
+    "source_item_id": "item_008",
+    "object_text": "右肺中叶、下叶病灶边缘模糊",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "其中",
+    "assertion_scope_text": "右肺中叶、下叶病灶边缘模糊",
+    "context_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_d89c2b04",
+    "source_item_id": "item_008",
+    "object_text": "肺部感染",
+    "object_type": "etiology_or_trigger",
+    "assertion_status": "possible",
+    "assertion_cue_text": "考虑为",
+    "assertion_scope_text": "考虑为“肺部感染”",
+    "context_text": "2024年6月11日胸部CT示：双肺间质增粗纹理走形杂乱，肺野密度增高，右肺中叶、下叶、左肺舌段条片状实性高密度影，其中右肺中叶、下叶病灶边缘模糊，考虑为“肺部感染”",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "medium",
+    "notes": "The phrase '考虑为' indicates suspicion or probable diagnosis, not confirmed presence."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_2dbc4e54",
+    "source_item_id": "item_010",
+    "object_text": "间质性肺炎",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "以“间质性肺炎，肺部感染”收住我科",
+    "assertion_scope_text": "以“间质性肺炎，肺部感染”收住我科",
+    "context_text": "请我科医师会诊后，以“间质性肺炎，肺部感染”收住我科",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_324cc79c",
+    "source_item_id": "item_010",
+    "object_text": "肺部感染",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "以“间质性肺炎，肺部感染”收住我科",
+    "assertion_scope_text": "以“间质性肺炎，肺部感染”收住我科",
+    "context_text": "请我科医师会诊后，以“间质性肺炎，肺部感染”收住我科",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_8a19d96f",
+    "source_item_id": "item_011",
+    "object_text": "神志清",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "神志清",
+    "assertion_scope_text": "神志清",
+    "context_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_066b1bd3",
+    "source_item_id": "item_011",
+    "object_text": "精神可",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "精神可",
+    "assertion_scope_text": "精神可",
+    "context_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_b1b5ffe3",
+    "source_item_id": "item_011",
+    "object_text": "饮食睡眠、大小便正常",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "饮食睡眠、大小便正常",
+    "context_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260515_91c2aefe",
+    "source_item_id": "item_011",
+    "object_text": "体重无明显变化",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无明显变化",
+    "assertion_scope_text": "体重无明显变化",
+    "context_text": "病程中，患者神志清，精神可，饮食睡眠、大小便正常 ，体重无明显变化",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": "No significant weight change indicates absence of weight loss or gain"
+  }
+]

@@ -5,13 +5,21 @@ You are an Attribute Extractor.
 Extract target-grounded clinical attribute relations from each
 StructuredClinicalItem.source_text.
 
-Each attribute relation must identify:
-1. the copied attribute span,
-2. the semantic role of the span,
-3. the source-copied target phrase it modifies,
-4. the scope of modification.
+A ClinicalAttribute is a source-grounded modifier relation attached to a
+StructuredClinicalItem.
 
+Each relation identifies:
+1. the copied modifier span
+2. its semantic role
+3. the source-copied object or phrase it modifies
+4. the scope of modification
+
+# Boundary
 {{ attribute_boundary }}
+
+ClinicalAttribute is not an independent clinical fact. It modifies a source
+item. It does not decide final evidence atoms and it does not assign final
+assertion status.
 
 # Input Identity
 case_id: {{ case_id }}
@@ -41,94 +49,39 @@ extraction_confidence:
 warning severity:
 {{ allowed_warning_severity_values }}
 
-# Methodological Boundary
-ClinicalAttribute is not an independent clinical fact.
+# Abstract Attribute Relation Patterns
+1. Demographic modifier relation
+When a demographic statement contains patient-level modifiers such as sex or
+age, extract the modifier span and link it to the patient or person phrase.
 
-ClinicalAttribute is a source-grounded modifier relation attached to a
-StructuredClinicalItem. It answers: what modifier span appears in this item,
-what role does it play, and what source-copied object or phrase does it modify?
+2. Temporal modifier relation
+When a duration, onset time, worsening interval, or historical time expression
+modifies a clinical object, extract the time span as an attribute and set
+applies_to_text to the source-copied object it modifies.
 
-It does not answer: what is the final clinical evidence atom?
+3. Coordinated-object shared modifier
+When one modifier applies to several coordinated clinical objects, extract the
+modifier once, set attribute_scope to coordinated_objects, and set
+applies_to_text to the coordinated object phrase.
 
-Evidence Atomizer is responsible for final atomization.
+4. Measurement or result modifier
+When a numeric value, qualitative result, or abnormal direction modifies a
+test, measurement, finding, or clinical object, extract the result modifier and
+link it to the source-copied object phrase.
 
-# Examples
-Example 1:
-item_type=demographic
-source_text="患者***，女，77岁"
+5. Medication administration modifier
+When a dose, frequency, or route modifies a medication or treatment object,
+extract the administration modifier and link it to the medication or treatment
+phrase.
 
-Output attributes:
-- span_text="女"
-  attribute_role="sex"
-  attribute_scope="local_phrase"
-  applies_to_text="患者***"
+6. Non-useful vague descriptor
+Do not extract vague adjectives or isolated descriptive words unless they are
+clinically useful for downstream evidence atomization and can be linked to a
+clear source-copied target.
 
-- span_text="77岁"
-  attribute_role="age"
-  attribute_scope="local_phrase"
-  applies_to_text="患者***"
-
-Example 2:
-item_type=symptom
-source_text="间断咳嗽咳痰伴胸闷气短8年"
-
-Output attributes:
-- span_text="8年"
-  attribute_role="symptom_duration"
-  attribute_scope="coordinated_objects"
-  applies_to_text="间断咳嗽咳痰伴胸闷气短"
-
-Example 3:
-item_type=comorbidity
-source_text="既往高血压8年"
-
-Output attributes:
-- span_text="8年"
-  attribute_role="disease_history_duration"
-  attribute_scope="item"
-  applies_to_text="既往高血压"
-
-Example 4:
-item_type=medication
-source_text="沙库巴曲缬沙坦片2片/次，1次/日"
-
-Output attributes:
-- span_text="2片/次"
-  attribute_role="medication_dose"
-  attribute_scope="item"
-  applies_to_text="沙库巴曲缬沙坦片"
-
-- span_text="1次/日"
-  attribute_role="medication_frequency"
-  attribute_scope="item"
-  applies_to_text="沙库巴曲缬沙坦片"
-
-Example 5:
-item_type=pulmonary_function
-source_text="气道总阻力R5、外周阻力R5-R20及近端阻力R35增高"
-
-Output attributes:
-- span_text="增高"
-  attribute_role="abnormal_direction"
-  attribute_scope="coordinated_objects"
-  applies_to_text="气道总阻力R5、外周阻力R5-R20及近端阻力R35"
-
-Do not force R5/R5-R20/R35 into attributes. They are clinical objects to be
-handled by Evidence Atomizer.
-
-Example 6:
-item_type=treatment
-source_text="治疗效果良好"
-
-Preferred:
-Return no attribute if the isolated modifier is not useful for downstream
-atomization.
-
-Alternative only if necessary:
-- span_text="良好"
-  attribute_role="qualitative_result"
-  attribute_scope="item"
-  applies_to_text="治疗效果"
+7. Clinical object is not attribute
+Do not extract the clinical object itself as an attribute. A ClinicalAttribute
+modifies an object; it is not the object.
 
 # Output Skeleton
 Return exactly one JSON object with keys:
@@ -139,23 +92,17 @@ Detailed skeleton:
 {{ output_skeleton }}
 
 # Rules
-- Return JSON only. Do not include Markdown, code fences, or commentary.
-- Select only clinically useful attribute relations for downstream evidence atomization.
-- Do not extract every vague adjective or every small descriptive word.
-- Do not use an entire clinical object or whole finding as an attribute.
-- applies_to_text should not equal span_text unless the span is clearly acting as a modifier.
-- span_text must be copied exactly from the corresponding item source_text.
-- span_text must be one continuous original substring.
-- applies_to_text must be copied exactly from source_text when present.
-- If the target is the whole item, applies_to_text may be the item label or the main clinical object phrase.
-- If the attribute modifies multiple coordinated objects, set attribute_scope to coordinated_objects.
-- If the attribute modifies only a local phrase, set attribute_scope to local_phrase.
-- If the attribute modifies the whole item, set attribute_scope to item.
-- If uncertain, set attribute_scope to uncertain and attribute_role to uncertain_attribute.
+- Return JSON only.
+- Extract only clinically useful attribute relations for downstream evidence atomization.
+- Each span_text must be copied exactly from the corresponding item source_text.
+- Each span_text must be a continuous original substring.
+- applies_to_text, when present, must be copied exactly from source_text.
+- attribute_scope must describe whether the modifier applies to the whole item, a local phrase, coordinated objects, or is uncertain.
+- If the relation is unclear, use uncertain_attribute and uncertain scope.
 - Do not infer unstated attributes.
 - Do not create evidence atoms.
 - Do not create diagnostic reasoning.
 - Do not create treatment advice.
 - Do not output context_text; code fills it from the source item text.
-- Leave normalized_value, normalized_unit, and normalized_text as null if unsure.
+- Leave normalized fields null if unsure.
 - If no attributes can be safely extracted, return {"attribute_spans": [], "extraction_warnings": []}.

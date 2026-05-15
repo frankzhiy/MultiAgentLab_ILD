@@ -400,6 +400,23 @@ def source_span_text(spans: list[Any]) -> str:
     )
 
 
+def source_contexts_text(contexts: list[Any]) -> str:
+    labels: list[str] = []
+    for context in contexts:
+        section_id = enum_text(object_field(context, "section_id"))
+        section_type = enum_text(object_field(context, "section_type"))
+        section_title = enum_text(object_field(context, "section_title"))
+        if not section_id or not section_type:
+            continue
+
+        label = section_type
+        if section_title:
+            label = f"{section_type}:{section_title}"
+        labels.append(f"{label}({section_id})")
+
+    return "; ".join(labels)
+
+
 def render_stage_context_table(stage_context: Any) -> list[str]:
     lines = [
         "### Stage Context",
@@ -700,8 +717,8 @@ def render_round_markdown_summary(
             "",
             "## Evidence Atoms",
             "",
-            "| evidence_id | evidence_type | clinical_domain | statement | normalized_label | assertion_status | certainty | temporality | source_item_ids | source_attribute_ids | source_span_ids | source_text |",
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+            "| evidence_id | evidence_type | clinical_domain | statement | normalized_label | assertion_status | certainty | temporality | source_item_ids | source_attribute_ids | source_span_ids | source_contexts | source_text |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
         ]
     )
     for atom in atoms:
@@ -721,13 +738,14 @@ def render_round_markdown_summary(
                         object_field(atom, "source_attribute_ids", [])
                     ),
                     join_markdown_values(object_field(atom, "source_span_ids", [])),
+                    source_contexts_text(object_list_field(atom, "source_contexts")),
                     object_field(atom, "source_text"),
                 ]
             )
         )
 
     if not atoms:
-        lines.append(empty_markdown_row(12, "No evidence atoms produced."))
+        lines.append(empty_markdown_row(13, "No evidence atoms produced."))
 
     lines.extend(["", "## Boundary Note", "", MULTI_ROUND_NOTE, ""])
     return "\n".join(lines)

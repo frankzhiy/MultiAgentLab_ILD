@@ -34,7 +34,7 @@ def evidence_atomization_contract() -> dict[str, Any]:
                 "statement: minimal source-grounded evidence statement",
                 "normalized_label",
                 "assertion_status, certainty, temporality",
-                "source_item_ids, source_attribute_ids, source_span_ids, source_text",
+                "source_item_ids, source_attribute_ids, source_span_ids",
                 "atomization_confidence, notes",
             ]
         ),
@@ -82,6 +82,15 @@ def evidence_atomization_contract() -> dict[str, Any]:
                 "Do not generate atomization_result_id values.",
                 "Temporary draft ids are allowed only for links inside this response.",
                 "Code will replace temporary draft ids with persistent ids.",
+            ]
+        ),
+        "code_filled_provenance_policy": _lines(
+            [
+                "Do not output source_contexts.",
+                "ClinicalSection provenance will be filled by code from source_item_ids.",
+                "Do not guess section_type or section_title.",
+                "Do not output source_text.",
+                "EvidenceAtom.source_text will be filled by code from source_span_ids.",
             ]
         ),
         "forbidden_reasoning_policy": _lines(

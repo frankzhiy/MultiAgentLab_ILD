@@ -1,0 +1,41 @@
+{
+  "accepted": true,
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "source_text_not_found_in_source_span",
+      "message": "EvidenceAtom.source_text was not found in referenced source span text or raw_text after whitespace-normalized matching.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_542610b3",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "source_text_not_found_in_source_span",
+      "message": "EvidenceAtom.source_text was not found in referenced source span text or raw_text after whitespace-normalized matching.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_a187c218",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "source_text_not_found_in_source_span",
+      "message": "EvidenceAtom.source_text was not found in referenced source span text or raw_text after whitespace-normalized matching.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_6ad5dd2f",
+      "related_span_id": null,
+      "related_attribute_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "present_atom_has_negation_surface",
+      "message": "EvidenceAtom statement begins with a negation expression while assertion_status is present.",
+      "related_item_id": null,
+      "related_evidence_id": "evidence_20260515_0ee38210",
+      "related_span_id": null,
+      "related_attribute_id": null
+    }
+  ]
+}
