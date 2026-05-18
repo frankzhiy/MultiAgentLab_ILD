@@ -7,7 +7,7 @@ system where a structured field came from in the original user-provided
 text.
 
 This schema must not represent uploaded documents, files, clinical
-sections, evidence atoms, diagnoses, hypotheses, conflicts, or actions.
+sections, evidence tree nodes, diagnoses, hypotheses, conflicts, or actions.
 """
 
 from __future__ import annotations

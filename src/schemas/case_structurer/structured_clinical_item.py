@@ -8,18 +8,27 @@ It answers one question:
     What source-level clinical statement appears inside this section?
 
 StructuredClinicalItem is still part of case structuring. It must not
-represent evidence atoms, parsed attributes, diagnoses, hypotheses, conflicts,
+represent tree-shaped evidence, parsed attributes, diagnoses, hypotheses, conflicts,
 actions, treatment recommendations, or arbitration results.
 
-Minimal evidence-level splitting belongs to EvidenceAtomizer, and attribute
-role labeling belongs to Attribute Extractor.
+Evidence-level tree structuring belongs to the Evidence Tree Structurer, and
+attribute role labeling belongs to the evidence-tree stage when needed.
 """
 
 from __future__ import annotations
 
 from enum import StrEnum
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from typing import Any
+
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    computed_field,
+    field_validator,
+    model_validator,
+)
 from src.utils.id_generator import generate_item_id
 
 from .common import (
@@ -77,7 +86,6 @@ class ClinicalItemType(StrEnum):
 
     MDT_STATEMENT = "mdt_statement"
 
-    OTHER = "other"
     UNCERTAIN = "uncertain"
 
 
@@ -87,13 +95,13 @@ class StructuredClinicalItem(BaseModel):
     StructuredClinicalItem turns section-level text into stable source-level
     clinical statements. It does not parse values, units, time expressions, or
     body sites, and it does not split coordinated source statements into
-    minimal evidence atoms.
+    minimal evidence tree nodes.
 
     It does not answer:
 
     - What diagnosis is likely?
     - What hypothesis does this item support or refute?
-    - What evidence atom should be created?
+    - What evidence tree node should be created?
     - What attribute spans should be role-labeled?
     - What treatment should be recommended?
     - What conflict exists?
@@ -131,18 +139,6 @@ class StructuredClinicalItem(BaseModel):
         description=(
             "Fine-grained clinical item type, such as symptom, lab_result, "
             "imaging_finding, medication, exposure, or treatment_response."
-        ),
-    )
-
-    label: str = Field(
-        ...,
-        min_length=1,
-        description=(
-            "Source-level clinical statement label that should stay close to "
-            "the original text. It may contain coordinated symptoms, findings, "
-            "or measurements when expressed as one continuous source statement. "
-            "Minimal evidence-level splitting and attribute role labeling "
-            "belong to downstream modules, not StructuredClinicalItem."
         ),
     )
 
@@ -206,18 +202,6 @@ class StructuredClinicalItem(BaseModel):
     )
 
     @field_validator(
-        "label",
-        mode="after",
-    )
-    @classmethod
-    def label_must_not_be_blank(cls, value: str) -> str:
-        """Reject empty or whitespace-only labels."""
-        cleaned = value.strip()
-        if not cleaned:
-            raise ValueError("label must not be empty.")
-        return cleaned
-
-    @field_validator(
         "notes",
         mode="after",
     )
@@ -235,6 +219,44 @@ class StructuredClinicalItem(BaseModel):
             return None
 
         return cleaned
+
+    @model_validator(mode="before")
+    @classmethod
+    def _drop_legacy_derived_keys(cls, data: Any) -> Any:
+        """Silently drop legacy stored fields that are now computed.
+
+        ``label`` used to be an LLM-authored free-text field. It is now a
+        computed property derived from ``source_spans``. To remain backward
+        compatible with historical JSON payloads and tolerant of LLM output
+        that still emits the key, we strip it before validation.
+        """
+        if isinstance(data, dict) and "label" in data:
+            data = dict(data)
+            data.pop("label", None)
+        return data
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def label(self) -> str:
+        """Concatenation of ``source_spans[*].quoted_text`` in document order.
+
+        ``label`` is intentionally derived from the item's source spans rather
+        than authored by the LLM. This guarantees the item label is exactly
+        what is grounded in raw_text, with no paraphrasing or information
+        loss when downstream stages consume the canonical statement.
+        """
+        ordered = sorted(
+            self.source_spans,
+            key=lambda span: (
+                span.char_start if span.char_start is not None else float("inf")
+            ),
+        )
+        parts = [
+            span.quoted_text.strip()
+            for span in ordered
+            if span.quoted_text and span.quoted_text.strip()
+        ]
+        return " ".join(parts)
 
     @model_validator(mode="after")
     def validate_source_span_input_consistency(self) -> "StructuredClinicalItem":

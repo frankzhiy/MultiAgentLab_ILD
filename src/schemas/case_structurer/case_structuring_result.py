@@ -18,7 +18,7 @@ This schema performs cross-object consistency checks, such as:
 - duplicate ids and duplicate ordering are detected.
 
 This schema must not contain:
-- EvidenceAtom
+- EvidenceTree
 - HypothesisState
 - Conflict
 - ActionPlan
@@ -123,7 +123,7 @@ class CaseStructuringResult(BaseModel):
 
     - What diagnosis is likely?
     - What hypothesis does an item support or refute?
-    - What evidence atom should be used for reasoning?
+    - What evidence tree node should be used for reasoning?
     - What conflict exists between hypotheses?
     - What treatment should be recommended?
     - What action should be taken?
@@ -142,7 +142,7 @@ class CaseStructuringResult(BaseModel):
         default_factory=generate_case_structuring_result_id,
         description=(
             "Stable id for this CaseStructuringResult. Downstream modules such "
-            "as Evidence Atomizer may reference this id as "
+            "as Evidence Tree Structurer may reference this id as "
             "source_structuring_result_id."
         ),
     )
@@ -164,7 +164,7 @@ class CaseStructuringResult(BaseModel):
         default_factory=list,
         description=(
             "Coarse clinical sections extracted from the raw input. "
-            "These are section-level groupings, not evidence atoms."
+            "These are section-level groupings, not evidence tree nodes."
         ),
     )
 
@@ -172,8 +172,7 @@ class CaseStructuringResult(BaseModel):
         default_factory=list,
         description=(
             "Source-level clinical statements extracted from clinical sections. "
-            "These are still case-structuring objects, not reasoning evidence "
-            "or parsed attribute spans."
+            "These are still case-structuring objects, not reasoning evidence."
         ),
     )
 
@@ -185,11 +184,11 @@ class CaseStructuringResult(BaseModel):
         ),
     )
 
-    ready_for_attribute_extraction: bool = Field(
+    ready_for_evidence_tree_structuring: bool = Field(
         default=True,
         description=(
             "Whether this structuring result is considered ready for the "
-            "Attribute Extractor. This is not the same as Pydantic validity. "
+            "Evidence Tree Structurer. This is not the same as Pydantic validity. "
             "A result may be schema-valid but not ready for downstream evidence "
             "processing if it is too incomplete."
         ),
@@ -330,7 +329,7 @@ class CaseStructuringResult(BaseModel):
     @model_validator(mode="after")
     def validate_readiness_has_warning_when_false(self) -> "CaseStructuringResult":
         """Require an explanation when the result is not ready downstream."""
-        if self.ready_for_attribute_extraction:
+        if self.ready_for_evidence_tree_structuring:
             return self
 
         has_warning_or_error = any(
@@ -343,7 +342,7 @@ class CaseStructuringResult(BaseModel):
 
         if not has_warning_or_error:
             raise ValueError(
-                "ready_for_attribute_extraction=False requires at least one "
+                "ready_for_evidence_tree_structuring=False requires at least one "
                 "structuring warning with severity warning or error."
             )
 

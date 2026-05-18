@@ -20,13 +20,10 @@ from src.schemas.case_structurer.common import (
     SpanID,
     StageID,
 )
-from src.schemas.evidence_atomizer.common import (
-    EvidenceAtomizationResultID,
-    EvidenceID,
-)
-from src.schemas.attribute_extractor.common import (
-    AttributeExtractionResultID,
-    AttributeID,
+from src.schemas.evidence_tree_structurer.common import (
+    EvidenceTreeStructuringResultID,
+    EvidenceTreeID,
+    EvidenceTreeNodeID,
 )
 
 _PREFIX_PATTERN = re.compile(r"^[a-z0-9_]+$")
@@ -99,25 +96,13 @@ def generate_ambiguity_id() -> AmbiguityID:
     return AmbiguityID(generate_id("ambiguity"))
 
 
-def generate_evidence_id() -> EvidenceID:
-    return EvidenceID(generate_id("evidence"))
+def generate_tree_structuring_result_id() -> EvidenceTreeStructuringResultID:
+    return EvidenceTreeStructuringResultID(generate_id("tree_structuring_result"))
 
 
-def generate_atomization_result_id() -> EvidenceAtomizationResultID:
-    return EvidenceAtomizationResultID(generate_id("atomization_result"))
+def generate_evidence_tree_id() -> EvidenceTreeID:
+    return EvidenceTreeID(generate_id("evidence_tree"))
 
 
-def generate_evidence_frame_id() -> str:
-    return generate_id("evidence_frame")
-
-
-def generate_evidence_frame_node_id() -> str:
-    return generate_id("evidence_frame_node")
-
-
-def generate_attribute_id() -> AttributeID:
-    return AttributeID(generate_id("attribute"))
-
-
-def generate_attribute_extraction_result_id() -> AttributeExtractionResultID:
-    return AttributeExtractionResultID(generate_id("attribute_extraction_result"))
+def generate_evidence_tree_node_id() -> EvidenceTreeNodeID:
+    return EvidenceTreeNodeID(generate_id("evidence_tree_node"))

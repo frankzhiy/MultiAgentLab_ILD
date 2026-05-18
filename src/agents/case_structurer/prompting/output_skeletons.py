@@ -35,7 +35,6 @@ def clinical_section_skeleton(input_id: str) -> str:
                     "input_id": input_id,
                     "section_type": "...",
                     "title": None,
-                    "normalized_text": "...",
                     "source_spans": [
                         {
                             "span_id": "span_section_001",
@@ -64,7 +63,6 @@ def structured_item_skeleton(input_id: str) -> str:
                     "input_id": input_id,
                     "section_id": "section_001",
                     "item_type": "...",
-                    "label": "...",
                     "temporality": TemporalRelation.UNKNOWN.value,
                     "certainty": CertaintyLevel.DEFINITE.value,
                     "negation": NegationStatus.PRESENT.value,

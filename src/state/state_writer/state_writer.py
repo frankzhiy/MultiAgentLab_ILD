@@ -6,23 +6,17 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict
 
-from src.schemas.attribute_extractor.attribute_extraction_result import (
-    AttributeExtractionResult,
-)
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.case_structurer.common import ValidationSeverity
-from src.schemas.evidence_atomizer.evidence_atomization_result import (
-    EvidenceAtomizationResult,
+from src.schemas.evidence_tree_structurer.evidence_tree_structuring_result import (
+    EvidenceTreeStructuringResult,
 )
 from src.state.case_state import CaseState
 from src.state.write_event import WriteEvent, WriteStatus
-from src.validators.evidence_atomizer import EvidenceAtomizationValidator
 from src.validators.case_structurer import (
-    SourceSpanValidationCorrectionResult,
-    validate_and_correct_source_spans,
-)
-from src.agents.attribute_extractor.modules.attribute_extraction_validator import (
-    AttributeExtractionValidator,
+    CaseStructuringSourceSpanResult,
+    validate_and_correct_item_spans,
+    validate_and_correct_section_spans,
 )
 
 
@@ -37,7 +31,15 @@ class StateWriteResult(BaseModel):
     message: str
     write_event: WriteEvent
     corrected_result: Any | None = None
-    validation_correction_result: SourceSpanValidationCorrectionResult | None = None
+    source_span_result: CaseStructuringSourceSpanResult | None = None
+
+
+class _StateValidationIssue(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    severity: ValidationSeverity
+    code: str
+    message: str
 
 
 class StateWriter:
@@ -45,8 +47,7 @@ class StateWriter:
 
     writer_name = "state_writer"
     _case_structuring_object_type = "case_structuring_result"
-    _attribute_extraction_object_type = "attribute_extraction_result"
-    _evidence_atomization_object_type = "evidence_atomization_result"
+    _evidence_tree_structuring_object_type = "evidence_tree_structuring_result"
 
     def write_case_structuring_result(
         self,
@@ -83,14 +84,33 @@ class StateWriter:
                 message=message,
             )
 
-        validation_correction_result = validate_and_correct_source_spans(result)
-        corrected_result = validation_correction_result.corrected_result
-        final_report = validation_correction_result.final_validation_report
+        section_span_result = validate_and_correct_section_spans(
+            raw_text=result.input.raw_text,
+            expected_input_id=result.input.input_id,
+            sections=result.clinical_sections,
+        )
+        item_span_result = validate_and_correct_item_spans(
+            raw_text=result.input.raw_text,
+            expected_input_id=result.input.input_id,
+            sections=section_span_result.corrected_sections,
+            items=result.structured_items,
+        )
+        corrected_result = result.model_copy(
+            update={
+                "clinical_sections": section_span_result.corrected_sections,
+                "structured_items": item_span_result.corrected_items,
+            }
+        )
+        source_span_result = CaseStructuringSourceSpanResult(
+            corrected_result=corrected_result,
+            section_span_result=section_span_result,
+            item_span_result=item_span_result,
+        )
+        section_final_report = section_span_result.final_validation_report
+        item_final_report = item_span_result.final_validation_report
 
-        if not final_report.is_valid:
-            state.source_span_validation_correction_results.append(
-                validation_correction_result
-            )
+        if not section_final_report.is_valid or not item_final_report.is_valid:
+            state.case_structuring_source_span_results.append(source_span_result)
             message = (
                 "CaseStructuringResult rejected because source spans remain "
                 "invalid after deterministic correction."
@@ -110,12 +130,15 @@ class StateWriter:
                 message=message,
                 write_event=write_event,
                 corrected_result=corrected_result,
-                validation_correction_result=validation_correction_result,
+                source_span_result=source_span_result,
             )
 
         status = (
             WriteStatus.ACCEPTED_WITH_WARNINGS
-            if _has_warnings(final_report.issues)
+            if (
+                _has_warnings(section_final_report.issues)
+                or _has_warnings(item_final_report.issues)
+            )
             else WriteStatus.ACCEPTED
         )
         message = (
@@ -127,9 +150,7 @@ class StateWriter:
         if not state.has_input(corrected_result.input.input_id):
             state.raw_inputs.append(corrected_result.input)
         state.case_structuring_results.append(corrected_result)
-        state.source_span_validation_correction_results.append(
-            validation_correction_result
-        )
+        state.case_structuring_source_span_results.append(source_span_result)
         write_event = self._append_write_event(
             state=state,
             agent_name=agent_name,
@@ -146,17 +167,16 @@ class StateWriter:
             message=message,
             write_event=write_event,
             corrected_result=corrected_result,
-            validation_correction_result=validation_correction_result,
+            source_span_result=source_span_result,
         )
 
-    def write_attribute_extraction_result(
+    def write_evidence_tree_structuring_result(
         self,
         state: CaseState,
-        result: AttributeExtractionResult,
-        source_case_structuring_result: CaseStructuringResult | None = None,
-        agent_name: str = "attribute_extractor",
+        result: EvidenceTreeStructuringResult,
+        agent_name: str = "evidence_tree_structurer",
     ) -> StateWriteResult:
-        """Validate and write an Attribute Extractor result into state."""
+        """Validate and write an Evidence Tree Structurer result into state."""
         object_id = result.input_id
 
         if result.case_id != state.case_id:
@@ -164,9 +184,9 @@ class StateWriter:
                 state=state,
                 agent_name=agent_name,
                 object_id=object_id,
-                object_type=self._attribute_extraction_object_type,
+                object_type=self._evidence_tree_structuring_object_type,
                 message=(
-                    "AttributeExtractionResult rejected because result case_id "
+                    "EvidenceTreeStructuringResult rejected because result case_id "
                     "does not match CaseState case_id."
                 ),
             )
@@ -176,159 +196,58 @@ class StateWriter:
                 state=state,
                 agent_name=agent_name,
                 object_id=object_id,
-                object_type=self._attribute_extraction_object_type,
+                object_type=self._evidence_tree_structuring_object_type,
                 message=(
-                    "AttributeExtractionResult rejected because this input_id "
+                    "EvidenceTreeStructuringResult rejected because this input_id "
                     "has no accepted CaseStructuringResult."
                 ),
             )
 
-        if state.has_attribute_extraction_result(object_id):
+        if state.has_evidence_tree_structuring_result(object_id):
             return self._reject_without_validation(
                 state=state,
                 agent_name=agent_name,
                 object_id=object_id,
-                object_type=self._attribute_extraction_object_type,
+                object_type=self._evidence_tree_structuring_object_type,
                 message=(
-                    "AttributeExtractionResult rejected because this input_id "
-                    "already has an accepted attribute extraction result."
+                    "EvidenceTreeStructuringResult rejected because this input_id "
+                    "already has an accepted evidence tree structuring result."
                 ),
             )
 
-        source_result = source_case_structuring_result or _case_structuring_result_for_input(
-            state,
-            object_id,
+        validation_issues = _evidence_tree_structuring_issues(
+            state=state,
+            result=result,
         )
-        validation_report = AttributeExtractionValidator().validate(
-            structuring_result=source_result,
-            attribute_result=result,
-        )
-        if not validation_report.accepted:
+        if _has_errors(validation_issues):
             return self._reject_without_validation(
                 state=state,
                 agent_name=agent_name,
                 object_id=object_id,
-                object_type=self._attribute_extraction_object_type,
+                object_type=self._evidence_tree_structuring_object_type,
                 message=(
-                    "AttributeExtractionResult rejected because deterministic "
+                    "EvidenceTreeStructuringResult rejected because deterministic "
                     "validation produced error issues."
                 ),
             )
 
-        state.attribute_extraction_results.append(result)
-        state.clinical_attributes.extend(result.clinical_attributes)
+        state.evidence_tree_structuring_results.append(result)
+        state.evidence_trees.extend(result.evidence_trees)
         status = (
             WriteStatus.ACCEPTED_WITH_WARNINGS
-            if _has_warnings(validation_report.issues)
+            if _has_warnings(validation_issues)
             else WriteStatus.ACCEPTED
         )
         message = (
-            "AttributeExtractionResult accepted with validation warnings."
+            "EvidenceTreeStructuringResult accepted with validation warnings."
             if status == WriteStatus.ACCEPTED_WITH_WARNINGS
-            else "AttributeExtractionResult accepted."
+            else "EvidenceTreeStructuringResult accepted."
         )
         write_event = self._append_write_event(
             state=state,
             agent_name=agent_name,
             object_id=object_id,
-            object_type=self._attribute_extraction_object_type,
-            status=status,
-            message=message,
-        )
-        return StateWriteResult(
-            status=status,
-            case_id=state.case_id,
-            accepted=True,
-            message=message,
-            write_event=write_event,
-            corrected_result=result,
-        )
-
-    def write_evidence_atomization_result(
-        self,
-        state: CaseState,
-        result: EvidenceAtomizationResult,
-        source_attribute_extraction_result: AttributeExtractionResult | None = None,
-        agent_name: str = "evidence_atomizer",
-    ) -> StateWriteResult:
-        """Validate and write an Evidence Atomizer result into state."""
-        object_id = result.input_id
-
-        if result.case_id != state.case_id:
-            return self._reject_without_validation(
-                state=state,
-                agent_name=agent_name,
-                object_id=object_id,
-                object_type=self._evidence_atomization_object_type,
-                message=(
-                    "EvidenceAtomizationResult rejected because result case_id "
-                    "does not match CaseState case_id."
-                ),
-            )
-
-        if not state.has_attribute_extraction_result(object_id):
-            return self._reject_without_validation(
-                state=state,
-                agent_name=agent_name,
-                object_id=object_id,
-                object_type=self._evidence_atomization_object_type,
-                message=(
-                    "EvidenceAtomizationResult rejected because this input_id "
-                    "has no accepted AttributeExtractionResult."
-                ),
-            )
-
-        if state.has_evidence_atomization_result(object_id):
-            return self._reject_without_validation(
-                state=state,
-                agent_name=agent_name,
-                object_id=object_id,
-                object_type=self._evidence_atomization_object_type,
-                message=(
-                    "EvidenceAtomizationResult rejected because this input_id "
-                    "already has an accepted evidence atomization result."
-                ),
-            )
-
-        source_attribute_result = (
-            source_attribute_extraction_result
-            or _attribute_extraction_result_for_input(state, object_id)
-        )
-        source_structuring_result = _case_structuring_result_for_input(state, object_id)
-        validation_report = EvidenceAtomizationValidator().validate(
-            structuring_result=source_structuring_result,
-            attribute_result=source_attribute_result,
-            atomization_result=result,
-        )
-        if not validation_report.accepted:
-            return self._reject_without_validation(
-                state=state,
-                agent_name=agent_name,
-                object_id=object_id,
-                object_type=self._evidence_atomization_object_type,
-                message=(
-                    "EvidenceAtomizationResult rejected because deterministic "
-                    "validation produced error issues."
-                ),
-            )
-
-        state.evidence_atomization_results.append(result)
-        state.evidence_atoms.extend(result.evidence_atoms)
-        status = (
-            WriteStatus.ACCEPTED_WITH_WARNINGS
-            if _has_warnings(validation_report.issues)
-            else WriteStatus.ACCEPTED
-        )
-        message = (
-            "EvidenceAtomizationResult accepted with validation warnings."
-            if status == WriteStatus.ACCEPTED_WITH_WARNINGS
-            else "EvidenceAtomizationResult accepted."
-        )
-        write_event = self._append_write_event(
-            state=state,
-            agent_name=agent_name,
-            object_id=object_id,
-            object_type=self._evidence_atomization_object_type,
+            object_type=self._evidence_tree_structuring_object_type,
             status=status,
             message=message,
         )
@@ -394,6 +313,34 @@ def _has_warnings(issues: list[object]) -> bool:
     )
 
 
+def _has_errors(issues: list[object]) -> bool:
+    return any(
+        getattr(issue, "severity", None) == ValidationSeverity.ERROR
+        for issue in issues
+    )
+
+
+def _evidence_tree_structuring_issues(
+    *,
+    state: CaseState,
+    result: EvidenceTreeStructuringResult,
+) -> list[object]:
+    source_result = _case_structuring_result_for_input(state, result.input_id)
+    issues: list[object] = []
+    if result.source_structuring_result_id != source_result.case_structuring_result_id:
+        issues.append(
+            _StateValidationIssue(
+                severity=ValidationSeverity.ERROR,
+                code="source_structuring_result_id_mismatch",
+                message=(
+                    "EvidenceTreeStructuringResult.source_structuring_result_id "
+                    "must match CaseStructuringResult.case_structuring_result_id."
+                ),
+            )
+        )
+    return issues
+
+
 def _case_structuring_result_for_input(
     state: CaseState,
     input_id: str,
@@ -402,13 +349,3 @@ def _case_structuring_result_for_input(
         if result.input.input_id == input_id:
             return result
     raise ValueError(f"No CaseStructuringResult found for input_id={input_id!r}.")
-
-
-def _attribute_extraction_result_for_input(
-    state: CaseState,
-    input_id: str,
-) -> AttributeExtractionResult:
-    for result in state.attribute_extraction_results:
-        if result.input_id == input_id:
-            return result
-    raise ValueError(f"No AttributeExtractionResult found for input_id={input_id!r}.")

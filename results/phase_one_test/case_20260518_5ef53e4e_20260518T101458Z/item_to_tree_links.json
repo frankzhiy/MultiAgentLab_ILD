@@ -1,0 +1,130 @@
+[
+  {
+    "item_id": "item_001",
+    "tree_ids": [
+      "evidence_tree_20260518_4a3e1a98"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_002",
+    "tree_ids": [
+      "evidence_tree_20260518_adbb3933"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_003",
+    "tree_ids": [
+      "evidence_tree_20260518_14e33df4"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_004",
+    "tree_ids": [
+      "evidence_tree_20260518_abe93428"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_005",
+    "tree_ids": [
+      "evidence_tree_20260518_015c2fd4"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_006",
+    "tree_ids": [
+      "evidence_tree_20260518_1ee1b45d"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_007",
+    "tree_ids": [
+      "evidence_tree_20260518_8c13e701"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_008",
+    "tree_ids": [
+      "evidence_tree_20260518_4a5fa98c"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_009",
+    "tree_ids": [
+      "evidence_tree_20260518_c607efcf"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_010",
+    "tree_ids": [
+      "evidence_tree_20260518_cb00203a"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_011",
+    "tree_ids": [
+      "evidence_tree_20260518_a3a9c54b"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_012",
+    "tree_ids": [
+      "evidence_tree_20260518_c2e441e3"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_013",
+    "tree_ids": [
+      "evidence_tree_20260518_2bdb20c8"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_014",
+    "tree_ids": [
+      "evidence_tree_20260518_697f3a9d"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_015",
+    "tree_ids": [
+      "evidence_tree_20260518_8ddcc7ea"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  },
+  {
+    "item_id": "item_016",
+    "tree_ids": [
+      "evidence_tree_20260518_0b37f091"
+    ],
+    "transformation_type": "copied",
+    "explanation": null
+  }
+]

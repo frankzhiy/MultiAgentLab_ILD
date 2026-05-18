@@ -15,7 +15,7 @@ def format_forbidden_objects() -> str:
         "differential diagnosis",
         "treatment recommendation",
         "management plan",
-        "EvidenceAtom",
+        "EvidenceTree",
         "HypothesisState",
         "Conflict",
         "ActionPlan",
@@ -37,17 +37,12 @@ def format_source_span_policy(input_id: str) -> str:
             ),
             (
                 "- Quote the complete original statement that supports the "
-                "structured object. Do not use atomized, rewritten, or "
+                "structured object. Do not use evidence-node-level, rewritten, or "
                 "synthesized item text as quoted_text."
             ),
             "- Set char_start and char_end to null unless you are certain.",
             "- Code will resolve exact offsets later.",
             "- Never invent source text.",
-            (
-                "- StructuredClinicalItem.label should stay close to the "
-                "continuous original statement. Attribute spans are extracted "
-                "later by Attribute Extractor."
-            ),
         ]
     )
 

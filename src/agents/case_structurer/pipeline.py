@@ -14,8 +14,9 @@ from src.agents.case_structurer.errors import (
 from src.llm.chatanywhere_client import ChatAnywhereClient
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.validators.case_structurer import (
-    SourceSpanValidationCorrectionResult,
-    validate_and_correct_source_spans,
+    CaseStructuringSourceSpanResult,
+    validate_and_correct_item_spans,
+    validate_and_correct_section_spans,
 )
 
 from .modules import (
@@ -24,7 +25,6 @@ from .modules import (
     ItemNormalizer,
     RawInputBuilder,
     SectionNormalizer,
-    SourceSpanResolver,
     StageContextExtractor,
     StructuredClinicalItemExtractor,
 )
@@ -58,7 +58,6 @@ class CaseStructurerPipeline:
             agent_name=agent_name,
         )
         self.item_normalizer = ItemNormalizer()
-        self.source_span_resolver = SourceSpanResolver()
         self.assembler = CaseStructuringAssembler()
 
     def run(
@@ -81,25 +80,21 @@ class CaseStructurerPipeline:
         case_id: str | None = None,
         input_order: int = 1,
         parent_input_id: str | None = None,
-    ) -> SourceSpanValidationCorrectionResult:
-        initial_result = self._run_initial_structuring(
+    ) -> CaseStructuringSourceSpanResult:
+        return self._run_structuring_with_span_stages(
             raw_text=raw_text,
             case_id=case_id,
             input_order=input_order,
             parent_input_id=parent_input_id,
         )
-        return self._run_step(
-            "SourceSpanValidationCorrection",
-            lambda: validate_and_correct_source_spans(initial_result),
-        )
 
-    def _run_initial_structuring(
+    def _run_structuring_with_span_stages(
         self,
         raw_text: str,
         case_id: str | None = None,
         input_order: int = 1,
         parent_input_id: str | None = None,
-    ) -> CaseStructuringResult:
+    ) -> CaseStructuringSourceSpanResult:
         raw_input = self._run_step(
             "RawInputBuilder",
             lambda: self.raw_input_builder.build(
@@ -128,18 +123,26 @@ class CaseStructurerPipeline:
             lambda: self.section_normalizer.normalize(sections, raw_input),
         )
 
+        section_span_result = self._run_step(
+            "SectionSourceSpanValidationCorrection",
+            lambda: validate_and_correct_section_spans(
+                raw_text=raw_input.raw_text,
+                expected_input_id=raw_input.input_id,
+                sections=normalized_sections.sections,
+            ),
+        )
+        corrected_sections = section_span_result.corrected_sections
+
         items = self._run_step(
             "StructuredClinicalItemExtractor",
             lambda: self.structured_item_extractor.extract(
                 raw_input,
                 stage_context,
-                normalized_sections.sections,
+                corrected_sections,
             ),
         )
 
-        valid_section_ids = {
-            section.section_id for section in normalized_sections.sections
-        }
+        valid_section_ids = {section.section_id for section in corrected_sections}
         normalized_items = self._run_step(
             "ItemNormalizer",
             lambda: self.item_normalizer.normalize(
@@ -149,23 +152,29 @@ class CaseStructurerPipeline:
             ),
         )
 
-        resolved = self._run_step(
-            "SourceSpanResolver",
-            lambda: self.source_span_resolver.resolve(
-                raw_input=raw_input,
-                sections=normalized_sections.sections,
+        item_span_result = self._run_step(
+            "ItemSourceSpanValidationCorrection",
+            lambda: validate_and_correct_item_spans(
+                raw_text=raw_input.raw_text,
+                expected_input_id=raw_input.input_id,
+                sections=corrected_sections,
                 items=normalized_items.items,
             ),
         )
 
-        return self._run_step(
+        corrected_result = self._run_step(
             "CaseStructuringAssembler",
             lambda: self.assembler.assemble(
                 raw_input=raw_input,
                 stage_context=stage_context,
-                sections=resolved.sections,
-                items=resolved.items,
+                sections=corrected_sections,
+                items=item_span_result.corrected_items,
             ),
+        )
+        return CaseStructuringSourceSpanResult(
+            corrected_result=corrected_result,
+            section_span_result=section_span_result,
+            item_span_result=item_span_result,
         )
 
     @staticmethod

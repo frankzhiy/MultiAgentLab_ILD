@@ -1,0 +1,8 @@
+{
+  "EvidenceTreeStructurerInputGuard": 8.500006515532732e-06,
+  "TreeStructuringCandidateBuilder": 0.00016820800374262035,
+  "ClinicalAssertionResolver": 206.25079887500033,
+  "EvidenceTreeBuilder": 707.4831319590157,
+  "EvidenceTreeStructuringResult": 0.0003874580143019557,
+  "EvidenceTreeStructuringValidator": 0.00041229199268855155
+}

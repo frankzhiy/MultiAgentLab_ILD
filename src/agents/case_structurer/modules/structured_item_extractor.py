@@ -96,24 +96,28 @@ class StructuredClinicalItemExtractor(BaseLLMExtractor):
         index: int,
         valid_section_ids: list[str],
     ) -> dict:
-        label = self.first_text(
+        # ``label`` is a computed property of StructuredClinicalItem now.
+        # We still mine the LLM payload for any free-text hint that can serve
+        # as an emergency quoted_text fallback when no source_spans are
+        # provided. This value is NEVER persisted on the schema.
+        default_quoted_text_hint = self.first_text(
             payload,
             ("label", "name", "item", "statement", "text", "quoted_text"),
         )
-        if label is None:
+        if default_quoted_text_hint is None:
             source_spans = payload.get("source_spans") or []
             if isinstance(source_spans, list) and source_spans:
                 first_span = source_spans[0]
                 if isinstance(first_span, dict):
-                    label = self.first_text(
+                    default_quoted_text_hint = self.first_text(
                         first_span,
                         ("quoted_text", "source_text", "text", "fragment"),
                     )
 
-        if label is None:
+        if default_quoted_text_hint is None:
             raise ValueError(
-                "StructuredClinicalItem payload is missing label or an "
-                "equivalent text field."
+                "StructuredClinicalItem payload is missing source_spans and "
+                "any text fallback. Cannot construct a grounded item."
             )
 
         section_id = payload.get("section_id")
@@ -138,9 +142,8 @@ class StructuredClinicalItemExtractor(BaseLLMExtractor):
             "item_type": self.coerce_enum_value(
                 payload.get("item_type"),
                 ClinicalItemType,
-                "uncertain",
+                ClinicalItemType.UNCERTAIN.value,
             ),
-            "label": label,
             "temporality": self.coerce_enum_value(
                 payload.get("temporality"),
                 TemporalRelation,
@@ -159,7 +162,7 @@ class StructuredClinicalItemExtractor(BaseLLMExtractor):
             "source_spans": self.prepare_source_spans(
                 raw_input=raw_input,
                 payload=payload,
-                default_quoted_text=label,
+                default_quoted_text=default_quoted_text_hint,
                 span_prefix=f"span_item_{index:03d}",
             ),
             "item_order": index,

@@ -8,7 +8,6 @@ from typing import Sequence
 
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.case_structurer.source_span import SourceSpan
-from src.schemas.case_structurer.structured_clinical_item import StructuredClinicalItem
 
 
 SourceRange = tuple[int, int]
@@ -18,7 +17,7 @@ _ASCII_WORD_RE = re.compile(r"[A-Za-z]+")
 _ALNUM_TOKEN_RE = re.compile(
     r"[A-Za-z0-9]+(?:[-_/+.][A-Za-z0-9]+)*|\d+(?:\.\d+)?%?"
 )
-_SOURCE_GROUNDED_ITEM_FIELDS = {"label"}
+_SPAN_UNIT_RE = re.compile(r"[^。；;，,\n]+[。；;，,]?\s*")
 
 
 @dataclass(frozen=True)
@@ -148,121 +147,6 @@ def combined_existing_span_text(
     )
 
 
-def item_field_values(item: StructuredClinicalItem) -> dict[str, str | None]:
-    return {
-        "label": item.label,
-    }
-
-
-def unsupported_item_fields(
-    item: StructuredClinicalItem,
-    source_text: str,
-) -> list[str]:
-    unsupported_fields: list[str] = []
-
-    for field_name, field_text in item_field_values(item).items():
-        if not should_validate_item_field(field_name, field_text, source_text):
-            continue
-
-        if not item_field_supported_by_source(
-            field_text=field_text or "",
-            source_text=source_text,
-        ):
-            unsupported_fields.append(field_name)
-
-    return unsupported_fields
-
-
-def should_validate_item_field(
-    field_name: str,
-    field_text: str | None,
-    source_text: str,
-) -> bool:
-    if field_text is None:
-        return False
-
-    cleaned = field_text.strip()
-    if not cleaned:
-        return False
-
-    if field_name in _SOURCE_GROUNDED_ITEM_FIELDS:
-        return True
-
-    if has_cjk(cleaned):
-        return True
-
-    if has_non_alpha_source_token(cleaned):
-        return True
-
-    return not has_cjk(source_text)
-
-
-def item_field_supported_by_source(
-    field_text: str,
-    source_text: str,
-) -> bool:
-    cleaned = field_text.strip()
-    if not cleaned:
-        return True
-
-    if normalized_contains(source_text, cleaned):
-        return True
-
-    return source_like_text_covered_by_source(cleaned, source_text)
-
-
-def source_like_text_covered_by_source(value: str, source_text: str) -> bool:
-    required_tokens = required_alnum_tokens(value)
-    normalized_source = normalize_text_for_match(source_text).lower()
-    if any(token.lower() not in normalized_source for token in required_tokens):
-        return False
-
-    chunks = cjk_chunks(value)
-    if not chunks:
-        return bool(required_tokens)
-
-    return all(cjk_chunk_covered_by_source(chunk, source_text) for chunk in chunks)
-
-
-def cjk_chunk_covered_by_source(chunk: str, source_text: str) -> bool:
-    if len(chunk) == 1:
-        return chunk in source_text
-
-    normalized_chunk = normalize_text_for_match(chunk)
-    if normalized_chunk in source_text:
-        return True
-
-    covered = [False] * len(normalized_chunk)
-    for start in range(len(normalized_chunk)):
-        for end in range(len(normalized_chunk), start + 1, -1):
-            candidate = normalized_chunk[start:end]
-            if len(candidate) < 2:
-                continue
-            if candidate in source_text:
-                for index in range(start, end):
-                    covered[index] = True
-                break
-
-    return sum(covered) / len(normalized_chunk) >= 0.75
-
-
-def normalized_contains(text: str, query: str) -> bool:
-    return normalize_text_for_match(query).lower() in normalize_text_for_match(
-        text
-    ).lower()
-
-
-def has_cjk(text: str) -> bool:
-    return _CJK_RE.search(text) is not None
-
-
-def has_non_alpha_source_token(text: str) -> bool:
-    return any(
-        char.isdigit() or (not char.isalpha() and not char.isspace())
-        for char in text
-    )
-
-
 def required_alnum_tokens(text: str) -> list[str]:
     tokens: list[str] = []
     for token in _ALNUM_TOKEN_RE.findall(text):
@@ -278,7 +162,7 @@ def cjk_chunks(text: str) -> list[str]:
     current_chars: list[str] = []
 
     for char in text:
-        if has_cjk(char):
+        if _CJK_RE.search(char) is not None:
             current_chars.append(char)
         elif current_chars:
             chunks.append("".join(current_chars))
@@ -314,6 +198,78 @@ def find_all_occurrences(
             cursor = start + 1
 
     return occurrences
+
+
+def find_resolvable_span_pieces(
+    raw_text: str,
+    quoted_text: str,
+    ranges: Sequence[SourceRange] | None = None,
+    min_piece_length: int = 6,
+) -> list[SourceRange]:
+    """Find long exact pieces of a synthetic quote inside raw_text.
+
+    This is intentionally conservative. It only returns exact raw_text ranges
+    for pieces that can be located, and it never invents paraphrased text.
+    """
+    if quoted_text in raw_text:
+        return []
+
+    units = [
+        match.group(0).strip()
+        for match in _SPAN_UNIT_RE.finditer(quoted_text)
+        if match.group(0).strip()
+    ]
+    if not units:
+        return []
+
+    found_ranges: list[SourceRange] = []
+    index = 0
+    while index < len(units):
+        best_range: SourceRange | None = None
+        best_end_index: int | None = None
+
+        for end_index in range(len(units), index, -1):
+            candidate = "".join(units[index:end_index]).strip()
+            if len(candidate) < min_piece_length:
+                continue
+
+            occurrences = find_all_occurrences(raw_text, candidate, ranges)
+            if not occurrences:
+                occurrences = find_all_occurrences(raw_text, candidate)
+            if not occurrences:
+                continue
+
+            if ranges:
+                best_range = choose_nearest_occurrence(occurrences, ranges)
+            else:
+                best_range = occurrences[0]
+            best_end_index = end_index
+            break
+
+        if best_range is None or best_end_index is None:
+            index += 1
+            continue
+
+        found_ranges.append(best_range)
+        index = best_end_index
+
+    return merge_source_ranges(found_ranges)
+
+
+def merge_source_ranges(ranges: Sequence[SourceRange]) -> list[SourceRange]:
+    """Merge overlapping or touching source ranges."""
+    if not ranges:
+        return []
+
+    ordered = sorted(ranges)
+    merged: list[SourceRange] = [ordered[0]]
+    for start, end in ordered[1:]:
+        previous_start, previous_end = merged[-1]
+        if start <= previous_end:
+            merged[-1] = (previous_start, max(previous_end, end))
+            continue
+        merged.append((start, end))
+    return merged
 
 
 def valid_ranges(text: str, ranges: Sequence[SourceRange]) -> list[SourceRange]:

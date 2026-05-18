@@ -14,22 +14,19 @@ from src.schemas.case_structurer.structured_clinical_item import StructuredClini
 from src.validators.case_structurer.source_span_utils import (
     SourceRange,
     cjk_chunks,
-    combined_existing_span_text,
+    find_resolvable_span_pieces,
     find_all_occurrences,
-    item_field_supported_by_source,
-    item_field_values,
-    normalize_text_for_match,
     offsets_in_bounds,
+    range_inside_any_parent,
     range_distance,
     required_alnum_tokens,
     resolved_range,
-    unsupported_item_fields,
     valid_ranges,
 )
 from src.validators.case_structurer.source_span_validator import (
-    SourceSpanValidationIssue,
+    ItemSourceSpanValidator,
+    SectionSourceSpanValidator,
     SourceSpanValidationReport,
-    StrictSourceSpanValidator,
 )
 
 
@@ -59,57 +56,57 @@ class SourceSpanCorrectionReport(BaseModel):
     skipped_count: int = 0
 
 
-class SourceSpanValidationCorrectionResult(BaseModel):
-    """Bundle output for validation, correction, and final residual issues."""
+class SectionSourceSpanValidationCorrectionResult(BaseModel):
+    """Section-stage validation and correction output."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
-    initial_result: CaseStructuringResult
-    corrected_result: CaseStructuringResult
+    initial_sections: list[ClinicalSection]
+    corrected_sections: list[ClinicalSection]
     initial_validation_report: SourceSpanValidationReport
     correction_report: SourceSpanCorrectionReport
     final_validation_report: SourceSpanValidationReport
-    residual_issues: list[SourceSpanValidationIssue] = Field(default_factory=list)
 
 
-class DeterministicSourceSpanCorrector:
-    """Correct provenance fields without changing clinical meaning."""
+class ItemSourceSpanValidationCorrectionResult(BaseModel):
+    """Item-stage validation and correction output."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    initial_items: list[StructuredClinicalItem]
+    corrected_items: list[StructuredClinicalItem]
+    initial_validation_report: SourceSpanValidationReport
+    correction_report: SourceSpanCorrectionReport
+    final_validation_report: SourceSpanValidationReport
+
+
+class CaseStructuringSourceSpanResult(BaseModel):
+    """Case Structurer output with separate section and item span reports."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    corrected_result: CaseStructuringResult
+    section_span_result: SectionSourceSpanValidationCorrectionResult
+    item_span_result: ItemSourceSpanValidationCorrectionResult
+
+
+class SectionSourceSpanCorrector:
+    """Correct ClinicalSection provenance fields without changing content."""
 
     def correct(
         self,
-        result: CaseStructuringResult,
-        initial_validation_report: SourceSpanValidationReport | None = None,
-    ) -> tuple[CaseStructuringResult, SourceSpanCorrectionReport]:
-        """Return a corrected result plus a correction report."""
-        del initial_validation_report
+        sections: Sequence[ClinicalSection],
+        raw_text: str,
+        expected_input_id: str,
+    ) -> tuple[list[ClinicalSection], SourceSpanCorrectionReport]:
         actions: list[SourceSpanCorrectionAction] = []
-        raw_text = result.input.raw_text
-        expected_input_id = result.input.input_id
-
         corrected_sections = self._correct_sections(
-            sections=result.clinical_sections,
+            sections=sections,
             raw_text=raw_text,
             expected_input_id=expected_input_id,
             actions=actions,
         )
-
-        ranges_by_section = _section_ranges_from_sections(corrected_sections, raw_text)
-
-        corrected_items = self._correct_items(
-            items=result.structured_items,
-            raw_text=raw_text,
-            expected_input_id=expected_input_id,
-            ranges_by_section=ranges_by_section,
-            actions=actions,
-        )
-
-        corrected_result = _rebuild_result(
-            result,
-            clinical_sections=corrected_sections,
-            structured_items=corrected_items,
-        )
-        report = _build_report(actions)
-        return corrected_result, report
+        return corrected_sections, _build_report(actions)
 
     def _correct_sections(
         self,
@@ -120,14 +117,15 @@ class DeterministicSourceSpanCorrector:
     ) -> list[ClinicalSection]:
         corrected: list[ClinicalSection] = []
         for section in sections:
-            spans = self._correct_object_spans(
+            spans = _correct_object_spans(
                 object_type="ClinicalSection",
                 object_id=section.section_id,
                 source_spans=section.source_spans,
                 raw_text=raw_text,
                 expected_input_id=expected_input_id,
-                support_values=[section.normalized_text, section.title],
+                support_values=[section.title],
                 preferred_ranges=[(0, len(raw_text))],
+                allow_discontinuous_split=True,
                 actions=actions,
             )
             corrected.append(
@@ -141,33 +139,73 @@ class DeterministicSourceSpanCorrector:
             )
         return corrected
 
+
+class ItemSourceSpanCorrector:
+    """Correct StructuredClinicalItem provenance fields within sections."""
+
+    def correct(
+        self,
+        items: Sequence[StructuredClinicalItem],
+        raw_text: str,
+        expected_input_id: str,
+        sections: Sequence[ClinicalSection],
+    ) -> tuple[list[StructuredClinicalItem], SourceSpanCorrectionReport]:
+        actions: list[SourceSpanCorrectionAction] = []
+        ranges_by_section = _section_ranges_from_sections(sections, raw_text)
+        section_ids = {section.section_id for section in sections}
+        corrected = self._correct_items(
+            items=items,
+            raw_text=raw_text,
+            expected_input_id=expected_input_id,
+            ranges_by_section=ranges_by_section,
+            section_ids=section_ids,
+            actions=actions,
+        )
+        return corrected, _build_report(actions)
+
     def _correct_items(
         self,
         items: Sequence[StructuredClinicalItem],
         raw_text: str,
         expected_input_id: str,
         ranges_by_section: dict[str, list[SourceRange]],
+        section_ids: set[str],
         actions: list[SourceSpanCorrectionAction],
     ) -> list[StructuredClinicalItem]:
         corrected: list[StructuredClinicalItem] = []
         for item in items:
+            if item.section_id not in section_ids:
+                _record(
+                    actions,
+                    status="skipped",
+                    code="item_parent_section_not_found",
+                    message=(
+                        "Could not correct item source spans because the parent "
+                        "ClinicalSection does not exist."
+                    ),
+                    object_type="StructuredClinicalItem",
+                    object_id=item.item_id,
+                )
+                corrected.append(item)
+                continue
+
             parent_ranges = ranges_by_section.get(item.section_id, [])
-            spans = self._correct_object_spans(
+            spans = _correct_object_spans(
                 object_type="StructuredClinicalItem",
                 object_id=item.item_id,
                 source_spans=item.source_spans,
                 raw_text=raw_text,
                 expected_input_id=expected_input_id,
-                support_values=list(item_field_values(item).values()),
+                support_values=[],
                 preferred_ranges=parent_ranges,
+                allow_discontinuous_split=False,
                 actions=actions,
             )
-            spans = self._add_missing_item_support_spans(
+            spans = _correct_item_parent_range(
                 item=item,
                 spans=spans,
                 raw_text=raw_text,
-                expected_input_id=expected_input_id,
-                preferred_ranges=parent_ranges,
+                parent_ranges=parent_ranges,
                 actions=actions,
             )
             corrected.append(
@@ -181,298 +219,397 @@ class DeterministicSourceSpanCorrector:
             )
         return corrected
 
-    def _correct_object_spans(
-        self,
-        object_type: str,
-        object_id: str,
-        source_spans: Sequence[SourceSpan],
-        raw_text: str,
-        expected_input_id: str,
-        support_values: Sequence[str | None],
-        preferred_ranges: Sequence[SourceRange],
-        actions: list[SourceSpanCorrectionAction],
-    ) -> list[SourceSpan]:
-        spans = list(source_spans)
-        if not spans:
-            new_span = self._span_from_support_values(
+
+def _correct_object_spans(
+    object_type: str,
+    object_id: str,
+    source_spans: Sequence[SourceSpan],
+    raw_text: str,
+    expected_input_id: str,
+    support_values: Sequence[str | None],
+    preferred_ranges: Sequence[SourceRange],
+    allow_discontinuous_split: bool,
+    actions: list[SourceSpanCorrectionAction],
+) -> list[SourceSpan]:
+    spans = list(source_spans)
+    if not spans:
+        new_span = _span_from_support_values(
+            object_type=object_type,
+            object_id=object_id,
+            raw_text=raw_text,
+            expected_input_id=expected_input_id,
+            support_values=support_values,
+            preferred_ranges=preferred_ranges,
+            actions=actions,
+        )
+        return [new_span] if new_span is not None else spans
+
+    corrected_spans: list[SourceSpan] = []
+    for span in spans:
+        if allow_discontinuous_split and not quoted_text_exactly_found(
+            raw_text, span.quoted_text
+        ):
+            split_spans = _split_discontinuous_span(
                 object_type=object_type,
                 object_id=object_id,
+                span=span,
+                raw_text=raw_text,
+                expected_input_id=expected_input_id,
+                preferred_ranges=preferred_ranges,
+                actions=actions,
+            )
+            if split_spans:
+                corrected_spans.extend(split_spans)
+                continue
+
+        corrected_spans.append(
+            _correct_single_span(
+                object_type=object_type,
+                object_id=object_id,
+                span=span,
                 raw_text=raw_text,
                 expected_input_id=expected_input_id,
                 support_values=support_values,
                 preferred_ranges=preferred_ranges,
                 actions=actions,
             )
-            return [new_span] if new_span is not None else spans
+        )
+    return corrected_spans
 
-        corrected_spans: list[SourceSpan] = []
-        for span in spans:
-            corrected_spans.append(
-                self._correct_single_span(
-                    object_type=object_type,
-                    object_id=object_id,
-                    span=span,
-                    raw_text=raw_text,
-                    expected_input_id=expected_input_id,
-                    support_values=support_values,
-                    preferred_ranges=preferred_ranges,
-                    actions=actions,
-                )
-            )
-        return corrected_spans
 
-    def _correct_single_span(
-        self,
-        object_type: str,
-        object_id: str,
-        span: SourceSpan,
-        raw_text: str,
-        expected_input_id: str,
-        support_values: Sequence[str | None],
-        preferred_ranges: Sequence[SourceRange],
-        actions: list[SourceSpanCorrectionAction],
-    ) -> SourceSpan:
-        updated_span = span
+def _correct_single_span(
+    object_type: str,
+    object_id: str,
+    span: SourceSpan,
+    raw_text: str,
+    expected_input_id: str,
+    support_values: Sequence[str | None],
+    preferred_ranges: Sequence[SourceRange],
+    actions: list[SourceSpanCorrectionAction],
+) -> SourceSpan:
+    updated_span = span
 
-        if updated_span.input_id != expected_input_id:
+    if updated_span.input_id != expected_input_id:
+        updated_span = updated_span.model_copy(update={"input_id": expected_input_id})
+        _record(
+            actions,
+            status="applied",
+            code="source_span_input_id_mismatch",
+            message="Corrected SourceSpan.input_id to result.input.input_id.",
+            object_type=object_type,
+            object_id=object_id,
+            span_id=span.span_id,
+            before_quoted_text=span.quoted_text,
+            after_quoted_text=updated_span.quoted_text,
+        )
+
+    resolved = _resolve_exact_range(
+        raw_text=raw_text,
+        quoted_text=updated_span.quoted_text,
+        preferred_ranges=preferred_ranges,
+    )
+    if resolved is not None:
+        start, end = resolved
+        if (
+            updated_span.char_start != start
+            or updated_span.char_end != end
+            or not span_slice_safe(raw_text, updated_span)
+        ):
+            correction_code = _offset_correction_code(raw_text, updated_span)
+            current_range = resolved_range(updated_span, raw_text)
+            if (
+                object_type == "StructuredClinicalItem"
+                and preferred_ranges
+                and current_range is not None
+                and not range_inside_any_parent(current_range, preferred_ranges)
+                and range_inside_any_parent((start, end), preferred_ranges)
+            ):
+                correction_code = "item_span_outside_parent_section"
             updated_span = updated_span.model_copy(
-                update={"input_id": expected_input_id}
+                update={"char_start": start, "char_end": end}
             )
             _record(
                 actions,
                 status="applied",
-                code="source_span_input_id_mismatch",
-                message="Corrected SourceSpan.input_id to result.input.input_id.",
+                code=correction_code,
+                message="Recomputed SourceSpan character offsets.",
                 object_type=object_type,
                 object_id=object_id,
                 span_id=span.span_id,
                 before_quoted_text=span.quoted_text,
                 after_quoted_text=updated_span.quoted_text,
             )
+        return updated_span
 
-        resolved = _resolve_exact_range(
-            raw_text=raw_text,
-            quoted_text=updated_span.quoted_text,
-            preferred_ranges=preferred_ranges,
-        )
-        if resolved is not None:
-            start, end = resolved
-            if (
-                updated_span.char_start != start
-                or updated_span.char_end != end
-                or not span_slice_safe(raw_text, updated_span)
-            ):
-                updated_span = updated_span.model_copy(
-                    update={"char_start": start, "char_end": end}
-                )
-                _record(
-                    actions,
-                    status="applied",
-                    code="source_span_offsets_recomputed",
-                    message="Recomputed SourceSpan character offsets.",
-                    object_type=object_type,
-                    object_id=object_id,
-                    span_id=span.span_id,
-                    before_quoted_text=span.quoted_text,
-                    after_quoted_text=updated_span.quoted_text,
-                )
-            return updated_span
-
-        repaired_range = _best_support_range(
-            raw_text=raw_text,
-            values=support_values,
-            preferred_ranges=preferred_ranges,
-        )
-        if repaired_range is None:
-            _record(
-                actions,
-                status="skipped",
-                code="quoted_text_not_found",
-                message="Could not deterministically replace missing quoted_text.",
-                object_type=object_type,
-                object_id=object_id,
-                span_id=span.span_id,
-                before_quoted_text=span.quoted_text,
-                after_quoted_text=None,
-            )
-            return updated_span.model_copy(update={"char_start": None, "char_end": None})
-
-        start, end = repaired_range
-        quoted_text = raw_text[start:end]
+    repaired_range = _best_support_range(
+        raw_text=raw_text,
+        values=support_values,
+        preferred_ranges=preferred_ranges,
+    )
+    if repaired_range is None:
         _record(
             actions,
-            status="applied",
+            status="skipped",
             code="quoted_text_not_found",
-            message="Replaced missing quoted_text with a deterministic raw_text span.",
+            message="Could not deterministically replace missing quoted_text.",
             object_type=object_type,
             object_id=object_id,
             span_id=span.span_id,
             before_quoted_text=span.quoted_text,
-            after_quoted_text=quoted_text,
+            after_quoted_text=None,
         )
-        return updated_span.model_copy(
-            update={"quoted_text": quoted_text, "char_start": start, "char_end": end}
-        )
+        return updated_span.model_copy(update={"char_start": None, "char_end": None})
 
-    def _span_from_support_values(
-        self,
-        object_type: str,
-        object_id: str,
-        raw_text: str,
-        expected_input_id: str,
-        support_values: Sequence[str | None],
-        preferred_ranges: Sequence[SourceRange],
-        actions: list[SourceSpanCorrectionAction],
-    ) -> SourceSpan | None:
-        support_range = _best_support_range(
-            raw_text=raw_text,
-            values=support_values,
-            preferred_ranges=preferred_ranges,
-        )
-        if support_range is None:
-            _record(
-                actions,
-                status="skipped",
-                code="missing_source_span",
-                message="Could not deterministically create a source span.",
-                object_type=object_type,
-                object_id=object_id,
-            )
-            return None
+    start, end = repaired_range
+    quoted_text = raw_text[start:end]
+    _record(
+        actions,
+        status="applied",
+        code="quoted_text_not_found",
+        message="Replaced missing quoted_text with a deterministic raw_text span.",
+        object_type=object_type,
+        object_id=object_id,
+        span_id=span.span_id,
+        before_quoted_text=span.quoted_text,
+        after_quoted_text=quoted_text,
+    )
+    return updated_span.model_copy(
+        update={"quoted_text": quoted_text, "char_start": start, "char_end": end}
+    )
 
-        start, end = support_range
-        quoted_text = raw_text[start:end]
-        span = SourceSpan(
-            span_id=f"span_{object_id}_corrected_001",
+
+def _split_discontinuous_span(
+    object_type: str,
+    object_id: str,
+    span: SourceSpan,
+    raw_text: str,
+    expected_input_id: str,
+    preferred_ranges: Sequence[SourceRange],
+    actions: list[SourceSpanCorrectionAction],
+) -> list[SourceSpan]:
+    piece_ranges = find_resolvable_span_pieces(
+        raw_text=raw_text,
+        quoted_text=span.quoted_text,
+        ranges=preferred_ranges,
+    )
+    if len(piece_ranges) < 2:
+        return []
+
+    split_spans = [
+        SourceSpan(
+            span_id=f"{span.span_id}_part_{index:03d}",
             input_id=expected_input_id,
-            quoted_text=quoted_text,
+            quoted_text=raw_text[start:end],
             char_start=start,
             char_end=end,
         )
+        for index, (start, end) in enumerate(piece_ranges, start=1)
+    ]
+    _record(
+        actions,
+        status="applied",
+        code="section_quoted_text_discontinuous_or_synthetic",
+        message="Split synthetic section quoted_text into exact raw_text spans.",
+        object_type=object_type,
+        object_id=object_id,
+        span_id=span.span_id,
+        before_quoted_text=span.quoted_text,
+        after_quoted_text=" ".join(split_span.quoted_text for split_span in split_spans),
+    )
+    return split_spans
+
+
+def _correct_item_parent_range(
+    item: StructuredClinicalItem,
+    spans: Sequence[SourceSpan],
+    raw_text: str,
+    parent_ranges: Sequence[SourceRange],
+    actions: list[SourceSpanCorrectionAction],
+) -> list[SourceSpan]:
+    if not parent_ranges:
+        return list(spans)
+
+    corrected: list[SourceSpan] = []
+    for span in spans:
+        span_range = resolved_range(span, raw_text)
+        if span_range is None or range_inside_any_parent(span_range, parent_ranges):
+            corrected.append(span)
+            continue
+
+        parent_occurrence = _resolve_exact_range(
+            raw_text=raw_text,
+            quoted_text=span.quoted_text,
+            preferred_ranges=parent_ranges,
+        )
+        if parent_occurrence is None or not range_inside_any_parent(
+            parent_occurrence, parent_ranges
+        ):
+            _record(
+                actions,
+                status="skipped",
+                code="item_span_outside_parent_section",
+                message=(
+                    "Could not move item source span inside parent section "
+                    "because quoted_text was not found there."
+                ),
+                object_type="StructuredClinicalItem",
+                object_id=item.item_id,
+                span_id=span.span_id,
+                before_quoted_text=span.quoted_text,
+                after_quoted_text=None,
+            )
+            corrected.append(span)
+            continue
+
+        start, end = parent_occurrence
+        corrected_span = span.model_copy(update={"char_start": start, "char_end": end})
         _record(
             actions,
             status="applied",
+            code="item_span_outside_parent_section",
+            message="Moved item source span to the matching parent section range.",
+            object_type="StructuredClinicalItem",
+            object_id=item.item_id,
+            span_id=span.span_id,
+            before_quoted_text=span.quoted_text,
+            after_quoted_text=corrected_span.quoted_text,
+        )
+        corrected.append(corrected_span)
+    return corrected
+
+
+def _span_from_support_values(
+    object_type: str,
+    object_id: str,
+    raw_text: str,
+    expected_input_id: str,
+    support_values: Sequence[str | None],
+    preferred_ranges: Sequence[SourceRange],
+    actions: list[SourceSpanCorrectionAction],
+) -> SourceSpan | None:
+    support_range = _best_support_range(
+        raw_text=raw_text,
+        values=support_values,
+        preferred_ranges=preferred_ranges,
+    )
+    if support_range is None:
+        _record(
+            actions,
+            status="skipped",
             code="missing_source_span",
-            message="Created a deterministic source span.",
+            message="Could not deterministically create a source span.",
             object_type=object_type,
             object_id=object_id,
-            span_id=span.span_id,
-            after_quoted_text=quoted_text,
         )
-        return span
+        return None
 
-    def _add_missing_item_support_spans(
-        self,
-        item: StructuredClinicalItem,
-        spans: list[SourceSpan],
-        raw_text: str,
-        expected_input_id: str,
-        preferred_ranges: Sequence[SourceRange],
-        actions: list[SourceSpanCorrectionAction],
-    ) -> list[SourceSpan]:
-        source_text = combined_existing_span_text(raw_text, spans)
-        unsupported_fields = unsupported_item_fields(item, source_text)
-        if not unsupported_fields:
-            return spans
-
-        corrected_spans = list(spans)
-        for field_name in unsupported_fields:
-            value = item_field_values(item).get(field_name)
-            if value is None:
-                continue
-
-            missing_values = _missing_support_values(
-                field_text=value,
-                source_text=combined_existing_span_text(raw_text, corrected_spans),
-                raw_text=raw_text,
-                preferred_ranges=preferred_ranges,
-            )
-            if not missing_values:
-                _record(
-                    actions,
-                    status="skipped",
-                    code="item_source_span_insufficient_support",
-                    message="Could not identify a missing field-support span.",
-                    object_type="StructuredClinicalItem",
-                    object_id=item.item_id,
-                    field_name=field_name,
-                )
-                continue
-
-            for missing_value in missing_values:
-                support_range = _best_support_range(
-                    raw_text=raw_text,
-                    values=[missing_value],
-                    preferred_ranges=preferred_ranges,
-                )
-                if support_range is None:
-                    _record(
-                        actions,
-                        status="skipped",
-                        code="item_source_span_insufficient_support",
-                        message="Missing field support was not uniquely locatable.",
-                        object_type="StructuredClinicalItem",
-                        object_id=item.item_id,
-                        field_name=field_name,
-                        before_quoted_text=missing_value,
-                    )
-                    continue
-
-                start, end = support_range
-                quoted_text = raw_text[start:end]
-                new_span = SourceSpan(
-                    span_id=(
-                        f"span_{item.item_id}_{field_name}_support_"
-                        f"{len(corrected_spans) + 1:03d}"
-                    ),
-                    input_id=expected_input_id,
-                    quoted_text=quoted_text,
-                    char_start=start,
-                    char_end=end,
-                )
-                if _has_equivalent_span(corrected_spans, new_span):
-                    continue
-
-                corrected_spans.append(new_span)
-                _record(
-                    actions,
-                    status="applied",
-                    code="item_source_span_insufficient_support",
-                    message="Added minimal source span for unsupported item field.",
-                    object_type="StructuredClinicalItem",
-                    object_id=item.item_id,
-                    span_id=new_span.span_id,
-                    field_name=field_name,
-                    after_quoted_text=quoted_text,
-                )
-
-        return corrected_spans
-
-
-def validate_and_correct_source_spans(
-    result: CaseStructuringResult,
-    validator: StrictSourceSpanValidator | None = None,
-    corrector: DeterministicSourceSpanCorrector | None = None,
-) -> SourceSpanValidationCorrectionResult:
-    """Run validation, deterministic correction, and validation again."""
-    validator = validator or StrictSourceSpanValidator()
-    corrector = corrector or DeterministicSourceSpanCorrector()
-
-    initial_report = validator.validate(result)
-    corrected_result, correction_report = corrector.correct(
-        result,
-        initial_validation_report=initial_report,
+    start, end = support_range
+    quoted_text = raw_text[start:end]
+    span = SourceSpan(
+        span_id=f"span_{object_id}_corrected_001",
+        input_id=expected_input_id,
+        quoted_text=quoted_text,
+        char_start=start,
+        char_end=end,
     )
-    final_report = validator.validate(corrected_result)
-    residual_issues = list(final_report.issues)
+    _record(
+        actions,
+        status="applied",
+        code="missing_source_span",
+        message="Created a deterministic source span.",
+        object_type=object_type,
+        object_id=object_id,
+        span_id=span.span_id,
+        after_quoted_text=quoted_text,
+    )
+    return span
 
-    return SourceSpanValidationCorrectionResult(
-        initial_result=result,
-        corrected_result=corrected_result,
+
+def _offset_correction_code(raw_text: str, span: SourceSpan) -> str:
+    if span.char_start is None or span.char_end is None:
+        return "unresolved_offsets"
+    if not offsets_in_bounds(raw_text, span.char_start, span.char_end):
+        return "char_offsets_out_of_bounds"
+    if not span_slice_safe(raw_text, span):
+        return "char_offsets_do_not_match_quoted_text"
+    return "source_span_offsets_recomputed"
+
+
+def quoted_text_exactly_found(raw_text: str, quoted_text: str) -> bool:
+    return bool(quoted_text) and quoted_text in raw_text
+
+
+def validate_and_correct_section_spans(
+    raw_text: str,
+    expected_input_id: str,
+    sections: Sequence[ClinicalSection],
+    validator: SectionSourceSpanValidator | None = None,
+    corrector: SectionSourceSpanCorrector | None = None,
+) -> SectionSourceSpanValidationCorrectionResult:
+    """Run section-only source-span validation, correction, then validation."""
+    validator = validator or SectionSourceSpanValidator()
+    corrector = corrector or SectionSourceSpanCorrector()
+
+    initial_report = validator.validate(
+        raw_text=raw_text,
+        expected_input_id=expected_input_id,
+        sections=sections,
+    )
+    corrected_sections, correction_report = corrector.correct(
+        sections=sections,
+        raw_text=raw_text,
+        expected_input_id=expected_input_id,
+    )
+    final_report = validator.validate(
+        raw_text=raw_text,
+        expected_input_id=expected_input_id,
+        sections=corrected_sections,
+    )
+    return SectionSourceSpanValidationCorrectionResult(
+        initial_sections=list(sections),
+        corrected_sections=corrected_sections,
         initial_validation_report=initial_report,
         correction_report=correction_report,
         final_validation_report=final_report,
-        residual_issues=residual_issues,
+    )
+
+
+def validate_and_correct_item_spans(
+    raw_text: str,
+    expected_input_id: str,
+    sections: Sequence[ClinicalSection],
+    items: Sequence[StructuredClinicalItem],
+    validator: ItemSourceSpanValidator | None = None,
+    corrector: ItemSourceSpanCorrector | None = None,
+) -> ItemSourceSpanValidationCorrectionResult:
+    """Run item-only source-span validation, correction, then validation."""
+    validator = validator or ItemSourceSpanValidator()
+    corrector = corrector or ItemSourceSpanCorrector()
+
+    initial_report = validator.validate(
+        raw_text=raw_text,
+        expected_input_id=expected_input_id,
+        sections=sections,
+        items=items,
+    )
+    corrected_items, correction_report = corrector.correct(
+        items=items,
+        raw_text=raw_text,
+        expected_input_id=expected_input_id,
+        sections=sections,
+    )
+    final_report = validator.validate(
+        raw_text=raw_text,
+        expected_input_id=expected_input_id,
+        sections=sections,
+        items=corrected_items,
+    )
+    return ItemSourceSpanValidationCorrectionResult(
+        initial_items=list(items),
+        corrected_items=corrected_items,
+        initial_validation_report=initial_report,
+        correction_report=correction_report,
+        final_validation_report=final_report,
     )
 
 
@@ -615,48 +752,6 @@ def _support_pieces(
     return _dedupe_nonblank(pieces)
 
 
-def _missing_support_values(
-    field_text: str,
-    source_text: str,
-    raw_text: str,
-    preferred_ranges: Sequence[SourceRange],
-) -> list[str]:
-    if item_field_supported_by_source(field_text, source_text):
-        return []
-
-    cleaned = field_text.strip()
-    if not cleaned:
-        return []
-
-    if (
-        normalize_text_for_match(cleaned).lower()
-        not in normalize_text_for_match(source_text).lower()
-        and find_all_occurrences(raw_text, cleaned, preferred_ranges)
-    ):
-        return [cleaned]
-
-    missing: list[str] = []
-    normalized_source = normalize_text_for_match(source_text).lower()
-    for chunk in cjk_chunks(cleaned):
-        if chunk not in source_text:
-            missing.append(chunk)
-    for token in required_alnum_tokens(cleaned):
-        if token.lower() not in normalized_source:
-            missing.append(token)
-
-    return _dedupe_nonblank(missing)
-
-
-def _has_equivalent_span(spans: Sequence[SourceSpan], candidate: SourceSpan) -> bool:
-    candidate_range = (candidate.char_start, candidate.char_end)
-    for span in spans:
-        if span.quoted_text == candidate.quoted_text:
-            return True
-        if (span.char_start, span.char_end) == candidate_range:
-            return True
-    return False
-
-
 def _section_ranges_from_sections(
     sections: Sequence[ClinicalSection],
     raw_text: str,
@@ -668,6 +763,7 @@ def _section_ranges_from_sections(
             if span_range is not None:
                 ranges.setdefault(section.section_id, []).append(span_range)
     return ranges
+
 
 def _rebuild_object(
     model: Any,
@@ -690,18 +786,6 @@ def _rebuild_object(
             object_id=object_id,
         )
         return model
-
-
-def _rebuild_result(
-    result: CaseStructuringResult,
-    **updates: Any,
-) -> CaseStructuringResult:
-    data = result.model_dump(mode="python")
-    data.update(updates)
-    try:
-        return CaseStructuringResult.model_validate(data)
-    except ValidationError:
-        return result.model_copy(update=updates)
 
 
 def _record(

@@ -1,0 +1,18 @@
+[
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_dropped",
+    "message": "Assertion #3 dropped: object_text is not a substring of source_text",
+    "related_item_id": "item_003",
+    "related_tree_node_id": null,
+    "related_span_id": null
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_dropped",
+    "message": "Assertion #1 dropped: object_text is not a substring of source_text",
+    "related_item_id": "item_013",
+    "related_tree_node_id": null,
+    "related_span_id": null
+  }
+]

@@ -7,7 +7,6 @@ from .normalizers import (
     SectionNormalizer,
 )
 from .raw_input_builder import RawInputBuilder
-from .source_span_resolver import ResolvedSourceObjects, SourceSpanResolver
 from .stage_context_extractor import StageContextExtractor
 from .structured_item_extractor import StructuredClinicalItemExtractor
 
@@ -18,9 +17,7 @@ __all__ = [
     "NormalizedItems",
     "NormalizedSections",
     "RawInputBuilder",
-    "ResolvedSourceObjects",
     "SectionNormalizer",
-    "SourceSpanResolver",
     "StageContextExtractor",
     "StructuredClinicalItemExtractor",
 ]

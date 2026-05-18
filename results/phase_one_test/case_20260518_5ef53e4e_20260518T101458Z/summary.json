@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-05-18T10:14:58.735393+00:00",
+  "selected_file": "data/05.txt",
+  "case_id": "case_20260518_5ef53e4e",
+  "input_id": "input_20260518_b6a26d41",
+  "case_structuring_result_id": "case_structuring_result_20260518_ec5cb16e",
+  "tree_structuring_result_id": "tree_structuring_result_20260518_0a83d6cd",
+  "ready_for_evidence_tree_structuring": true,
+  "ready_for_hypothesis_state": false,
+  "clinical_sections": 9,
+  "structured_items": 16,
+  "clinical_object_assertions": 113,
+  "evidence_trees": 16,
+  "item_to_tree_links": 16,
+  "deferred_items": 0,
+  "tree_structuring_warnings": 52,
+  "evidence_tree_warnings": 50,
+  "tree_structuring_validation_accepted": false,
+  "tree_structuring_validation_issue_counts": {
+    "clinical_assertion_dropped": 2,
+    "tree_assertion_mapping_missing": 6,
+    "tree_build_fallback_uncertain": 2,
+    "tree_grammar_parent_type_not_allowed": 25,
+    "tree_grammar_root_not_allowed": 2,
+    "tree_node_dropped": 15
+  },
+  "durations_seconds": {
+    "case_structurer": 108.20749408300617,
+    "evidence_tree_structurer": 911.3163714160037,
+    "evidence_tree_structurer.ItemContextBuilder": 0.00012883299496024847,
+    "evidence_tree_structurer.ClinicalAssertionResolver": 301.54860120799276,
+    "evidence_tree_structurer.EvidenceTreeBuilder": 609.7669909580145,
+    "evidence_tree_structurer.EvidenceTreeStructuringValidator": 9.23750048968941e-05,
+    "total": 1019.5246056669857
+  },
+  "durations_human": {
+    "case_structurer": "1 min 48.2 s",
+    "evidence_tree_structurer": "15 min 11.3 s",
+    "evidence_tree_structurer.ItemContextBuilder": "0 ms",
+    "evidence_tree_structurer.ClinicalAssertionResolver": "5 min 1.5 s",
+    "evidence_tree_structurer.EvidenceTreeBuilder": "10 min 9.8 s",
+    "evidence_tree_structurer.EvidenceTreeStructuringValidator": "0 ms",
+    "total": "16 min 59.5 s"
+  }
+}

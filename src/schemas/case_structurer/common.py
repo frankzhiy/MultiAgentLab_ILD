@@ -2,7 +2,7 @@
 
 This module only contains reusable primitive aliases and enums.
 It must not contain Pydantic models, agent logic, validators, mock data,
-or phase-specific schemas such as EvidenceAtom, HypothesisState, Conflict,
+or phase-specific schemas such as EvidenceTree, HypothesisState, Conflict,
 UpdateTrace, ActionPlan, or ArbitrationResult.
 """
 

@@ -75,7 +75,11 @@ class ClinicalSectionExtractor(BaseLLMExtractor):
         payload: dict,
         index: int,
     ) -> dict:
-        normalized_text = self.first_text(
+        # ``normalized_text`` is a computed property of ClinicalSection now.
+        # We still mine the LLM payload for any free-text hint that can serve
+        # as an emergency quoted_text fallback when no source_spans are
+        # provided. This value is NEVER persisted on the schema.
+        default_quoted_text_hint = self.first_text(
             payload,
             (
                 "normalized_text",
@@ -86,20 +90,20 @@ class ClinicalSectionExtractor(BaseLLMExtractor):
                 "summary",
             ),
         )
-        if normalized_text is None:
+        if default_quoted_text_hint is None:
             source_spans = payload.get("source_spans") or []
             if isinstance(source_spans, list) and source_spans:
                 first_span = source_spans[0]
                 if isinstance(first_span, dict):
-                    normalized_text = self.first_text(
+                    default_quoted_text_hint = self.first_text(
                         first_span,
                         ("quoted_text", "source_text", "text", "fragment"),
                     )
 
-        if normalized_text is None:
+        if default_quoted_text_hint is None:
             raise ValueError(
-                "ClinicalSection payload is missing normalized_text or an "
-                "equivalent text field."
+                "ClinicalSection payload is missing source_spans and any "
+                "text fallback. Cannot construct a grounded section."
             )
 
         return {
@@ -111,11 +115,10 @@ class ClinicalSectionExtractor(BaseLLMExtractor):
                 "uncertain",
             ),
             "title": self.coerce_optional_text(payload.get("title")),
-            "normalized_text": normalized_text,
             "source_spans": self.prepare_source_spans(
                 raw_input=raw_input,
                 payload=payload,
-                default_quoted_text=normalized_text,
+                default_quoted_text=default_quoted_text_hint,
                 span_prefix=f"span_section_{index:03d}",
             ),
             "section_order": index,

@@ -1,0 +1,242 @@
+[
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_001",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_cue_not_grounded",
+    "source_item_id": "item_001",
+    "field_name": "assertion_cue_text",
+    "before_value": "negation",
+    "after_value": null,
+    "action": "clear_ungrounded_cue",
+    "message": "Cleared ungrounded assertion_cue_text."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_001",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_cue_not_grounded",
+    "source_item_id": "item_001",
+    "field_name": "assertion_cue_text",
+    "before_value": "negation",
+    "after_value": null,
+    "action": "clear_ungrounded_cue",
+    "message": "Cleared ungrounded assertion_cue_text."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_scope_repaired",
+    "source_item_id": "item_003",
+    "field_name": "assertion_scope_text",
+    "before_value": "出现咳痰",
+    "after_value": "患者自诉10天前无明显诱因出现咳嗽、咳痰",
+    "action": "replace_with_source_scope",
+    "message": "Repaired assertion_scope_text to source text."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_003",
+    "field_name": "assertion_status",
+    "before_value": "present",
+    "after_value": "absent",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_scope_repaired",
+    "source_item_id": "item_003",
+    "field_name": "assertion_scope_text",
+    "before_value": "无寒战",
+    "after_value": "无发热、寒战",
+    "action": "replace_with_source_scope",
+    "message": "Repaired assertion_scope_text to source text."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_scope_repaired",
+    "source_item_id": "item_003",
+    "field_name": "assertion_scope_text",
+    "before_value": "无胸痛",
+    "after_value": "无呼吸困难、胸痛等不适",
+    "action": "replace_with_source_scope",
+    "message": "Repaired assertion_scope_text to source text."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_004",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_object_type_repaired",
+    "source_item_id": "item_006",
+    "field_name": "object_type",
+    "before_value": "diagnosis_history",
+    "after_value": "finding",
+    "action": "infer_specific_object_type",
+    "message": "Repaired object_type to a specific allowed value."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_object_type_repaired",
+    "source_item_id": "item_006",
+    "field_name": "object_type",
+    "before_value": "diagnosis_history",
+    "after_value": "finding",
+    "action": "infer_specific_object_type",
+    "message": "Repaired object_type to a specific allowed value."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_007",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_object_type_repaired",
+    "source_item_id": "item_008",
+    "field_name": "object_type",
+    "before_value": "comorbidity",
+    "after_value": "finding",
+    "action": "infer_specific_object_type",
+    "message": "Repaired object_type to a specific allowed value."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_009",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_009",
+    "field_name": "assertion_status",
+    "before_value": "present",
+    "after_value": "absent",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_object_type_repaired",
+    "source_item_id": "item_011",
+    "field_name": "object_type",
+    "before_value": "comorbidity",
+    "after_value": "lab_or_test",
+    "action": "infer_specific_object_type",
+    "message": "Repaired object_type to a specific allowed value."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_object_type_repaired",
+    "source_item_id": "item_011",
+    "field_name": "object_type",
+    "before_value": "comorbidity",
+    "after_value": "finding",
+    "action": "infer_specific_object_type",
+    "message": "Repaired object_type to a specific allowed value."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_012",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_012",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_012",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_012",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_013",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_assertion_status_repaired",
+    "source_item_id": "item_013",
+    "field_name": "assertion_status",
+    "before_value": "absent",
+    "after_value": "present",
+    "action": "infer_status_from_source_cues",
+    "message": "Repaired assertion_status from local source cues."
+  },
+  {
+    "status": "applied",
+    "code": "clinical_object_split_repaired",
+    "source_item_id": "item_015",
+    "field_name": "object_text",
+    "before_value": "二尖瓣返流（轻度）",
+    "after_value": "二尖瓣 | 返流（轻度",
+    "action": "split_to_source_phrases",
+    "message": "Repaired object_text to source-copied contiguous text."
+  }
+]

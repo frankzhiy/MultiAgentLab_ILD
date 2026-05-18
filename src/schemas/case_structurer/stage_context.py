@@ -9,7 +9,7 @@ It combines:
 3. validation rules that prevent internally inconsistent stage metadata.
 
 This schema must not extract clinical findings, diagnoses, hypotheses,
-evidence atoms, conflicts, actions, treatment recommendations, or
+evidence tree nodes, conflicts, actions, treatment recommendations, or
 arbitration results.
 """
 

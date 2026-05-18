@@ -1,0 +1,789 @@
+{
+  "accepted": false,
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_001",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_001"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_001",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_001"
+    },
+    {
+      "severity": "warning",
+      "code": "assertion_needs_review",
+      "message": "Negation present in candidate but no explicit negation cue in source text; assertion status assigned as absent with caution.",
+      "related_item_id": "item_001",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_001"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_scope_repaired",
+      "message": "Clinical assertion assertion_scope_text was repaired to source text.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_003"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_003"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_scope_repaired",
+      "message": "Clinical assertion assertion_scope_text was repaired to source text.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_003"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_scope_repaired",
+      "message": "Clinical assertion assertion_scope_text was repaired to source text.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_003"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_004",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_004"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_006"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_006"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_006"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_006",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_006"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_007",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_007"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_object_type_repaired",
+      "message": "Clinical assertion object_type was repaired to a specific allowed value; uncertain is not allowed.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_008"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_009",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_009"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_009",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_009"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_object_type_repaired",
+      "message": "Clinical assertion object_type was repaired to a specific allowed value; uncertain is not allowed.",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_011"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_object_type_repaired",
+      "message": "Clinical assertion object_type was repaired to a specific allowed value; uncertain is not allowed.",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_011"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_012"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_012"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_012"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_012"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_013",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_013"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_assertion_status_repaired",
+      "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+      "related_item_id": "item_013",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_013"
+    },
+    {
+      "severity": "warning",
+      "code": "clinical_object_split_repaired",
+      "message": "Clinical assertion object_text was repaired to one or more source-copied contiguous phrase(s).",
+      "related_item_id": "item_014",
+      "related_evidence_id": null,
+      "related_span_id": "span_item_014"
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_mapping_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=7 total=10 missing=['clinical_object_assertion_20260517_7f81e93f', 'clinical_object_assertion_20260517_dc608c4a', 'clinical_object_assertion_20260517_f81fee2a']",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_mapping_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=7 total=10 missing=['clinical_object_assertion_20260517_7f81e93f', 'clinical_object_assertion_20260517_dc608c4a', 'clinical_object_assertion_20260517_f81fee2a']",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_used",
+      "message": "A conservative assertion-grounded EvidenceEventFrame fallback was used after draft validation failed. Each ClinicalObjectAssertion was preserved as its own frame node or context node.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_mapping_warning",
+      "message": "A finding assertion was conservatively mapped to a clinical_object node because no safe parent relation was available in fallback mode.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_mapping_warning",
+      "message": "A finding assertion was conservatively mapped to a clinical_object node because no safe parent relation was available in fallback mode.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_mapping_warning",
+      "message": "A finding assertion was conservatively mapped to a clinical_object node because no safe parent relation was available in fallback mode.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_root_added",
+      "message": "Fallback mode added a non-atomizable structural root so assertion nodes do not become orphan roots.",
+      "related_item_id": "item_003",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_005",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_005",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_005",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_005",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_005",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_root_not_allowed",
+      "message": "Node type 'treatment_response' is not allowed at root. It must attach to an appropriate parent per the frame grammar.",
+      "related_item_id": "item_007",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'treatment_response' per the frame grammar.",
+      "related_item_id": "item_007",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'treatment_response' per the frame grammar.",
+      "related_item_id": "item_007",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'treatment_response' per the frame grammar.",
+      "related_item_id": "item_007",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'treatment_response' per the frame grammar.",
+      "related_item_id": "item_007",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'treatment_response' per the frame grammar.",
+      "related_item_id": "item_007",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'negative_finding' cannot have a parent of type 'treatment_response' per the frame grammar.",
+      "related_item_id": "item_007",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'treatment_event' cannot have a parent of type 'background_state' per the frame grammar.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'treatment_event' cannot have a parent of type 'background_state' per the frame grammar.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'main_event' cannot have a parent of type 'background_state' per the frame grammar.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_missing_finding_structure",
+      "message": "Finding assertions were present, but the frame did not include mapped test_finding, clinical_object, or object_property nodes.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'treatment_response' cannot have a parent of type 'management_event' per the frame grammar.",
+      "related_item_id": "item_009",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_missing_negative_finding_structure",
+      "message": "Absent symptom or finding assertions were present, but the frame did not include a mapped negative_finding node.",
+      "related_item_id": "item_010",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_missing_negative_finding_structure",
+      "message": "Absent symptom or finding assertions were present, but the frame did not include a mapped negative_finding node.",
+      "related_item_id": "item_010",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_used",
+      "message": "A conservative assertion-grounded EvidenceEventFrame fallback was used after draft validation failed. Each ClinicalObjectAssertion was preserved as its own frame node or context node.",
+      "related_item_id": "item_010",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_root_added",
+      "message": "Fallback mode added a non-atomizable structural root so assertion nodes do not become orphan roots.",
+      "related_item_id": "item_010",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_mapping_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=0 total=2 missing=['clinical_object_assertion_20260517_1f396e5b', 'clinical_object_assertion_20260517_c527d528']",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_mapping_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=0 total=2 missing=['clinical_object_assertion_20260517_1f396e5b', 'clinical_object_assertion_20260517_c527d528']",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_used",
+      "message": "A conservative assertion-grounded EvidenceEventFrame fallback was used after draft validation failed. Each ClinicalObjectAssertion was preserved as its own frame node or context node.",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_root_added",
+      "message": "Fallback mode added a non-atomizable structural root so assertion nodes do not become orphan roots.",
+      "related_item_id": "item_011",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'test_event' cannot have a parent of type 'main_event' per the frame grammar.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'negative_finding' cannot have a parent of type 'clinical_object' per the frame grammar.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_mapping_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=19 total=20 missing=['clinical_object_assertion_20260517_950cfb7c']",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'test_event' cannot have a parent of type 'main_event' per the frame grammar.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_mapping_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=19 total=20 missing=['clinical_object_assertion_20260517_950cfb7c']",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_used",
+      "message": "A conservative assertion-grounded EvidenceEventFrame fallback was used after draft validation failed. Each ClinicalObjectAssertion was preserved as its own frame node or context node.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_root_added",
+      "message": "Fallback mode added a non-atomizable structural root so assertion nodes do not become orphan roots.",
+      "related_item_id": "item_012",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_013",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_014",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'test_event' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'test_event' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'test_event' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_mapping_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=10 total=13 missing=['clinical_object_assertion_20260517_44f092d7', 'clinical_object_assertion_20260517_67e34092', 'clinical_object_assertion_20260517_9c5d9d59']",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_node_text_not_in_source",
+      "message": "Frame node text was not a continuous substring of candidate.source_text and was discarded.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "error",
+      "code": "frame_assertion_mapping_missing",
+      "message": "EvidenceEventFrame failed to map all ClinicalObjectAssertions. mapped=10 total=13 missing=['clinical_object_assertion_20260517_44f092d7', 'clinical_object_assertion_20260517_67e34092', 'clinical_object_assertion_20260517_9c5d9d59']",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_used",
+      "message": "A conservative assertion-grounded EvidenceEventFrame fallback was used after draft validation failed. Each ClinicalObjectAssertion was preserved as its own frame node or context node.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_builder_fallback_root_added",
+      "message": "Fallback mode added a non-atomizable structural root so assertion nodes do not become orphan roots.",
+      "related_item_id": "item_015",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'treatment_response' cannot have a parent of type 'management_event' per the frame grammar.",
+      "related_item_id": "item_016",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_missing_finding_structure",
+      "message": "Finding assertions were present, but the frame did not include mapped test_finding, clinical_object, or object_property nodes.",
+      "related_item_id": "item_016",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'treatment_event' cannot have a parent of type 'background_state' per the frame grammar.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'treatment_event' cannot have a parent of type 'background_state' per the frame grammar.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'main_event' cannot have a parent of type 'background_state' per the frame grammar.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_missing_finding_structure",
+      "message": "Finding assertions were present, but the frame did not include mapped test_finding, clinical_object, or object_property nodes.",
+      "related_item_id": "item_008",
+      "related_evidence_id": null,
+      "related_span_id": null
+    },
+    {
+      "severity": "warning",
+      "code": "frame_grammar_parent_type_not_allowed",
+      "message": "Node type 'clinical_object' cannot have a parent of type 'test_event' per the frame grammar.",
+      "related_item_id": "item_014",
+      "related_evidence_id": null,
+      "related_span_id": null
+    }
+  ]
+}

@@ -1,0 +1,1742 @@
+[
+  {
+    "object_id": "clinical_object_assertion_20260517_16656af2",
+    "source_item_id": "item_001",
+    "object_text": "男",
+    "object_type": "other",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "男",
+    "context_text": "患者***,男,65岁",
+    "source_span_ids": [
+      "span_item_001"
+    ],
+    "confidence": "high",
+    "notes": "Negation present in candidate but no explicit negation cue in text; defaulting to absent due to negation flag."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_7129c35a",
+    "source_item_id": "item_001",
+    "object_text": "65岁",
+    "object_type": "other",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "65岁",
+    "context_text": "患者***,男,65岁",
+    "source_span_ids": [
+      "span_item_001"
+    ],
+    "confidence": "high",
+    "notes": "Negation present in candidate but no explicit negation cue in text; defaulting to absent due to negation flag."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_f0a7c3dd",
+    "source_item_id": "item_002",
+    "object_text": "咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "咳嗽咳痰伴痰中带血10天",
+    "context_text": "主因“咳嗽咳痰伴痰中带血10天。”入院。",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_d7ac7f32",
+    "source_item_id": "item_002",
+    "object_text": "咳痰",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "咳嗽咳痰伴痰中带血10天",
+    "context_text": "主因“咳嗽咳痰伴痰中带血10天。”入院。",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_dce33f04",
+    "source_item_id": "item_002",
+    "object_text": "痰中带血",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "咳嗽咳痰伴痰中带血10天",
+    "context_text": "主因“咳嗽咳痰伴痰中带血10天。”入院。",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_c664d3df",
+    "source_item_id": "item_003",
+    "object_text": "咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "出现咳嗽",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_7f81e93f",
+    "source_item_id": "item_003",
+    "object_text": "咳痰",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_30da33ec",
+    "source_item_id": "item_003",
+    "object_text": "白色粘痰",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "呈",
+    "assertion_scope_text": "呈白色粘痰",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_dedeeb29",
+    "source_item_id": "item_003",
+    "object_text": "痰中少量鲜红色血丝",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴有",
+    "assertion_scope_text": "痰中少量鲜红色血丝",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_abbac280",
+    "source_item_id": "item_003",
+    "object_text": "暗红色血块",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴有",
+    "assertion_scope_text": "暗红色血块",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_756c57ba",
+    "source_item_id": "item_003",
+    "object_text": "发热",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无发热",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_f81fee2a",
+    "source_item_id": "item_003",
+    "object_text": "寒战",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无发热、寒战",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_141d7547",
+    "source_item_id": "item_003",
+    "object_text": "活动后气短喘息",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无活动后气短喘息",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_1c3d131d",
+    "source_item_id": "item_003",
+    "object_text": "呼吸困难",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无呼吸困难",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_dc608c4a",
+    "source_item_id": "item_003",
+    "object_text": "胸痛",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无呼吸困难、胸痛等不适",
+    "context_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口，无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适。",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_61f0bcc5",
+    "source_item_id": "item_004",
+    "object_text": "肾功四项:GLU 8.20mmol/L",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "肾功四项:GLU 8.20mmol/L",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_565fc304",
+    "source_item_id": "item_004",
+    "object_text": "电解质四项:Cl 109.0mmol/L",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "电解质四项:Cl 109.0mmol/L",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_3f557f18",
+    "source_item_id": "item_004",
+    "object_text": "CO2 21.6mmol/L",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "CO2 21.6mmol/L",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_b3a2e43b",
+    "source_item_id": "item_004",
+    "object_text": "血常规",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "血常规",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_cf657c20",
+    "source_item_id": "item_004",
+    "object_text": "血脂四项",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "血脂四项",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_c73e96cf",
+    "source_item_id": "item_004",
+    "object_text": "凝血四项",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "凝血四项",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_80a71c2a",
+    "source_item_id": "item_004",
+    "object_text": "D2聚体",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "D2聚体",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_77fe8997",
+    "source_item_id": "item_004",
+    "object_text": "肌钙蛋白IPOCT",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "肌钙蛋白IPOCT",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_0449b592",
+    "source_item_id": "item_004",
+    "object_text": "肌红蛋白POCT",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "肌红蛋白POCT",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_7b242f96",
+    "source_item_id": "item_004",
+    "object_text": "肌酸激酶同工酶POCT",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "肌酸激酶同工酶POCT",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_51673f16",
+    "source_item_id": "item_004",
+    "object_text": "酶类三项",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "酶类三项",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_b8b041ea",
+    "source_item_id": "item_004",
+    "object_text": "肾功四项",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "肾功四项",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": "Repeated mention, but present"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_8f4db5a5",
+    "source_item_id": "item_004",
+    "object_text": "肝功十项未见明显异常",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "未见明显异常",
+    "assertion_scope_text": "肝功十项未见明显异常",
+    "context_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常。",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": "Indicates no obvious abnormality in liver function tests"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_d0dcf72a",
+    "source_item_id": "item_005",
+    "object_text": "双肺间质性肺炎",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "双肺间质性肺炎",
+    "context_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_0c0493b1",
+    "source_item_id": "item_005",
+    "object_text": "双肺外周带间质纤维化",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "双肺外周带间质纤维化",
+    "context_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_0af4a1d0",
+    "source_item_id": "item_005",
+    "object_text": "双肺气肿",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "双肺气肿",
+    "context_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_0fa54454",
+    "source_item_id": "item_005",
+    "object_text": "主动脉壁钙化",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "主动脉壁钙化",
+    "context_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_6eae7bf6",
+    "source_item_id": "item_005",
+    "object_text": "双侧胸膜轻度增厚",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "双侧胸膜轻度增厚",
+    "context_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_51bbc674",
+    "source_item_id": "item_006",
+    "object_text": "内科药物止血",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "给予",
+    "assertion_scope_text": "给予内科药物止血",
+    "context_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗。请我科会诊后，以“间质性肺疾病”收住我科。",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Negation present in source, but '给予' indicates treatment was given; however, overall negation flag suggests absence, so marked as absent cautiously."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_eadf920a",
+    "source_item_id": "item_006",
+    "object_text": "抗感染治疗",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "给予",
+    "assertion_scope_text": "给予内科药物止血、抗感染治疗",
+    "context_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗。请我科会诊后，以“间质性肺疾病”收住我科。",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Same as above, coordinated treatment with negation present."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_cbe42371",
+    "source_item_id": "item_006",
+    "object_text": "激素抗炎（甲强龙40mg静滴缓解症状）",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "给予",
+    "assertion_scope_text": "激素抗炎（甲强龙40mg静滴缓解症状）",
+    "context_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗。请我科会诊后，以“间质性肺疾病”收住我科。",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Treatment mentioned with dosage, but negation present in source."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_70144e76",
+    "source_item_id": "item_006",
+    "object_text": "氨溴索化痰等治疗",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "给予",
+    "assertion_scope_text": "氨溴索化痰等治疗",
+    "context_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗。请我科会诊后，以“间质性肺疾病”收住我科。",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Treatment mentioned but negation present."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_f64ccca4",
+    "source_item_id": "item_006",
+    "object_text": "间质性肺疾病",
+    "object_type": "other",
+    "assertion_status": "present",
+    "assertion_cue_text": "以“间质性肺疾病”收住我科",
+    "assertion_scope_text": "以“间质性肺疾病”收住我科",
+    "context_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗。请我科会诊后，以“间质性肺疾病”收住我科。",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": "Disease name mentioned as reason for admission, no negation."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_068ff669",
+    "source_item_id": "item_007",
+    "object_text": "神志清楚",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "神志清楚",
+    "assertion_scope_text": "神志清楚",
+    "context_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变。",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_1c9d2836",
+    "source_item_id": "item_007",
+    "object_text": "精神尚可",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "精神尚可",
+    "assertion_scope_text": "精神尚可",
+    "context_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变。",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_8ecf11fa",
+    "source_item_id": "item_007",
+    "object_text": "食欲正常",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "食欲正常",
+    "assertion_scope_text": "食欲正常",
+    "context_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变。",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_1a8e459a",
+    "source_item_id": "item_007",
+    "object_text": "睡眠一般",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "睡眠一般",
+    "assertion_scope_text": "睡眠一般",
+    "context_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变。",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_e088fb4d",
+    "source_item_id": "item_007",
+    "object_text": "二便正常",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "二便正常",
+    "assertion_scope_text": "二便正常",
+    "context_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变。",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_381d78c7",
+    "source_item_id": "item_007",
+    "object_text": "近期体重未见明显改变",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "未见明显改变",
+    "assertion_scope_text": "近期体重未见明显改变",
+    "context_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变。",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": "Negation cue '未见明显改变' indicates absence of significant weight change"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_0196fc96",
+    "source_item_id": "item_008",
+    "object_text": "糖尿病史",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "既往",
+    "assertion_scope_text": "既往糖尿病史10余年",
+    "context_text": "既往糖尿病史10余年，平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID;既往血糖控制不佳。",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_ae7eebc6",
+    "source_item_id": "item_008",
+    "object_text": "二甲双胍格列本脲片",
+    "object_type": "medication",
+    "assertion_status": "present",
+    "assertion_cue_text": "平素口服",
+    "assertion_scope_text": "平素口服二甲双胍格列本脲片，2片，QD",
+    "context_text": "既往糖尿病史10余年，平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID;既往血糖控制不佳。",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_79510687",
+    "source_item_id": "item_008",
+    "object_text": "阿卡波糖",
+    "object_type": "medication",
+    "assertion_status": "present",
+    "assertion_cue_text": "平素口服",
+    "assertion_scope_text": "平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID",
+    "context_text": "既往糖尿病史10余年，平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID;既往血糖控制不佳。",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_b594e48e",
+    "source_item_id": "item_008",
+    "object_text": "血糖控制不佳",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "既往",
+    "assertion_scope_text": "既往血糖控制不佳",
+    "context_text": "既往糖尿病史10余年，平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID;既往血糖控制不佳。",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": "Although the candidate negation is 'present', the phrase '血糖控制不佳' indicates poor blood sugar control, which is a present finding."
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_03ce191e",
+    "source_item_id": "item_009",
+    "object_text": "咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "出现咳嗽",
+    "context_text": "3月前受凉后出现咳嗽咳少量白粘痰，未就医，自行服药（具体不详）后减轻。",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_dbf0bbea",
+    "source_item_id": "item_009",
+    "object_text": "咳少量白粘痰",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "出现咳嗽咳少量白粘痰",
+    "context_text": "3月前受凉后出现咳嗽咳少量白粘痰，未就医，自行服药（具体不详）后减轻。",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_33675f9a",
+    "source_item_id": "item_009",
+    "object_text": "未就医",
+    "object_type": "care_seeking_or_management",
+    "assertion_status": "present",
+    "assertion_cue_text": "未",
+    "assertion_scope_text": "未就医",
+    "context_text": "3月前受凉后出现咳嗽咳少量白粘痰，未就医，自行服药（具体不详）后减轻。",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": "Indicates absence of care seeking"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_def50302",
+    "source_item_id": "item_009",
+    "object_text": "自行服药（具体不详）",
+    "object_type": "care_seeking_or_management",
+    "assertion_status": "present",
+    "assertion_cue_text": "自行服药",
+    "assertion_scope_text": "自行服药（具体不详）",
+    "context_text": "3月前受凉后出现咳嗽咳少量白粘痰，未就医，自行服药（具体不详）后减轻。",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": "Indicates self-medication"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_f20208bc",
+    "source_item_id": "item_009",
+    "object_text": "减轻",
+    "object_type": "treatment_response",
+    "assertion_status": "absent",
+    "assertion_cue_text": "减轻",
+    "assertion_scope_text": "自行服药（具体不详）后减轻",
+    "context_text": "3月前受凉后出现咳嗽咳少量白粘痰，未就医，自行服药（具体不详）后减轻。",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": "Symptom relief after self-medication"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_2b37a3e6",
+    "source_item_id": "item_010",
+    "object_text": "口干",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "口干、眼干不适5-6年",
+    "context_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年，无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象。",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_37adda77",
+    "source_item_id": "item_010",
+    "object_text": "眼干不适",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "口干、眼干不适5-6年",
+    "context_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年，无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象。",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_7790cc70",
+    "source_item_id": "item_010",
+    "object_text": "右侧大拇指指间关节腱鞘炎",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "右侧大拇指指间关节腱鞘炎多年",
+    "context_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年，无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象。",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_58b32765",
+    "source_item_id": "item_010",
+    "object_text": "其他关节疼痛不适",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无其他关节疼痛不适病史",
+    "context_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年，无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象。",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_e98ad314",
+    "source_item_id": "item_010",
+    "object_text": "皮疹",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无皮疹及过敏病史",
+    "context_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年，无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象。",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_614c725f",
+    "source_item_id": "item_010",
+    "object_text": "过敏",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无皮疹及过敏病史",
+    "context_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年，无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象。",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_401a2119",
+    "source_item_id": "item_010",
+    "object_text": "雷诺现象",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无雷诺现象",
+    "context_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年，无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象。",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_c527d528",
+    "source_item_id": "item_011",
+    "object_text": "高血压",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "否认",
+    "assertion_scope_text": "否认高血压冠心病病史",
+    "context_text": "否认高血压冠心病病史。",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_1f396e5b",
+    "source_item_id": "item_011",
+    "object_text": "冠心病",
+    "object_type": "finding",
+    "assertion_status": "absent",
+    "assertion_cue_text": "否认",
+    "assertion_scope_text": "否认高血压冠心病病史",
+    "context_text": "否认高血压冠心病病史。",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_d587b917",
+    "source_item_id": "item_012",
+    "object_text": "体温：36.5℃",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "体温：36.5℃",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_a95265ef",
+    "source_item_id": "item_012",
+    "object_text": "脉搏76次/分",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "脉搏76次/分",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_d595f25c",
+    "source_item_id": "item_012",
+    "object_text": "呼吸：20次/分",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "呼吸：20次/分",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_48ebadbd",
+    "source_item_id": "item_012",
+    "object_text": "血压：119/79mmHg",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "血压：119/79mmHg",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_75527f73",
+    "source_item_id": "item_012",
+    "object_text": "SpO2 91%（未吸氧）",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "SpO2 91%（未吸氧）",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_5be8dd39",
+    "source_item_id": "item_012",
+    "object_text": "胸廓无畸形",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "胸廓无畸形",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": "Negation cue '无' applies locally to '畸形'"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_f92347fc",
+    "source_item_id": "item_012",
+    "object_text": "双侧呼吸动度一致",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "双侧呼吸动度一致",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_ecedb1ac",
+    "source_item_id": "item_012",
+    "object_text": "双肺呼吸音粗",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "听诊双肺呼吸音粗",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_feeefbe1",
+    "source_item_id": "item_012",
+    "object_text": "双肺底闻及少许湿性啰音",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "闻及",
+    "assertion_scope_text": "双肺底闻及少许湿性啰音",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_d4782973",
+    "source_item_id": "item_012",
+    "object_text": "velcro啰音",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "闻及",
+    "assertion_scope_text": "双肺底闻及少许湿性啰音及velcro啰音",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": "Velcro啰音 is a specific type of lung auscultation finding"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_6be518a7",
+    "source_item_id": "item_012",
+    "object_text": "心律齐",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "心律齐",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_01a9e240",
+    "source_item_id": "item_012",
+    "object_text": "早搏",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未闻及",
+    "assertion_scope_text": "未闻及早搏及杂音",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": "Negation cue '未闻及' applies to '早搏' and '杂音'"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_950cfb7c",
+    "source_item_id": "item_012",
+    "object_text": "杂音",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未闻及",
+    "assertion_scope_text": "未闻及早搏及杂音",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_78d7fe66",
+    "source_item_id": "item_012",
+    "object_text": "腹部外形平坦",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "腹部外形平坦",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_15780874",
+    "source_item_id": "item_012",
+    "object_text": "腹部柔软",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "腹部柔软",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_8beac703",
+    "source_item_id": "item_012",
+    "object_text": "全腹无压痛及反跳痛",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "全腹无压痛及反跳痛",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": "Negation cue '无' applies to '压痛' and '反跳痛'"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_8857951e",
+    "source_item_id": "item_012",
+    "object_text": "腹部包块",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未触及",
+    "assertion_scope_text": "未触及腹部包块",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": "Negation cue '未触及' applies to '腹部包块'"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_67912bfb",
+    "source_item_id": "item_012",
+    "object_text": "肝脏肋下未触及",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "未触及",
+    "assertion_scope_text": "肝脏肋下未触及",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": "Negation cue '未触及' applies to '肝脏肋下'"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_a5e235f3",
+    "source_item_id": "item_012",
+    "object_text": "肠鸣音正常",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "肠鸣音正常",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_a3d190e4",
+    "source_item_id": "item_012",
+    "object_text": "双下肢无水肿",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "双下肢无水肿",
+    "context_text": "体格检查：体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）胸廓无畸形，双侧呼吸动度一致，听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音。心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿。",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": "Negation cue '无' applies to '水肿'"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_d1eb7eef",
+    "source_item_id": "item_013",
+    "object_text": "自身抗体",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "阴性",
+    "assertion_scope_text": "自身抗体及血清肿瘤标记物阴性",
+    "context_text": "入院完善自身抗体及血清肿瘤标记物阴性，糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_568f94dc",
+    "source_item_id": "item_013",
+    "object_text": "血清肿瘤标记物",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "阴性",
+    "assertion_scope_text": "自身抗体及血清肿瘤标记物阴性",
+    "context_text": "入院完善自身抗体及血清肿瘤标记物阴性，糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_9e46d93e",
+    "source_item_id": "item_013",
+    "object_text": "糖化血红蛋白:HbA1C 7.40%",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "糖化血红蛋白:HbA1C 7.40%",
+    "context_text": "入院完善自身抗体及血清肿瘤标记物阴性，糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_f862f66a",
+    "source_item_id": "item_013",
+    "object_text": "血气分析PH 7.383",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "血气分析PH 7.383",
+    "context_text": "入院完善自身抗体及血清肿瘤标记物阴性，糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_2d7c505a",
+    "source_item_id": "item_013",
+    "object_text": "PCO2 39.20mmHg",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "PCO2 39.20mmHg",
+    "context_text": "入院完善自身抗体及血清肿瘤标记物阴性，糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_f4d4e40b",
+    "source_item_id": "item_013",
+    "object_text": "PO2 78.90mmHg",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "PO2 78.90mmHg",
+    "context_text": "入院完善自身抗体及血清肿瘤标记物阴性，糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_b7f756b7",
+    "source_item_id": "item_013",
+    "object_text": "Lac 3.00mmol/L",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "Lac 3.00mmol/L",
+    "context_text": "入院完善自身抗体及血清肿瘤标记物阴性，糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_da9a29b9",
+    "source_item_id": "item_013",
+    "object_text": "RI 272.00",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "RI 272.00",
+    "context_text": "入院完善自身抗体及血清肿瘤标记物阴性，糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_cee247ab",
+    "source_item_id": "item_013",
+    "object_text": "FiO2 29.00%",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "FiO2 29.00%",
+    "context_text": "入院完善自身抗体及血清肿瘤标记物阴性，糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_298517ec",
+    "source_item_id": "item_014",
+    "object_text": "左房略增大",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "左房略增大",
+    "context_text": "常规超声心动图：左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低，左室收缩功能正常；腹部彩超：胆囊附壁结晶；",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_ea570fa2",
+    "source_item_id": "item_014",
+    "object_text": "二尖瓣",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "二尖瓣、三尖瓣返流（轻度）",
+    "context_text": "常规超声心动图：左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低，左室收缩功能正常；腹部彩超：胆囊附壁结晶；",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": "二尖瓣返流和三尖瓣返流均为轻度，联合描述"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_dc96c659",
+    "source_item_id": "item_014",
+    "object_text": "返流（轻度",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "二尖瓣、三尖瓣返流（轻度）",
+    "context_text": "常规超声心动图：左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低，左室收缩功能正常；腹部彩超：胆囊附壁结晶；",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": "二尖瓣返流和三尖瓣返流均为轻度，联合描述"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_06d87113",
+    "source_item_id": "item_014",
+    "object_text": "三尖瓣返流（轻度）",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "二尖瓣、三尖瓣返流（轻度）",
+    "context_text": "常规超声心动图：左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低，左室收缩功能正常；腹部彩超：胆囊附壁结晶；",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": "二尖瓣返流和三尖瓣返流均为轻度，联合描述"
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_53a6267d",
+    "source_item_id": "item_014",
+    "object_text": "左室舒张功能减低",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "左室舒张功能减低",
+    "context_text": "常规超声心动图：左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低，左室收缩功能正常；腹部彩超：胆囊附壁结晶；",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_66f70f34",
+    "source_item_id": "item_014",
+    "object_text": "左室收缩功能正常",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "左室收缩功能正常",
+    "context_text": "常规超声心动图：左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低，左室收缩功能正常；腹部彩超：胆囊附壁结晶；",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_731c9ee7",
+    "source_item_id": "item_014",
+    "object_text": "胆囊附壁结晶",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "胆囊附壁结晶",
+    "context_text": "常规超声心动图：左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低，左室收缩功能正常；腹部彩超：胆囊附壁结晶；",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_67e34092",
+    "source_item_id": "item_015",
+    "object_text": "常规通气功能",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_9c5d9d59",
+    "source_item_id": "item_015",
+    "object_text": "小气道功能(V-V曲线)",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_44f092d7",
+    "source_item_id": "item_015",
+    "object_text": "呼吸储备功能(最大通气量)",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_092dd2b9",
+    "source_item_id": "item_015",
+    "object_text": "肺容量(残气容积等)",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_79cc3f60",
+    "source_item_id": "item_015",
+    "object_text": "轻度弥散功能障碍",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "轻度",
+    "assertion_scope_text": "轻度弥散功能障碍",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_6d6b3b1c",
+    "source_item_id": "item_015",
+    "object_text": "呼吸总阻抗Zrs",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "呼吸总阻抗Zrs正常",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_edd336c3",
+    "source_item_id": "item_015",
+    "object_text": "气道阻力R系列",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "气道阻力R系列正常",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_cfe99202",
+    "source_item_id": "item_015",
+    "object_text": "中心阻抗Rc",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "中心阻抗Rc正常",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_5dfcf43e",
+    "source_item_id": "item_015",
+    "object_text": "周边阻抗Rp",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "略增大",
+    "assertion_scope_text": "周边阻抗Rp略增大",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_37b69fb1",
+    "source_item_id": "item_015",
+    "object_text": "电抗X5",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "电抗X5正常",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_51f89db4",
+    "source_item_id": "item_015",
+    "object_text": "共振频率Fres",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "增高",
+    "assertion_scope_text": "共振频率Fres增高",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_a27bcb22",
+    "source_item_id": "item_015",
+    "object_text": "电抗面积AX",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "增大",
+    "assertion_scope_text": "电抗面积AX增大",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_5fa9cb82",
+    "source_item_id": "item_015",
+    "object_text": "Ers",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "轻度增宽",
+    "assertion_scope_text": "Ers轻度增宽",
+    "context_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常。换气功能：轻度弥散功能障碍。脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常，周边阻抗Rp略增大；电抗X5正常；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽。",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_557d81bb",
+    "source_item_id": "item_016",
+    "object_text": "哌拉西林他唑巴坦抗感染",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "予以",
+    "assertion_scope_text": "入院予以哌拉西林他唑巴坦抗感染",
+    "context_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗，患者症状减轻，现针对间质性肺病提请MDT讨论。",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_8e570d9a",
+    "source_item_id": "item_016",
+    "object_text": "化痰治疗",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "予以",
+    "assertion_scope_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗",
+    "context_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗，患者症状减轻，现针对间质性肺病提请MDT讨论。",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_a8408605",
+    "source_item_id": "item_016",
+    "object_text": "患者症状减轻",
+    "object_type": "treatment_response",
+    "assertion_status": "present",
+    "assertion_cue_text": "减轻",
+    "assertion_scope_text": "患者症状减轻",
+    "context_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗，患者症状减轻，现针对间质性肺病提请MDT讨论。",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_f50d157e",
+    "source_item_id": "item_016",
+    "object_text": "间质性肺病",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "针对",
+    "assertion_scope_text": "针对间质性肺病提请MDT讨论",
+    "context_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗，患者症状减轻，现针对间质性肺病提请MDT讨论。",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260517_c3d8d1eb",
+    "source_item_id": "item_016",
+    "object_text": "MDT讨论",
+    "object_type": "care_seeking_or_management",
+    "assertion_status": "present",
+    "assertion_cue_text": "提请",
+    "assertion_scope_text": "提请MDT讨论",
+    "context_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗，患者症状减轻，现针对间质性肺病提请MDT讨论。",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  }
+]

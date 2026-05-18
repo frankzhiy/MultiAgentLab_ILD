@@ -1,0 +1,202 @@
+[
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_001",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_001"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_cue_not_grounded",
+    "message": "Clinical assertion assertion_cue_text could not be grounded and was cleared.",
+    "related_item_id": "item_001",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_001"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_001",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_001"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_cue_not_grounded",
+    "message": "Clinical assertion assertion_cue_text could not be grounded and was cleared.",
+    "related_item_id": "item_001",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_001"
+  },
+  {
+    "severity": "warning",
+    "code": "assertion_needs_review",
+    "message": "Negation present in demographic data is unusual; verify if '男' and '65岁' are truly negated or if negation applies to other context.",
+    "related_item_id": "item_001",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_001"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_scope_repaired",
+    "message": "Clinical assertion assertion_scope_text was repaired to source text.",
+    "related_item_id": "item_003",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_003"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_003",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_003"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_scope_repaired",
+    "message": "Clinical assertion assertion_scope_text was repaired to source text.",
+    "related_item_id": "item_003",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_003"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_scope_repaired",
+    "message": "Clinical assertion assertion_scope_text was repaired to source text.",
+    "related_item_id": "item_003",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_003"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_004",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_004"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_type_repaired",
+    "message": "Clinical assertion object_type was repaired to a specific allowed value; uncertain is not allowed.",
+    "related_item_id": "item_006",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_006"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_type_repaired",
+    "message": "Clinical assertion object_type was repaired to a specific allowed value; uncertain is not allowed.",
+    "related_item_id": "item_006",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_006"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_007",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_007"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_type_repaired",
+    "message": "Clinical assertion object_type was repaired to a specific allowed value; uncertain is not allowed.",
+    "related_item_id": "item_008",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_008"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_009",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_009"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_009",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_009"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_type_repaired",
+    "message": "Clinical assertion object_type was repaired to a specific allowed value; uncertain is not allowed.",
+    "related_item_id": "item_011",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_011"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_type_repaired",
+    "message": "Clinical assertion object_type was repaired to a specific allowed value; uncertain is not allowed.",
+    "related_item_id": "item_011",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_011"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_012",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_012"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_012",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_012"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_012",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_012"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_012",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_012"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_013",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_013"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_status_repaired",
+    "message": "Clinical assertion status was repaired from local source cues; uncertain is not allowed.",
+    "related_item_id": "item_013",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_013"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_object_split_repaired",
+    "message": "Clinical assertion object_text was repaired to one or more source-copied contiguous phrase(s).",
+    "related_item_id": "item_015",
+    "related_tree_node_id": null,
+    "related_span_id": "span_item_015"
+  }
+]

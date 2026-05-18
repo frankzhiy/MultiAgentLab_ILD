@@ -1,0 +1,18 @@
+[
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_scope_not_grounded",
+    "message": "Clinical assertion assertion_scope_text was not a contiguous substring of source_text and was cleared.",
+    "related_item_id": "item_006",
+    "related_evidence_id": null,
+    "related_span_id": "span_item_006"
+  },
+  {
+    "severity": "warning",
+    "code": "clinical_assertion_scope_not_grounded",
+    "message": "Clinical assertion assertion_scope_text was not a contiguous substring of source_text and was cleared.",
+    "related_item_id": "item_006",
+    "related_evidence_id": null,
+    "related_span_id": "span_item_006"
+  }
+]

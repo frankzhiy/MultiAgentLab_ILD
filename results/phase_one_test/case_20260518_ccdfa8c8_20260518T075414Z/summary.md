@@ -1,0 +1,38 @@
+# Phase One Test Summary
+
+- case_id: `case_20260518_ccdfa8c8`
+- input_id: `input_20260518_9b78af24`
+- selected_file: `data/05.txt`
+- created_at: `2026-05-18T07:54:14.053214+00:00`
+
+## Counts
+
+- clinical_sections: 11
+- structured_items: 17
+- clinical_assertion_repairs: 24
+- evidence_trees: 17
+- item_to_tree_links: 17
+- deferred_items: 0
+- tree_structuring_warnings: 110
+- evidence_tree_warnings: 132
+
+## Validation
+
+- tree_structuring_validation_accepted: False
+- tree_structuring_validation_issue_counts: `{'assertion_needs_review': 1, 'clinical_assertion_cue_not_grounded': 2, 'clinical_assertion_scope_repaired': 3, 'clinical_assertion_status_repaired': 13, 'clinical_object_split_repaired': 1, 'clinical_object_type_repaired': 5, 'tree_assertion_mapping_missing': 10, 'tree_builder_fallback_mapping_warning': 3, 'tree_builder_fallback_root_added': 4, 'tree_builder_fallback_used': 4, 'tree_grammar_parent_type_not_allowed': 35, 'tree_grammar_root_not_allowed': 6, 'tree_invalid_node': 5, 'tree_missing_finding_structure': 2, 'tree_missing_treatment_structure': 1, 'tree_node_text_not_in_source': 15}`
+
+## Timing
+
+- case_structurer: 2 min 4.5 s
+- evidence_tree_structurer: 15 min 13.7 s
+- evidence_tree_structurer.EvidenceTreeStructurerInputGuard: 0 ms
+- evidence_tree_structurer.TreeStructuringCandidateBuilder: 0 ms
+- evidence_tree_structurer.ClinicalAssertionResolver: 3 min 26.3 s
+- evidence_tree_structurer.EvidenceTreeBuilder: 11 min 47.5 s
+- evidence_tree_structurer.EvidenceTreeStructuringResult: 0 ms
+- evidence_tree_structurer.EvidenceTreeStructuringValidator: 0 ms
+- total: 17 min 18.2 s
+
+## Reader Output
+
+Open `report.html` for the grouped, readable trace view.
