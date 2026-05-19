@@ -5,7 +5,6 @@ from __future__ import annotations
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from .common import (
-    EvidenceTreeNodeID,
     ItemID,
     SpanID,
     ValidationSeverity,
@@ -53,11 +52,6 @@ class TreeStructuringWarning(BaseModel):
         description="Optional related StructuredClinicalItem id.",
     )
 
-    related_tree_node_id: EvidenceTreeNodeID | None = Field(
-        default=None,
-        description="Optional related EvidenceTreeNode id.",
-    )
-
     related_span_id: SpanID | None = Field(
         default=None,
         description="Optional related SourceSpan id.",
@@ -81,7 +75,6 @@ class TreeStructuringWarning(BaseModel):
 
     @field_validator(
         "related_item_id",
-        "related_tree_node_id",
         "related_span_id",
         mode="after",
     )

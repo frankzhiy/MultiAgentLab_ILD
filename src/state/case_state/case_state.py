@@ -6,10 +6,6 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.case_structurer.raw_text_input import RawTextInput
-from src.schemas.evidence_tree_structurer.evidence_tree_structuring_result import (
-    EvidenceTreeStructuringResult,
-)
-from src.schemas.evidence_tree_structurer.evidence_tree import EvidenceTree
 from src.state.write_event import WriteEvent
 from src.validators.case_structurer import CaseStructuringSourceSpanResult
 
@@ -24,10 +20,6 @@ class CaseState(BaseModel):
     case_structuring_results: list[CaseStructuringResult] = Field(
         default_factory=list
     )
-    evidence_tree_structuring_results: list[EvidenceTreeStructuringResult] = Field(
-        default_factory=list
-    )
-    evidence_trees: list[EvidenceTree] = Field(default_factory=list)
     case_structuring_source_span_results: list[
         CaseStructuringSourceSpanResult
     ] = Field(default_factory=list)
@@ -42,11 +34,4 @@ class CaseState(BaseModel):
         return any(
             result.input.input_id == input_id
             for result in self.case_structuring_results
-        )
-
-    def has_evidence_tree_structuring_result(self, input_id: str) -> bool:
-        """Return whether this state already stores an tree structuring result."""
-        return any(
-            result.input_id == input_id
-            for result in self.evidence_tree_structuring_results
         )

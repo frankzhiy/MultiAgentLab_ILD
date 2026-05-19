@@ -124,14 +124,10 @@ def render_clinical_sections_html(corrected_result: Any) -> str:
 def render_structured_items_html(
     *,
     corrected_result: Any,
-    tree_result: Any,
 ) -> str:
-    trees_by_item = index_by(obj_list(tree_result, "evidence_trees"), "source_item_id")
     rows = []
     for item in obj_list(corrected_result, "structured_items"):
         item_id = enum_text(obj_field(item, "item_id"))
-        trees = trees_by_item.get(item_id, [])
-        node_count = sum(len(tree_nodes(tree)) for tree in trees)
         rows.append(
             "<tr>"
             f"<td><code>{h(item_id)}</code></td>"
@@ -143,15 +139,14 @@ def render_structured_items_html(
             f"<td>{badge(obj_field(item, 'negation'))}</td>"
             f"<td>{h(source_text_for_item(item))}</td>"
             f"<td>{h(span_debug_text(obj_list(item, 'source_spans')))}</td>"
-            f"<td>{len(trees)} trees<br>{node_count} nodes</td>"
             "</tr>"
         )
     return (
         "<section><h2>Structured Items</h2>"
-        "<p class='muted'>Section 内进一步抽出的 source-level 临床陈述。Evidence Tree Structurer 后续基于这些 item 继续拆 assertions 并构建 evidence tree。</p>"
+        "<p class='muted'>Section 内进一步抽出的 source-level 临床陈述。Evidence Tree Structurer 后续基于这些 item 继续拆 assertions。</p>"
         "<div class='table-wrap'><table><thead><tr>"
         "<th>item</th><th>section</th><th>order</th><th>type</th><th>time</th><th>certainty</th><th>negation</th>"
-        "<th>source text</th><th>spans</th><th>tree</th>"
+        "<th>source text</th><th>spans</th>"
         "</tr></thead><tbody>"
         + "".join(rows)
         + "</tbody></table></div></section>"
@@ -349,289 +344,6 @@ def render_assertion_warnings_html(assertion_resolution: Any) -> str:
     )
 
 
-def render_tree_structuring_metadata_html(
-    tree_structuring_result: Any,
-    tree_structuring_validation_report: Any,
-) -> str:
-    tree_links = obj_list(tree_structuring_result, "item_to_tree_links")
-    deferred_items = obj_list(tree_structuring_result, "deferred_items")
-    tree_structuring_warnings = obj_list(tree_structuring_result, "tree_structuring_warnings")
-    validation_issues = obj_list(tree_structuring_validation_report, "issues")
-
-    def issue_row(issue: Any) -> str:
-        related_ids = [
-            short_id(obj_field(issue, "related_item_id")),
-            short_id(obj_field(issue, "related_tree_node_id")),
-            short_id(obj_field(issue, "related_span_id")),
-        ]
-        related = " / ".join(item for item in related_ids if item)
-        return (
-            "<tr>"
-            f"<td>{badge(obj_field(issue, 'severity'), enum_text(obj_field(issue, 'severity')))}</td>"
-            f"<td><code>{h(obj_field(issue, 'code'))}</code></td>"
-            f"<td>{h(related)}</td>"
-            f"<td>{h(obj_field(issue, 'message'))}</td>"
-            "</tr>"
-        )
-
-    def issue_table(issues: list[Any], empty_text: str) -> str:
-        if not issues:
-            return f"<p class='muted'>{h(empty_text)}</p>"
-        return (
-            "<div class='table-wrap'><table><thead><tr>"
-            "<th>severity</th><th>code</th><th>related id</th><th>message</th>"
-            "</tr></thead><tbody>"
-            + "".join(issue_row(issue) for issue in issues)
-            + "</tbody></table></div>"
-        )
-
-    if tree_links:
-        tree_link_rows = "".join(
-            "<tr>"
-            f"<td><code>{h(short_id(obj_field(link, 'item_id')))}</code></td>"
-            f"<td>{badge(obj_field(link, 'transformation_type'))}</td>"
-            f"<td>{h(', '.join(short_id(tree_id) for tree_id in obj_list(link, 'tree_ids')))}</td>"
-            f"<td>{h(obj_field(link, 'explanation'))}</td>"
-            "</tr>"
-            for link in tree_links
-        )
-        tree_link_html = (
-            "<div class='table-wrap'><table><thead><tr>"
-            "<th>item</th><th>transformation</th><th>tree ids</th><th>explanation</th>"
-            "</tr></thead><tbody>"
-            + tree_link_rows
-            + "</tbody></table></div>"
-        )
-    else:
-        tree_link_html = "<p class='muted'>No item-to-tree links.</p>"
-
-    if deferred_items:
-        deferred_rows = "".join(
-            "<tr>"
-            f"<td><code>{h(short_id(obj_field(item, 'item_id')))}</code></td>"
-            f"<td>{badge(obj_field(item, 'reason'))}</td>"
-            f"<td>{h(obj_field(item, 'explanation'))}</td>"
-            "</tr>"
-            for item in deferred_items
-        )
-        deferred_html = (
-            "<div class='table-wrap'><table><thead><tr>"
-            "<th>item</th><th>reason</th><th>explanation</th>"
-            "</tr></thead><tbody>"
-            + deferred_rows
-            + "</tbody></table></div>"
-        )
-    else:
-        deferred_html = "<p class='muted'>No deferred items.</p>"
-
-    return (
-        "<section><h2>Evidence Tree Structuring Metadata</h2>"
-        "<p class='muted'>这里放 Evidence Tree Structurer 的链接和质量信息：item 如何变成 tree，哪些 item 被延后，以及最终 validator issue。</p>"
-        "<div class='output-grid'>"
-        "<div><h3>Item To Tree Links</h3>"
-        + tree_link_html
-        + "</div><div><h3>Deferred Items</h3>"
-        + deferred_html
-        + "</div></div>"
-        "<div class='output-grid'>"
-        "<div><h3>Tree Warnings</h3>"
-        + issue_table(tree_structuring_warnings, "No tree warnings.")
-        + "</div><div><h3>Tree Structuring Validation Issues</h3>"
-        + issue_table(validation_issues, "No tree-structuring validation issues.")
-        + "</div></div>"
-        + "</section>"
-    )
-
-
-def node_parent_text(node: Any, node_by_id: dict[str, Any]) -> str:
-    parent_id = enum_text(obj_field(node, "parent_node_id"))
-    if not parent_id:
-        return ""
-    parent = node_by_id.get(parent_id)
-    if parent is None:
-        return short_id(parent_id)
-    return compact(obj_field(parent, "node_text"), 80)
-
-
-def tree_node_id(node: Any) -> str:
-    return enum_text(obj_field(node, "tree_node_id"))
-
-
-def tree_nodes(tree: Any) -> list[Any]:
-    return obj_list(tree, "tree_nodes")
-
-
-def tree_warnings(tree: Any) -> list[Any]:
-    return obj_list(tree, "tree_warnings")
-
-
-def render_node_tree_html(
-    *,
-    node: Any,
-    children_by_parent: dict[str, list[Any]],
-) -> str:
-    node_id = tree_node_id(node)
-    relation = obj_field(node, "relation_to_parent")
-    relation_html = f" <span class='muted'>rel={h(relation)}</span>" if relation else ""
-
-    child_html = ""
-    children = children_by_parent.get(node_id, [])
-    if children:
-        child_html = (
-            "<ul>"
-            + "".join(
-                render_node_tree_html(
-                    node=child,
-                    children_by_parent=children_by_parent,
-                )
-                for child in children
-            )
-            + "</ul>"
-        )
-
-    return (
-        "<li>"
-        "<div class='node-line'>"
-        f"{badge(obj_field(node, 'node_type'))}"
-        f"<span class='node-text'>{h(obj_field(node, 'node_text'))}</span>"
-        f"{relation_html}"
-        f" <span class='muted'>origin={h(obj_field(node, 'node_origin'))}</span>"
-        "</div>"
-        + child_html
-        + "</li>"
-    )
-
-
-def render_tree_structure_html(
-    *,
-    nodes: list[Any],
-) -> str:
-    if not nodes:
-        return "<p class='muted'>No tree nodes.</p>"
-
-    node_ids = {tree_node_id(node) for node in nodes}
-    children_by_parent: dict[str, list[Any]] = {}
-    roots: list[Any] = []
-    for node in nodes:
-        parent_id = enum_text(obj_field(node, "parent_node_id"))
-        if parent_id and parent_id in node_ids:
-            children_by_parent.setdefault(parent_id, []).append(node)
-        else:
-            roots.append(node)
-
-    return (
-        "<div class='tree'><ul>"
-        + "".join(
-            render_node_tree_html(
-                node=root,
-                children_by_parent=children_by_parent,
-            )
-            for root in roots
-        )
-        + "</ul></div>"
-    )
-
-
-def render_trees_html(
-    *,
-    tree_result: Any,
-) -> str:
-    trees = obj_list(tree_result, "evidence_trees")
-    top_level_warnings = obj_list(tree_result, "warnings")
-
-    def tree_warning_html(warnings: list[Any], *, force_summary: bool = False) -> str:
-        if not warnings:
-            return ""
-        counts = render_counts(warning_counts(warnings))
-        if force_summary or len(warnings) > 8:
-            return (
-                "<div class='warnings'>"
-                f"<p><strong>{len(warnings)} warnings/issues</strong> {counts}</p>"
-                "<details><summary>Show warning details</summary>"
-                + "".join(
-                    f"<p>{badge(obj_field(w, 'severity'), enum_text(obj_field(w, 'severity')))} "
-                    f"<code>{h(obj_field(w, 'code'))}</code> {h(obj_field(w, 'message'))}</p>"
-                    for w in warnings
-                )
-                + "</details></div>"
-            )
-        return (
-            "<div class='warnings'>"
-            + "".join(
-                f"<p>{badge(obj_field(w, 'severity'), enum_text(obj_field(w, 'severity')))} "
-                f"<code>{h(obj_field(w, 'code'))}</code> {h(obj_field(w, 'message'))}</p>"
-                for w in warnings
-            )
-            + "</div>"
-        )
-
-    if not trees:
-        return (
-            "<section><h2>Evidence Trees</h2>"
-            + tree_warning_html(top_level_warnings)
-            + "<p class='muted'>No evidence tree payload was produced.</p></section>"
-        )
-
-    all_nodes = [node for tree in trees for node in tree_nodes(tree)]
-    summary_cards = "".join(
-        f"<div class='metric'><span>{h(label)}</span><strong>{h(value)}</strong></div>"
-        for label, value in (
-            ("trees", len(trees)),
-            ("tree nodes", len(all_nodes)),
-            ("top-level warnings", len(top_level_warnings)),
-        )
-    )
-
-    blocks = []
-    for index, tree in enumerate(trees):
-        nodes = tree_nodes(tree)
-        node_by_id = {tree_node_id(node): node for node in nodes}
-        warnings = tree_warnings(tree)
-
-        rows = []
-        for node in nodes:
-            assertion_count = len(obj_list(node, "source_assertion_ids"))
-            rows.append(
-                "<tr>"
-                f"<td>{badge(obj_field(node, 'node_type'))}</td>"
-                f"<td>{h(obj_field(node, 'node_text'))}</td>"
-                f"<td>{h(node_parent_text(node, node_by_id))}</td>"
-                f"<td>{h(obj_field(node, 'relation_to_parent'))}</td>"
-                f"<td>{badge(obj_field(node, 'node_origin'))}</td>"
-                f"<td>{badge(obj_field(node, 'context_role'))}</td>"
-                f"<td>{assertion_count}</td>"
-                "</tr>"
-            )
-
-        warning_html = tree_warning_html(warnings)
-        open_attr = " open" if index < 3 else ""
-
-        blocks.append(
-            f"<details class='tree-detail'{open_attr}>"
-            f"<summary><code>{h(obj_field(tree, 'source_item_id'))}</code> · {h(compact(obj_field(tree, 'source_text'), 120))} "
-            f"<span class='count'>{len(nodes)} nodes</span></summary>"
-            f"<p class='source'>{h(obj_field(tree, 'source_text'))}</p>"
-            + warning_html
-            + "<h3>Tree structure</h3>"
-            + render_tree_structure_html(
-                nodes=nodes,
-            )
-            + "<h3>Tree nodes</h3><div class='table-wrap'><table><thead><tr>"
-            "<th>type</th><th>node text</th><th>parent</th><th>relation</th><th>origin</th><th>role</th><th>assertions</th>"
-            "</tr></thead><tbody>"
-            + "".join(rows)
-            + "</tbody></table></div></details>"
-        )
-    return (
-        "<section><h2>Evidence Trees Primary View</h2>"
-        "<p class='muted'>这是当前 Evidence Tree Structurer 的最终输出：tree 表达层级结构，节点直接携带 assertion/context/structural provenance。前 3 棵树默认展开，方便直接检查结构是否真的成树。</p>"
-        f"<div class='metrics slim'>{summary_cards}</div>"
-        + tree_warning_html(top_level_warnings, force_summary=True)
-        + "".join(blocks)
-        + "</section>"
-    )
-
-
 def render_counts(counts: dict[str, int]) -> str:
     if not counts:
         return "<span class='muted'>none</span>"
@@ -673,14 +385,8 @@ def render_pipeline_flow_html() -> str:
         ),
         (
             "5",
-            "树形证据构建",
-            "把对象断言、上下文、修饰语和结构节点组织成 EvidenceTree，保留 parent、relation、node_origin 和 provenance。",
-            "EvidenceTree[]",
-        ),
-        (
-            "6",
             "报告输出",
-            "写出 JSON 与 HTML。报告展示 assertions、trees 和节点 provenance 的对应关系。",
+            "写出 JSON 与 HTML。报告展示 assertions 和 item-level provenance 的对应关系。",
             "report.html",
         ),
     ]
@@ -701,10 +407,7 @@ def render_stage_diagnostics_html(
     summary: dict[str, Any],
     case_bundle: Any,
     corrected_result: Any,
-    tree_structuring_result: Any,
-    tree_structuring_validation_report: Any,
-    assertion_resolution: Any,
-    tree_result: Any,
+    assertion_result: Any,
 ) -> str:
     raw_input = obj_field(corrected_result, "input", {})
     raw_char_count = len(enum_text(obj_field(raw_input, "raw_text")))
@@ -714,10 +417,7 @@ def render_stage_diagnostics_html(
     item_final_report = obj_field(item_span_result, "final_validation_report")
     section_correction_report = obj_field(section_span_result, "correction_report")
     item_correction_report = obj_field(item_span_result, "correction_report")
-    assertion_warnings = obj_list(assertion_resolution, "assertion_warnings")
-    tree_warning_items = obj_list(tree_result, "warnings")
-    for tree in obj_list(tree_result, "evidence_trees"):
-        tree_warning_items.extend(tree_warnings(tree))
+    assertion_warnings = obj_list(assertion_result, "assertion_warnings")
 
     stages = [
         {
@@ -738,7 +438,7 @@ def render_stage_diagnostics_html(
             "output": f"{summary['clinical_sections']} sections, {summary['structured_items']} structured items",
             "schemas": "RawTextInput, StageContext, ClinicalSection, StructuredClinicalItem, SourceSpan, CaseStructuringResult",
             "mechanisms": "RawInputBuilder -> StageContextExtractor -> ClinicalSectionExtractor -> SectionNormalizer -> SectionSourceSpanValidationCorrection -> StructuredClinicalItemExtractor -> ItemNormalizer -> ItemSourceSpanValidationCorrection -> CaseStructuringAssembler",
-            "risk": "item 边界太粗会让后面 assertion/tree 变复杂；item 边界太碎会丢上下文。",
+            "risk": "item 边界太粗会让后面 assertion 变复杂；item 边界太碎会丢上下文。",
         },
         {
             "name": "Source Span Correction",
@@ -763,29 +463,15 @@ def render_stage_diagnostics_html(
         {
             "name": "Clinical Assertion Resolver",
             "status": "warning" if assertion_warnings else "done",
-            "plain": "作用：把 item 内的临床对象、肯否定状态和结构提示（parent/relation/temporal/trigger/modifiers）拆出来。目的：为树形证据提供带结构线索的最小对象节点。",
+            "plain": "作用：把 item 内的临床对象、肯否定状态和结构提示（parent/relation/temporal/trigger/modifiers）拆出来。目的：产出带结构线索的最小对象节点。",
             "input": "ItemContext[] = item + section + spans",
             "output": (
-                f"{len(obj_list(assertion_resolution, 'clinical_object_assertions'))} assertions; "
+                f"{len(obj_list(assertion_result, 'clinical_object_assertions'))} assertions; "
                 f"warnings={len(assertion_warnings)} {render_counts(warning_counts(assertion_warnings))}"
             ),
             "schemas": "ItemContext, ClinicalObjectAssertion, ClinicalAssertionResolutionResult",
             "mechanisms": "ClinicalAssertionResolver (LLM) + ClinicalAssertionValidator (source-grounding only, drops invalid drafts with warnings).",
-            "risk": "如果 object_text 拆错或不在原文，下游 tree builder 会拿到错误的原子节点。注意 assertion 不再带 parent/relation 提示，树的拓扑由 LLM 在建树阶段决定。",
-        },
-        {
-            "name": "Evidence Tree Builder",
-            "status": "warning" if tree_warning_items else "done",
-            "plain": "作用：LLM 读 source_text + assertions，自己决定树的父子、兼顾 grammar 和 source grounding。目的：输出完整的结构化证据。",
-            "input": "ItemContext[] + ClinicalObjectAssertion[]",
-            "output": (
-                f"{summary['evidence_trees']} trees; "
-                f"tree warnings={summary['evidence_tree_warnings']} "
-                f"{render_counts(warning_counts(tree_warning_items))}"
-            ),
-            "schemas": "EvidenceTree, EvidenceTreeNode, EvidenceTreeBuildResult, TreeStructuringWarning",
-            "mechanisms": "EvidenceTreeBuilder + EvidenceTreeValidator；validator 检查 node_text grounding、parent/context/assertion/span 引用和 node_origin。",
-            "risk": "tree warning 多时，问题通常在 assertion 映射、父子关系、节点文本不在原文、或强行套模板。",
+            "risk": "如果 object_text 拆错或不在原文，下游会拿到错误的原子节点。",
         },
     ]
 
@@ -808,7 +494,7 @@ def render_stage_diagnostics_html(
     )
     return (
         "<section><h2>Stage Diagnostics</h2>"
-        "<p class='muted'>这个部分只放阶段健康度和调试重点；完整阶段输出在后面的 Raw Input、Clinical Sections、Structured Items、Assertions、Evidence Trees 各区块里。</p>"
+        "<p class='muted'>这个部分只放阶段健康度和调试重点；完整阶段输出在后面的 Raw Input、Clinical Sections、Structured Items、Assertions 各区块里。</p>"
         f"<div class='stage-diagnostics'>{rows}</div></section>"
     )
 
@@ -816,37 +502,28 @@ def render_stage_diagnostics_html(
 def render_item_lineage_html(
     *,
     corrected_result: Any,
-    assertion_resolution: Any,
-    tree_result: Any,
+    assertion_result: Any,
 ) -> str:
     assertions_by_item = index_by(
-        obj_list(assertion_resolution, "clinical_object_assertions"),
+        obj_list(assertion_result, "clinical_object_assertions"),
         "source_item_id",
     )
-    trees_by_item = {
-        enum_text(obj_field(tree, "source_item_id")): tree
-        for tree in obj_list(tree_result, "evidence_trees")
-    }
     rows = []
     for item in obj_list(corrected_result, "structured_items"):
         item_id = enum_text(obj_field(item, "item_id"))
         assertions = assertions_by_item.get(item_id, [])
-        tree = trees_by_item.get(item_id)
-        nodes = tree_nodes(tree) if tree is not None else []
-        warnings = tree_warnings(tree) if tree is not None else []
         rows.append(
             "<tr>"
             f"<td><code>{h(item_id)}</code><br>{badge(obj_field(item, 'item_type'))}</td>"
             f"<td>{h(compact(source_text_for_item(item), 180))}</td>"
             f"<td>{len(assertions)}<br>{h(', '.join(compact(obj_field(assertion, 'object_text'), 20) for assertion in assertions[:5]))}</td>"
-            f"<td>{len(nodes)} nodes<br>{len(warnings)} warnings</td>"
             "</tr>"
         )
     return (
         "<section><h2>Item Lineage Matrix</h2>"
-        "<p class='muted'>每一行回答：这个 item 后面有没有对象断言、有没有 tree、有没有 warning。断点通常就藏在某个数字突然变成 0 或 warning 激增的地方。</p>"
+        "<p class='muted'>每一行回答：这个 item 后面有没有对象断言。断点通常就藏在某个数字突然变成 0 的地方。</p>"
         "<div class='table-wrap'><table><thead><tr>"
-        "<th>item</th><th>source text</th><th>assertions</th><th>tree</th>"
+        "<th>item</th><th>source text</th><th>assertions</th>"
         "</tr></thead><tbody>"
         + "".join(rows)
         + "</tbody></table></div></section>"
@@ -860,19 +537,14 @@ def render_html_report(
     selected_payload: dict[str, Any],
     case_bundle: Any,
     corrected_result: Any,
-    tree_structuring_result: Any,
-    tree_structuring_validation_report: Any,
-    assertion_resolution: Any,
-    tree_result: Any,
+    assertion_result: Any,
 ) -> str:
+    assertion_warnings = obj_list(assertion_result, "assertion_warnings") if assertion_result else []
     metrics = [
         ("sections", summary["clinical_sections"]),
         ("items", summary["structured_items"]),
-        ("assertions", len(obj_list(assertion_resolution, "clinical_object_assertions"))),
-        ("clinical object assertions", summary.get("clinical_object_assertions", 0)),
-        ("trees", summary["evidence_trees"]),
-        ("tree warnings", summary["evidence_tree_warnings"]),
-        ("warnings", summary["tree_structuring_warnings"]),
+        ("assertions", summary.get("clinical_object_assertions", 0)),
+        ("assertion warnings", summary.get("assertion_warnings", 0)),
     ]
     metric_cards = "".join(
         f"<div class='metric'><span>{h(label)}</span><strong>{h(value)}</strong></div>"
@@ -882,24 +554,6 @@ def render_html_report(
         f"<tr><td>{h(key)}</td><td>{h(summary['durations_human'].get(key))}</td></tr>"
         for key in ("case_structurer", "evidence_tree_structurer", "total")
         if key in summary["durations_human"]
-    )
-    tree_structurer_duration_rows = "".join(
-        f"<tr><td>{h(key.removeprefix('evidence_tree_structurer.'))}</td><td>{h(value)}</td></tr>"
-        for key, value in summary["durations_human"].items()
-        if key.startswith("evidence_tree_structurer.")
-    )
-    tree_structurer_timing_html = (
-        "<p class='muted'>No Evidence Tree Structurer internal timings were captured.</p>"
-        if not tree_structurer_duration_rows
-        else "<h3>Evidence Tree Structurer Internal Timing</h3>"
-        "<div class='table-wrap'><table><tbody>"
-        + tree_structurer_duration_rows
-        + "</tbody></table></div>"
-    )
-    tree_note = (
-        "Current Evidence Tree Structurer produces EvidenceTrees as the final "
-        "hierarchical evidence output. Tree nodes carry assertion/context/"
-        "structural provenance directly."
     )
 
     return f"""<!doctype html>
@@ -1149,46 +803,6 @@ th {{ color: var(--muted); font-size: 12px; text-transform: uppercase; letter-sp
   font-size: 12px;
   text-transform: uppercase;
 }}
-.tree {{
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fbfcff;
-  padding: 10px 12px;
-  overflow-x: auto;
-}}
-.tree ul {{
-  list-style: none;
-  margin: 0 0 0 22px;
-  padding: 0;
-  border-left: 1px solid #cfd7e3;
-}}
-.tree > ul {{
-  margin-left: 0;
-  border-left: 0;
-}}
-.tree li {{
-  margin: 6px 0 6px 0;
-  padding-left: 12px;
-  position: relative;
-}}
-.tree li::before {{
-  content: "";
-  position: absolute;
-  top: 15px;
-  left: 0;
-  width: 10px;
-  border-top: 1px solid #cfd7e3;
-}}
-.tree > ul > li::before {{ display: none; }}
-.node-line {{
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  flex-wrap: wrap;
-}}
-.node-text {{
-  font-weight: 650;
-}}
 .warnings {{
   border: 1px solid #f6d58f;
   background: #fff8e8;
@@ -1209,8 +823,7 @@ th {{ color: var(--muted); font-size: 12px; text-transform: uppercase; letter-sp
     <h2>How To Read This Report</h2>
     <div class="callout">
       <p><strong>这份报告的目的不是展示漂亮结果，而是帮你定位项目问题。</strong></p>
-      <p>{h(tree_note)}</p>
-      <p>阅读顺序建议：先看 End-to-end Flow 和 Stage Diagnostics；再从 Raw Input、Stage Context、Clinical Sections、Structured Items 逐层往下查；assertion 和 tree 的 warning 分别放在对应区域里。</p>
+      <p>阅读顺序建议：先看 End-to-end Flow 和 Stage Diagnostics；再从 Raw Input、Stage Context、Clinical Sections、Structured Items 逐层往下查；assertion warning 放在对应区块里。</p>
     </div>
   </section>
   {render_pipeline_flow_html()}
@@ -1219,26 +832,23 @@ th {{ color: var(--muted); font-size: 12px; text-transform: uppercase; letter-sp
     <div class="table-wrap"><table><tbody>
       <tr><td>case_id</td><td><code>{h(summary["case_id"])}</code></td></tr>
       <tr><td>input_id</td><td><code>{h(summary["input_id"])}</code></td></tr>
-      <tr><td>evidence tree structurer validation</td><td>{badge(summary["tree_structuring_validation_accepted"])}</td></tr>
-      <tr><td>recommended debug target</td><td><code>clinical_object_assertions.json</code> + <code>evidence_trees.json</code></td></tr>
+      <tr><td>recommended debug target</td><td><code>clinical_object_assertions.json</code></td></tr>
     </tbody></table></div>
     <h3>Top-level Timing</h3>
     <div class="table-wrap"><table><tbody>{top_level_duration_rows}</tbody></table></div>
-    {tree_structurer_timing_html}
   </section>
-  {render_stage_diagnostics_html(summary=summary, case_bundle=case_bundle, corrected_result=corrected_result, tree_structuring_result=tree_structuring_result, tree_structuring_validation_report=tree_structuring_validation_report, assertion_resolution=assertion_resolution, tree_result=tree_result)}
+  {render_stage_diagnostics_html(summary=summary, case_bundle=case_bundle, corrected_result=corrected_result, assertion_result=assertion_result)}
   {render_raw_input_html(raw_text=raw_text, selected_payload=selected_payload)}
   {render_stage_context_html(corrected_result)}
   {render_clinical_sections_html(corrected_result)}
   {render_structuring_warnings_html(corrected_result)}
-  {render_structured_items_html(corrected_result=corrected_result, tree_result=tree_result)}
+  {render_structured_items_html(corrected_result=corrected_result)}
   {render_span_validation_html(case_bundle)}
-  {render_item_lineage_html(corrected_result=corrected_result, assertion_resolution=assertion_resolution, tree_result=tree_result)}
-  {render_assertion_warnings_html(assertion_resolution)}
-  {render_assertions_html(corrected_result=corrected_result, assertion_resolution=assertion_resolution)}
-  {render_trees_html(tree_result=tree_result)}
-  {render_tree_structuring_metadata_html(tree_structuring_result, tree_structuring_validation_report)}
+  {render_item_lineage_html(corrected_result=corrected_result, assertion_result=assertion_result)}
+  {render_assertion_warnings_html(assertion_result)}
+  {render_assertions_html(corrected_result=corrected_result, assertion_resolution=assertion_result)}
 </main>
 </body>
 </html>
 """
+

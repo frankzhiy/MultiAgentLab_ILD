@@ -1,7 +1,7 @@
 """Shared primitive types, enums, and helpers for Evidence Tree Structurer schemas.
 
 Evidence Tree Structurer converts validated Case Structurer output into
-source-grounded evidence trees for later reasoning phases.
+source-grounded clinical object assertions for later reasoning phases.
 
 It does not assign support/refute relationships to diagnoses, generate
 hypotheses, recommend treatment, resolve conflicts, perform update tracing,
@@ -9,8 +9,6 @@ run safety gates, or arbitrate between agents.
 """
 
 import re
-from enum import StrEnum
-from typing import TypeAlias
 
 from src.schemas.case_structurer.common import (
     CaseID,
@@ -26,14 +24,9 @@ from src.schemas.case_structurer.common import (
 )
 
 __all__ = [
-    "TreeStructuringTransformationType",
     "CaseID",
     "CertaintyLevel",
     "ConfidenceLevel",
-    "DeferredReason",
-    "EvidenceTreeStructuringResultID",
-    "EvidenceTreeID",
-    "EvidenceTreeNodeID",
     "FORBIDDEN_REASONING_FIELD_NAMES",
     "FORBIDDEN_REASONING_TEXT_PATTERNS",
     "InputID",
@@ -48,42 +41,6 @@ __all__ = [
     "require_non_empty_text",
     "validate_no_forbidden_schema_fields",
 ]
-
-
-# ---------------------------------------------------------------------
-# ID type definitions
-# ---------------------------------------------------------------------
-
-EvidenceTreeStructuringResultID: TypeAlias = str
-EvidenceTreeID: TypeAlias = str
-EvidenceTreeNodeID: TypeAlias = str
-
-
-# ---------------------------------------------------------------------
-# Evidence tree transformation categories
-# ---------------------------------------------------------------------
-
-class TreeStructuringTransformationType(StrEnum):
-    """How a StructuredClinicalItem became EvidenceTree material."""
-
-    COPIED = "copied"
-    SPLIT = "split"
-    NORMALIZED = "normalized"
-    MERGED = "merged"
-    DEFERRED = "deferred"
-    DROPPED = "dropped"
-
-
-class DeferredReason(StrEnum):
-    """Reason a StructuredClinicalItem was not safely structured as evidence."""
-
-    TOO_AMBIGUOUS = "too_ambiguous"
-    NOT_CLINICAL_EVIDENCE = "not_clinical_evidence"
-    INSUFFICIENT_SOURCE_SPAN = "insufficient_source_span"
-    ADMINISTRATIVE_TEXT = "administrative_text"
-    DUPLICATE_OF_EXISTING_TREE = "duplicate_of_existing_tree"
-    REQUIRES_DOWNSTREAM_INTERPRETATION = "requires_downstream_interpretation"
-    OUTSIDE_TREE_STRUCTURER_SCOPE = "outside_tree_structurer_scope"
 
 
 # ---------------------------------------------------------------------

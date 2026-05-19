@@ -20,11 +20,6 @@ from src.schemas.case_structurer.common import (
     SpanID,
     StageID,
 )
-from src.schemas.evidence_tree_structurer.common import (
-    EvidenceTreeStructuringResultID,
-    EvidenceTreeID,
-    EvidenceTreeNodeID,
-)
 
 _PREFIX_PATTERN = re.compile(r"^[a-z0-9_]+$")
 
@@ -94,15 +89,3 @@ def generate_timeline_event_id() -> EventID:
 
 def generate_ambiguity_id() -> AmbiguityID:
     return AmbiguityID(generate_id("ambiguity"))
-
-
-def generate_tree_structuring_result_id() -> EvidenceTreeStructuringResultID:
-    return EvidenceTreeStructuringResultID(generate_id("tree_structuring_result"))
-
-
-def generate_evidence_tree_id() -> EvidenceTreeID:
-    return EvidenceTreeID(generate_id("evidence_tree"))
-
-
-def generate_evidence_tree_node_id() -> EvidenceTreeNodeID:
-    return EvidenceTreeNodeID(generate_id("evidence_tree_node"))

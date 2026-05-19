@@ -1,7 +1,7 @@
 """Clinical Assertion Resolver — LLM #1 of the Evidence Tree Structurer.
 
 For each ItemContext, prompt the LLM once to produce ClinicalObjectAssertions
-with structural hints (parent/relation/temporal/trigger/modifier). The result is
+strictly conforming to the ClinicalObjectAssertion schema. The result is
 validated and source-grounded by ClinicalAssertionValidator. There is no
 hardcoded Chinese cue/term table — the prompt and schema do the work.
 """
@@ -37,10 +37,11 @@ if TYPE_CHECKING:
 
 _INSTRUCTION = (
     "Extract source-grounded ClinicalObjectAssertion records for the provided "
-    "StructuredClinicalItem. Fill parent_object_text, relation_to_parent, "
-    "temporal_anchor_text, trigger_text, and modifier_texts so the downstream "
-    "evidence tree builder can mechanically attach nodes. Return strict JSON "
-    "matching the contract."
+    "StructuredClinicalItem. Your output must strictly conform to the JSON schema "
+    "defined for ClinicalObjectAssertion — include only the fields declared in the "
+    "schema and populate every required field. Tree-level structure (parent/child "
+    "relationships and relation types) is handled by a separate downstream component "
+    "and must not appear in your output."
 )
 
 

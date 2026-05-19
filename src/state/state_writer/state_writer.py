@@ -8,9 +8,6 @@ from pydantic import BaseModel, ConfigDict
 
 from src.schemas.case_structurer.case_structuring_result import CaseStructuringResult
 from src.schemas.case_structurer.common import ValidationSeverity
-from src.schemas.evidence_tree_structurer.evidence_tree_structuring_result import (
-    EvidenceTreeStructuringResult,
-)
 from src.state.case_state import CaseState
 from src.state.write_event import WriteEvent, WriteStatus
 from src.validators.case_structurer import (
@@ -47,7 +44,6 @@ class StateWriter:
 
     writer_name = "state_writer"
     _case_structuring_object_type = "case_structuring_result"
-    _evidence_tree_structuring_object_type = "evidence_tree_structuring_result"
 
     def write_case_structuring_result(
         self,
@@ -170,96 +166,6 @@ class StateWriter:
             source_span_result=source_span_result,
         )
 
-    def write_evidence_tree_structuring_result(
-        self,
-        state: CaseState,
-        result: EvidenceTreeStructuringResult,
-        agent_name: str = "evidence_tree_structurer",
-    ) -> StateWriteResult:
-        """Validate and write an Evidence Tree Structurer result into state."""
-        object_id = result.input_id
-
-        if result.case_id != state.case_id:
-            return self._reject_without_validation(
-                state=state,
-                agent_name=agent_name,
-                object_id=object_id,
-                object_type=self._evidence_tree_structuring_object_type,
-                message=(
-                    "EvidenceTreeStructuringResult rejected because result case_id "
-                    "does not match CaseState case_id."
-                ),
-            )
-
-        if not state.has_case_structuring_result(object_id):
-            return self._reject_without_validation(
-                state=state,
-                agent_name=agent_name,
-                object_id=object_id,
-                object_type=self._evidence_tree_structuring_object_type,
-                message=(
-                    "EvidenceTreeStructuringResult rejected because this input_id "
-                    "has no accepted CaseStructuringResult."
-                ),
-            )
-
-        if state.has_evidence_tree_structuring_result(object_id):
-            return self._reject_without_validation(
-                state=state,
-                agent_name=agent_name,
-                object_id=object_id,
-                object_type=self._evidence_tree_structuring_object_type,
-                message=(
-                    "EvidenceTreeStructuringResult rejected because this input_id "
-                    "already has an accepted evidence tree structuring result."
-                ),
-            )
-
-        validation_issues = _evidence_tree_structuring_issues(
-            state=state,
-            result=result,
-        )
-        if _has_errors(validation_issues):
-            return self._reject_without_validation(
-                state=state,
-                agent_name=agent_name,
-                object_id=object_id,
-                object_type=self._evidence_tree_structuring_object_type,
-                message=(
-                    "EvidenceTreeStructuringResult rejected because deterministic "
-                    "validation produced error issues."
-                ),
-            )
-
-        state.evidence_tree_structuring_results.append(result)
-        state.evidence_trees.extend(result.evidence_trees)
-        status = (
-            WriteStatus.ACCEPTED_WITH_WARNINGS
-            if _has_warnings(validation_issues)
-            else WriteStatus.ACCEPTED
-        )
-        message = (
-            "EvidenceTreeStructuringResult accepted with validation warnings."
-            if status == WriteStatus.ACCEPTED_WITH_WARNINGS
-            else "EvidenceTreeStructuringResult accepted."
-        )
-        write_event = self._append_write_event(
-            state=state,
-            agent_name=agent_name,
-            object_id=object_id,
-            object_type=self._evidence_tree_structuring_object_type,
-            status=status,
-            message=message,
-        )
-        return StateWriteResult(
-            status=status,
-            case_id=state.case_id,
-            accepted=True,
-            message=message,
-            write_event=write_event,
-            corrected_result=result,
-        )
-
     def _reject_without_validation(
         self,
         state: CaseState,
@@ -318,34 +224,3 @@ def _has_errors(issues: list[object]) -> bool:
         getattr(issue, "severity", None) == ValidationSeverity.ERROR
         for issue in issues
     )
-
-
-def _evidence_tree_structuring_issues(
-    *,
-    state: CaseState,
-    result: EvidenceTreeStructuringResult,
-) -> list[object]:
-    source_result = _case_structuring_result_for_input(state, result.input_id)
-    issues: list[object] = []
-    if result.source_structuring_result_id != source_result.case_structuring_result_id:
-        issues.append(
-            _StateValidationIssue(
-                severity=ValidationSeverity.ERROR,
-                code="source_structuring_result_id_mismatch",
-                message=(
-                    "EvidenceTreeStructuringResult.source_structuring_result_id "
-                    "must match CaseStructuringResult.case_structuring_result_id."
-                ),
-            )
-        )
-    return issues
-
-
-def _case_structuring_result_for_input(
-    state: CaseState,
-    input_id: str,
-) -> CaseStructuringResult:
-    for result in state.case_structuring_results:
-        if result.input.input_id == input_id:
-            return result
-    raise ValueError(f"No CaseStructuringResult found for input_id={input_id!r}.")

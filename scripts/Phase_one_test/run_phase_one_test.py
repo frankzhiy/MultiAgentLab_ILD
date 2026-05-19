@@ -216,9 +216,6 @@ def initialize_agents() -> tuple[Any, Any]:
     CaseStructurerAgent, EvidenceTreeStructurerAgent, ChatAnywhereClient = load_runtime_components()
     llm_client = ChatAnywhereClient()
     return CaseStructurerAgent(llm_client=llm_client), EvidenceTreeStructurerAgent(llm_client=llm_client)
-
-
-def run_stage(label: str, callback: Any) -> tuple[Any, float]:
     timer = LiveTimer(label)
     with timer:
         result = callback()
@@ -251,19 +248,6 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--parent-input-id", default=None)
     parser.add_argument("--list-only", action="store_true")
     return parser.parse_args(argv)
-
-
-def evidence_tree_structurer_progress_printer(tree_timer: LiveTimer):
-    def progress(step: str, elapsed_seconds: float) -> None:
-        LiveTimer._clear_line()
-        print(
-            "    "
-            + color("done", Style.green)
-            + f" {step} in {format_duration(elapsed_seconds)}"
-        )
-        tree_timer._render()
-
-    return progress
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -347,26 +331,16 @@ def main(argv: list[str] | None = None) -> int:
             output_dir = output_root / f"{case_id}_{timestamp}_{suffix}"
         pending_dir.rename(output_dir)
 
-        tree_timer = LiveTimer("Evidence Tree Structurer")
-        with tree_timer:
-            tree_structuring_bundle = evidence_tree_structurer.run_with_validation(
-                corrected_result,
-                progress_callback=evidence_tree_structurer_progress_printer(tree_timer),
-            )
-        tree_seconds = tree_timer.elapsed_seconds
-        tree_structuring_result = obj_field(tree_structuring_bundle, "tree_structuring_result")
-        if tree_structuring_result is None:
-            raise RuntimeError("Evidence Tree Structurer did not return tree_structuring_result.")
+        assertion_timer = LiveTimer("Evidence Tree Structurer")
+        with assertion_timer:
+            assertion_result = evidence_tree_structurer.run(corrected_result)
+        assertion_seconds = assertion_timer.elapsed_seconds
 
         total_seconds = perf_counter() - total_start
-        tree_result = obj_field(tree_structuring_bundle, "evidence_tree_build_result")
-        assertion_resolution = obj_field(tree_structuring_bundle, "clinical_assertion_resolution")
-        tree_structurer_timings = obj_field(tree_structuring_bundle, "pipeline_timings_seconds", {})
 
         durations = {
             "case_structurer": case_seconds,
-            "evidence_tree_structurer": tree_seconds,
-            **{f"evidence_tree_structurer.{step}": seconds for step, seconds in tree_structurer_timings.items()},
+            "evidence_tree_structurer": assertion_seconds,
             "total": total_seconds,
         }
         summary = build_summary(
@@ -374,10 +348,7 @@ def main(argv: list[str] | None = None) -> int:
             repo_root=REPO_ROOT,
             created_at=created_at,
             corrected_result=corrected_result,
-            tree_structuring_result=tree_structuring_result,
-            tree_structuring_validation_report=obj_field(tree_structuring_bundle, "validation_report"),
-            assertion_resolution=assertion_resolution,
-            tree_result=tree_result,
+            assertion_result=assertion_result,
             durations=durations,
         )
 
@@ -388,9 +359,7 @@ def main(argv: list[str] | None = None) -> int:
             summary=summary,
             case_bundle=case_bundle,
             corrected_result=corrected_result,
-            tree_structuring_bundle=tree_structuring_bundle,
-            tree_structuring_result=tree_structuring_result,
-            tree_result=tree_result,
+            assertion_result=assertion_result,
         )
     except Exception as exc:
         target_dir = locals().get("output_dir", pending_dir)

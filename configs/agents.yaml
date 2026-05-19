@@ -9,14 +9,6 @@ agents:
       stage_context: src/agents/case_structurer/prompts/stage_context.md
       clinical_section: src/agents/case_structurer/prompts/clinical_section.md
       structured_item: src/agents/case_structurer/prompts/structured_item.md
-  attribute_extractor:
-    provider: chatanywhere
-    model: deepseek-v4-flash
-    temperature: 0.0
-    max_tokens: 32000
-    response_format: json_object
-    prompts:
-      attribute_span_role_labeling: src/agents/attribute_extractor/prompts/attribute_span_role_labeling.md
   evidence_tree_structurer:
     provider: chatanywhere
     model: deepseek-v4-flash
@@ -25,4 +17,3 @@ agents:
     response_format: json_object
     prompts:
       clinical_assertion_labeling: src/agents/evidence_tree_structurer/prompts/clinical_assertion_labeling.md
-      evidence_tree_building: src/agents/evidence_tree_structurer/prompts/evidence_tree_building.md
