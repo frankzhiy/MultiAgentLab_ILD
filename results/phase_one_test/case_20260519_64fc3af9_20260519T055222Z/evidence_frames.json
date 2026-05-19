@@ -1,0 +1,891 @@
+[
+  {
+    "frame_id": "evidence_frame_20260519_6d17c339",
+    "source_item_id": "item_001",
+    "frame_type": "past_history",
+    "frame_label": "患者***,男,65岁",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_7b035ab9"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_e95900a2"
+    ],
+    "source_span_ids": [
+      "span_item_001"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_ac7b10fc",
+    "source_item_id": "item_002",
+    "frame_type": "symptom_course",
+    "frame_label": "主因咳嗽咳痰伴痰中带血10天",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_47bf1ff6",
+      "clinical_object_assertion_20260519_0dd75e32",
+      "clinical_object_assertion_20260519_013c90fc"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_2191ee41",
+      "evidence_node_20260519_a10d3688",
+      "evidence_node_20260519_595b2f2e"
+    ],
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_fb7dc114",
+    "source_item_id": "item_003",
+    "frame_type": "symptom_course",
+    "frame_label": "10天前出现咳嗽、咳痰、白色粘痰，晨起痰中带血",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_02268e9e",
+      "clinical_object_assertion_20260519_ed467dff",
+      "clinical_object_assertion_20260519_e64cd815",
+      "clinical_object_assertion_20260519_10c64495",
+      "clinical_object_assertion_20260519_0b334bbe"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_3e571ed0",
+      "evidence_node_20260519_264ff1d1",
+      "evidence_node_20260519_f866984a",
+      "evidence_node_20260519_41525a45",
+      "evidence_node_20260519_07bd40ad"
+    ],
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_4ac3e1e3",
+    "source_item_id": "item_004",
+    "frame_type": "negated_symptom_group",
+    "frame_label": "无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_f3bb8933",
+      "clinical_object_assertion_20260519_255a9f52",
+      "clinical_object_assertion_20260519_cba88dcf",
+      "clinical_object_assertion_20260519_2f9bb726",
+      "clinical_object_assertion_20260519_d1a2dab4"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_9c437418",
+      "evidence_node_20260519_fbf3b6fe",
+      "evidence_node_20260519_ea8a8350",
+      "evidence_node_20260519_b85ca47f",
+      "evidence_node_20260519_6174e40f"
+    ],
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_58aca41e",
+    "source_item_id": "item_005",
+    "frame_type": "test_result_group",
+    "frame_label": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_0712bb4d",
+      "clinical_object_assertion_20260519_bb3ebcca",
+      "clinical_object_assertion_20260519_e6ecfc91"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_05d023e8",
+      "evidence_node_20260519_4a9ba7d9",
+      "evidence_node_20260519_633a67b7"
+    ],
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_4eeead60",
+    "source_item_id": "item_005",
+    "frame_type": "lab_panel",
+    "frame_label": "未见明显异常的检验项目：血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_297c6cdf",
+      "clinical_object_assertion_20260519_de2e7642",
+      "clinical_object_assertion_20260519_d029d699",
+      "clinical_object_assertion_20260519_798f514d",
+      "clinical_object_assertion_20260519_53a54006",
+      "clinical_object_assertion_20260519_950ddfc3",
+      "clinical_object_assertion_20260519_eb15299d",
+      "clinical_object_assertion_20260519_079e5a0e",
+      "clinical_object_assertion_20260519_996c853e",
+      "clinical_object_assertion_20260519_d003bd1c"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_49894f26",
+      "evidence_node_20260519_9f3d4633",
+      "evidence_node_20260519_19a78e80",
+      "evidence_node_20260519_e95006bc",
+      "evidence_node_20260519_5595857f",
+      "evidence_node_20260519_9db00daf",
+      "evidence_node_20260519_7baf64fc",
+      "evidence_node_20260519_fd961de6",
+      "evidence_node_20260519_7e0aca19",
+      "evidence_node_20260519_21540082"
+    ],
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_ba4f58b3",
+    "source_item_id": "item_006",
+    "frame_type": "test_result_group",
+    "frame_label": "胸部CT示双肺间质性肺炎、间质纤维化、气肿、主动脉壁钙化、胸膜增厚",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_5a9a7da3",
+      "clinical_object_assertion_20260519_ea4a409f",
+      "clinical_object_assertion_20260519_cc7125ca",
+      "clinical_object_assertion_20260519_36edbe2c",
+      "clinical_object_assertion_20260519_a16cd0c9"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_cae46b39",
+      "evidence_node_20260519_3450c45c",
+      "evidence_node_20260519_76080f31",
+      "evidence_node_20260519_c5aab185",
+      "evidence_node_20260519_0b632bcb"
+    ],
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_db5c8b76",
+    "source_item_id": "item_007",
+    "frame_type": "treatment_exposure",
+    "frame_label": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_a6fc5d9b",
+      "clinical_object_assertion_20260519_3b0ef3a3",
+      "clinical_object_assertion_20260519_36975772",
+      "clinical_object_assertion_20260519_554edf91",
+      "clinical_object_assertion_20260519_524125a7"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_87ba6f3b",
+      "evidence_node_20260519_bfeb1f20",
+      "evidence_node_20260519_243e210d",
+      "evidence_node_20260519_99a981aa",
+      "evidence_node_20260519_9e2c3c87"
+    ],
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_9d426338",
+    "source_item_id": "item_008",
+    "frame_type": "care_seeking",
+    "frame_label": "请我科会诊后，以间质性肺疾病收住我科",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_54f372be",
+      "clinical_object_assertion_20260519_33fda6ae",
+      "clinical_object_assertion_20260519_3fa53ade"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_167ad208",
+      "evidence_node_20260519_1ac7369e",
+      "evidence_node_20260519_4c2b8f97"
+    ],
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_7b7dcad6",
+    "source_item_id": "item_009",
+    "frame_type": "symptom_course",
+    "frame_label": "病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_8ad890de",
+      "clinical_object_assertion_20260519_c5bb0ef4",
+      "clinical_object_assertion_20260519_fc1499be",
+      "clinical_object_assertion_20260519_f6961290",
+      "clinical_object_assertion_20260519_b3f61842"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_ad415987",
+      "evidence_node_20260519_3088dcb9",
+      "evidence_node_20260519_19db8b87",
+      "evidence_node_20260519_fc9eeb4a",
+      "evidence_node_20260519_804b29c1"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_022ed456",
+    "source_item_id": "item_009",
+    "frame_type": "negated_symptom_group",
+    "frame_label": "近期体重未见明显改变",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_13c178b3"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_5c8ff66c"
+    ],
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_8999f8dc",
+    "source_item_id": "item_010",
+    "frame_type": "past_history",
+    "frame_label": "既往糖尿病史10余年",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_70e96d4a"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_8ff402da"
+    ],
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_36cf8cfc",
+    "source_item_id": "item_011",
+    "frame_type": "treatment_exposure",
+    "frame_label": "平素口服二甲双胍格列本脲片，阿卡波糖",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_e81df7c4",
+      "clinical_object_assertion_20260519_3ef9cf33"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_7055ede7",
+      "evidence_node_20260519_066d2b9e"
+    ],
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_6f7c24c2",
+    "source_item_id": "item_012",
+    "frame_type": "past_history",
+    "frame_label": "既往血糖控制不佳",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_32a04678"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_17eb8f63"
+    ],
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_e72b8a2d",
+    "source_item_id": "item_013",
+    "frame_type": "symptom_course",
+    "frame_label": "3月前受凉后出现咳嗽咳少量白粘痰",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_320b4fd1",
+      "clinical_object_assertion_20260519_a2d0a84c",
+      "clinical_object_assertion_20260519_86d19495"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_ea2f59b6",
+      "evidence_node_20260519_3f2d54e7",
+      "evidence_node_20260519_6eba9345"
+    ],
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_5fa3c6ec",
+    "source_item_id": "item_014",
+    "frame_type": "treatment_response",
+    "frame_label": "自行服药（具体不详）后减轻",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_ea0959ee",
+      "clinical_object_assertion_20260519_96ff0f83"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_1cdd419d",
+      "evidence_node_20260519_7e69a48c"
+    ],
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_8aa1f31b",
+    "source_item_id": "item_015",
+    "frame_type": "symptom_course",
+    "frame_label": "口干、眼干不适5-6年",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_5566fda8",
+      "clinical_object_assertion_20260519_841a8e48"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_216be245",
+      "evidence_node_20260519_a7bc6dcf"
+    ],
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_9f205e2f",
+    "source_item_id": "item_015",
+    "frame_type": "past_history",
+    "frame_label": "右侧大拇指指间关节腱鞘炎多年",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_976cd0eb"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_6f63dda1"
+    ],
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_21aacf5e",
+    "source_item_id": "item_016",
+    "frame_type": "negated_symptom_group",
+    "frame_label": "无其他关节疼痛不适，皮疹及过敏，雷诺现象",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_1aa714a9",
+      "clinical_object_assertion_20260519_cede39d6",
+      "clinical_object_assertion_20260519_3d30ca38",
+      "clinical_object_assertion_20260519_d574cb6d"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_aa85d106",
+      "evidence_node_20260519_0618d743",
+      "evidence_node_20260519_7bffb447",
+      "evidence_node_20260519_f658c903"
+    ],
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_1c2c5243",
+    "source_item_id": "item_017",
+    "frame_type": "past_history",
+    "frame_label": "否认高血压冠心病病史",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_aa5b8087",
+      "clinical_object_assertion_20260519_1d724abe"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_fbb35aee",
+      "evidence_node_20260519_0638e93f"
+    ],
+    "source_span_ids": [
+      "span_item_017"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_b3876a23",
+    "source_item_id": "item_018",
+    "frame_type": "physical_exam",
+    "frame_label": "Vital signs: temperature, pulse, respiration, blood pressure, SpO2",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_7fb682b6",
+      "clinical_object_assertion_20260519_d6055b85",
+      "clinical_object_assertion_20260519_86e4a864",
+      "clinical_object_assertion_20260519_0162fdc7",
+      "clinical_object_assertion_20260519_814b2f27"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_31145a27",
+      "evidence_node_20260519_d4b1da2c",
+      "evidence_node_20260519_9dc56191",
+      "evidence_node_20260519_f5f0c033",
+      "evidence_node_20260519_7b5bd5f9"
+    ],
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_d869eecc",
+    "source_item_id": "item_019",
+    "frame_type": "physical_exam",
+    "frame_label": "听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_abdb77a1",
+      "clinical_object_assertion_20260519_3a6cee0b",
+      "clinical_object_assertion_20260519_08ff6478"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_4a667025",
+      "evidence_node_20260519_02dc4b15",
+      "evidence_node_20260519_e52cdd37"
+    ],
+    "source_span_ids": [
+      "span_item_019"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_064d8da8",
+    "source_item_id": "item_020",
+    "frame_type": "physical_exam",
+    "frame_label": "胸廓无畸形，双侧呼吸动度一致",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_64d6de77",
+      "clinical_object_assertion_20260519_51a1d1d2"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_03cd1f6a",
+      "evidence_node_20260519_33129345"
+    ],
+    "source_span_ids": [
+      "span_item_020"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_244fbb60",
+    "source_item_id": "item_021",
+    "frame_type": "physical_exam",
+    "frame_label": "心脏听诊：心律齐，未闻及早搏及杂音",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_e8f324bf",
+      "clinical_object_assertion_20260519_5c0fceda",
+      "clinical_object_assertion_20260519_96a7babc"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_40865b29",
+      "evidence_node_20260519_109cf6f3",
+      "evidence_node_20260519_371ecb43"
+    ],
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_f7fc7570",
+    "source_item_id": "item_021",
+    "frame_type": "physical_exam",
+    "frame_label": "腹部检查：腹部外形平坦，柔软，无压痛及反跳痛，未触及包块，肝脏肋下未触及，肠鸣音正常",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_455c687d",
+      "clinical_object_assertion_20260519_4cc6d98a",
+      "clinical_object_assertion_20260519_26619315",
+      "clinical_object_assertion_20260519_470ecff1",
+      "clinical_object_assertion_20260519_0128ee4b",
+      "clinical_object_assertion_20260519_8e29c851",
+      "clinical_object_assertion_20260519_b4cc7602"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_283bafae",
+      "evidence_node_20260519_82cbadf9",
+      "evidence_node_20260519_1d10120d",
+      "evidence_node_20260519_ac879261",
+      "evidence_node_20260519_2298d499",
+      "evidence_node_20260519_a38d19ca",
+      "evidence_node_20260519_dfd1bfc2"
+    ],
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_179b8090",
+    "source_item_id": "item_021",
+    "frame_type": "physical_exam",
+    "frame_label": "双下肢无水肿",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_ac1511ce"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_80a70e96"
+    ],
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_32811885",
+    "source_item_id": "item_022",
+    "frame_type": "diagnostic_impression",
+    "frame_label": "肺部感染",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_ac121e4c"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_6ba644d6"
+    ],
+    "source_span_ids": [
+      "span_item_022"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_cfa9d419",
+    "source_item_id": "item_023",
+    "frame_type": "diagnostic_impression",
+    "frame_label": "间质性肺病(原因待查)",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_322a20b1"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_0ec2d821"
+    ],
+    "source_span_ids": [
+      "span_item_023"
+    ],
+    "confidence": "medium",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_165bb931",
+    "source_item_id": "item_024",
+    "frame_type": "diagnostic_impression",
+    "frame_label": "间质性肺炎",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_0962a5a1"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_5903855a"
+    ],
+    "source_span_ids": [
+      "span_item_024"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_dbabecfa",
+    "source_item_id": "item_025",
+    "frame_type": "disease_status",
+    "frame_label": "2型糖尿病",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_46d46e3a"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_f1a21052"
+    ],
+    "source_span_ids": [
+      "span_item_025"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_013fadd1",
+    "source_item_id": "item_026",
+    "frame_type": "test_result_group",
+    "frame_label": "自身抗体及血清肿瘤标记物阴性",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_e35cd227",
+      "clinical_object_assertion_20260519_f97cc617"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_8c24d916",
+      "evidence_node_20260519_2fcf6737"
+    ],
+    "source_span_ids": [
+      "span_item_026"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_96de966e",
+    "source_item_id": "item_027",
+    "frame_type": "test_result_group",
+    "frame_label": "糖化血红蛋白:HbA1C 7.40%",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_fd02fdfc"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_8ce0d3f4"
+    ],
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_168c46af",
+    "source_item_id": "item_027",
+    "frame_type": "lab_panel",
+    "frame_label": "血气分析 (PH, PCO2, PO2, Lac, RI, FiO2)",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_6b9bb365",
+      "clinical_object_assertion_20260519_9f3015c6",
+      "clinical_object_assertion_20260519_f71a382e",
+      "clinical_object_assertion_20260519_9eccd861",
+      "clinical_object_assertion_20260519_1da2907f",
+      "clinical_object_assertion_20260519_f51adf9f"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_f12f08fc",
+      "evidence_node_20260519_4c150efa",
+      "evidence_node_20260519_c5e26d61",
+      "evidence_node_20260519_9b064552",
+      "evidence_node_20260519_ed28d2f3",
+      "evidence_node_20260519_0d37874c"
+    ],
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_2e71018b",
+    "source_item_id": "item_028",
+    "frame_type": "test_result_group",
+    "frame_label": "左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_3b5b15cf",
+      "clinical_object_assertion_20260519_63c9cd4a",
+      "clinical_object_assertion_20260519_43219c43"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_10137219",
+      "evidence_node_20260519_efb821e6",
+      "evidence_node_20260519_18f47ec5"
+    ],
+    "source_span_ids": [
+      "span_item_028"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_84195581",
+    "source_item_id": "item_029",
+    "frame_type": "test_result_group",
+    "frame_label": "左室收缩功能正常",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_ced6921a"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_527e21cb"
+    ],
+    "source_span_ids": [
+      "span_item_029"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_f408faf7",
+    "source_item_id": "item_030",
+    "frame_type": "test_result_group",
+    "frame_label": "胆囊附壁结晶",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_50050333"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_b7298be3"
+    ],
+    "source_span_ids": [
+      "span_item_030"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_6494b77e",
+    "source_item_id": "item_031",
+    "frame_type": "test_result_group",
+    "frame_label": "肺功能检查通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_9a4edf24",
+      "clinical_object_assertion_20260519_dd0b4315",
+      "clinical_object_assertion_20260519_cda0db93",
+      "clinical_object_assertion_20260519_9c88620f"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_0e220cb6",
+      "evidence_node_20260519_e72f101c",
+      "evidence_node_20260519_b54894cf",
+      "evidence_node_20260519_a9c66ecc"
+    ],
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_2738a13d",
+    "source_item_id": "item_032",
+    "frame_type": "test_result_group",
+    "frame_label": "换气功能：轻度弥散功能障碍",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_cd75e664"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_5388acbe"
+    ],
+    "source_span_ids": [
+      "span_item_032"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_d924838c",
+    "source_item_id": "item_033",
+    "frame_type": "test_result_group",
+    "frame_label": "脉冲振荡各项正常",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_937483eb",
+      "clinical_object_assertion_20260519_59f994dd",
+      "clinical_object_assertion_20260519_35e1ab20",
+      "clinical_object_assertion_20260519_4e055774"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_7f8ca780",
+      "evidence_node_20260519_bd27aa20",
+      "evidence_node_20260519_107e4d15",
+      "evidence_node_20260519_ef2fa90a"
+    ],
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_16c9cbe8",
+    "source_item_id": "item_034",
+    "frame_type": "test_result_group",
+    "frame_label": "周边阻抗Rp略增大；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_5ef15dde",
+      "clinical_object_assertion_20260519_d6974552",
+      "clinical_object_assertion_20260519_e721e898",
+      "clinical_object_assertion_20260519_99734538"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_ab67295a",
+      "evidence_node_20260519_4bb76607",
+      "evidence_node_20260519_600a2fbd",
+      "evidence_node_20260519_61afa5a3"
+    ],
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_9d5d32e8",
+    "source_item_id": "item_035",
+    "frame_type": "treatment_exposure",
+    "frame_label": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_f66ac510",
+      "clinical_object_assertion_20260519_0ae74978",
+      "clinical_object_assertion_20260519_ec93e3a8"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_f3c3186e",
+      "evidence_node_20260519_03cf75e5",
+      "evidence_node_20260519_490e5e4e"
+    ],
+    "source_span_ids": [
+      "span_item_035"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_ffbf8232",
+    "source_item_id": "item_036",
+    "frame_type": "treatment_response",
+    "frame_label": "患者症状减轻",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_e1e8c728"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_c04b667e"
+    ],
+    "source_span_ids": [
+      "span_item_036"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "frame_id": "evidence_frame_20260519_b885a2e9",
+    "source_item_id": "item_037",
+    "frame_type": "procedure_or_intervention",
+    "frame_label": "现针对间质性肺病提请MDT讨论",
+    "member_assertion_ids": [
+      "clinical_object_assertion_20260519_bed8d0f1",
+      "clinical_object_assertion_20260519_1be4ffd2"
+    ],
+    "member_node_ids": [
+      "evidence_node_20260519_f7df2dd0",
+      "evidence_node_20260519_92ca4e45"
+    ],
+    "source_span_ids": [
+      "span_item_037"
+    ],
+    "confidence": "high",
+    "notes": null
+  }
+]

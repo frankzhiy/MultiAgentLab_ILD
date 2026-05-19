@@ -1,0 +1,2408 @@
+{
+  "initial_items": [
+    {
+      "item_id": "item_001",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_001",
+      "item_type": "demographic",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_001",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "患者***,男,65岁",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 1,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "患者***,男,65岁"
+    },
+    {
+      "item_id": "item_002",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_002",
+      "item_type": "symptom",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_002",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "主因“咳嗽咳痰伴痰中带血10天。”入院。",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 2,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "主因“咳嗽咳痰伴痰中带血10天。”入院。"
+    },
+    {
+      "item_id": "item_003",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "symptom",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_003",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 3,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口"
+    },
+    {
+      "item_id": "item_004",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "symptom",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_004",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 4,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适"
+    },
+    {
+      "item_id": "item_005",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_005",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 5,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常"
+    },
+    {
+      "item_id": "item_006",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "imaging_finding",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_006",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 6,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。"
+    },
+    {
+      "item_id": "item_007",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "treatment",
+      "temporality": "past",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_007",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 7,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗"
+    },
+    {
+      "item_id": "item_008",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "procedure",
+      "temporality": "past",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_008",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "请我科会诊后，以“间质性肺疾病”收住我科",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 8,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "请我科会诊后，以“间质性肺疾病”收住我科"
+    },
+    {
+      "item_id": "item_009",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "symptom",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_009",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 9,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变"
+    },
+    {
+      "item_id": "item_010",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "comorbidity",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_010",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "既往糖尿病史10余年",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 10,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "既往糖尿病史10余年"
+    },
+    {
+      "item_id": "item_011",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "medication",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_011",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 11,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID"
+    },
+    {
+      "item_id": "item_012",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "treatment_response",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_012",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "既往血糖控制不佳",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 12,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "既往血糖控制不佳"
+    },
+    {
+      "item_id": "item_013",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "symptom",
+      "temporality": "past",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_013",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "3月前受凉后出现咳嗽咳少量白粘痰",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 13,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "3月前受凉后出现咳嗽咳少量白粘痰"
+    },
+    {
+      "item_id": "item_014",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "treatment_response",
+      "temporality": "past",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_014",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "自行服药（具体不详）后减轻",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 14,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "自行服药（具体不详）后减轻"
+    },
+    {
+      "item_id": "item_015",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "symptom",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_015",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 15,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年"
+    },
+    {
+      "item_id": "item_016",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "symptom",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_016",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 16,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象"
+    },
+    {
+      "item_id": "item_017",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "comorbidity",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_017",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "否认高血压冠心病病史",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 17,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "否认高血压冠心病病史"
+    },
+    {
+      "item_id": "item_018",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_005",
+      "item_type": "sign",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_018",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 18,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）"
+    },
+    {
+      "item_id": "item_019",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_005",
+      "item_type": "sign",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_019",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 19,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音"
+    },
+    {
+      "item_id": "item_020",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_005",
+      "item_type": "sign",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_020",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "胸廓无畸形，双侧呼吸动度一致",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 20,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "胸廓无畸形，双侧呼吸动度一致"
+    },
+    {
+      "item_id": "item_021",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_005",
+      "item_type": "sign",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_021",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 21,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿"
+    },
+    {
+      "item_id": "item_022",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_006",
+      "item_type": "diagnosis_history",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_022",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "肺部感染",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 22,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "肺部感染"
+    },
+    {
+      "item_id": "item_023",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_006",
+      "item_type": "diagnosis_history",
+      "temporality": "current",
+      "certainty": "possible",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_023",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "间质性肺病(原因待查)",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 23,
+      "classification_confidence": "medium",
+      "notes": null,
+      "label": "间质性肺病(原因待查)"
+    },
+    {
+      "item_id": "item_024",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_006",
+      "item_type": "diagnosis_history",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_024",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "间质性肺炎",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 24,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "间质性肺炎"
+    },
+    {
+      "item_id": "item_025",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_006",
+      "item_type": "diagnosis_history",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_025",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "2型糖尿病",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 25,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "2型糖尿病"
+    },
+    {
+      "item_id": "item_026",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_007",
+      "item_type": "lab_result",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_026",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "自身抗体及血清肿瘤标记物阴性",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 26,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "自身抗体及血清肿瘤标记物阴性"
+    },
+    {
+      "item_id": "item_027",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_007",
+      "item_type": "lab_result",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_027",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 27,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%"
+    },
+    {
+      "item_id": "item_028",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_008",
+      "item_type": "imaging_finding",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_028",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 28,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低"
+    },
+    {
+      "item_id": "item_029",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_008",
+      "item_type": "imaging_finding",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_029",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "左室收缩功能正常",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 29,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "左室收缩功能正常"
+    },
+    {
+      "item_id": "item_030",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_008",
+      "item_type": "imaging_finding",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_030",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "胆囊附壁结晶",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 30,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "胆囊附壁结晶"
+    },
+    {
+      "item_id": "item_031",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_009",
+      "item_type": "pulmonary_function",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_031",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 31,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常"
+    },
+    {
+      "item_id": "item_032",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_009",
+      "item_type": "pulmonary_function",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_032",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "换气功能：轻度弥散功能障碍",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 32,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "换气功能：轻度弥散功能障碍"
+    },
+    {
+      "item_id": "item_033",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_009",
+      "item_type": "pulmonary_function",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_033",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常；电抗X5正常",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 33,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常；电抗X5正常"
+    },
+    {
+      "item_id": "item_034",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_009",
+      "item_type": "pulmonary_function",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_034",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "周边阻抗Rp略增大；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 34,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "周边阻抗Rp略增大；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽"
+    },
+    {
+      "item_id": "item_035",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_010",
+      "item_type": "treatment",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_035",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 35,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗"
+    },
+    {
+      "item_id": "item_036",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_010",
+      "item_type": "treatment_response",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_036",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "患者症状减轻",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 36,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "患者症状减轻"
+    },
+    {
+      "item_id": "item_037",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_011",
+      "item_type": "mdt_statement",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_037",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "现针对间质性肺病提请MDT讨论。",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 37,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "现针对间质性肺病提请MDT讨论。"
+    }
+  ],
+  "corrected_items": [
+    {
+      "item_id": "item_001",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_001",
+      "item_type": "demographic",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_001",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "患者***,男,65岁",
+          "char_start": 0,
+          "char_end": 11
+        }
+      ],
+      "item_order": 1,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "患者***,男,65岁"
+    },
+    {
+      "item_id": "item_002",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_002",
+      "item_type": "symptom",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_002",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "主因“咳嗽咳痰伴痰中带血10天。”入院。",
+          "char_start": 12,
+          "char_end": 32
+        }
+      ],
+      "item_order": 2,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "主因“咳嗽咳痰伴痰中带血10天。”入院。"
+    },
+    {
+      "item_id": "item_003",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "symptom",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_003",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口",
+          "char_start": 32,
+          "char_end": 88
+        }
+      ],
+      "item_order": 3,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口"
+    },
+    {
+      "item_id": "item_004",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "symptom",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_004",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适",
+          "char_start": 89,
+          "char_end": 116
+        }
+      ],
+      "item_order": 4,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适"
+    },
+    {
+      "item_id": "item_005",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "lab_result",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_005",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常",
+          "char_start": 144,
+          "char_end": 270
+        }
+      ],
+      "item_order": 5,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常"
+    },
+    {
+      "item_id": "item_006",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "imaging_finding",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_006",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。",
+          "char_start": 271,
+          "char_end": 338
+        }
+      ],
+      "item_order": 6,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。"
+    },
+    {
+      "item_id": "item_007",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "treatment",
+      "temporality": "past",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_007",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗",
+          "char_start": 347,
+          "char_end": 390
+        }
+      ],
+      "item_order": 7,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗"
+    },
+    {
+      "item_id": "item_008",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "procedure",
+      "temporality": "past",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_008",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "请我科会诊后，以“间质性肺疾病”收住我科",
+          "char_start": 391,
+          "char_end": 411
+        }
+      ],
+      "item_order": 8,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "请我科会诊后，以“间质性肺疾病”收住我科"
+    },
+    {
+      "item_id": "item_009",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_003",
+      "item_type": "symptom",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_009",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变",
+          "char_start": 412,
+          "char_end": 452
+        }
+      ],
+      "item_order": 9,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变"
+    },
+    {
+      "item_id": "item_010",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "comorbidity",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_010",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "既往糖尿病史10余年",
+          "char_start": 453,
+          "char_end": 463
+        }
+      ],
+      "item_order": 10,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "既往糖尿病史10余年"
+    },
+    {
+      "item_id": "item_011",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "medication",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_011",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID",
+          "char_start": 464,
+          "char_end": 497
+        }
+      ],
+      "item_order": 11,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID"
+    },
+    {
+      "item_id": "item_012",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "treatment_response",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_012",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "既往血糖控制不佳",
+          "char_start": 498,
+          "char_end": 506
+        }
+      ],
+      "item_order": 12,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "既往血糖控制不佳"
+    },
+    {
+      "item_id": "item_013",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "symptom",
+      "temporality": "past",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_013",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "3月前受凉后出现咳嗽咳少量白粘痰",
+          "char_start": 507,
+          "char_end": 523
+        }
+      ],
+      "item_order": 13,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "3月前受凉后出现咳嗽咳少量白粘痰"
+    },
+    {
+      "item_id": "item_014",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "treatment_response",
+      "temporality": "past",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_014",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "自行服药（具体不详）后减轻",
+          "char_start": 528,
+          "char_end": 541
+        }
+      ],
+      "item_order": 14,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "自行服药（具体不详）后减轻"
+    },
+    {
+      "item_id": "item_015",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "symptom",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_015",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年",
+          "char_start": 542,
+          "char_end": 568
+        }
+      ],
+      "item_order": 15,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年"
+    },
+    {
+      "item_id": "item_016",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "symptom",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_016",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象",
+          "char_start": 569,
+          "char_end": 595
+        }
+      ],
+      "item_order": 16,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象"
+    },
+    {
+      "item_id": "item_017",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_004",
+      "item_type": "comorbidity",
+      "temporality": "chronic",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_017",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "否认高血压冠心病病史",
+          "char_start": 596,
+          "char_end": 606
+        }
+      ],
+      "item_order": 17,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "否认高血压冠心病病史"
+    },
+    {
+      "item_id": "item_018",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_005",
+      "item_type": "sign",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_018",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）",
+          "char_start": 612,
+          "char_end": 665
+        }
+      ],
+      "item_order": 18,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）"
+    },
+    {
+      "item_id": "item_019",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_005",
+      "item_type": "sign",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_019",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音",
+          "char_start": 680,
+          "char_end": 709
+        }
+      ],
+      "item_order": 19,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音"
+    },
+    {
+      "item_id": "item_020",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_005",
+      "item_type": "sign",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_020",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "胸廓无畸形，双侧呼吸动度一致",
+          "char_start": 665,
+          "char_end": 679
+        }
+      ],
+      "item_order": 20,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "胸廓无畸形，双侧呼吸动度一致"
+    },
+    {
+      "item_id": "item_021",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_005",
+      "item_type": "sign",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_021",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿",
+          "char_start": 710,
+          "char_end": 773
+        }
+      ],
+      "item_order": 21,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿"
+    },
+    {
+      "item_id": "item_022",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_006",
+      "item_type": "diagnosis_history",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_022",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "肺部感染",
+          "char_start": 784,
+          "char_end": 788
+        }
+      ],
+      "item_order": 22,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "肺部感染"
+    },
+    {
+      "item_id": "item_023",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_006",
+      "item_type": "diagnosis_history",
+      "temporality": "current",
+      "certainty": "possible",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_023",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "间质性肺病(原因待查)",
+          "char_start": 791,
+          "char_end": 802
+        }
+      ],
+      "item_order": 23,
+      "classification_confidence": "medium",
+      "notes": null,
+      "label": "间质性肺病(原因待查)"
+    },
+    {
+      "item_id": "item_024",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_006",
+      "item_type": "diagnosis_history",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_024",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "间质性肺炎",
+          "char_start": 805,
+          "char_end": 810
+        }
+      ],
+      "item_order": 24,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "间质性肺炎"
+    },
+    {
+      "item_id": "item_025",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_006",
+      "item_type": "diagnosis_history",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_025",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "2型糖尿病",
+          "char_start": 813,
+          "char_end": 818
+        }
+      ],
+      "item_order": 25,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "2型糖尿病"
+    },
+    {
+      "item_id": "item_026",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_007",
+      "item_type": "lab_result",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_026",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "自身抗体及血清肿瘤标记物阴性",
+          "char_start": 823,
+          "char_end": 837
+        }
+      ],
+      "item_order": 26,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "自身抗体及血清肿瘤标记物阴性"
+    },
+    {
+      "item_id": "item_027",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_007",
+      "item_type": "lab_result",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_027",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+          "char_start": 838,
+          "char_end": 935
+        }
+      ],
+      "item_order": 27,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%"
+    },
+    {
+      "item_id": "item_028",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_008",
+      "item_type": "imaging_finding",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_028",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低",
+          "char_start": 944,
+          "char_end": 972
+        }
+      ],
+      "item_order": 28,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低"
+    },
+    {
+      "item_id": "item_029",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_008",
+      "item_type": "imaging_finding",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_029",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "左室收缩功能正常",
+          "char_start": 973,
+          "char_end": 981
+        }
+      ],
+      "item_order": 29,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "左室收缩功能正常"
+    },
+    {
+      "item_id": "item_030",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_008",
+      "item_type": "imaging_finding",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_030",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "胆囊附壁结晶",
+          "char_start": 987,
+          "char_end": 993
+        }
+      ],
+      "item_order": 30,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "胆囊附壁结晶"
+    },
+    {
+      "item_id": "item_031",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_009",
+      "item_type": "pulmonary_function",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_031",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+          "char_start": 994,
+          "char_end": 1054
+        }
+      ],
+      "item_order": 31,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常"
+    },
+    {
+      "item_id": "item_032",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_009",
+      "item_type": "pulmonary_function",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_032",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "换气功能：轻度弥散功能障碍",
+          "char_start": 1055,
+          "char_end": 1068
+        }
+      ],
+      "item_order": 32,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "换气功能：轻度弥散功能障碍"
+    },
+    {
+      "item_id": "item_033",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_009",
+      "item_type": "pulmonary_function",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "absent",
+      "source_spans": [
+        {
+          "span_id": "span_item_033",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常；电抗X5正常",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 33,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常；电抗X5正常"
+    },
+    {
+      "item_id": "item_034",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_009",
+      "item_type": "pulmonary_function",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_034",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "周边阻抗Rp略增大；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽",
+          "char_start": null,
+          "char_end": null
+        }
+      ],
+      "item_order": 34,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "周边阻抗Rp略增大；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽"
+    },
+    {
+      "item_id": "item_035",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_010",
+      "item_type": "treatment",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_035",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗",
+          "char_start": 1149,
+          "char_end": 1169
+        }
+      ],
+      "item_order": 35,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗"
+    },
+    {
+      "item_id": "item_036",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_010",
+      "item_type": "treatment_response",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_036",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "患者症状减轻",
+          "char_start": 1170,
+          "char_end": 1176
+        }
+      ],
+      "item_order": 36,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "患者症状减轻"
+    },
+    {
+      "item_id": "item_037",
+      "input_id": "input_20260519_050d3d9c",
+      "section_id": "section_011",
+      "item_type": "mdt_statement",
+      "temporality": "current",
+      "certainty": "definite",
+      "negation": "present",
+      "source_spans": [
+        {
+          "span_id": "span_item_037",
+          "input_id": "input_20260519_050d3d9c",
+          "quoted_text": "现针对间质性肺病提请MDT讨论。",
+          "char_start": 1177,
+          "char_end": 1193
+        }
+      ],
+      "item_order": 37,
+      "classification_confidence": "high",
+      "notes": null,
+      "label": "现针对间质性肺病提请MDT讨论。"
+    }
+  ],
+  "initial_validation_report": {
+    "is_valid": false,
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_001",
+        "span_id": "span_item_001",
+        "quoted_text": "患者***,男,65岁"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_002",
+        "span_id": "span_item_002",
+        "quoted_text": "主因“咳嗽咳痰伴痰中带血10天。”入院。"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_003",
+        "span_id": "span_item_003",
+        "quoted_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_004",
+        "span_id": "span_item_004",
+        "quoted_text": "无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_005",
+        "span_id": "span_item_005",
+        "quoted_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_006",
+        "span_id": "span_item_006",
+        "quoted_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_007",
+        "span_id": "span_item_007",
+        "quoted_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_008",
+        "span_id": "span_item_008",
+        "quoted_text": "请我科会诊后，以“间质性肺疾病”收住我科"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_009",
+        "span_id": "span_item_009",
+        "quoted_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_010",
+        "span_id": "span_item_010",
+        "quoted_text": "既往糖尿病史10余年"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_011",
+        "span_id": "span_item_011",
+        "quoted_text": "平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_012",
+        "span_id": "span_item_012",
+        "quoted_text": "既往血糖控制不佳"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_013",
+        "span_id": "span_item_013",
+        "quoted_text": "3月前受凉后出现咳嗽咳少量白粘痰"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_014",
+        "span_id": "span_item_014",
+        "quoted_text": "自行服药（具体不详）后减轻"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_015",
+        "span_id": "span_item_015",
+        "quoted_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_016",
+        "span_id": "span_item_016",
+        "quoted_text": "无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_017",
+        "span_id": "span_item_017",
+        "quoted_text": "否认高血压冠心病病史"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_018",
+        "span_id": "span_item_018",
+        "quoted_text": "体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_019",
+        "span_id": "span_item_019",
+        "quoted_text": "听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_020",
+        "span_id": "span_item_020",
+        "quoted_text": "胸廓无畸形，双侧呼吸动度一致"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_021",
+        "span_id": "span_item_021",
+        "quoted_text": "心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_022",
+        "span_id": "span_item_022",
+        "quoted_text": "肺部感染"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_023",
+        "span_id": "span_item_023",
+        "quoted_text": "间质性肺病(原因待查)"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_024",
+        "span_id": "span_item_024",
+        "quoted_text": "间质性肺炎"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_025",
+        "span_id": "span_item_025",
+        "quoted_text": "2型糖尿病"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_026",
+        "span_id": "span_item_026",
+        "quoted_text": "自身抗体及血清肿瘤标记物阴性"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_027",
+        "span_id": "span_item_027",
+        "quoted_text": "糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_028",
+        "span_id": "span_item_028",
+        "quoted_text": "左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_029",
+        "span_id": "span_item_029",
+        "quoted_text": "左室收缩功能正常"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_030",
+        "span_id": "span_item_030",
+        "quoted_text": "胆囊附壁结晶"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_031",
+        "span_id": "span_item_031",
+        "quoted_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_032",
+        "span_id": "span_item_032",
+        "quoted_text": "换气功能：轻度弥散功能障碍"
+      },
+      {
+        "severity": "error",
+        "code": "quoted_text_not_found",
+        "message": "SourceSpan.quoted_text was not found in raw_text, even after whitespace normalization.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_033",
+        "span_id": "span_item_033",
+        "quoted_text": "脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常；电抗X5正常"
+      },
+      {
+        "severity": "error",
+        "code": "quoted_text_not_found",
+        "message": "SourceSpan.quoted_text was not found in raw_text, even after whitespace normalization.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_034",
+        "span_id": "span_item_034",
+        "quoted_text": "周边阻抗Rp略增大；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_035",
+        "span_id": "span_item_035",
+        "quoted_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_036",
+        "span_id": "span_item_036",
+        "quoted_text": "患者症状减轻"
+      },
+      {
+        "severity": "warning",
+        "code": "unresolved_offsets",
+        "message": "SourceSpan.quoted_text exists in raw_text, but char_start and char_end were not resolved.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_037",
+        "span_id": "span_item_037",
+        "quoted_text": "现针对间质性肺病提请MDT讨论。"
+      }
+    ]
+  },
+  "correction_report": {
+    "actions": [
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_001",
+        "span_id": "span_item_001",
+        "field_name": null,
+        "before_quoted_text": "患者***,男,65岁",
+        "after_quoted_text": "患者***,男,65岁"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_002",
+        "span_id": "span_item_002",
+        "field_name": null,
+        "before_quoted_text": "主因“咳嗽咳痰伴痰中带血10天。”入院。",
+        "after_quoted_text": "主因“咳嗽咳痰伴痰中带血10天。”入院。"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_003",
+        "span_id": "span_item_003",
+        "field_name": null,
+        "before_quoted_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口",
+        "after_quoted_text": "患者自诉10天前无明显诱因出现咳嗽、咳痰，呈白色粘痰，晨起咳痰时伴有痰中少量鲜红色血丝及暗红色血块，量共1-2口"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_004",
+        "span_id": "span_item_004",
+        "field_name": null,
+        "before_quoted_text": "无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适",
+        "after_quoted_text": "无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_005",
+        "span_id": "span_item_005",
+        "field_name": null,
+        "before_quoted_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常",
+        "after_quoted_text": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L,血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项未见明显异常"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_006",
+        "span_id": "span_item_006",
+        "field_name": null,
+        "before_quoted_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。",
+        "after_quoted_text": "胸部CT轴位平扫及三维重建(HRCT)(十排及以上) 双肺间质性肺炎，双肺外周带间质纤维化。双肺气肿。主动脉壁钙化。双侧胸膜轻度增厚。"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_007",
+        "span_id": "span_item_007",
+        "field_name": null,
+        "before_quoted_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗",
+        "after_quoted_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_008",
+        "span_id": "span_item_008",
+        "field_name": null,
+        "before_quoted_text": "请我科会诊后，以“间质性肺疾病”收住我科",
+        "after_quoted_text": "请我科会诊后，以“间质性肺疾病”收住我科"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_009",
+        "span_id": "span_item_009",
+        "field_name": null,
+        "before_quoted_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变",
+        "after_quoted_text": "患者病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常，近期体重未见明显改变"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_010",
+        "span_id": "span_item_010",
+        "field_name": null,
+        "before_quoted_text": "既往糖尿病史10余年",
+        "after_quoted_text": "既往糖尿病史10余年"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_011",
+        "span_id": "span_item_011",
+        "field_name": null,
+        "before_quoted_text": "平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID",
+        "after_quoted_text": "平素口服二甲双胍格列本脲片，2片，QD；阿卡波糖，100mgBID"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_012",
+        "span_id": "span_item_012",
+        "field_name": null,
+        "before_quoted_text": "既往血糖控制不佳",
+        "after_quoted_text": "既往血糖控制不佳"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_013",
+        "span_id": "span_item_013",
+        "field_name": null,
+        "before_quoted_text": "3月前受凉后出现咳嗽咳少量白粘痰",
+        "after_quoted_text": "3月前受凉后出现咳嗽咳少量白粘痰"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_014",
+        "span_id": "span_item_014",
+        "field_name": null,
+        "before_quoted_text": "自行服药（具体不详）后减轻",
+        "after_quoted_text": "自行服药（具体不详）后减轻"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_015",
+        "span_id": "span_item_015",
+        "field_name": null,
+        "before_quoted_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年",
+        "after_quoted_text": "口干、眼干不适5-6年，右侧大拇指指间关节腱鞘炎多年"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_016",
+        "span_id": "span_item_016",
+        "field_name": null,
+        "before_quoted_text": "无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象",
+        "after_quoted_text": "无其他关节疼痛不适病史，无皮疹及过敏病史，无雷诺现象"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_017",
+        "span_id": "span_item_017",
+        "field_name": null,
+        "before_quoted_text": "否认高血压冠心病病史",
+        "after_quoted_text": "否认高血压冠心病病史"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_018",
+        "span_id": "span_item_018",
+        "field_name": null,
+        "before_quoted_text": "体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）",
+        "after_quoted_text": "体温：36.5℃，脉搏76次/分，呼吸：20次/分，血压：119/79mmHg，SpO2 91%（未吸氧）"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_019",
+        "span_id": "span_item_019",
+        "field_name": null,
+        "before_quoted_text": "听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音",
+        "after_quoted_text": "听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_020",
+        "span_id": "span_item_020",
+        "field_name": null,
+        "before_quoted_text": "胸廓无畸形，双侧呼吸动度一致",
+        "after_quoted_text": "胸廓无畸形，双侧呼吸动度一致"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_021",
+        "span_id": "span_item_021",
+        "field_name": null,
+        "before_quoted_text": "心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿",
+        "after_quoted_text": "心律齐，未闻及早搏及杂音。腹部外形平坦，腹部柔软，全腹无压痛及反跳痛，未触及腹部包块，肝脏肋下未触及，肠鸣音正常。双下肢无水肿"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_022",
+        "span_id": "span_item_022",
+        "field_name": null,
+        "before_quoted_text": "肺部感染",
+        "after_quoted_text": "肺部感染"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_023",
+        "span_id": "span_item_023",
+        "field_name": null,
+        "before_quoted_text": "间质性肺病(原因待查)",
+        "after_quoted_text": "间质性肺病(原因待查)"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_024",
+        "span_id": "span_item_024",
+        "field_name": null,
+        "before_quoted_text": "间质性肺炎",
+        "after_quoted_text": "间质性肺炎"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_025",
+        "span_id": "span_item_025",
+        "field_name": null,
+        "before_quoted_text": "2型糖尿病",
+        "after_quoted_text": "2型糖尿病"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_026",
+        "span_id": "span_item_026",
+        "field_name": null,
+        "before_quoted_text": "自身抗体及血清肿瘤标记物阴性",
+        "after_quoted_text": "自身抗体及血清肿瘤标记物阴性"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_027",
+        "span_id": "span_item_027",
+        "field_name": null,
+        "before_quoted_text": "糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%",
+        "after_quoted_text": "糖化血红蛋白:HbA1C 7.40%,血气分析PH 7.383,PCO2 39.20mmHg,PO2 78.90mmHg,Lac 3.00mmol/L,RI 272.00,FiO2 29.00%"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_028",
+        "span_id": "span_item_028",
+        "field_name": null,
+        "before_quoted_text": "左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低",
+        "after_quoted_text": "左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_029",
+        "span_id": "span_item_029",
+        "field_name": null,
+        "before_quoted_text": "左室收缩功能正常",
+        "after_quoted_text": "左室收缩功能正常"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_030",
+        "span_id": "span_item_030",
+        "field_name": null,
+        "before_quoted_text": "胆囊附壁结晶",
+        "after_quoted_text": "胆囊附壁结晶"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_031",
+        "span_id": "span_item_031",
+        "field_name": null,
+        "before_quoted_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+        "after_quoted_text": "肺功能检查(内科)通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_032",
+        "span_id": "span_item_032",
+        "field_name": null,
+        "before_quoted_text": "换气功能：轻度弥散功能障碍",
+        "after_quoted_text": "换气功能：轻度弥散功能障碍"
+      },
+      {
+        "status": "skipped",
+        "code": "quoted_text_not_found",
+        "message": "Could not deterministically replace missing quoted_text.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_033",
+        "span_id": "span_item_033",
+        "field_name": null,
+        "before_quoted_text": "脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常；电抗X5正常",
+        "after_quoted_text": null
+      },
+      {
+        "status": "skipped",
+        "code": "quoted_text_not_found",
+        "message": "Could not deterministically replace missing quoted_text.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_034",
+        "span_id": "span_item_034",
+        "field_name": null,
+        "before_quoted_text": "周边阻抗Rp略增大；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽",
+        "after_quoted_text": null
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_035",
+        "span_id": "span_item_035",
+        "field_name": null,
+        "before_quoted_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗",
+        "after_quoted_text": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_036",
+        "span_id": "span_item_036",
+        "field_name": null,
+        "before_quoted_text": "患者症状减轻",
+        "after_quoted_text": "患者症状减轻"
+      },
+      {
+        "status": "applied",
+        "code": "unresolved_offsets",
+        "message": "Recomputed SourceSpan character offsets.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_037",
+        "span_id": "span_item_037",
+        "field_name": null,
+        "before_quoted_text": "现针对间质性肺病提请MDT讨论。",
+        "after_quoted_text": "现针对间质性肺病提请MDT讨论。"
+      }
+    ],
+    "applied_count": 35,
+    "skipped_count": 2
+  },
+  "final_validation_report": {
+    "is_valid": false,
+    "issues": [
+      {
+        "severity": "error",
+        "code": "quoted_text_not_found",
+        "message": "SourceSpan.quoted_text was not found in raw_text, even after whitespace normalization.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_033",
+        "span_id": "span_item_033",
+        "quoted_text": "脉冲振荡：呼吸总阻抗Zrs正常，气道阻力R系列正常；中心阻抗Rc正常；电抗X5正常"
+      },
+      {
+        "severity": "error",
+        "code": "quoted_text_not_found",
+        "message": "SourceSpan.quoted_text was not found in raw_text, even after whitespace normalization.",
+        "object_type": "StructuredClinicalItem",
+        "object_id": "item_034",
+        "span_id": "span_item_034",
+        "quoted_text": "周边阻抗Rp略增大；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽"
+      }
+    ]
+  }
+}

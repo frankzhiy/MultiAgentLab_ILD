@@ -60,7 +60,7 @@ def load_runtime_components() -> tuple[type[Any], type[Any], type[Any]]:
     ensure_repo_on_path()
     try:
         from src.agents.case_structurer import CaseStructurerAgent
-        from src.agents.evidence_tree_structurer import EvidenceTreeStructurerAgent
+        from src.agents.evidence_graph_structurer import EvidenceGraphStructurerAgent
         from src.llm.chatanywhere_client import ChatAnywhereClient
     except ModuleNotFoundError as exc:
         missing = exc.name or str(exc)
@@ -69,7 +69,7 @@ def load_runtime_components() -> tuple[type[Any], type[Any], type[Any]]:
             f"first, then rerun this script. Missing module: {missing}"
         ) from exc
 
-    return CaseStructurerAgent, EvidenceTreeStructurerAgent, ChatAnywhereClient
+    return CaseStructurerAgent, EvidenceGraphStructurerAgent, ChatAnywhereClient
 
 
 class LiveTimer:
@@ -213,9 +213,12 @@ def selected_file_payload(
 
 
 def initialize_agents() -> tuple[Any, Any]:
-    CaseStructurerAgent, EvidenceTreeStructurerAgent, ChatAnywhereClient = load_runtime_components()
+    CaseStructurerAgent, EvidenceGraphStructurerAgent, ChatAnywhereClient = load_runtime_components()
     llm_client = ChatAnywhereClient()
-    return CaseStructurerAgent(llm_client=llm_client), EvidenceTreeStructurerAgent(llm_client=llm_client)
+    return CaseStructurerAgent(llm_client=llm_client), EvidenceGraphStructurerAgent(llm_client=llm_client)
+
+
+def run_stage(label: str, callback: Any) -> tuple[Any, float]:
     timer = LiveTimer(label)
     with timer:
         result = callback()
@@ -236,7 +239,7 @@ def resolve_selected_file(args: argparse.Namespace, files: list[Path]) -> Path:
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Run Phase One end-to-end: Case Structurer -> Evidence Tree Structurer, "
+            "Run Phase One end-to-end: Case Structurer -> Evidence Graph Structurer, "
             "then write compact JSON and readable HTML outputs."
         )
     )
@@ -259,7 +262,7 @@ def main(argv: list[str] | None = None) -> int:
     if not output_root.is_absolute():
         output_root = (REPO_ROOT / output_root).resolve()
 
-    print_banner("Phase One Test Runner", "Case Structurer -> Evidence Tree Structurer")
+    print_banner("Phase One Test Runner", "Case Structurer -> Evidence Graph Structurer")
 
     files = find_data_files(data_dir)
     if not files:
@@ -302,7 +305,7 @@ def main(argv: list[str] | None = None) -> int:
     print()
 
     try:
-        case_structurer, evidence_tree_structurer = initialize_agents()
+        case_structurer, evidence_graph_structurer = initialize_agents()
     except Exception as exc:
         write_json(pending_dir / "error.json", {"stage": "startup", "type": type(exc).__name__, "message": str(exc)})
         print(color("Failed to initialize agents.", Style.red), file=sys.stderr)
@@ -331,16 +334,16 @@ def main(argv: list[str] | None = None) -> int:
             output_dir = output_root / f"{case_id}_{timestamp}_{suffix}"
         pending_dir.rename(output_dir)
 
-        assertion_timer = LiveTimer("Evidence Tree Structurer")
-        with assertion_timer:
-            assertion_result = evidence_tree_structurer.run(corrected_result)
-        assertion_seconds = assertion_timer.elapsed_seconds
+        evidence_timer = LiveTimer("Evidence Graph Structurer")
+        with evidence_timer:
+            structuring_result = evidence_graph_structurer.run(corrected_result)
+        evidence_seconds = evidence_timer.elapsed_seconds
 
         total_seconds = perf_counter() - total_start
 
         durations = {
             "case_structurer": case_seconds,
-            "evidence_tree_structurer": assertion_seconds,
+            "evidence_graph_structurer": evidence_seconds,
             "total": total_seconds,
         }
         summary = build_summary(
@@ -348,7 +351,7 @@ def main(argv: list[str] | None = None) -> int:
             repo_root=REPO_ROOT,
             created_at=created_at,
             corrected_result=corrected_result,
-            assertion_result=assertion_result,
+            structuring_result=structuring_result,
             durations=durations,
         )
 
@@ -359,7 +362,7 @@ def main(argv: list[str] | None = None) -> int:
             summary=summary,
             case_bundle=case_bundle,
             corrected_result=corrected_result,
-            assertion_result=assertion_result,
+            structuring_result=structuring_result,
         )
     except Exception as exc:
         target_dir = locals().get("output_dir", pending_dir)

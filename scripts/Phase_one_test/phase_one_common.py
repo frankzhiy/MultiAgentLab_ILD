@@ -120,9 +120,13 @@ def source_text_for_item(item: Any) -> str:
     return text or enum_text(obj_field(item, "label"))
 
 
-def warning_counts(warnings: list[Any]) -> dict[str, int]:
+def issue_count_breakdown(items: list[Any]) -> dict[str, int]:
     counts: dict[str, int] = {}
-    for warning in warnings:
-        code = enum_text(obj_field(warning, "code", "unknown"))
+    for item in items:
+        code = enum_text(obj_field(item, "code", "unknown"))
         counts[code] = counts.get(code, 0) + 1
     return dict(sorted(counts.items()))
+
+
+# Backwards-compatible alias.
+warning_counts = issue_count_breakdown

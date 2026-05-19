@@ -18,7 +18,7 @@ This schema performs cross-object consistency checks, such as:
 - duplicate ids and duplicate ordering are detected.
 
 This schema must not contain:
-- EvidenceTree
+- EvidenceGraph
 - HypothesisState
 - Conflict
 - ActionPlan
@@ -184,11 +184,11 @@ class CaseStructuringResult(BaseModel):
         ),
     )
 
-    ready_for_evidence_tree_structuring: bool = Field(
+    ready_for_evidence_graph_structuring: bool = Field(
         default=True,
         description=(
             "Whether this structuring result is considered ready for the "
-            "Evidence Tree Structurer. This is not the same as Pydantic validity. "
+            "Evidence Graph Structurer. This is not the same as Pydantic validity. "
             "A result may be schema-valid but not ready for downstream evidence "
             "processing if it is too incomplete."
         ),
@@ -329,7 +329,7 @@ class CaseStructuringResult(BaseModel):
     @model_validator(mode="after")
     def validate_readiness_has_warning_when_false(self) -> "CaseStructuringResult":
         """Require an explanation when the result is not ready downstream."""
-        if self.ready_for_evidence_tree_structuring:
+        if self.ready_for_evidence_graph_structuring:
             return self
 
         has_warning_or_error = any(
@@ -342,7 +342,7 @@ class CaseStructuringResult(BaseModel):
 
         if not has_warning_or_error:
             raise ValueError(
-                "ready_for_evidence_tree_structuring=False requires at least one "
+                "ready_for_evidence_graph_structuring=False requires at least one "
                 "structuring warning with severity warning or error."
             )
 

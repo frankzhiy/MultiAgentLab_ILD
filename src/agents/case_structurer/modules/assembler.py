@@ -22,9 +22,9 @@ class CaseStructuringAssembler:
         items: list[StructuredClinicalItem],
     ) -> CaseStructuringResult:
         warnings: list[StructuringWarning] = []
-        ready_for_evidence_tree_structuring = bool(sections or items)
+        ready_for_evidence_graph_structuring = bool(sections or items)
 
-        if not ready_for_evidence_tree_structuring:
+        if not ready_for_evidence_graph_structuring:
             warnings.append(
                 StructuringWarning(
                     severity=ValidationSeverity.WARNING,
@@ -43,5 +43,5 @@ class CaseStructuringAssembler:
             clinical_sections=sections,
             structured_items=items,
             structuring_warnings=warnings,
-            ready_for_evidence_tree_structuring=ready_for_evidence_tree_structuring,
+            ready_for_evidence_graph_structuring=ready_for_evidence_graph_structuring,
         )

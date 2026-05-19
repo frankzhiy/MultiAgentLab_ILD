@@ -1,0 +1,1832 @@
+[
+  {
+    "node_id": "evidence_node_20260519_e95900a2",
+    "source_item_id": "item_001",
+    "node_type": "clinical_object",
+    "text": "患者***,男,65岁",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_7b035ab9"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_001"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_2191ee41",
+    "source_item_id": "item_002",
+    "node_type": "clinical_object",
+    "text": "咳嗽",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_47bf1ff6"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_a10d3688",
+    "source_item_id": "item_002",
+    "node_type": "clinical_object",
+    "text": "咳痰",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_0dd75e32"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_595b2f2e",
+    "source_item_id": "item_002",
+    "node_type": "clinical_object",
+    "text": "痰中带血",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_013c90fc"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_3e571ed0",
+    "source_item_id": "item_003",
+    "node_type": "clinical_object",
+    "text": "咳嗽",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_02268e9e"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_264ff1d1",
+    "source_item_id": "item_003",
+    "node_type": "clinical_object",
+    "text": "咳痰",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_ed467dff"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_f866984a",
+    "source_item_id": "item_003",
+    "node_type": "clinical_object",
+    "text": "白色粘痰",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_e64cd815"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_41525a45",
+    "source_item_id": "item_003",
+    "node_type": "clinical_object",
+    "text": "鲜红色血丝",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_10c64495"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_07bd40ad",
+    "source_item_id": "item_003",
+    "node_type": "clinical_object",
+    "text": "暗红色血块",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_0b334bbe"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_9c437418",
+    "source_item_id": "item_004",
+    "node_type": "clinical_object",
+    "text": "发热",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_f3bb8933"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_fbf3b6fe",
+    "source_item_id": "item_004",
+    "node_type": "clinical_object",
+    "text": "寒战",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_255a9f52"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_ea8a8350",
+    "source_item_id": "item_004",
+    "node_type": "clinical_object",
+    "text": "活动后气短喘息",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_cba88dcf"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_b85ca47f",
+    "source_item_id": "item_004",
+    "node_type": "clinical_object",
+    "text": "呼吸困难",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_2f9bb726"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_6174e40f",
+    "source_item_id": "item_004",
+    "node_type": "clinical_object",
+    "text": "胸痛",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_d1a2dab4"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_05d023e8",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "GLU 8.20mmol/L",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_0712bb4d"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_4a9ba7d9",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "Cl 109.0mmol/L",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_bb3ebcca"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_633a67b7",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "CO2 21.6mmol/L",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_e6ecfc91"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_49894f26",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "血常规",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_297c6cdf"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_9f3d4633",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "血脂四项",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_de2e7642"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_19a78e80",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "凝血四项",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_d029d699"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_e95006bc",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "D2聚体",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_798f514d"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_5595857f",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "肌钙蛋白IPOCT",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_53a54006"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_9db00daf",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "肌红蛋白POCT",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_950ddfc3"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_7baf64fc",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "肌酸激酶同工酶POCT",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_eb15299d"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_fd961de6",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "酶类三项",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_079e5a0e"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_7e0aca19",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "肾功四项",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_996c853e"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_21540082",
+    "source_item_id": "item_005",
+    "node_type": "clinical_object",
+    "text": "肝功十项",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_d003bd1c"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_cae46b39",
+    "source_item_id": "item_006",
+    "node_type": "clinical_object",
+    "text": "双肺间质性肺炎",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_5a9a7da3"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_3450c45c",
+    "source_item_id": "item_006",
+    "node_type": "clinical_object",
+    "text": "双肺外周带间质纤维化",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_ea4a409f"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_76080f31",
+    "source_item_id": "item_006",
+    "node_type": "clinical_object",
+    "text": "双肺气肿",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_cc7125ca"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_c5aab185",
+    "source_item_id": "item_006",
+    "node_type": "clinical_object",
+    "text": "主动脉壁钙化",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_36edbe2c"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_0b632bcb",
+    "source_item_id": "item_006",
+    "node_type": "clinical_object",
+    "text": "双侧胸膜轻度增厚",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_a16cd0c9"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_87ba6f3b",
+    "source_item_id": "item_007",
+    "node_type": "clinical_object",
+    "text": "内科药物止血",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_a6fc5d9b"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_bfeb1f20",
+    "source_item_id": "item_007",
+    "node_type": "clinical_object",
+    "text": "抗感染治疗",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_3b0ef3a3"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_243e210d",
+    "source_item_id": "item_007",
+    "node_type": "clinical_object",
+    "text": "激素抗炎",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_36975772"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_99a981aa",
+    "source_item_id": "item_007",
+    "node_type": "clinical_object",
+    "text": "甲强龙40mg静滴",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_554edf91"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_9e2c3c87",
+    "source_item_id": "item_007",
+    "node_type": "clinical_object",
+    "text": "氨溴索化痰",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_524125a7"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_167ad208",
+    "source_item_id": "item_008",
+    "node_type": "clinical_object",
+    "text": "会诊",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_54f372be"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_1ac7369e",
+    "source_item_id": "item_008",
+    "node_type": "clinical_object",
+    "text": "间质性肺疾病",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_33fda6ae"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_4c2b8f97",
+    "source_item_id": "item_008",
+    "node_type": "clinical_object",
+    "text": "收住我科",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_3fa53ade"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_ad415987",
+    "source_item_id": "item_009",
+    "node_type": "clinical_object",
+    "text": "神志清楚",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_8ad890de"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_3088dcb9",
+    "source_item_id": "item_009",
+    "node_type": "clinical_object",
+    "text": "精神尚可",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_c5bb0ef4"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_19db8b87",
+    "source_item_id": "item_009",
+    "node_type": "clinical_object",
+    "text": "食欲正常",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_fc1499be"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_fc9eeb4a",
+    "source_item_id": "item_009",
+    "node_type": "clinical_object",
+    "text": "睡眠一般",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_f6961290"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_804b29c1",
+    "source_item_id": "item_009",
+    "node_type": "clinical_object",
+    "text": "二便正常",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_b3f61842"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_5c8ff66c",
+    "source_item_id": "item_009",
+    "node_type": "clinical_object",
+    "text": "体重",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_13c178b3"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_8ff402da",
+    "source_item_id": "item_010",
+    "node_type": "clinical_object",
+    "text": "糖尿病",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_70e96d4a"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_7055ede7",
+    "source_item_id": "item_011",
+    "node_type": "clinical_object",
+    "text": "二甲双胍格列本脲片",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_e81df7c4"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_066d2b9e",
+    "source_item_id": "item_011",
+    "node_type": "clinical_object",
+    "text": "阿卡波糖",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_3ef9cf33"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_17eb8f63",
+    "source_item_id": "item_012",
+    "node_type": "clinical_object",
+    "text": "血糖控制不佳",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_32a04678"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_ea2f59b6",
+    "source_item_id": "item_013",
+    "node_type": "clinical_object",
+    "text": "咳嗽",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_320b4fd1"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_3f2d54e7",
+    "source_item_id": "item_013",
+    "node_type": "clinical_object",
+    "text": "咳少量白粘痰",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_a2d0a84c"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_6eba9345",
+    "source_item_id": "item_013",
+    "node_type": "clinical_object",
+    "text": "受凉",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_86d19495"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_1cdd419d",
+    "source_item_id": "item_014",
+    "node_type": "clinical_object",
+    "text": "自行服药（具体不详）",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_ea0959ee"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_7e69a48c",
+    "source_item_id": "item_014",
+    "node_type": "clinical_object",
+    "text": "减轻",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_96ff0f83"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_216be245",
+    "source_item_id": "item_015",
+    "node_type": "clinical_object",
+    "text": "口干",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_5566fda8"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_a7bc6dcf",
+    "source_item_id": "item_015",
+    "node_type": "clinical_object",
+    "text": "眼干不适",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_841a8e48"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_6f63dda1",
+    "source_item_id": "item_015",
+    "node_type": "clinical_object",
+    "text": "右侧大拇指指间关节腱鞘炎",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_976cd0eb"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_aa85d106",
+    "source_item_id": "item_016",
+    "node_type": "clinical_object",
+    "text": "关节疼痛不适",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_1aa714a9"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_0618d743",
+    "source_item_id": "item_016",
+    "node_type": "clinical_object",
+    "text": "皮疹",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_cede39d6"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_7bffb447",
+    "source_item_id": "item_016",
+    "node_type": "clinical_object",
+    "text": "过敏",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_3d30ca38"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_f658c903",
+    "source_item_id": "item_016",
+    "node_type": "clinical_object",
+    "text": "雷诺现象",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_d574cb6d"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_fbb35aee",
+    "source_item_id": "item_017",
+    "node_type": "clinical_object",
+    "text": "高血压",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_aa5b8087"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_017"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_0638e93f",
+    "source_item_id": "item_017",
+    "node_type": "clinical_object",
+    "text": "冠心病",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_1d724abe"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_017"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_31145a27",
+    "source_item_id": "item_018",
+    "node_type": "clinical_object",
+    "text": "体温：36.5℃",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_7fb682b6"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_d4b1da2c",
+    "source_item_id": "item_018",
+    "node_type": "clinical_object",
+    "text": "脉搏76次/分",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_d6055b85"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_9dc56191",
+    "source_item_id": "item_018",
+    "node_type": "clinical_object",
+    "text": "呼吸：20次/分",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_86e4a864"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_f5f0c033",
+    "source_item_id": "item_018",
+    "node_type": "clinical_object",
+    "text": "血压：119/79mmHg",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_0162fdc7"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_7b5bd5f9",
+    "source_item_id": "item_018",
+    "node_type": "clinical_object",
+    "text": "SpO2 91%（未吸氧）",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_814b2f27"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_4a667025",
+    "source_item_id": "item_019",
+    "node_type": "clinical_object",
+    "text": "呼吸音粗",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_abdb77a1"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_019"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_02dc4b15",
+    "source_item_id": "item_019",
+    "node_type": "clinical_object",
+    "text": "湿性啰音",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_3a6cee0b"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_019"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_e52cdd37",
+    "source_item_id": "item_019",
+    "node_type": "clinical_object",
+    "text": "velcro啰音",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_08ff6478"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_019"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_03cd1f6a",
+    "source_item_id": "item_020",
+    "node_type": "clinical_object",
+    "text": "胸廓无畸形",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_64d6de77"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_020"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_33129345",
+    "source_item_id": "item_020",
+    "node_type": "clinical_object",
+    "text": "双侧呼吸动度一致",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_51a1d1d2"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_020"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_40865b29",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "心律齐",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_e8f324bf"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_109cf6f3",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "早搏",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_5c0fceda"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_371ecb43",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "杂音",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_96a7babc"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_283bafae",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "腹部外形平坦",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_455c687d"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_82cbadf9",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "腹部柔软",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_4cc6d98a"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_1d10120d",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "压痛",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_26619315"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_ac879261",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "反跳痛",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_470ecff1"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_2298d499",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "腹部包块",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_0128ee4b"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_a38d19ca",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "肝脏肋下",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_8e29c851"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_dfd1bfc2",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "肠鸣音",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_b4cc7602"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_80a70e96",
+    "source_item_id": "item_021",
+    "node_type": "clinical_object",
+    "text": "水肿",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_ac1511ce"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_6ba644d6",
+    "source_item_id": "item_022",
+    "node_type": "clinical_object",
+    "text": "肺部感染",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_ac121e4c"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_022"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_0ec2d821",
+    "source_item_id": "item_023",
+    "node_type": "clinical_object",
+    "text": "间质性肺病",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_322a20b1"
+    ],
+    "assertion_status": "possible",
+    "source_span_ids": [
+      "span_item_023"
+    ],
+    "confidence": "medium",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_5903855a",
+    "source_item_id": "item_024",
+    "node_type": "clinical_object",
+    "text": "间质性肺炎",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_0962a5a1"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_024"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_f1a21052",
+    "source_item_id": "item_025",
+    "node_type": "clinical_object",
+    "text": "2型糖尿病",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_46d46e3a"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_025"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_8c24d916",
+    "source_item_id": "item_026",
+    "node_type": "clinical_object",
+    "text": "自身抗体",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_e35cd227"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_026"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_2fcf6737",
+    "source_item_id": "item_026",
+    "node_type": "clinical_object",
+    "text": "血清肿瘤标记物",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_f97cc617"
+    ],
+    "assertion_status": "absent",
+    "source_span_ids": [
+      "span_item_026"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_8ce0d3f4",
+    "source_item_id": "item_027",
+    "node_type": "clinical_object",
+    "text": "糖化血红蛋白:HbA1C 7.40%",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_fd02fdfc"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_f12f08fc",
+    "source_item_id": "item_027",
+    "node_type": "clinical_object",
+    "text": "血气分析PH 7.383",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_6b9bb365"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_4c150efa",
+    "source_item_id": "item_027",
+    "node_type": "clinical_object",
+    "text": "PCO2 39.20mmHg",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_9f3015c6"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_c5e26d61",
+    "source_item_id": "item_027",
+    "node_type": "clinical_object",
+    "text": "PO2 78.90mmHg",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_f71a382e"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_9b064552",
+    "source_item_id": "item_027",
+    "node_type": "clinical_object",
+    "text": "Lac 3.00mmol/L",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_9eccd861"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_ed28d2f3",
+    "source_item_id": "item_027",
+    "node_type": "clinical_object",
+    "text": "RI 272.00",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_1da2907f"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_0d37874c",
+    "source_item_id": "item_027",
+    "node_type": "clinical_object",
+    "text": "FiO2 29.00%",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_f51adf9f"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_10137219",
+    "source_item_id": "item_028",
+    "node_type": "clinical_object",
+    "text": "左房略增大",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_3b5b15cf"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_028"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_efb821e6",
+    "source_item_id": "item_028",
+    "node_type": "clinical_object",
+    "text": "二尖瓣、三尖瓣返流（轻度）",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_63c9cd4a"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_028"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_18f47ec5",
+    "source_item_id": "item_028",
+    "node_type": "clinical_object",
+    "text": "左室舒张功能减低",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_43219c43"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_028"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_527e21cb",
+    "source_item_id": "item_029",
+    "node_type": "clinical_object",
+    "text": "左室收缩功能正常",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_ced6921a"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_029"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_b7298be3",
+    "source_item_id": "item_030",
+    "node_type": "clinical_object",
+    "text": "胆囊附壁结晶",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_50050333"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_030"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_0e220cb6",
+    "source_item_id": "item_031",
+    "node_type": "clinical_object",
+    "text": "常规通气功能",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_9a4edf24"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_e72f101c",
+    "source_item_id": "item_031",
+    "node_type": "clinical_object",
+    "text": "小气道功能(V-V曲线)",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_dd0b4315"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_b54894cf",
+    "source_item_id": "item_031",
+    "node_type": "clinical_object",
+    "text": "呼吸储备功能(最大通气量)",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_cda0db93"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_a9c66ecc",
+    "source_item_id": "item_031",
+    "node_type": "clinical_object",
+    "text": "肺容量(残气容积等)",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_9c88620f"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_5388acbe",
+    "source_item_id": "item_032",
+    "node_type": "clinical_object",
+    "text": "弥散功能障碍",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_cd75e664"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_032"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_7f8ca780",
+    "source_item_id": "item_033",
+    "node_type": "clinical_object",
+    "text": "呼吸总阻抗Zrs",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_937483eb"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_bd27aa20",
+    "source_item_id": "item_033",
+    "node_type": "clinical_object",
+    "text": "气道阻力R系列",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_59f994dd"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_107e4d15",
+    "source_item_id": "item_033",
+    "node_type": "clinical_object",
+    "text": "中心阻抗Rc",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_35e1ab20"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_ef2fa90a",
+    "source_item_id": "item_033",
+    "node_type": "clinical_object",
+    "text": "电抗X5",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_4e055774"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_ab67295a",
+    "source_item_id": "item_034",
+    "node_type": "clinical_object",
+    "text": "周边阻抗Rp",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_5ef15dde"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_4bb76607",
+    "source_item_id": "item_034",
+    "node_type": "clinical_object",
+    "text": "共振频率Fres",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_d6974552"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_600a2fbd",
+    "source_item_id": "item_034",
+    "node_type": "clinical_object",
+    "text": "电抗面积AX",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_e721e898"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_61afa5a3",
+    "source_item_id": "item_034",
+    "node_type": "clinical_object",
+    "text": "Ers",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_99734538"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_f3c3186e",
+    "source_item_id": "item_035",
+    "node_type": "clinical_object",
+    "text": "哌拉西林他唑巴坦",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_f66ac510"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_035"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_03cf75e5",
+    "source_item_id": "item_035",
+    "node_type": "clinical_object",
+    "text": "抗感染",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_0ae74978"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_035"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_490e5e4e",
+    "source_item_id": "item_035",
+    "node_type": "clinical_object",
+    "text": "化痰治疗",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_ec93e3a8"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_035"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_c04b667e",
+    "source_item_id": "item_036",
+    "node_type": "clinical_object",
+    "text": "症状",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_e1e8c728"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_036"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_f7df2dd0",
+    "source_item_id": "item_037",
+    "node_type": "clinical_object",
+    "text": "间质性肺病",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_bed8d0f1"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_037"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "node_id": "evidence_node_20260519_92ca4e45",
+    "source_item_id": "item_037",
+    "node_type": "clinical_object",
+    "text": "MDT讨论",
+    "assertion_ids": [
+      "clinical_object_assertion_20260519_1be4ffd2"
+    ],
+    "assertion_status": "present",
+    "source_span_ids": [
+      "span_item_037"
+    ],
+    "confidence": "high",
+    "notes": null
+  }
+]

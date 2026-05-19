@@ -1,0 +1,2250 @@
+[
+  {
+    "object_id": "clinical_object_assertion_20260519_7b035ab9",
+    "source_item_id": "item_001",
+    "object_text": "患者***,男,65岁",
+    "object_type": "demographic",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "患者***,男,65岁",
+    "source_span_ids": [
+      "span_item_001"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_47bf1ff6",
+    "source_item_id": "item_002",
+    "object_text": "咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "主因“咳嗽咳痰伴痰中带血10天。”",
+    "temporal_anchor_text": "10天",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "主因“咳嗽咳痰伴痰中带血10天。”",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_0dd75e32",
+    "source_item_id": "item_002",
+    "object_text": "咳痰",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "主因“咳嗽咳痰伴痰中带血10天。”",
+    "temporal_anchor_text": "10天",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "主因“咳嗽咳痰伴痰中带血10天。”",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_013c90fc",
+    "source_item_id": "item_002",
+    "object_text": "痰中带血",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "主因",
+    "assertion_scope_text": "主因“咳嗽咳痰伴痰中带血10天。”",
+    "temporal_anchor_text": "10天",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "主因“咳嗽咳痰伴痰中带血10天。”",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_02268e9e",
+    "source_item_id": "item_003",
+    "object_text": "咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "出现咳嗽",
+    "temporal_anchor_text": "10天前",
+    "trigger_text": "无明显诱因",
+    "modifier_texts": [],
+    "context_text": "出现咳嗽",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_ed467dff",
+    "source_item_id": "item_003",
+    "object_text": "咳痰",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "出现咳嗽、咳痰",
+    "temporal_anchor_text": "10天前",
+    "trigger_text": "无明显诱因",
+    "modifier_texts": [
+      "晨起"
+    ],
+    "context_text": "出现咳嗽、咳痰",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_e64cd815",
+    "source_item_id": "item_003",
+    "object_text": "白色粘痰",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "呈",
+    "assertion_scope_text": "呈白色粘痰",
+    "temporal_anchor_text": "10天前",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "呈白色粘痰",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_10c64495",
+    "source_item_id": "item_003",
+    "object_text": "鲜红色血丝",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴有",
+    "assertion_scope_text": "伴有痰中少量鲜红色血丝",
+    "temporal_anchor_text": "晨起",
+    "trigger_text": null,
+    "modifier_texts": [
+      "痰中少量",
+      "量共1-2口"
+    ],
+    "context_text": "伴有痰中少量鲜红色血丝",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_0b334bbe",
+    "source_item_id": "item_003",
+    "object_text": "暗红色血块",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "伴有",
+    "assertion_scope_text": "伴有痰中少量鲜红色血丝及暗红色血块",
+    "temporal_anchor_text": "晨起",
+    "trigger_text": null,
+    "modifier_texts": [
+      "痰中少量",
+      "量共1-2口"
+    ],
+    "context_text": "伴有痰中少量鲜红色血丝及暗红色血块",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_f3bb8933",
+    "source_item_id": "item_004",
+    "object_text": "发热",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无发热、寒战",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "无发热、寒战",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_255a9f52",
+    "source_item_id": "item_004",
+    "object_text": "寒战",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无发热、寒战",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "无发热、寒战",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_cba88dcf",
+    "source_item_id": "item_004",
+    "object_text": "活动后气短喘息",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无活动后气短喘息",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "无活动后气短喘息",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_2f9bb726",
+    "source_item_id": "item_004",
+    "object_text": "呼吸困难",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无呼吸困难、胸痛等不适",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "无呼吸困难、胸痛等不适",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_d1a2dab4",
+    "source_item_id": "item_004",
+    "object_text": "胸痛",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无呼吸困难、胸痛等不适",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "无呼吸困难、胸痛等不适",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_0712bb4d",
+    "source_item_id": "item_005",
+    "object_text": "GLU 8.20mmol/L",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "GLU 8.20mmol/L",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_bb3ebcca",
+    "source_item_id": "item_005",
+    "object_text": "Cl 109.0mmol/L",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "Cl 109.0mmol/L",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_e6ecfc91",
+    "source_item_id": "item_005",
+    "object_text": "CO2 21.6mmol/L",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "CO2 21.6mmol/L",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_297c6cdf",
+    "source_item_id": "item_005",
+    "object_text": "血常规",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_de2e7642",
+    "source_item_id": "item_005",
+    "object_text": "血脂四项",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_d029d699",
+    "source_item_id": "item_005",
+    "object_text": "凝血四项",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_798f514d",
+    "source_item_id": "item_005",
+    "object_text": "D2聚体",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_53a54006",
+    "source_item_id": "item_005",
+    "object_text": "肌钙蛋白IPOCT",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_950ddfc3",
+    "source_item_id": "item_005",
+    "object_text": "肌红蛋白POCT",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_eb15299d",
+    "source_item_id": "item_005",
+    "object_text": "肌酸激酶同工酶POCT",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_079e5a0e",
+    "source_item_id": "item_005",
+    "object_text": "酶类三项",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_996c853e",
+    "source_item_id": "item_005",
+    "object_text": "肾功四项",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_d003bd1c",
+    "source_item_id": "item_005",
+    "object_text": "肝功十项",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "未见明显异常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未见明显异常",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_5a9a7da3",
+    "source_item_id": "item_006",
+    "object_text": "双肺间质性肺炎",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "双肺间质性肺炎",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_ea4a409f",
+    "source_item_id": "item_006",
+    "object_text": "双肺外周带间质纤维化",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "双肺外周带间质纤维化",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_cc7125ca",
+    "source_item_id": "item_006",
+    "object_text": "双肺气肿",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "双肺气肿",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_36edbe2c",
+    "source_item_id": "item_006",
+    "object_text": "主动脉壁钙化",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "主动脉壁钙化",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_a16cd0c9",
+    "source_item_id": "item_006",
+    "object_text": "双侧胸膜轻度增厚",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "双侧胸膜轻度增厚",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_a6fc5d9b",
+    "source_item_id": "item_007",
+    "object_text": "内科药物止血",
+    "object_type": "medication",
+    "assertion_status": "present",
+    "assertion_cue_text": "给予",
+    "assertion_scope_text": "给予内科药物止血",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "给予内科药物止血",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_3b0ef3a3",
+    "source_item_id": "item_007",
+    "object_text": "抗感染治疗",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "给予",
+    "assertion_scope_text": "给予内科药物止血、抗感染治疗",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "给予内科药物止血、抗感染治疗",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_36975772",
+    "source_item_id": "item_007",
+    "object_text": "激素抗炎",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "给予",
+    "assertion_scope_text": "给予内科药物止血、抗感染治疗，激素抗炎",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "给予内科药物止血、抗感染治疗，激素抗炎",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_554edf91",
+    "source_item_id": "item_007",
+    "object_text": "甲强龙40mg静滴",
+    "object_type": "medication",
+    "assertion_status": "present",
+    "assertion_cue_text": "给予",
+    "assertion_scope_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "缓解症状"
+    ],
+    "context_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_524125a7",
+    "source_item_id": "item_007",
+    "object_text": "氨溴索化痰",
+    "object_type": "medication",
+    "assertion_status": "present",
+    "assertion_cue_text": "给予",
+    "assertion_scope_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_54f372be",
+    "source_item_id": "item_008",
+    "object_text": "会诊",
+    "object_type": "procedure",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "请我科会诊后",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "请我科会诊后",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_33fda6ae",
+    "source_item_id": "item_008",
+    "object_text": "间质性肺疾病",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": "以",
+    "assertion_scope_text": "以“间质性肺疾病”",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "以“间质性肺疾病”",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_3fa53ade",
+    "source_item_id": "item_008",
+    "object_text": "收住我科",
+    "object_type": "procedure",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "收住我科",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "收住我科",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_8ad890de",
+    "source_item_id": "item_009",
+    "object_text": "神志清楚",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "神志清楚",
+    "temporal_anchor_text": "病程中",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "神志清楚",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_c5bb0ef4",
+    "source_item_id": "item_009",
+    "object_text": "精神尚可",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "精神尚可",
+    "temporal_anchor_text": "病程中",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "精神尚可",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_fc1499be",
+    "source_item_id": "item_009",
+    "object_text": "食欲正常",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "食欲正常",
+    "temporal_anchor_text": "病程中",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "食欲正常",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_f6961290",
+    "source_item_id": "item_009",
+    "object_text": "睡眠一般",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "睡眠一般",
+    "temporal_anchor_text": "病程中",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "睡眠一般",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_b3f61842",
+    "source_item_id": "item_009",
+    "object_text": "二便正常",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "二便正常",
+    "temporal_anchor_text": "病程中",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "二便正常",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_13c178b3",
+    "source_item_id": "item_009",
+    "object_text": "体重",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未见",
+    "assertion_scope_text": "体重未见明显改变",
+    "temporal_anchor_text": "近期",
+    "trigger_text": null,
+    "modifier_texts": [
+      "明显"
+    ],
+    "context_text": "体重未见明显改变",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_70e96d4a",
+    "source_item_id": "item_010",
+    "object_text": "糖尿病",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "糖尿病史10余年",
+    "temporal_anchor_text": "10余年",
+    "trigger_text": null,
+    "modifier_texts": [
+      "既往"
+    ],
+    "context_text": "糖尿病史10余年",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_e81df7c4",
+    "source_item_id": "item_011",
+    "object_text": "二甲双胍格列本脲片",
+    "object_type": "medication",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "口服二甲双胍格列本脲片，2片，QD",
+    "temporal_anchor_text": "平素",
+    "trigger_text": null,
+    "modifier_texts": [
+      "2片",
+      "QD"
+    ],
+    "context_text": "口服二甲双胍格列本脲片，2片，QD",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_3ef9cf33",
+    "source_item_id": "item_011",
+    "object_text": "阿卡波糖",
+    "object_type": "medication",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "阿卡波糖，100mgBID",
+    "temporal_anchor_text": "平素",
+    "trigger_text": null,
+    "modifier_texts": [
+      "100mg",
+      "BID"
+    ],
+    "context_text": "阿卡波糖，100mgBID",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_32a04678",
+    "source_item_id": "item_012",
+    "object_text": "血糖控制不佳",
+    "object_type": "treatment_response",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "既往血糖控制不佳",
+    "temporal_anchor_text": "既往",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "既往血糖控制不佳",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_320b4fd1",
+    "source_item_id": "item_013",
+    "object_text": "咳嗽",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "出现咳嗽",
+    "temporal_anchor_text": "3月前",
+    "trigger_text": "受凉后",
+    "modifier_texts": [],
+    "context_text": "出现咳嗽",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_a2d0a84c",
+    "source_item_id": "item_013",
+    "object_text": "咳少量白粘痰",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "出现",
+    "assertion_scope_text": "出现咳嗽咳少量白粘痰",
+    "temporal_anchor_text": "3月前",
+    "trigger_text": "受凉后",
+    "modifier_texts": [
+      "少量",
+      "白粘"
+    ],
+    "context_text": "出现咳嗽咳少量白粘痰",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_86d19495",
+    "source_item_id": "item_013",
+    "object_text": "受凉",
+    "object_type": "etiology_or_trigger",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "受凉后",
+    "temporal_anchor_text": "3月前",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "受凉后",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_ea0959ee",
+    "source_item_id": "item_014",
+    "object_text": "自行服药（具体不详）",
+    "object_type": "medication",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "自行服药（具体不详）",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "自行服药（具体不详）",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_96ff0f83",
+    "source_item_id": "item_014",
+    "object_text": "减轻",
+    "object_type": "treatment_response",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "减轻",
+    "temporal_anchor_text": "自行服药（具体不详）后",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "减轻",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_5566fda8",
+    "source_item_id": "item_015",
+    "object_text": "口干",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "口干",
+    "temporal_anchor_text": "5-6年",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "口干",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_841a8e48",
+    "source_item_id": "item_015",
+    "object_text": "眼干不适",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "眼干不适",
+    "temporal_anchor_text": "5-6年",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "眼干不适",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_976cd0eb",
+    "source_item_id": "item_015",
+    "object_text": "右侧大拇指指间关节腱鞘炎",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "右侧大拇指指间关节腱鞘炎",
+    "temporal_anchor_text": "多年",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "右侧大拇指指间关节腱鞘炎",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_1aa714a9",
+    "source_item_id": "item_016",
+    "object_text": "关节疼痛不适",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无其他关节疼痛不适病史",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "其他",
+      "病史"
+    ],
+    "context_text": "无其他关节疼痛不适病史",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_cede39d6",
+    "source_item_id": "item_016",
+    "object_text": "皮疹",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无皮疹及过敏病史",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "无皮疹及过敏病史",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_3d30ca38",
+    "source_item_id": "item_016",
+    "object_text": "过敏",
+    "object_type": "finding",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无皮疹及过敏病史",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "病史"
+    ],
+    "context_text": "无皮疹及过敏病史",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_d574cb6d",
+    "source_item_id": "item_016",
+    "object_text": "雷诺现象",
+    "object_type": "symptom",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "无雷诺现象",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "无雷诺现象",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_aa5b8087",
+    "source_item_id": "item_017",
+    "object_text": "高血压",
+    "object_type": "finding",
+    "assertion_status": "absent",
+    "assertion_cue_text": "否认",
+    "assertion_scope_text": "否认高血压冠心病病史",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "否认高血压冠心病病史",
+    "source_span_ids": [
+      "span_item_017"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_1d724abe",
+    "source_item_id": "item_017",
+    "object_text": "冠心病",
+    "object_type": "finding",
+    "assertion_status": "absent",
+    "assertion_cue_text": "否认",
+    "assertion_scope_text": "否认高血压冠心病病史",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "否认高血压冠心病病史",
+    "source_span_ids": [
+      "span_item_017"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_7fb682b6",
+    "source_item_id": "item_018",
+    "object_text": "体温：36.5℃",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "体温：36.5℃",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "体温：36.5℃",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_d6055b85",
+    "source_item_id": "item_018",
+    "object_text": "脉搏76次/分",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "脉搏76次/分",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "脉搏76次/分",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_86e4a864",
+    "source_item_id": "item_018",
+    "object_text": "呼吸：20次/分",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "呼吸：20次/分",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "呼吸：20次/分",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_0162fdc7",
+    "source_item_id": "item_018",
+    "object_text": "血压：119/79mmHg",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "血压：119/79mmHg",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "血压：119/79mmHg",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_814b2f27",
+    "source_item_id": "item_018",
+    "object_text": "SpO2 91%（未吸氧）",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "SpO2 91%（未吸氧）",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "未吸氧"
+    ],
+    "context_text": "SpO2 91%（未吸氧）",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_abdb77a1",
+    "source_item_id": "item_019",
+    "object_text": "呼吸音粗",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "双肺呼吸音粗",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "双肺"
+    ],
+    "context_text": "双肺呼吸音粗",
+    "source_span_ids": [
+      "span_item_019"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_3a6cee0b",
+    "source_item_id": "item_019",
+    "object_text": "湿性啰音",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "闻及",
+    "assertion_scope_text": "少许湿性啰音",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "双肺底",
+      "少许"
+    ],
+    "context_text": "少许湿性啰音",
+    "source_span_ids": [
+      "span_item_019"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_08ff6478",
+    "source_item_id": "item_019",
+    "object_text": "velcro啰音",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": "闻及",
+    "assertion_scope_text": "velcro啰音",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "双肺底",
+      "少许"
+    ],
+    "context_text": "velcro啰音",
+    "source_span_ids": [
+      "span_item_019"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_64d6de77",
+    "source_item_id": "item_020",
+    "object_text": "胸廓无畸形",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "胸廓无畸形",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "胸廓无畸形",
+    "source_span_ids": [
+      "span_item_020"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_51a1d1d2",
+    "source_item_id": "item_020",
+    "object_text": "双侧呼吸动度一致",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "双侧呼吸动度一致",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "双侧呼吸动度一致",
+    "source_span_ids": [
+      "span_item_020"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_e8f324bf",
+    "source_item_id": "item_021",
+    "object_text": "心律齐",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "心律齐",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "心律齐",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_5c0fceda",
+    "source_item_id": "item_021",
+    "object_text": "早搏",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未闻及",
+    "assertion_scope_text": "未闻及早搏及杂音",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未闻及早搏及杂音",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_96a7babc",
+    "source_item_id": "item_021",
+    "object_text": "杂音",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未闻及",
+    "assertion_scope_text": "未闻及早搏及杂音",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未闻及早搏及杂音",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_455c687d",
+    "source_item_id": "item_021",
+    "object_text": "腹部外形平坦",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "腹部外形平坦",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "腹部外形平坦",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_4cc6d98a",
+    "source_item_id": "item_021",
+    "object_text": "腹部柔软",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "腹部柔软",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "腹部柔软",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_26619315",
+    "source_item_id": "item_021",
+    "object_text": "压痛",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "全腹无压痛及反跳痛",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "全腹无压痛及反跳痛",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_470ecff1",
+    "source_item_id": "item_021",
+    "object_text": "反跳痛",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "全腹无压痛及反跳痛",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "全腹无压痛及反跳痛",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_0128ee4b",
+    "source_item_id": "item_021",
+    "object_text": "腹部包块",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未触及",
+    "assertion_scope_text": "未触及腹部包块",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "未触及腹部包块",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_8e29c851",
+    "source_item_id": "item_021",
+    "object_text": "肝脏肋下",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "未触及",
+    "assertion_scope_text": "肝脏肋下未触及",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "肝脏肋下未触及",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_b4cc7602",
+    "source_item_id": "item_021",
+    "object_text": "肠鸣音",
+    "object_type": "sign",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "肠鸣音正常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "肠鸣音正常",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_ac1511ce",
+    "source_item_id": "item_021",
+    "object_text": "水肿",
+    "object_type": "sign",
+    "assertion_status": "absent",
+    "assertion_cue_text": "无",
+    "assertion_scope_text": "双下肢无水肿",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "双下肢"
+    ],
+    "context_text": "双下肢无水肿",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_ac121e4c",
+    "source_item_id": "item_022",
+    "object_text": "肺部感染",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "肺部感染",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "肺部感染",
+    "source_span_ids": [
+      "span_item_022"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_322a20b1",
+    "source_item_id": "item_023",
+    "object_text": "间质性肺病",
+    "object_type": "finding",
+    "assertion_status": "possible",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "间质性肺病(原因待查)",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "原因待查"
+    ],
+    "context_text": "间质性肺病(原因待查)",
+    "source_span_ids": [
+      "span_item_023"
+    ],
+    "confidence": "medium",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_0962a5a1",
+    "source_item_id": "item_024",
+    "object_text": "间质性肺炎",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "间质性肺炎",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "间质性肺炎",
+    "source_span_ids": [
+      "span_item_024"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_46d46e3a",
+    "source_item_id": "item_025",
+    "object_text": "2型糖尿病",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "2型糖尿病",
+    "source_span_ids": [
+      "span_item_025"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_e35cd227",
+    "source_item_id": "item_026",
+    "object_text": "自身抗体",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "阴性",
+    "assertion_scope_text": "自身抗体及血清肿瘤标记物阴性",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "自身抗体及血清肿瘤标记物阴性",
+    "source_span_ids": [
+      "span_item_026"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_f97cc617",
+    "source_item_id": "item_026",
+    "object_text": "血清肿瘤标记物",
+    "object_type": "lab_or_test",
+    "assertion_status": "absent",
+    "assertion_cue_text": "阴性",
+    "assertion_scope_text": "自身抗体及血清肿瘤标记物阴性",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "自身抗体及血清肿瘤标记物阴性",
+    "source_span_ids": [
+      "span_item_026"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_fd02fdfc",
+    "source_item_id": "item_027",
+    "object_text": "糖化血红蛋白:HbA1C 7.40%",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "糖化血红蛋白:HbA1C 7.40%",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_6b9bb365",
+    "source_item_id": "item_027",
+    "object_text": "血气分析PH 7.383",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "血气分析PH 7.383",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_9f3015c6",
+    "source_item_id": "item_027",
+    "object_text": "PCO2 39.20mmHg",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "PCO2 39.20mmHg",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_f71a382e",
+    "source_item_id": "item_027",
+    "object_text": "PO2 78.90mmHg",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "PO2 78.90mmHg",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_9eccd861",
+    "source_item_id": "item_027",
+    "object_text": "Lac 3.00mmol/L",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "Lac 3.00mmol/L",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_1da2907f",
+    "source_item_id": "item_027",
+    "object_text": "RI 272.00",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "RI 272.00",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_f51adf9f",
+    "source_item_id": "item_027",
+    "object_text": "FiO2 29.00%",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "FiO2 29.00%",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_3b5b15cf",
+    "source_item_id": "item_028",
+    "object_text": "左房略增大",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "左房略增大",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "左房略增大",
+    "source_span_ids": [
+      "span_item_028"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_63c9cd4a",
+    "source_item_id": "item_028",
+    "object_text": "二尖瓣、三尖瓣返流（轻度）",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "二尖瓣、三尖瓣返流（轻度）",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "二尖瓣、三尖瓣返流（轻度）",
+    "source_span_ids": [
+      "span_item_028"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_43219c43",
+    "source_item_id": "item_028",
+    "object_text": "左室舒张功能减低",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "左室舒张功能减低",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "左室舒张功能减低",
+    "source_span_ids": [
+      "span_item_028"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_ced6921a",
+    "source_item_id": "item_029",
+    "object_text": "左室收缩功能正常",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": null,
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "左室收缩功能正常",
+    "source_span_ids": [
+      "span_item_029"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_50050333",
+    "source_item_id": "item_030",
+    "object_text": "胆囊附壁结晶",
+    "object_type": "imaging_finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "胆囊附壁结晶",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "胆囊附壁结晶",
+    "source_span_ids": [
+      "span_item_030"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_9a4edf24",
+    "source_item_id": "item_031",
+    "object_text": "常规通气功能",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_dd0b4315",
+    "source_item_id": "item_031",
+    "object_text": "小气道功能(V-V曲线)",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_cda0db93",
+    "source_item_id": "item_031",
+    "object_text": "呼吸储备功能(最大通气量)",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_9c88620f",
+    "source_item_id": "item_031",
+    "object_text": "肺容量(残气容积等)",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "肺容量(残气容积等)正常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "肺容量(残气容积等)正常",
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_cd75e664",
+    "source_item_id": "item_032",
+    "object_text": "弥散功能障碍",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "换气功能：轻度弥散功能障碍",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "轻度"
+    ],
+    "context_text": "换气功能：轻度弥散功能障碍",
+    "source_span_ids": [
+      "span_item_032"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_937483eb",
+    "source_item_id": "item_033",
+    "object_text": "呼吸总阻抗Zrs",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "呼吸总阻抗Zrs正常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "呼吸总阻抗Zrs正常",
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_59f994dd",
+    "source_item_id": "item_033",
+    "object_text": "气道阻力R系列",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "气道阻力R系列正常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "气道阻力R系列正常",
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_35e1ab20",
+    "source_item_id": "item_033",
+    "object_text": "中心阻抗Rc",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "中心阻抗Rc正常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "中心阻抗Rc正常",
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_4e055774",
+    "source_item_id": "item_033",
+    "object_text": "电抗X5",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": "正常",
+    "assertion_scope_text": "电抗X5正常",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "电抗X5正常",
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_5ef15dde",
+    "source_item_id": "item_034",
+    "object_text": "周边阻抗Rp",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "周边阻抗Rp略增大",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "略增大"
+    ],
+    "context_text": "周边阻抗Rp略增大",
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_d6974552",
+    "source_item_id": "item_034",
+    "object_text": "共振频率Fres",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "共振频率Fres增高",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "增高"
+    ],
+    "context_text": "共振频率Fres增高",
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_e721e898",
+    "source_item_id": "item_034",
+    "object_text": "电抗面积AX",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "电抗面积AX增大",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "增大"
+    ],
+    "context_text": "电抗面积AX增大",
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_99734538",
+    "source_item_id": "item_034",
+    "object_text": "Ers",
+    "object_type": "lab_or_test",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "Ers轻度增宽",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [
+      "轻度增宽"
+    ],
+    "context_text": "Ers轻度增宽",
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_f66ac510",
+    "source_item_id": "item_035",
+    "object_text": "哌拉西林他唑巴坦",
+    "object_type": "medication",
+    "assertion_status": "present",
+    "assertion_cue_text": "予以",
+    "assertion_scope_text": "予以哌拉西林他唑巴坦",
+    "temporal_anchor_text": "入院",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "予以哌拉西林他唑巴坦",
+    "source_span_ids": [
+      "span_item_035"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_0ae74978",
+    "source_item_id": "item_035",
+    "object_text": "抗感染",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "予以",
+    "assertion_scope_text": "予以哌拉西林他唑巴坦抗感染",
+    "temporal_anchor_text": "入院",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "予以哌拉西林他唑巴坦抗感染",
+    "source_span_ids": [
+      "span_item_035"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_ec93e3a8",
+    "source_item_id": "item_035",
+    "object_text": "化痰治疗",
+    "object_type": "treatment",
+    "assertion_status": "present",
+    "assertion_cue_text": "予以",
+    "assertion_scope_text": "予以哌拉西林他唑巴坦抗感染及化痰治疗",
+    "temporal_anchor_text": "入院",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "予以哌拉西林他唑巴坦抗感染及化痰治疗",
+    "source_span_ids": [
+      "span_item_035"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_e1e8c728",
+    "source_item_id": "item_036",
+    "object_text": "症状",
+    "object_type": "symptom",
+    "assertion_status": "present",
+    "assertion_cue_text": "减轻",
+    "assertion_scope_text": "患者症状减轻",
+    "temporal_anchor_text": null,
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "患者症状减轻",
+    "source_span_ids": [
+      "span_item_036"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_bed8d0f1",
+    "source_item_id": "item_037",
+    "object_text": "间质性肺病",
+    "object_type": "finding",
+    "assertion_status": "present",
+    "assertion_cue_text": null,
+    "assertion_scope_text": "针对间质性肺病",
+    "temporal_anchor_text": "现",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "针对间质性肺病",
+    "source_span_ids": [
+      "span_item_037"
+    ],
+    "confidence": "high",
+    "notes": null
+  },
+  {
+    "object_id": "clinical_object_assertion_20260519_1be4ffd2",
+    "source_item_id": "item_037",
+    "object_text": "MDT讨论",
+    "object_type": "procedure",
+    "assertion_status": "present",
+    "assertion_cue_text": "提请",
+    "assertion_scope_text": "提请MDT讨论",
+    "temporal_anchor_text": "现",
+    "trigger_text": null,
+    "modifier_texts": [],
+    "context_text": "提请MDT讨论",
+    "source_span_ids": [
+      "span_item_037"
+    ],
+    "confidence": "high",
+    "notes": null
+  }
+]

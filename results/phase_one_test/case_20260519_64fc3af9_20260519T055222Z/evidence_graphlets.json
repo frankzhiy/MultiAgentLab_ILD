@@ -1,0 +1,4754 @@
+[
+  {
+    "graphlet_id": "evidence_graphlet_20260519_4d05fb41",
+    "source_item_id": "item_001",
+    "source_span_ids": [
+      "span_item_001"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_6d17c339",
+        "source_item_id": "item_001",
+        "frame_type": "past_history",
+        "frame_label": "患者***,男,65岁",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_7b035ab9"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_e95900a2"
+        ],
+        "source_span_ids": [
+          "span_item_001"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_e95900a2",
+        "source_item_id": "item_001",
+        "node_type": "clinical_object",
+        "text": "患者***,男,65岁",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_7b035ab9"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_001"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_fd5409b0",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 0
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_24bcc9bf",
+    "source_item_id": "item_002",
+    "source_span_ids": [
+      "span_item_002"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_ac7b10fc",
+        "source_item_id": "item_002",
+        "frame_type": "symptom_course",
+        "frame_label": "主因咳嗽咳痰伴痰中带血10天",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_47bf1ff6",
+          "clinical_object_assertion_20260519_0dd75e32",
+          "clinical_object_assertion_20260519_013c90fc"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_2191ee41",
+          "evidence_node_20260519_a10d3688",
+          "evidence_node_20260519_595b2f2e"
+        ],
+        "source_span_ids": [
+          "span_item_002"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_2191ee41",
+        "source_item_id": "item_002",
+        "node_type": "clinical_object",
+        "text": "咳嗽",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_47bf1ff6"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_002"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_a10d3688",
+        "source_item_id": "item_002",
+        "node_type": "clinical_object",
+        "text": "咳痰",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_0dd75e32"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_002"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_595b2f2e",
+        "source_item_id": "item_002",
+        "node_type": "clinical_object",
+        "text": "痰中带血",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_013c90fc"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_002"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_f15ac64c",
+        "source_ref": "evidence_node_20260519_2191ee41",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_a10d3688",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_8d201804",
+        "source_ref": "evidence_node_20260519_2191ee41",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_595b2f2e",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_5b758ac4",
+        "source_ref": "evidence_node_20260519_a10d3688",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_595b2f2e",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_c7e7e2e1",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 3,
+      "relation_count": 3
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_047aff69",
+    "source_item_id": "item_003",
+    "source_span_ids": [
+      "span_item_003"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_fb7dc114",
+        "source_item_id": "item_003",
+        "frame_type": "symptom_course",
+        "frame_label": "10天前出现咳嗽、咳痰、白色粘痰，晨起痰中带血",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_02268e9e",
+          "clinical_object_assertion_20260519_ed467dff",
+          "clinical_object_assertion_20260519_e64cd815",
+          "clinical_object_assertion_20260519_10c64495",
+          "clinical_object_assertion_20260519_0b334bbe"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_3e571ed0",
+          "evidence_node_20260519_264ff1d1",
+          "evidence_node_20260519_f866984a",
+          "evidence_node_20260519_41525a45",
+          "evidence_node_20260519_07bd40ad"
+        ],
+        "source_span_ids": [
+          "span_item_003"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_3e571ed0",
+        "source_item_id": "item_003",
+        "node_type": "clinical_object",
+        "text": "咳嗽",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_02268e9e"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_003"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_264ff1d1",
+        "source_item_id": "item_003",
+        "node_type": "clinical_object",
+        "text": "咳痰",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_ed467dff"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_003"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_f866984a",
+        "source_item_id": "item_003",
+        "node_type": "clinical_object",
+        "text": "白色粘痰",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_e64cd815"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_003"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_41525a45",
+        "source_item_id": "item_003",
+        "node_type": "clinical_object",
+        "text": "鲜红色血丝",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_10c64495"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_003"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_07bd40ad",
+        "source_item_id": "item_003",
+        "node_type": "clinical_object",
+        "text": "暗红色血块",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_0b334bbe"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_003"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_83e65c98",
+        "source_ref": "evidence_node_20260519_3e571ed0",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_264ff1d1",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_e5090530",
+        "source_ref": "evidence_node_20260519_f866984a",
+        "source_ref_type": "node",
+        "relation_type": "finding_of",
+        "target_ref": "evidence_node_20260519_264ff1d1",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_f8db8883",
+        "source_ref": "evidence_node_20260519_41525a45",
+        "source_ref_type": "node",
+        "relation_type": "finding_of",
+        "target_ref": "evidence_node_20260519_264ff1d1",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_5d7d41ec",
+        "source_ref": "evidence_node_20260519_07bd40ad",
+        "source_ref_type": "node",
+        "relation_type": "finding_of",
+        "target_ref": "evidence_node_20260519_264ff1d1",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_77360f78",
+        "source_ref": "evidence_node_20260519_41525a45",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_07bd40ad",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_7aadec5e",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 5,
+      "relation_count": 5
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_e4f7b6d6",
+    "source_item_id": "item_004",
+    "source_span_ids": [
+      "span_item_004"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_4ac3e1e3",
+        "source_item_id": "item_004",
+        "frame_type": "negated_symptom_group",
+        "frame_label": "无发热、寒战，无活动后气短喘息，无呼吸困难、胸痛等不适",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_f3bb8933",
+          "clinical_object_assertion_20260519_255a9f52",
+          "clinical_object_assertion_20260519_cba88dcf",
+          "clinical_object_assertion_20260519_2f9bb726",
+          "clinical_object_assertion_20260519_d1a2dab4"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_9c437418",
+          "evidence_node_20260519_fbf3b6fe",
+          "evidence_node_20260519_ea8a8350",
+          "evidence_node_20260519_b85ca47f",
+          "evidence_node_20260519_6174e40f"
+        ],
+        "source_span_ids": [
+          "span_item_004"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_9c437418",
+        "source_item_id": "item_004",
+        "node_type": "clinical_object",
+        "text": "发热",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_f3bb8933"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_004"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_fbf3b6fe",
+        "source_item_id": "item_004",
+        "node_type": "clinical_object",
+        "text": "寒战",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_255a9f52"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_004"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_ea8a8350",
+        "source_item_id": "item_004",
+        "node_type": "clinical_object",
+        "text": "活动后气短喘息",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_cba88dcf"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_004"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_b85ca47f",
+        "source_item_id": "item_004",
+        "node_type": "clinical_object",
+        "text": "呼吸困难",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_2f9bb726"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_004"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_6174e40f",
+        "source_item_id": "item_004",
+        "node_type": "clinical_object",
+        "text": "胸痛",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_d1a2dab4"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_004"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_8f67c74b",
+        "source_ref": "evidence_node_20260519_9c437418",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4ac3e1e3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_f858bb0e",
+        "source_ref": "evidence_node_20260519_fbf3b6fe",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4ac3e1e3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_09c84102",
+        "source_ref": "evidence_node_20260519_ea8a8350",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4ac3e1e3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_93f6003e",
+        "source_ref": "evidence_node_20260519_b85ca47f",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4ac3e1e3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_81cbd544",
+        "source_ref": "evidence_node_20260519_6174e40f",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4ac3e1e3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_d4538ad0",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 5,
+      "relation_count": 5
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_89358ec6",
+    "source_item_id": "item_005",
+    "source_span_ids": [
+      "span_item_005"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_58aca41e",
+        "source_item_id": "item_005",
+        "frame_type": "test_result_group",
+        "frame_label": "肾功四项:GLU 8.20mmol/L,电解质四项:Cl 109.0mmol/L,CO2 21.6mmol/L",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_0712bb4d",
+          "clinical_object_assertion_20260519_bb3ebcca",
+          "clinical_object_assertion_20260519_e6ecfc91"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_05d023e8",
+          "evidence_node_20260519_4a9ba7d9",
+          "evidence_node_20260519_633a67b7"
+        ],
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "frame_id": "evidence_frame_20260519_4eeead60",
+        "source_item_id": "item_005",
+        "frame_type": "lab_panel",
+        "frame_label": "未见明显异常的检验项目：血常规、血脂四项、凝血四项、D2聚体、肌钙蛋白IPOCT、肌红蛋白POCT、肌酸激酶同工酶POCT、酶类三项、肾功四项、肝功十项",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_297c6cdf",
+          "clinical_object_assertion_20260519_de2e7642",
+          "clinical_object_assertion_20260519_d029d699",
+          "clinical_object_assertion_20260519_798f514d",
+          "clinical_object_assertion_20260519_53a54006",
+          "clinical_object_assertion_20260519_950ddfc3",
+          "clinical_object_assertion_20260519_eb15299d",
+          "clinical_object_assertion_20260519_079e5a0e",
+          "clinical_object_assertion_20260519_996c853e",
+          "clinical_object_assertion_20260519_d003bd1c"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_49894f26",
+          "evidence_node_20260519_9f3d4633",
+          "evidence_node_20260519_19a78e80",
+          "evidence_node_20260519_e95006bc",
+          "evidence_node_20260519_5595857f",
+          "evidence_node_20260519_9db00daf",
+          "evidence_node_20260519_7baf64fc",
+          "evidence_node_20260519_fd961de6",
+          "evidence_node_20260519_7e0aca19",
+          "evidence_node_20260519_21540082"
+        ],
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_05d023e8",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "GLU 8.20mmol/L",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_0712bb4d"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_4a9ba7d9",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "Cl 109.0mmol/L",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_bb3ebcca"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_633a67b7",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "CO2 21.6mmol/L",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_e6ecfc91"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_49894f26",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "血常规",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_297c6cdf"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_9f3d4633",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "血脂四项",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_de2e7642"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_19a78e80",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "凝血四项",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_d029d699"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_e95006bc",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "D2聚体",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_798f514d"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_5595857f",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "肌钙蛋白IPOCT",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_53a54006"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_9db00daf",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "肌红蛋白POCT",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_950ddfc3"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_7baf64fc",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "肌酸激酶同工酶POCT",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_eb15299d"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_fd961de6",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "酶类三项",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_079e5a0e"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_7e0aca19",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "肾功四项",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_996c853e"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_21540082",
+        "source_item_id": "item_005",
+        "node_type": "clinical_object",
+        "text": "肝功十项",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_d003bd1c"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_005"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_27351743",
+        "source_ref": "evidence_node_20260519_49894f26",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_132f3cf5",
+        "source_ref": "evidence_node_20260519_9f3d4633",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_a95d0852",
+        "source_ref": "evidence_node_20260519_19a78e80",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_5113e3a2",
+        "source_ref": "evidence_node_20260519_e95006bc",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_32b0c13d",
+        "source_ref": "evidence_node_20260519_5595857f",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_7576b565",
+        "source_ref": "evidence_node_20260519_9db00daf",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_5a73dfae",
+        "source_ref": "evidence_node_20260519_7baf64fc",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_af5be0c8",
+        "source_ref": "evidence_node_20260519_fd961de6",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_d4d19438",
+        "source_ref": "evidence_node_20260519_7e0aca19",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_fc6a48f1",
+        "source_ref": "evidence_node_20260519_21540082",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_4eeead60",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_6d270b9c",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 2,
+      "node_count": 13,
+      "relation_count": 10
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_1b6016e1",
+    "source_item_id": "item_006",
+    "source_span_ids": [
+      "span_item_006"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_ba4f58b3",
+        "source_item_id": "item_006",
+        "frame_type": "test_result_group",
+        "frame_label": "胸部CT示双肺间质性肺炎、间质纤维化、气肿、主动脉壁钙化、胸膜增厚",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_5a9a7da3",
+          "clinical_object_assertion_20260519_ea4a409f",
+          "clinical_object_assertion_20260519_cc7125ca",
+          "clinical_object_assertion_20260519_36edbe2c",
+          "clinical_object_assertion_20260519_a16cd0c9"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_cae46b39",
+          "evidence_node_20260519_3450c45c",
+          "evidence_node_20260519_76080f31",
+          "evidence_node_20260519_c5aab185",
+          "evidence_node_20260519_0b632bcb"
+        ],
+        "source_span_ids": [
+          "span_item_006"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_cae46b39",
+        "source_item_id": "item_006",
+        "node_type": "clinical_object",
+        "text": "双肺间质性肺炎",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_5a9a7da3"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_006"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_3450c45c",
+        "source_item_id": "item_006",
+        "node_type": "clinical_object",
+        "text": "双肺外周带间质纤维化",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_ea4a409f"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_006"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_76080f31",
+        "source_item_id": "item_006",
+        "node_type": "clinical_object",
+        "text": "双肺气肿",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_cc7125ca"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_006"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_c5aab185",
+        "source_item_id": "item_006",
+        "node_type": "clinical_object",
+        "text": "主动脉壁钙化",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_36edbe2c"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_006"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_0b632bcb",
+        "source_item_id": "item_006",
+        "node_type": "clinical_object",
+        "text": "双侧胸膜轻度增厚",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_a16cd0c9"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_006"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_c5f12fa3",
+        "source_ref": "evidence_node_20260519_cae46b39",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_ba4f58b3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_d914a0f0",
+        "source_ref": "evidence_node_20260519_3450c45c",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_ba4f58b3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_26954238",
+        "source_ref": "evidence_node_20260519_76080f31",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_ba4f58b3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_7689d948",
+        "source_ref": "evidence_node_20260519_c5aab185",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_ba4f58b3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_dc62eda1",
+        "source_ref": "evidence_node_20260519_0b632bcb",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_ba4f58b3",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_3069d6f7",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 5,
+      "relation_count": 5
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_89f1eb40",
+    "source_item_id": "item_007",
+    "source_span_ids": [
+      "span_item_007"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_db5c8b76",
+        "source_item_id": "item_007",
+        "frame_type": "treatment_exposure",
+        "frame_label": "给予内科药物止血、抗感染治疗，激素抗炎（甲强龙40mg静滴缓解症状）、氨溴索化痰等治疗",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_a6fc5d9b",
+          "clinical_object_assertion_20260519_3b0ef3a3",
+          "clinical_object_assertion_20260519_36975772",
+          "clinical_object_assertion_20260519_554edf91",
+          "clinical_object_assertion_20260519_524125a7"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_87ba6f3b",
+          "evidence_node_20260519_bfeb1f20",
+          "evidence_node_20260519_243e210d",
+          "evidence_node_20260519_99a981aa",
+          "evidence_node_20260519_9e2c3c87"
+        ],
+        "source_span_ids": [
+          "span_item_007"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_87ba6f3b",
+        "source_item_id": "item_007",
+        "node_type": "clinical_object",
+        "text": "内科药物止血",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_a6fc5d9b"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_007"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_bfeb1f20",
+        "source_item_id": "item_007",
+        "node_type": "clinical_object",
+        "text": "抗感染治疗",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_3b0ef3a3"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_007"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_243e210d",
+        "source_item_id": "item_007",
+        "node_type": "clinical_object",
+        "text": "激素抗炎",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_36975772"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_007"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_99a981aa",
+        "source_item_id": "item_007",
+        "node_type": "clinical_object",
+        "text": "甲强龙40mg静滴",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_554edf91"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_007"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_9e2c3c87",
+        "source_item_id": "item_007",
+        "node_type": "clinical_object",
+        "text": "氨溴索化痰",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_524125a7"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_007"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_217df747",
+        "source_ref": "evidence_node_20260519_99a981aa",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_node_20260519_243e210d",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": "甲强龙40mg静滴是激素抗炎的具体实施"
+      }
+    ],
+    "status": "needs_review",
+    "validation_report_id": "evidence_graph_validation_report_20260519_a8faabb2",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 5,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_7ca23c77",
+    "source_item_id": "item_008",
+    "source_span_ids": [
+      "span_item_008"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_9d426338",
+        "source_item_id": "item_008",
+        "frame_type": "care_seeking",
+        "frame_label": "请我科会诊后，以间质性肺疾病收住我科",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_54f372be",
+          "clinical_object_assertion_20260519_33fda6ae",
+          "clinical_object_assertion_20260519_3fa53ade"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_167ad208",
+          "evidence_node_20260519_1ac7369e",
+          "evidence_node_20260519_4c2b8f97"
+        ],
+        "source_span_ids": [
+          "span_item_008"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_167ad208",
+        "source_item_id": "item_008",
+        "node_type": "clinical_object",
+        "text": "会诊",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_54f372be"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_008"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_1ac7369e",
+        "source_item_id": "item_008",
+        "node_type": "clinical_object",
+        "text": "间质性肺疾病",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_33fda6ae"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_008"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_4c2b8f97",
+        "source_item_id": "item_008",
+        "node_type": "clinical_object",
+        "text": "收住我科",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_3fa53ade"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_008"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_42958166",
+        "source_ref": "evidence_node_20260519_1ac7369e",
+        "source_ref_type": "node",
+        "relation_type": "reason_for_management",
+        "target_ref": "evidence_node_20260519_4c2b8f97",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": "以间质性肺疾病收住我科 indicates the finding is the reason for admission."
+      },
+      {
+        "relation_id": "evidence_relation_20260519_3ca9ffbd",
+        "source_ref": "evidence_node_20260519_167ad208",
+        "source_ref_type": "node",
+        "relation_type": "has_temporal_context",
+        "target_ref": "evidence_node_20260519_4c2b8f97",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": "会诊后 indicates consultation preceded admission."
+      }
+    ],
+    "status": "needs_review",
+    "validation_report_id": "evidence_graph_validation_report_20260519_2fe3d732",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 3,
+      "relation_count": 2
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_e2e7ce5f",
+    "source_item_id": "item_009",
+    "source_span_ids": [
+      "span_item_009"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_7b7dcad6",
+        "source_item_id": "item_009",
+        "frame_type": "symptom_course",
+        "frame_label": "病程中神志清楚，精神尚可，食欲正常，睡眠一般，二便正常",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_8ad890de",
+          "clinical_object_assertion_20260519_c5bb0ef4",
+          "clinical_object_assertion_20260519_fc1499be",
+          "clinical_object_assertion_20260519_f6961290",
+          "clinical_object_assertion_20260519_b3f61842"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_ad415987",
+          "evidence_node_20260519_3088dcb9",
+          "evidence_node_20260519_19db8b87",
+          "evidence_node_20260519_fc9eeb4a",
+          "evidence_node_20260519_804b29c1"
+        ],
+        "source_span_ids": [
+          "span_item_009"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "frame_id": "evidence_frame_20260519_022ed456",
+        "source_item_id": "item_009",
+        "frame_type": "negated_symptom_group",
+        "frame_label": "近期体重未见明显改变",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_13c178b3"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_5c8ff66c"
+        ],
+        "source_span_ids": [
+          "span_item_009"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_ad415987",
+        "source_item_id": "item_009",
+        "node_type": "clinical_object",
+        "text": "神志清楚",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_8ad890de"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_009"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_3088dcb9",
+        "source_item_id": "item_009",
+        "node_type": "clinical_object",
+        "text": "精神尚可",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_c5bb0ef4"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_009"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_19db8b87",
+        "source_item_id": "item_009",
+        "node_type": "clinical_object",
+        "text": "食欲正常",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_fc1499be"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_009"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_fc9eeb4a",
+        "source_item_id": "item_009",
+        "node_type": "clinical_object",
+        "text": "睡眠一般",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_f6961290"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_009"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_804b29c1",
+        "source_item_id": "item_009",
+        "node_type": "clinical_object",
+        "text": "二便正常",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_b3f61842"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_009"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_5c8ff66c",
+        "source_item_id": "item_009",
+        "node_type": "clinical_object",
+        "text": "体重",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_13c178b3"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_009"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_9f9e9186",
+        "source_ref": "evidence_node_20260519_ad415987",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_3088dcb9",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_912310e3",
+        "source_ref": "evidence_node_20260519_ad415987",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_19db8b87",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_19380c76",
+        "source_ref": "evidence_node_20260519_ad415987",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_fc9eeb4a",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_a0bccef1",
+        "source_ref": "evidence_node_20260519_ad415987",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_804b29c1",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_0cf7977c",
+        "source_ref": "evidence_node_20260519_3088dcb9",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_19db8b87",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_1eb10bec",
+        "source_ref": "evidence_node_20260519_3088dcb9",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_fc9eeb4a",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_065aacdc",
+        "source_ref": "evidence_node_20260519_3088dcb9",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_804b29c1",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_a42325cd",
+        "source_ref": "evidence_node_20260519_19db8b87",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_fc9eeb4a",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_9cebb5a7",
+        "source_ref": "evidence_node_20260519_19db8b87",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_804b29c1",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_c6234870",
+        "source_ref": "evidence_node_20260519_fc9eeb4a",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_804b29c1",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_352f3425",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 2,
+      "node_count": 6,
+      "relation_count": 10
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_abc2c945",
+    "source_item_id": "item_010",
+    "source_span_ids": [
+      "span_item_010"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_8999f8dc",
+        "source_item_id": "item_010",
+        "frame_type": "past_history",
+        "frame_label": "既往糖尿病史10余年",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_70e96d4a"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_8ff402da"
+        ],
+        "source_span_ids": [
+          "span_item_010"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_8ff402da",
+        "source_item_id": "item_010",
+        "node_type": "clinical_object",
+        "text": "糖尿病",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_70e96d4a"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_010"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_5c38b9cb",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 0
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_6996c491",
+    "source_item_id": "item_011",
+    "source_span_ids": [
+      "span_item_011"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_36cf8cfc",
+        "source_item_id": "item_011",
+        "frame_type": "treatment_exposure",
+        "frame_label": "平素口服二甲双胍格列本脲片，阿卡波糖",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_e81df7c4",
+          "clinical_object_assertion_20260519_3ef9cf33"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_7055ede7",
+          "evidence_node_20260519_066d2b9e"
+        ],
+        "source_span_ids": [
+          "span_item_011"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_7055ede7",
+        "source_item_id": "item_011",
+        "node_type": "clinical_object",
+        "text": "二甲双胍格列本脲片",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_e81df7c4"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_011"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_066d2b9e",
+        "source_item_id": "item_011",
+        "node_type": "clinical_object",
+        "text": "阿卡波糖",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_3ef9cf33"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_011"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_9daa6a59",
+        "source_ref": "evidence_node_20260519_7055ede7",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_066d2b9e",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": "Both medications are listed together in the same sentence, indicating concurrent use."
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_eed55f04",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 2,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_758420a6",
+    "source_item_id": "item_012",
+    "source_span_ids": [
+      "span_item_012"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_6f7c24c2",
+        "source_item_id": "item_012",
+        "frame_type": "past_history",
+        "frame_label": "既往血糖控制不佳",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_32a04678"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_17eb8f63"
+        ],
+        "source_span_ids": [
+          "span_item_012"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_17eb8f63",
+        "source_item_id": "item_012",
+        "node_type": "clinical_object",
+        "text": "血糖控制不佳",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_32a04678"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_012"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_d4ec491d",
+        "source_ref": "evidence_node_20260519_17eb8f63",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_frame_20260519_6f7c24c2",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_4adfa3ff",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_c972e4af",
+    "source_item_id": "item_013",
+    "source_span_ids": [
+      "span_item_013"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_e72b8a2d",
+        "source_item_id": "item_013",
+        "frame_type": "symptom_course",
+        "frame_label": "3月前受凉后出现咳嗽咳少量白粘痰",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_320b4fd1",
+          "clinical_object_assertion_20260519_a2d0a84c",
+          "clinical_object_assertion_20260519_86d19495"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_ea2f59b6",
+          "evidence_node_20260519_3f2d54e7",
+          "evidence_node_20260519_6eba9345"
+        ],
+        "source_span_ids": [
+          "span_item_013"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_ea2f59b6",
+        "source_item_id": "item_013",
+        "node_type": "clinical_object",
+        "text": "咳嗽",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_320b4fd1"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_013"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_3f2d54e7",
+        "source_item_id": "item_013",
+        "node_type": "clinical_object",
+        "text": "咳少量白粘痰",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_a2d0a84c"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_013"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_6eba9345",
+        "source_item_id": "item_013",
+        "node_type": "clinical_object",
+        "text": "受凉",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_86d19495"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_013"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_af9d2127",
+        "source_ref": "evidence_node_20260519_ea2f59b6",
+        "source_ref_type": "node",
+        "relation_type": "caused_by_or_attributed_to",
+        "target_ref": "evidence_node_20260519_6eba9345",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_670a582f",
+        "source_ref": "evidence_node_20260519_3f2d54e7",
+        "source_ref_type": "node",
+        "relation_type": "caused_by_or_attributed_to",
+        "target_ref": "evidence_node_20260519_6eba9345",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_0ae676e0",
+        "source_ref": "evidence_node_20260519_ea2f59b6",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_3f2d54e7",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_1dbdfb60",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 3,
+      "relation_count": 3
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_cb6a2e4b",
+    "source_item_id": "item_014",
+    "source_span_ids": [
+      "span_item_014"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_5fa3c6ec",
+        "source_item_id": "item_014",
+        "frame_type": "treatment_response",
+        "frame_label": "自行服药（具体不详）后减轻",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_ea0959ee",
+          "clinical_object_assertion_20260519_96ff0f83"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_1cdd419d",
+          "evidence_node_20260519_7e69a48c"
+        ],
+        "source_span_ids": [
+          "span_item_014"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_1cdd419d",
+        "source_item_id": "item_014",
+        "node_type": "clinical_object",
+        "text": "自行服药（具体不详）",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_ea0959ee"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_014"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_7e69a48c",
+        "source_item_id": "item_014",
+        "node_type": "clinical_object",
+        "text": "减轻",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_96ff0f83"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_014"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_b5f20f76",
+        "source_ref": "evidence_node_20260519_1cdd419d",
+        "source_ref_type": "node",
+        "relation_type": "response_to_treatment",
+        "target_ref": "evidence_node_20260519_7e69a48c",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "needs_review",
+    "validation_report_id": "evidence_graph_validation_report_20260519_4666d89a",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 2,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_dfb0837a",
+    "source_item_id": "item_015",
+    "source_span_ids": [
+      "span_item_015"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_8aa1f31b",
+        "source_item_id": "item_015",
+        "frame_type": "symptom_course",
+        "frame_label": "口干、眼干不适5-6年",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_5566fda8",
+          "clinical_object_assertion_20260519_841a8e48"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_216be245",
+          "evidence_node_20260519_a7bc6dcf"
+        ],
+        "source_span_ids": [
+          "span_item_015"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "frame_id": "evidence_frame_20260519_9f205e2f",
+        "source_item_id": "item_015",
+        "frame_type": "past_history",
+        "frame_label": "右侧大拇指指间关节腱鞘炎多年",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_976cd0eb"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_6f63dda1"
+        ],
+        "source_span_ids": [
+          "span_item_015"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_216be245",
+        "source_item_id": "item_015",
+        "node_type": "clinical_object",
+        "text": "口干",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_5566fda8"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_015"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_a7bc6dcf",
+        "source_item_id": "item_015",
+        "node_type": "clinical_object",
+        "text": "眼干不适",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_841a8e48"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_015"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_6f63dda1",
+        "source_item_id": "item_015",
+        "node_type": "clinical_object",
+        "text": "右侧大拇指指间关节腱鞘炎",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_976cd0eb"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_015"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_d093d95d",
+        "source_ref": "evidence_node_20260519_216be245",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_a7bc6dcf",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_14ba919e",
+        "source_ref": "evidence_frame_20260519_8aa1f31b",
+        "source_ref_type": "frame",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_frame_20260519_9f205e2f",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_20c1d9a5",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 2,
+      "node_count": 3,
+      "relation_count": 2
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_b7d8ee27",
+    "source_item_id": "item_016",
+    "source_span_ids": [
+      "span_item_016"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_21aacf5e",
+        "source_item_id": "item_016",
+        "frame_type": "negated_symptom_group",
+        "frame_label": "无其他关节疼痛不适，皮疹及过敏，雷诺现象",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_1aa714a9",
+          "clinical_object_assertion_20260519_cede39d6",
+          "clinical_object_assertion_20260519_3d30ca38",
+          "clinical_object_assertion_20260519_d574cb6d"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_aa85d106",
+          "evidence_node_20260519_0618d743",
+          "evidence_node_20260519_7bffb447",
+          "evidence_node_20260519_f658c903"
+        ],
+        "source_span_ids": [
+          "span_item_016"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_aa85d106",
+        "source_item_id": "item_016",
+        "node_type": "clinical_object",
+        "text": "关节疼痛不适",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_1aa714a9"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_016"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_0618d743",
+        "source_item_id": "item_016",
+        "node_type": "clinical_object",
+        "text": "皮疹",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_cede39d6"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_016"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_7bffb447",
+        "source_item_id": "item_016",
+        "node_type": "clinical_object",
+        "text": "过敏",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_3d30ca38"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_016"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_f658c903",
+        "source_item_id": "item_016",
+        "node_type": "clinical_object",
+        "text": "雷诺现象",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_d574cb6d"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_016"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_63a9307d",
+        "source_ref": "evidence_node_20260519_aa85d106",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_0618d743",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_3b86ea72",
+        "source_ref": "evidence_node_20260519_aa85d106",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_7bffb447",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_93b91dc5",
+        "source_ref": "evidence_node_20260519_aa85d106",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_f658c903",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_22efdc70",
+        "source_ref": "evidence_node_20260519_0618d743",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_7bffb447",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_c8eacfa2",
+        "source_ref": "evidence_node_20260519_0618d743",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_f658c903",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_1bd7e7d3",
+        "source_ref": "evidence_node_20260519_7bffb447",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_f658c903",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_bb429d09",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 4,
+      "relation_count": 6
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_f066408a",
+    "source_item_id": "item_017",
+    "source_span_ids": [
+      "span_item_017"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_1c2c5243",
+        "source_item_id": "item_017",
+        "frame_type": "past_history",
+        "frame_label": "否认高血压冠心病病史",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_aa5b8087",
+          "clinical_object_assertion_20260519_1d724abe"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_fbb35aee",
+          "evidence_node_20260519_0638e93f"
+        ],
+        "source_span_ids": [
+          "span_item_017"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_fbb35aee",
+        "source_item_id": "item_017",
+        "node_type": "clinical_object",
+        "text": "高血压",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_aa5b8087"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_017"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_0638e93f",
+        "source_item_id": "item_017",
+        "node_type": "clinical_object",
+        "text": "冠心病",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_1d724abe"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_017"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_89ae1009",
+        "source_ref": "evidence_node_20260519_fbb35aee",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_0638e93f",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_fa109c0b",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 2,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_dd104bb8",
+    "source_item_id": "item_018",
+    "source_span_ids": [
+      "span_item_018"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_b3876a23",
+        "source_item_id": "item_018",
+        "frame_type": "physical_exam",
+        "frame_label": "Vital signs: temperature, pulse, respiration, blood pressure, SpO2",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_7fb682b6",
+          "clinical_object_assertion_20260519_d6055b85",
+          "clinical_object_assertion_20260519_86e4a864",
+          "clinical_object_assertion_20260519_0162fdc7",
+          "clinical_object_assertion_20260519_814b2f27"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_31145a27",
+          "evidence_node_20260519_d4b1da2c",
+          "evidence_node_20260519_9dc56191",
+          "evidence_node_20260519_f5f0c033",
+          "evidence_node_20260519_7b5bd5f9"
+        ],
+        "source_span_ids": [
+          "span_item_018"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_31145a27",
+        "source_item_id": "item_018",
+        "node_type": "clinical_object",
+        "text": "体温：36.5℃",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_7fb682b6"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_018"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_d4b1da2c",
+        "source_item_id": "item_018",
+        "node_type": "clinical_object",
+        "text": "脉搏76次/分",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_d6055b85"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_018"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_9dc56191",
+        "source_item_id": "item_018",
+        "node_type": "clinical_object",
+        "text": "呼吸：20次/分",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_86e4a864"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_018"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_f5f0c033",
+        "source_item_id": "item_018",
+        "node_type": "clinical_object",
+        "text": "血压：119/79mmHg",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_0162fdc7"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_018"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_7b5bd5f9",
+        "source_item_id": "item_018",
+        "node_type": "clinical_object",
+        "text": "SpO2 91%（未吸氧）",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_814b2f27"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_018"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_07882b9b",
+        "source_ref": "evidence_node_20260519_31145a27",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_b3876a23",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_82dc4134",
+        "source_ref": "evidence_node_20260519_d4b1da2c",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_b3876a23",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_8531c1ee",
+        "source_ref": "evidence_node_20260519_9dc56191",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_b3876a23",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_54cf97a2",
+        "source_ref": "evidence_node_20260519_f5f0c033",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_b3876a23",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_85516370",
+        "source_ref": "evidence_node_20260519_7b5bd5f9",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_b3876a23",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_6985e55e",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 5,
+      "relation_count": 5
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_a509e3ea",
+    "source_item_id": "item_019",
+    "source_span_ids": [
+      "span_item_019"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_d869eecc",
+        "source_item_id": "item_019",
+        "frame_type": "physical_exam",
+        "frame_label": "听诊双肺呼吸音粗、双肺底闻及少许湿性啰音及velcro啰音",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_abdb77a1",
+          "clinical_object_assertion_20260519_3a6cee0b",
+          "clinical_object_assertion_20260519_08ff6478"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_4a667025",
+          "evidence_node_20260519_02dc4b15",
+          "evidence_node_20260519_e52cdd37"
+        ],
+        "source_span_ids": [
+          "span_item_019"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_4a667025",
+        "source_item_id": "item_019",
+        "node_type": "clinical_object",
+        "text": "呼吸音粗",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_abdb77a1"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_019"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_02dc4b15",
+        "source_item_id": "item_019",
+        "node_type": "clinical_object",
+        "text": "湿性啰音",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_3a6cee0b"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_019"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_e52cdd37",
+        "source_item_id": "item_019",
+        "node_type": "clinical_object",
+        "text": "velcro啰音",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_08ff6478"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_019"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_95f50e77",
+        "source_ref": "evidence_node_20260519_4a667025",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_02dc4b15",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_2578688d",
+        "source_ref": "evidence_node_20260519_4a667025",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_e52cdd37",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_678bdc3f",
+        "source_ref": "evidence_node_20260519_02dc4b15",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_e52cdd37",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_dadd4825",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 3,
+      "relation_count": 3
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_76fc4867",
+    "source_item_id": "item_020",
+    "source_span_ids": [
+      "span_item_020"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_064d8da8",
+        "source_item_id": "item_020",
+        "frame_type": "physical_exam",
+        "frame_label": "胸廓无畸形，双侧呼吸动度一致",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_64d6de77",
+          "clinical_object_assertion_20260519_51a1d1d2"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_03cd1f6a",
+          "evidence_node_20260519_33129345"
+        ],
+        "source_span_ids": [
+          "span_item_020"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_03cd1f6a",
+        "source_item_id": "item_020",
+        "node_type": "clinical_object",
+        "text": "胸廓无畸形",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_64d6de77"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_020"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_33129345",
+        "source_item_id": "item_020",
+        "node_type": "clinical_object",
+        "text": "双侧呼吸动度一致",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_51a1d1d2"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_020"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_00810cd5",
+        "source_ref": "evidence_node_20260519_03cd1f6a",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_33129345",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_23eda800",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 2,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_5bddd59a",
+    "source_item_id": "item_021",
+    "source_span_ids": [
+      "span_item_021"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_244fbb60",
+        "source_item_id": "item_021",
+        "frame_type": "physical_exam",
+        "frame_label": "心脏听诊：心律齐，未闻及早搏及杂音",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_e8f324bf",
+          "clinical_object_assertion_20260519_5c0fceda",
+          "clinical_object_assertion_20260519_96a7babc"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_40865b29",
+          "evidence_node_20260519_109cf6f3",
+          "evidence_node_20260519_371ecb43"
+        ],
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "frame_id": "evidence_frame_20260519_f7fc7570",
+        "source_item_id": "item_021",
+        "frame_type": "physical_exam",
+        "frame_label": "腹部检查：腹部外形平坦，柔软，无压痛及反跳痛，未触及包块，肝脏肋下未触及，肠鸣音正常",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_455c687d",
+          "clinical_object_assertion_20260519_4cc6d98a",
+          "clinical_object_assertion_20260519_26619315",
+          "clinical_object_assertion_20260519_470ecff1",
+          "clinical_object_assertion_20260519_0128ee4b",
+          "clinical_object_assertion_20260519_8e29c851",
+          "clinical_object_assertion_20260519_b4cc7602"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_283bafae",
+          "evidence_node_20260519_82cbadf9",
+          "evidence_node_20260519_1d10120d",
+          "evidence_node_20260519_ac879261",
+          "evidence_node_20260519_2298d499",
+          "evidence_node_20260519_a38d19ca",
+          "evidence_node_20260519_dfd1bfc2"
+        ],
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "frame_id": "evidence_frame_20260519_179b8090",
+        "source_item_id": "item_021",
+        "frame_type": "physical_exam",
+        "frame_label": "双下肢无水肿",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_ac1511ce"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_80a70e96"
+        ],
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_40865b29",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "心律齐",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_e8f324bf"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_109cf6f3",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "早搏",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_5c0fceda"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_371ecb43",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "杂音",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_96a7babc"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_283bafae",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "腹部外形平坦",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_455c687d"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_82cbadf9",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "腹部柔软",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_4cc6d98a"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_1d10120d",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "压痛",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_26619315"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_ac879261",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "反跳痛",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_470ecff1"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_2298d499",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "腹部包块",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_0128ee4b"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_a38d19ca",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "肝脏肋下",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_8e29c851"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_dfd1bfc2",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "肠鸣音",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_b4cc7602"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_80a70e96",
+        "source_item_id": "item_021",
+        "node_type": "clinical_object",
+        "text": "水肿",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_ac1511ce"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_021"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_a6a2aca5",
+        "source_ref": "evidence_frame_20260519_244fbb60",
+        "source_ref_type": "frame",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_frame_20260519_f7fc7570",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_3001ee50",
+        "source_ref": "evidence_frame_20260519_244fbb60",
+        "source_ref_type": "frame",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_frame_20260519_179b8090",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_2a2faceb",
+        "source_ref": "evidence_frame_20260519_f7fc7570",
+        "source_ref_type": "frame",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_frame_20260519_179b8090",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_01f16c85",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 3,
+      "node_count": 11,
+      "relation_count": 3
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_9dad1be5",
+    "source_item_id": "item_022",
+    "source_span_ids": [
+      "span_item_022"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_32811885",
+        "source_item_id": "item_022",
+        "frame_type": "diagnostic_impression",
+        "frame_label": "肺部感染",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_ac121e4c"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_6ba644d6"
+        ],
+        "source_span_ids": [
+          "span_item_022"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_6ba644d6",
+        "source_item_id": "item_022",
+        "node_type": "clinical_object",
+        "text": "肺部感染",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_ac121e4c"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_022"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_49e1ad3e",
+        "source_ref": "evidence_node_20260519_6ba644d6",
+        "source_ref_type": "node",
+        "relation_type": "finding_of",
+        "target_ref": "evidence_frame_20260519_32811885",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_8b47345b",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_a8f223fb",
+    "source_item_id": "item_023",
+    "source_span_ids": [
+      "span_item_023"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_cfa9d419",
+        "source_item_id": "item_023",
+        "frame_type": "diagnostic_impression",
+        "frame_label": "间质性肺病(原因待查)",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_322a20b1"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_0ec2d821"
+        ],
+        "source_span_ids": [
+          "span_item_023"
+        ],
+        "confidence": "medium",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_0ec2d821",
+        "source_item_id": "item_023",
+        "node_type": "clinical_object",
+        "text": "间质性肺病",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_322a20b1"
+        ],
+        "assertion_status": "possible",
+        "source_span_ids": [
+          "span_item_023"
+        ],
+        "confidence": "medium",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_4f58d691",
+        "source_ref": "evidence_node_20260519_0ec2d821",
+        "source_ref_type": "node",
+        "relation_type": "finding_of",
+        "target_ref": "evidence_frame_20260519_cfa9d419",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_16416e5d",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_866e2803",
+    "source_item_id": "item_024",
+    "source_span_ids": [
+      "span_item_024"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_165bb931",
+        "source_item_id": "item_024",
+        "frame_type": "diagnostic_impression",
+        "frame_label": "间质性肺炎",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_0962a5a1"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_5903855a"
+        ],
+        "source_span_ids": [
+          "span_item_024"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_5903855a",
+        "source_item_id": "item_024",
+        "node_type": "clinical_object",
+        "text": "间质性肺炎",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_0962a5a1"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_024"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_83a266f6",
+        "source_ref": "evidence_node_20260519_5903855a",
+        "source_ref_type": "node",
+        "relation_type": "finding_of",
+        "target_ref": "evidence_frame_20260519_165bb931",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_4fd07a9d",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_7d115ce8",
+    "source_item_id": "item_025",
+    "source_span_ids": [
+      "span_item_025"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_dbabecfa",
+        "source_item_id": "item_025",
+        "frame_type": "disease_status",
+        "frame_label": "2型糖尿病",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_46d46e3a"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_f1a21052"
+        ],
+        "source_span_ids": [
+          "span_item_025"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_f1a21052",
+        "source_item_id": "item_025",
+        "node_type": "clinical_object",
+        "text": "2型糖尿病",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_46d46e3a"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_025"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_22a9ddb0",
+        "source_ref": "evidence_node_20260519_f1a21052",
+        "source_ref_type": "node",
+        "relation_type": "finding_of",
+        "target_ref": "evidence_frame_20260519_dbabecfa",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_d27efbc5",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_f10f36f9",
+    "source_item_id": "item_026",
+    "source_span_ids": [
+      "span_item_026"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_013fadd1",
+        "source_item_id": "item_026",
+        "frame_type": "test_result_group",
+        "frame_label": "自身抗体及血清肿瘤标记物阴性",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_e35cd227",
+          "clinical_object_assertion_20260519_f97cc617"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_8c24d916",
+          "evidence_node_20260519_2fcf6737"
+        ],
+        "source_span_ids": [
+          "span_item_026"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_8c24d916",
+        "source_item_id": "item_026",
+        "node_type": "clinical_object",
+        "text": "自身抗体",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_e35cd227"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_026"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_2fcf6737",
+        "source_item_id": "item_026",
+        "node_type": "clinical_object",
+        "text": "血清肿瘤标记物",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_f97cc617"
+        ],
+        "assertion_status": "absent",
+        "source_span_ids": [
+          "span_item_026"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_f215662e",
+        "source_ref": "evidence_node_20260519_8c24d916",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_2fcf6737",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_5dddde88",
+        "source_ref": "evidence_node_20260519_8c24d916",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_013fadd1",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_025cdde8",
+        "source_ref": "evidence_node_20260519_2fcf6737",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_013fadd1",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_adb69890",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 2,
+      "relation_count": 3
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_b42d3683",
+    "source_item_id": "item_027",
+    "source_span_ids": [
+      "span_item_027"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_96de966e",
+        "source_item_id": "item_027",
+        "frame_type": "test_result_group",
+        "frame_label": "糖化血红蛋白:HbA1C 7.40%",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_fd02fdfc"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_8ce0d3f4"
+        ],
+        "source_span_ids": [
+          "span_item_027"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "frame_id": "evidence_frame_20260519_168c46af",
+        "source_item_id": "item_027",
+        "frame_type": "lab_panel",
+        "frame_label": "血气分析 (PH, PCO2, PO2, Lac, RI, FiO2)",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_6b9bb365",
+          "clinical_object_assertion_20260519_9f3015c6",
+          "clinical_object_assertion_20260519_f71a382e",
+          "clinical_object_assertion_20260519_9eccd861",
+          "clinical_object_assertion_20260519_1da2907f",
+          "clinical_object_assertion_20260519_f51adf9f"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_f12f08fc",
+          "evidence_node_20260519_4c150efa",
+          "evidence_node_20260519_c5e26d61",
+          "evidence_node_20260519_9b064552",
+          "evidence_node_20260519_ed28d2f3",
+          "evidence_node_20260519_0d37874c"
+        ],
+        "source_span_ids": [
+          "span_item_027"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_8ce0d3f4",
+        "source_item_id": "item_027",
+        "node_type": "clinical_object",
+        "text": "糖化血红蛋白:HbA1C 7.40%",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_fd02fdfc"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_027"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_f12f08fc",
+        "source_item_id": "item_027",
+        "node_type": "clinical_object",
+        "text": "血气分析PH 7.383",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_6b9bb365"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_027"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_4c150efa",
+        "source_item_id": "item_027",
+        "node_type": "clinical_object",
+        "text": "PCO2 39.20mmHg",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_9f3015c6"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_027"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_c5e26d61",
+        "source_item_id": "item_027",
+        "node_type": "clinical_object",
+        "text": "PO2 78.90mmHg",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_f71a382e"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_027"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_9b064552",
+        "source_item_id": "item_027",
+        "node_type": "clinical_object",
+        "text": "Lac 3.00mmol/L",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_9eccd861"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_027"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_ed28d2f3",
+        "source_item_id": "item_027",
+        "node_type": "clinical_object",
+        "text": "RI 272.00",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_1da2907f"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_027"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_0d37874c",
+        "source_item_id": "item_027",
+        "node_type": "clinical_object",
+        "text": "FiO2 29.00%",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_f51adf9f"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_027"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_4e4860a4",
+        "source_ref": "evidence_node_20260519_f12f08fc",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_168c46af",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_fc2c3ccf",
+        "source_ref": "evidence_node_20260519_4c150efa",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_168c46af",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_c6f1f254",
+        "source_ref": "evidence_node_20260519_c5e26d61",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_168c46af",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_a61ae2d4",
+        "source_ref": "evidence_node_20260519_9b064552",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_168c46af",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_57a782e4",
+        "source_ref": "evidence_node_20260519_ed28d2f3",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_168c46af",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_f137af50",
+        "source_ref": "evidence_node_20260519_0d37874c",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_168c46af",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_1d973e2e",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 2,
+      "node_count": 7,
+      "relation_count": 6
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_75f1e364",
+    "source_item_id": "item_028",
+    "source_span_ids": [
+      "span_item_028"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_2e71018b",
+        "source_item_id": "item_028",
+        "frame_type": "test_result_group",
+        "frame_label": "左房略增大，二尖瓣、三尖瓣返流（轻度），左室舒张功能减低",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_3b5b15cf",
+          "clinical_object_assertion_20260519_63c9cd4a",
+          "clinical_object_assertion_20260519_43219c43"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_10137219",
+          "evidence_node_20260519_efb821e6",
+          "evidence_node_20260519_18f47ec5"
+        ],
+        "source_span_ids": [
+          "span_item_028"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_10137219",
+        "source_item_id": "item_028",
+        "node_type": "clinical_object",
+        "text": "左房略增大",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_3b5b15cf"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_028"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_efb821e6",
+        "source_item_id": "item_028",
+        "node_type": "clinical_object",
+        "text": "二尖瓣、三尖瓣返流（轻度）",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_63c9cd4a"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_028"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_18f47ec5",
+        "source_item_id": "item_028",
+        "node_type": "clinical_object",
+        "text": "左室舒张功能减低",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_43219c43"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_028"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_ce18a956",
+        "source_ref": "evidence_node_20260519_10137219",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_2e71018b",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_16ebfaed",
+        "source_ref": "evidence_node_20260519_efb821e6",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_2e71018b",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_09f4379d",
+        "source_ref": "evidence_node_20260519_18f47ec5",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_2e71018b",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_3f8c20e3",
+        "source_ref": "evidence_node_20260519_10137219",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_efb821e6",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_a2659ddc",
+        "source_ref": "evidence_node_20260519_10137219",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_18f47ec5",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_cac182c0",
+        "source_ref": "evidence_node_20260519_efb821e6",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_18f47ec5",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_a07f9b5f",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 3,
+      "relation_count": 6
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_b0b512d4",
+    "source_item_id": "item_029",
+    "source_span_ids": [
+      "span_item_029"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_84195581",
+        "source_item_id": "item_029",
+        "frame_type": "test_result_group",
+        "frame_label": "左室收缩功能正常",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_ced6921a"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_527e21cb"
+        ],
+        "source_span_ids": [
+          "span_item_029"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_527e21cb",
+        "source_item_id": "item_029",
+        "node_type": "clinical_object",
+        "text": "左室收缩功能正常",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_ced6921a"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_029"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_9cd2bdea",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 0
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_80f4d22f",
+    "source_item_id": "item_030",
+    "source_span_ids": [
+      "span_item_030"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_f408faf7",
+        "source_item_id": "item_030",
+        "frame_type": "test_result_group",
+        "frame_label": "胆囊附壁结晶",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_50050333"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_b7298be3"
+        ],
+        "source_span_ids": [
+          "span_item_030"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_b7298be3",
+        "source_item_id": "item_030",
+        "node_type": "clinical_object",
+        "text": "胆囊附壁结晶",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_50050333"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_030"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_da69cfc1",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 0
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_61cc8537",
+    "source_item_id": "item_031",
+    "source_span_ids": [
+      "span_item_031"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_6494b77e",
+        "source_item_id": "item_031",
+        "frame_type": "test_result_group",
+        "frame_label": "肺功能检查通气功能：常规通气功能、小气道功能(V-V曲线)、呼吸储备功能(最大通气量)及肺容量(残气容积等)正常",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_9a4edf24",
+          "clinical_object_assertion_20260519_dd0b4315",
+          "clinical_object_assertion_20260519_cda0db93",
+          "clinical_object_assertion_20260519_9c88620f"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_0e220cb6",
+          "evidence_node_20260519_e72f101c",
+          "evidence_node_20260519_b54894cf",
+          "evidence_node_20260519_a9c66ecc"
+        ],
+        "source_span_ids": [
+          "span_item_031"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_0e220cb6",
+        "source_item_id": "item_031",
+        "node_type": "clinical_object",
+        "text": "常规通气功能",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_9a4edf24"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_031"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_e72f101c",
+        "source_item_id": "item_031",
+        "node_type": "clinical_object",
+        "text": "小气道功能(V-V曲线)",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_dd0b4315"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_031"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_b54894cf",
+        "source_item_id": "item_031",
+        "node_type": "clinical_object",
+        "text": "呼吸储备功能(最大通气量)",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_cda0db93"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_031"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_a9c66ecc",
+        "source_item_id": "item_031",
+        "node_type": "clinical_object",
+        "text": "肺容量(残气容积等)",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_9c88620f"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_031"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_6aebf13d",
+        "source_ref": "evidence_node_20260519_0e220cb6",
+        "source_ref_type": "node",
+        "relation_type": "normal_result_of",
+        "target_ref": "evidence_frame_20260519_6494b77e",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_b3cfc1be",
+        "source_ref": "evidence_node_20260519_e72f101c",
+        "source_ref_type": "node",
+        "relation_type": "normal_result_of",
+        "target_ref": "evidence_frame_20260519_6494b77e",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_4807be2d",
+        "source_ref": "evidence_node_20260519_b54894cf",
+        "source_ref_type": "node",
+        "relation_type": "normal_result_of",
+        "target_ref": "evidence_frame_20260519_6494b77e",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_0ea5d94e",
+        "source_ref": "evidence_node_20260519_a9c66ecc",
+        "source_ref_type": "node",
+        "relation_type": "normal_result_of",
+        "target_ref": "evidence_frame_20260519_6494b77e",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "needs_review",
+    "validation_report_id": "evidence_graph_validation_report_20260519_154e6a1d",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 4,
+      "relation_count": 4
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_6de82a61",
+    "source_item_id": "item_032",
+    "source_span_ids": [
+      "span_item_032"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_2738a13d",
+        "source_item_id": "item_032",
+        "frame_type": "test_result_group",
+        "frame_label": "换气功能：轻度弥散功能障碍",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_cd75e664"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_5388acbe"
+        ],
+        "source_span_ids": [
+          "span_item_032"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_5388acbe",
+        "source_item_id": "item_032",
+        "node_type": "clinical_object",
+        "text": "弥散功能障碍",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_cd75e664"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_032"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_6a3e949d",
+        "source_ref": "evidence_node_20260519_5388acbe",
+        "source_ref_type": "node",
+        "relation_type": "result_of_test",
+        "target_ref": "evidence_frame_20260519_2738a13d",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "needs_review",
+    "validation_report_id": "evidence_graph_validation_report_20260519_0bd8d4b2",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_3ffce3f2",
+    "source_item_id": "item_033",
+    "source_span_ids": [
+      "span_item_033"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_d924838c",
+        "source_item_id": "item_033",
+        "frame_type": "test_result_group",
+        "frame_label": "脉冲振荡各项正常",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_937483eb",
+          "clinical_object_assertion_20260519_59f994dd",
+          "clinical_object_assertion_20260519_35e1ab20",
+          "clinical_object_assertion_20260519_4e055774"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_7f8ca780",
+          "evidence_node_20260519_bd27aa20",
+          "evidence_node_20260519_107e4d15",
+          "evidence_node_20260519_ef2fa90a"
+        ],
+        "source_span_ids": [
+          "span_item_033"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_7f8ca780",
+        "source_item_id": "item_033",
+        "node_type": "clinical_object",
+        "text": "呼吸总阻抗Zrs",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_937483eb"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_033"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_bd27aa20",
+        "source_item_id": "item_033",
+        "node_type": "clinical_object",
+        "text": "气道阻力R系列",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_59f994dd"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_033"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_107e4d15",
+        "source_item_id": "item_033",
+        "node_type": "clinical_object",
+        "text": "中心阻抗Rc",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_35e1ab20"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_033"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_ef2fa90a",
+        "source_item_id": "item_033",
+        "node_type": "clinical_object",
+        "text": "电抗X5",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_4e055774"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_033"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_5e1152ba",
+        "source_ref": "evidence_node_20260519_7f8ca780",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_d924838c",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_e2e0f392",
+        "source_ref": "evidence_node_20260519_bd27aa20",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_d924838c",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_8cb3884c",
+        "source_ref": "evidence_node_20260519_107e4d15",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_d924838c",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_69b50f21",
+        "source_ref": "evidence_node_20260519_ef2fa90a",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_d924838c",
+        "target_ref_type": "frame",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_efeeb7c1",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 4,
+      "relation_count": 4
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_e8173974",
+    "source_item_id": "item_034",
+    "source_span_ids": [
+      "span_item_034"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_16c9cbe8",
+        "source_item_id": "item_034",
+        "frame_type": "test_result_group",
+        "frame_label": "周边阻抗Rp略增大；共振频率Fres增高；电抗面积AX增大；Ers轻度增宽",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_5ef15dde",
+          "clinical_object_assertion_20260519_d6974552",
+          "clinical_object_assertion_20260519_e721e898",
+          "clinical_object_assertion_20260519_99734538"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_ab67295a",
+          "evidence_node_20260519_4bb76607",
+          "evidence_node_20260519_600a2fbd",
+          "evidence_node_20260519_61afa5a3"
+        ],
+        "source_span_ids": [
+          "span_item_034"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_ab67295a",
+        "source_item_id": "item_034",
+        "node_type": "clinical_object",
+        "text": "周边阻抗Rp",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_5ef15dde"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_034"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_4bb76607",
+        "source_item_id": "item_034",
+        "node_type": "clinical_object",
+        "text": "共振频率Fres",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_d6974552"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_034"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_600a2fbd",
+        "source_item_id": "item_034",
+        "node_type": "clinical_object",
+        "text": "电抗面积AX",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_e721e898"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_034"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_61afa5a3",
+        "source_item_id": "item_034",
+        "node_type": "clinical_object",
+        "text": "Ers",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_99734538"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_034"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_f7624d15",
+        "source_ref": "evidence_node_20260519_ab67295a",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_16c9cbe8",
+        "target_ref_type": "frame",
+        "evidence_basis": "schema_compiled",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_f88a58c2",
+        "source_ref": "evidence_node_20260519_4bb76607",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_16c9cbe8",
+        "target_ref_type": "frame",
+        "evidence_basis": "schema_compiled",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_812dc723",
+        "source_ref": "evidence_node_20260519_600a2fbd",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_16c9cbe8",
+        "target_ref_type": "frame",
+        "evidence_basis": "schema_compiled",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      },
+      {
+        "relation_id": "evidence_relation_20260519_b614d7b2",
+        "source_ref": "evidence_node_20260519_61afa5a3",
+        "source_ref_type": "node",
+        "relation_type": "component_of_panel",
+        "target_ref": "evidence_frame_20260519_16c9cbe8",
+        "target_ref_type": "frame",
+        "evidence_basis": "schema_compiled",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "accepted",
+    "validation_report_id": "evidence_graph_validation_report_20260519_fb81802b",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 4,
+      "relation_count": 4
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_daa67af7",
+    "source_item_id": "item_035",
+    "source_span_ids": [
+      "span_item_035"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_9d5d32e8",
+        "source_item_id": "item_035",
+        "frame_type": "treatment_exposure",
+        "frame_label": "入院予以哌拉西林他唑巴坦抗感染及化痰治疗",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_f66ac510",
+          "clinical_object_assertion_20260519_0ae74978",
+          "clinical_object_assertion_20260519_ec93e3a8"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_f3c3186e",
+          "evidence_node_20260519_03cf75e5",
+          "evidence_node_20260519_490e5e4e"
+        ],
+        "source_span_ids": [
+          "span_item_035"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_f3c3186e",
+        "source_item_id": "item_035",
+        "node_type": "clinical_object",
+        "text": "哌拉西林他唑巴坦",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_f66ac510"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_035"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_03cf75e5",
+        "source_item_id": "item_035",
+        "node_type": "clinical_object",
+        "text": "抗感染",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_0ae74978"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_035"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_490e5e4e",
+        "source_item_id": "item_035",
+        "node_type": "clinical_object",
+        "text": "化痰治疗",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_ec93e3a8"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_035"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_bbc06eb9",
+        "source_ref": "evidence_node_20260519_03cf75e5",
+        "source_ref_type": "node",
+        "relation_type": "reason_for_management",
+        "target_ref": "evidence_node_20260519_f3c3186e",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": "抗感染是使用哌拉西林他唑巴坦的原因"
+      },
+      {
+        "relation_id": "evidence_relation_20260519_eaa8dc82",
+        "source_ref": "evidence_node_20260519_490e5e4e",
+        "source_ref_type": "node",
+        "relation_type": "reason_for_management",
+        "target_ref": "evidence_node_20260519_f3c3186e",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": "化痰治疗是使用哌拉西林他唑巴坦的原因"
+      },
+      {
+        "relation_id": "evidence_relation_20260519_02f6b0ae",
+        "source_ref": "evidence_node_20260519_03cf75e5",
+        "source_ref_type": "node",
+        "relation_type": "co_occurs_with",
+        "target_ref": "evidence_node_20260519_490e5e4e",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "needs_review",
+    "validation_report_id": "evidence_graph_validation_report_20260519_ee892ef4",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 3,
+      "relation_count": 3
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_d6ba4b18",
+    "source_item_id": "item_036",
+    "source_span_ids": [
+      "span_item_036"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_ffbf8232",
+        "source_item_id": "item_036",
+        "frame_type": "treatment_response",
+        "frame_label": "患者症状减轻",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_e1e8c728"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_c04b667e"
+        ],
+        "source_span_ids": [
+          "span_item_036"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_c04b667e",
+        "source_item_id": "item_036",
+        "node_type": "clinical_object",
+        "text": "症状",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_e1e8c728"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_036"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_7bdc7ef2",
+        "source_ref": "evidence_frame_20260519_ffbf8232",
+        "source_ref_type": "frame",
+        "relation_type": "response_to_treatment",
+        "target_ref": "evidence_node_20260519_c04b667e",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "needs_review",
+    "validation_report_id": "evidence_graph_validation_report_20260519_9232a621",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 1,
+      "relation_count": 1
+    }
+  },
+  {
+    "graphlet_id": "evidence_graphlet_20260519_626e8f0a",
+    "source_item_id": "item_037",
+    "source_span_ids": [
+      "span_item_037"
+    ],
+    "frames": [
+      {
+        "frame_id": "evidence_frame_20260519_b885a2e9",
+        "source_item_id": "item_037",
+        "frame_type": "procedure_or_intervention",
+        "frame_label": "现针对间质性肺病提请MDT讨论",
+        "member_assertion_ids": [
+          "clinical_object_assertion_20260519_bed8d0f1",
+          "clinical_object_assertion_20260519_1be4ffd2"
+        ],
+        "member_node_ids": [
+          "evidence_node_20260519_f7df2dd0",
+          "evidence_node_20260519_92ca4e45"
+        ],
+        "source_span_ids": [
+          "span_item_037"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "nodes": [
+      {
+        "node_id": "evidence_node_20260519_f7df2dd0",
+        "source_item_id": "item_037",
+        "node_type": "clinical_object",
+        "text": "间质性肺病",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_bed8d0f1"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_037"
+        ],
+        "confidence": "high",
+        "notes": null
+      },
+      {
+        "node_id": "evidence_node_20260519_92ca4e45",
+        "source_item_id": "item_037",
+        "node_type": "clinical_object",
+        "text": "MDT讨论",
+        "assertion_ids": [
+          "clinical_object_assertion_20260519_1be4ffd2"
+        ],
+        "assertion_status": "present",
+        "source_span_ids": [
+          "span_item_037"
+        ],
+        "confidence": "high",
+        "notes": null
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "evidence_relation_20260519_8f570017",
+        "source_ref": "evidence_node_20260519_f7df2dd0",
+        "source_ref_type": "node",
+        "relation_type": "reason_for_management",
+        "target_ref": "evidence_node_20260519_92ca4e45",
+        "target_ref_type": "node",
+        "evidence_basis": "source_text",
+        "confidence": "high",
+        "source_span_ids": [],
+        "notes": null
+      }
+    ],
+    "status": "needs_review",
+    "validation_report_id": "evidence_graph_validation_report_20260519_773d44bb",
+    "display_hints": {
+      "render_mode": "tree_like",
+      "frame_count": 1,
+      "node_count": 2,
+      "relation_count": 1
+    }
+  }
+]

@@ -15,7 +15,7 @@ def format_forbidden_objects() -> str:
         "differential diagnosis",
         "treatment recommendation",
         "management plan",
-        "EvidenceTree",
+        "EvidenceGraph",
         "HypothesisState",
         "Conflict",
         "ActionPlan",

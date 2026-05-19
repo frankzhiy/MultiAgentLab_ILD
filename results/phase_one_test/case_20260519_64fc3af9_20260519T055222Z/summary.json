@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-05-19T05:52:22.700098+00:00",
+  "selected_file": "data/05.txt",
+  "case_id": "case_20260519_64fc3af9",
+  "input_id": "input_20260519_050d3d9c",
+  "case_structuring_result_id": "case_structuring_result_20260519_0405ecc8",
+  "ready_for_evidence_graph_structuring": true,
+  "clinical_sections": 11,
+  "structured_items": 37,
+  "clinical_object_assertions": 122,
+  "assertion_issues": 0,
+  "evidence_frames": 43,
+  "evidence_nodes": 122,
+  "evidence_relations": 105,
+  "evidence_graphlets": 37,
+  "evidence_graphlets_by_status": {
+    "accepted": 29,
+    "needs_review": 8
+  },
+  "validation_reports": 37,
+  "structuring_issues": 0,
+  "ready_for_hypothesis_state": true,
+  "durations_seconds": {
+    "case_structurer": 246.32393741700798,
+    "evidence_graph_structurer": 1937.8739248749916,
+    "total": 2184.1986699999543
+  },
+  "durations_human": {
+    "case_structurer": "4 min 6.3 s",
+    "evidence_graph_structurer": "32 min 17.9 s",
+    "total": "36 min 24.2 s"
+  }
+}

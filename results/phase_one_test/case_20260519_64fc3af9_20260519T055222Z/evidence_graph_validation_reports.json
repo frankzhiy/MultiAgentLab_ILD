@@ -1,0 +1,1017 @@
+[
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_fd5409b0",
+    "source_item_id": "item_001",
+    "graphlet_id": "evidence_graphlet_20260519_4d05fb41",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 0,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_c7e7e2e1",
+    "source_item_id": "item_002",
+    "graphlet_id": "evidence_graphlet_20260519_24bcc9bf",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 3,
+      "covered": 3,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 3,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_7aadec5e",
+    "source_item_id": "item_003",
+    "graphlet_id": "evidence_graphlet_20260519_047aff69",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 5,
+      "covered": 5,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 5,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_d4538ad0",
+    "source_item_id": "item_004",
+    "graphlet_id": "evidence_graphlet_20260519_e4f7b6d6",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 5,
+      "covered": 5,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 5,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_6d270b9c",
+    "source_item_id": "item_005",
+    "graphlet_id": "evidence_graphlet_20260519_89358ec6",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 13,
+      "covered": 13,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 2,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 10,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_3069d6f7",
+    "source_item_id": "item_006",
+    "graphlet_id": "evidence_graphlet_20260519_1b6016e1",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 5,
+      "covered": 5,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 5,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_a8faabb2",
+    "source_item_id": "item_007",
+    "graphlet_id": "evidence_graphlet_20260519_89f1eb40",
+    "status": "needs_review",
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='component_of_panel': source_kind='node:clinical_object', target_kind='node:clinical_object'.",
+        "related_item_id": "item_007",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_217df747",
+        "related_span_id": null,
+        "details": null
+      }
+    ],
+    "assertion_coverage": {
+      "total": 5,
+      "covered": 5,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 1
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_2fe3d732",
+    "source_item_id": "item_008",
+    "graphlet_id": "evidence_graphlet_20260519_7ca23c77",
+    "status": "needs_review",
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='reason_for_management': source_kind='node:clinical_object', target_kind='node:clinical_object'.",
+        "related_item_id": "item_008",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_42958166",
+        "related_span_id": null,
+        "details": null
+      },
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='has_temporal_context': source_kind='node:clinical_object', target_kind='node:clinical_object'.",
+        "related_item_id": "item_008",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_3ca9ffbd",
+        "related_span_id": null,
+        "details": null
+      }
+    ],
+    "assertion_coverage": {
+      "total": 3,
+      "covered": 3,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 2,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 2
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_352f3425",
+    "source_item_id": "item_009",
+    "graphlet_id": "evidence_graphlet_20260519_e2e7ce5f",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 6,
+      "covered": 6,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 2,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 10,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_5c38b9cb",
+    "source_item_id": "item_010",
+    "graphlet_id": "evidence_graphlet_20260519_abc2c945",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 0,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_eed55f04",
+    "source_item_id": "item_011",
+    "graphlet_id": "evidence_graphlet_20260519_6996c491",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 2,
+      "covered": 2,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_4adfa3ff",
+    "source_item_id": "item_012",
+    "graphlet_id": "evidence_graphlet_20260519_758420a6",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_1dbdfb60",
+    "source_item_id": "item_013",
+    "graphlet_id": "evidence_graphlet_20260519_c972e4af",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 3,
+      "covered": 3,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 3,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_4666d89a",
+    "source_item_id": "item_014",
+    "graphlet_id": "evidence_graphlet_20260519_cb6a2e4b",
+    "status": "needs_review",
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='response_to_treatment': source_kind='node:clinical_object', target_kind='node:clinical_object'.",
+        "related_item_id": "item_014",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_b5f20f76",
+        "related_span_id": null,
+        "details": null
+      }
+    ],
+    "assertion_coverage": {
+      "total": 2,
+      "covered": 2,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 1
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_20c1d9a5",
+    "source_item_id": "item_015",
+    "graphlet_id": "evidence_graphlet_20260519_dfb0837a",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 3,
+      "covered": 3,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 2,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 2,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_bb429d09",
+    "source_item_id": "item_016",
+    "graphlet_id": "evidence_graphlet_20260519_b7d8ee27",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 4,
+      "covered": 4,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 6,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_fa109c0b",
+    "source_item_id": "item_017",
+    "graphlet_id": "evidence_graphlet_20260519_f066408a",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 2,
+      "covered": 2,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_6985e55e",
+    "source_item_id": "item_018",
+    "graphlet_id": "evidence_graphlet_20260519_dd104bb8",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 5,
+      "covered": 5,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 5,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_dadd4825",
+    "source_item_id": "item_019",
+    "graphlet_id": "evidence_graphlet_20260519_a509e3ea",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 3,
+      "covered": 3,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 3,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_23eda800",
+    "source_item_id": "item_020",
+    "graphlet_id": "evidence_graphlet_20260519_76fc4867",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 2,
+      "covered": 2,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_01f16c85",
+    "source_item_id": "item_021",
+    "graphlet_id": "evidence_graphlet_20260519_5bddd59a",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 11,
+      "covered": 11,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 3,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 3,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_8b47345b",
+    "source_item_id": "item_022",
+    "graphlet_id": "evidence_graphlet_20260519_9dad1be5",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_16416e5d",
+    "source_item_id": "item_023",
+    "graphlet_id": "evidence_graphlet_20260519_a8f223fb",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_4fd07a9d",
+    "source_item_id": "item_024",
+    "graphlet_id": "evidence_graphlet_20260519_866e2803",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_d27efbc5",
+    "source_item_id": "item_025",
+    "graphlet_id": "evidence_graphlet_20260519_7d115ce8",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_adb69890",
+    "source_item_id": "item_026",
+    "graphlet_id": "evidence_graphlet_20260519_f10f36f9",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 2,
+      "covered": 2,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 3,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_1d973e2e",
+    "source_item_id": "item_027",
+    "graphlet_id": "evidence_graphlet_20260519_b42d3683",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 7,
+      "covered": 7,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 2,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 6,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_a07f9b5f",
+    "source_item_id": "item_028",
+    "graphlet_id": "evidence_graphlet_20260519_75f1e364",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 3,
+      "covered": 3,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 6,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_9cd2bdea",
+    "source_item_id": "item_029",
+    "graphlet_id": "evidence_graphlet_20260519_b0b512d4",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 0,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_da69cfc1",
+    "source_item_id": "item_030",
+    "graphlet_id": "evidence_graphlet_20260519_80f4d22f",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 0,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_154e6a1d",
+    "source_item_id": "item_031",
+    "graphlet_id": "evidence_graphlet_20260519_61cc8537",
+    "status": "needs_review",
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='normal_result_of': source_kind='node:clinical_object', target_kind='frame:test_result_group'.",
+        "related_item_id": "item_031",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_6aebf13d",
+        "related_span_id": null,
+        "details": null
+      },
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='normal_result_of': source_kind='node:clinical_object', target_kind='frame:test_result_group'.",
+        "related_item_id": "item_031",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_b3cfc1be",
+        "related_span_id": null,
+        "details": null
+      },
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='normal_result_of': source_kind='node:clinical_object', target_kind='frame:test_result_group'.",
+        "related_item_id": "item_031",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_4807be2d",
+        "related_span_id": null,
+        "details": null
+      },
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='normal_result_of': source_kind='node:clinical_object', target_kind='frame:test_result_group'.",
+        "related_item_id": "item_031",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_0ea5d94e",
+        "related_span_id": null,
+        "details": null
+      }
+    ],
+    "assertion_coverage": {
+      "total": 4,
+      "covered": 4,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 4,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 4
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_0bd8d4b2",
+    "source_item_id": "item_032",
+    "graphlet_id": "evidence_graphlet_20260519_6de82a61",
+    "status": "needs_review",
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='result_of_test': source_kind='node:clinical_object', target_kind='frame:test_result_group'.",
+        "related_item_id": "item_032",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_6a3e949d",
+        "related_span_id": null,
+        "details": null
+      }
+    ],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 1
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_efeeb7c1",
+    "source_item_id": "item_033",
+    "graphlet_id": "evidence_graphlet_20260519_3ffce3f2",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 4,
+      "covered": 4,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 4,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_fb81802b",
+    "source_item_id": "item_034",
+    "graphlet_id": "evidence_graphlet_20260519_e8173974",
+    "status": "accepted",
+    "issues": [],
+    "assertion_coverage": {
+      "total": 4,
+      "covered": 4,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 4,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 0
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_ee892ef4",
+    "source_item_id": "item_035",
+    "graphlet_id": "evidence_graphlet_20260519_daa67af7",
+    "status": "needs_review",
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='reason_for_management': source_kind='node:clinical_object', target_kind='node:clinical_object'.",
+        "related_item_id": "item_035",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_bbc06eb9",
+        "related_span_id": null,
+        "details": null
+      },
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='reason_for_management': source_kind='node:clinical_object', target_kind='node:clinical_object'.",
+        "related_item_id": "item_035",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_eaa8dc82",
+        "related_span_id": null,
+        "details": null
+      }
+    ],
+    "assertion_coverage": {
+      "total": 3,
+      "covered": 3,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 3,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 2
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_9232a621",
+    "source_item_id": "item_036",
+    "graphlet_id": "evidence_graphlet_20260519_d6ba4b18",
+    "status": "needs_review",
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='response_to_treatment': source_kind='frame:treatment_response', target_kind='node:clinical_object'.",
+        "related_item_id": "item_036",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_7bdc7ef2",
+        "related_span_id": null,
+        "details": null
+      }
+    ],
+    "assertion_coverage": {
+      "total": 1,
+      "covered": 1,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 1
+    },
+    "downstream_readiness": true
+  },
+  {
+    "validation_report_id": "evidence_graph_validation_report_20260519_773d44bb",
+    "source_item_id": "item_037",
+    "graphlet_id": "evidence_graphlet_20260519_626e8f0a",
+    "status": "needs_review",
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "evidence_relation_endpoint_incompatible",
+        "message": "Relation endpoint kinds incompatible with relation_type='reason_for_management': source_kind='node:clinical_object', target_kind='node:clinical_object'.",
+        "related_item_id": "item_037",
+        "related_assertion_id": null,
+        "related_frame_id": null,
+        "related_node_id": null,
+        "related_relation_id": "evidence_relation_20260519_8f570017",
+        "related_span_id": null,
+        "details": null
+      }
+    ],
+    "assertion_coverage": {
+      "total": 2,
+      "covered": 2,
+      "uncovered_assertion_ids": []
+    },
+    "frame_coverage": {
+      "total": 1,
+      "empty": 0,
+      "empty_frame_ids": []
+    },
+    "relation_checks": {
+      "total": 1,
+      "unknown_endpoint": 0,
+      "incompatible_endpoint": 1
+    },
+    "downstream_readiness": true
+  }
+]
